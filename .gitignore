@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+corpus/inbox/*
+!corpus/inbox/.gitkeep
+graphs/*/evidence/*/*.rows.jsonl
+graphs/*/work/
+*.lock
