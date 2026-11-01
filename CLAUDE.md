@@ -33,5 +33,6 @@ Once the graph spec exists: `cd graphs/aacps-policy-dm && ../../../squiddy/.venv
 
 ## Seldon
 
-Not yet Seldon-managed. Adoption (seldon.yaml, dispatcher block, launchd job) is AP-02 if the project
-runs longer than one task batch; a one-batch project does not need a dispatcher.
+Seldon-managed since AP-02 (2026-11-01): database `seldon-aacps-ai-policy`, a dispatch block in `seldon.yaml`
+(hazbrief-mcp's reasons), launchd job `com.brock.aacps-ai-policy-dispatch`. Tasks are dispatched, not hand
+launched (factory F-008). To hold the queue: `touch .seldon/DISPATCH_STOP`.
