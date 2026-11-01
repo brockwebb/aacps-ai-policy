@@ -1,0 +1,67 @@
+# Related Entries named on draft Policy DM (page 1 header), acquired 2026-10-31.
+- id: aacps-policy-ac
+  title: Policy AC, Nondiscrimination (AACPS Board, 2024)
+  source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2024/12/FINAL-AC-2024.pdf
+  publisher: Anne Arundel County Public Schools
+  document_type: board policy
+  basis: public record; Related Entry named on draft Policy DM
+  access: browser
+  access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2024-12-04; sha256 14f8c1ff6c1426f08ef11f100e5148ee9ea6a50dc200d225106b5bd1e708e17f, 189644 bytes;
+    corpus/inbox/aacps-policy-ac.pdf
+  disposition: active
+- id: aacps-policy-di
+  title: Policy DI, Technology Use and Security (AACPS Board, 2024)
+  source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2024/12/FINAL-DI-Technology-Use-and-Security-2024.pdf
+  publisher: Anne Arundel County Public Schools
+  document_type: board policy
+  basis: public record; Related Entry named on draft Policy DM
+  access: browser
+  access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2024-12-04; sha256 31e05442fcbc117091a55f82a9ad870a8f805d03441552318e2a2fe2410c344b, 165975 bytes;
+    corpus/inbox/aacps-policy-di.pdf
+  disposition: active
+- id: aacps-reg-di-ra
+  title: Administrative Regulation DI-RA, Technology Use and Security (AACPS, 2024)
+  source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2024/12/FINAL-DI-RA-Technology-Use-and-Security-2024.pdf
+  publisher: Anne Arundel County Public Schools
+  document_type: administrative regulation
+  basis: public record; Related Entry named on draft Policy DM
+  access: browser
+  access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2024-12-04; sha256 1ee83b65b3b25e2972f9fd3368367a98480903325332d30250db1f243a2f68bc, 261706 bytes;
+    corpus/inbox/aacps-reg-di-ra.pdf
+  disposition: active
+- id: aacps-policy-dl
+  title: Policy DL, Data Governance (AACPS Board, 2024)
+  source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2025/07/FINAL-DL-Data-Governance-2024.pdf
+  publisher: Anne Arundel County Public Schools
+  document_type: board policy
+  basis: public record; Related Entry named on draft Policy DM
+  access: browser
+  access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2025-07-08; sha256 fa88959ced8d12a7313c2e90915208604e56879beadb4266260f3a1cdecfb0e6, 186154 bytes;
+    corpus/inbox/aacps-policy-dl.pdf
+  disposition: active
+- id: aacps-reg-dl-ra
+  title: Administrative Regulation DL-RA, Data Governance (AACPS, 2024)
+  source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2025/07/FINAL-DL-RA-Data-Governance-2024.pdf
+  publisher: Anne Arundel County Public Schools
+  document_type: administrative regulation
+  basis: public record; Related Entry named on draft Policy DM
+  access: browser
+  access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2025-07-08; sha256 0d6a9e8017e34344eb277f3c6a2d80368a2352eb94da20d78f9acd2ac0347014, 207233 bytes;
+    corpus/inbox/aacps-reg-dl-ra.pdf
+  disposition: active
+- id: aacps-reg-dm-ra
+  title: Administrative Regulation DM-RA (named as a Related Entry on draft Policy DM)
+  source_url: null
+  publisher: Anne Arundel County Public Schools
+  document_type: administrative regulation
+  basis: named on draft Policy DM
+  access: browser
+  access_note: 'Not posted 2026-10-31: absent from the Policy Committee proposed-policy listing and from the aacpsschools.org D section (which lists DI, DI-RA, DL, DL-RA). The draft cites a regulation the
+    public cannot read during the comment period.'
+  disposition: declined:not_published
+# Legal References named on the draft (page 2), still to catalog; machine-fetchable unless noted:
+#   FERPA 34 CFR 99, COPPA 16 CFR 312, CIPA 47 CFR 54.520 (in the AP-01 list); PPRA 20 USC 1232h / 34 CFR 98;
+#   IDEA 20 USC 1400 / 34 CFR 300; Section 504 29 USC 794 / 34 CFR 104; ADA 42 USC 12101 / 28 CFR 35;
+#   Title VI 42 USC 2000d / 34 CFR 100; Title IX 20 USC 1681 / 34 CFR 106; Md. Code, Education 4-131
+#   (mgaleg.maryland.gov); COMAR Title 13A (dsd.maryland.gov, may need browser); Maryland K-12 AI Guidance
+#   (MSDE, in the AP-01 list).
