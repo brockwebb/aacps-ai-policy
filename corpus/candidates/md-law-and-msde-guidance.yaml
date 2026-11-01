@@ -1,0 +1,133 @@
+# Maryland law and the MSDE AI guidance set, acquired 2026-11-01 through the operator's Chrome (MSDE returns 403 to scripts).
+# Currency: the MSDE K-12 guidance was revised 2026-10-03, after the June release the draft was written against; the
+# supporting set carries 2026-09-25. The draft's footer cites "Maryland K-12 Artificial Intelligence Guidance" with no
+# version or date. AP-01's msde-ai-guidance (ai-guidance-a.pdf) and msde-model-local-board-policy-ai URLs are the June
+# versions and are superseded by these entries.
+- id: msde-k12-ai-guidance
+  title: MSDE K-12 Instructional AI Guidance (revised; last-modified 2026-10-03)
+  source_url: https://msde.maryland.gov/media/26289
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: named in draft Policy DM legal references ("Maryland K-12 Artificial Intelligence Guidance")
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:55Z; HTTP 200 application/pdf; last-modified 2026-10-03T19:06:46Z; sha256 efefbf67b448759091651b37acc10251cf370afe06b784d2f16ac7073e3e5f85, 471998 bytes; corpus/inbox/msde-k12-ai-guidance.pdf
+  disposition: active
+- id: msde-01-k12-guidance-exec-summary
+  title: MSDE K-12 Guidance Executive Summary
+  source_url: https://msde.maryland.gov/media/17960
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:32 GMT; sha256 7a039a85e13bb168a03b0473eef66d1c52ae5f693eb0a5e6c88407120e32d60b, 111528 bytes;
+    corpus/inbox/msde-01-k12-guidance-exec-summary.pdf
+  disposition: active
+- id: msde-it-guidance
+  title: MSDE Information Technology Guidance
+  source_url: https://msde.maryland.gov/media/17961
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:33 GMT; sha256 1166365a9c73c9b5f8d074e1089afdcd53948d82aac1d85ba58811861b149301, 108285 bytes;
+    corpus/inbox/msde-it-guidance.pdf
+  disposition: active
+- id: msde-local-action-planning-guide
+  title: MSDE Local Action Planning Guide Companion
+  source_url: https://msde.maryland.gov/media/17962
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:34 GMT; sha256 9ea90123f4e1457b772f05fc1386034bc7dfdc7d2847ef95485d28df59b8d09f, 468631 bytes;
+    corpus/inbox/msde-local-action-planning-guide.pdf
+  disposition: active
+- id: msde-local-policy-considerations
+  title: MSDE Local Policy Considerations
+  source_url: https://msde.maryland.gov/media/17963
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:35 GMT; sha256 9ba52b0ab60a077168c738cbb22b376850b8a412ac3697fe7e9b65d9b5ea1ccf, 129022 bytes;
+    corpus/inbox/msde-local-policy-considerations.pdf
+  disposition: active
+- id: msde-state-level-responsibilities
+  title: MSDE State-Level Responsibilities
+  source_url: https://msde.maryland.gov/media/17964
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:37 GMT; sha256 6c7c9070cec44d59ddc3ce05f8eff6fd9c8e5fbf115c737f6dd382d21f8bce7b, 99216 bytes;
+    corpus/inbox/msde-state-level-responsibilities.pdf
+  disposition: active
+- id: msde-local-level-responsibilities
+  title: MSDE Local-Level Responsibilities
+  source_url: https://msde.maryland.gov/media/17965
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:37 GMT; sha256 5a4949b50dad57f1f2a991ab67c9cdf66bb98851e5e8da737f025ac896832ea3, 91525 bytes;
+    corpus/inbox/msde-local-level-responsibilities.pdf
+  disposition: active
+- id: msde-ai-tool-evaluation-rubric
+  title: MSDE AI Tool Evaluation Rubric
+  source_url: https://msde.maryland.gov/media/17966
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:38 GMT; sha256 0250314490bedf04a1959ca2cdb3de9148cfba5e18445afbb5e24e6fab7ddc15, 73200 bytes;
+    corpus/inbox/msde-ai-tool-evaluation-rubric.pdf
+  disposition: active
+- id: msde-model-local-board-policy
+  title: MSDE Model Local Board Policy for the Responsible Use of Artificial Intelligence
+  source_url: https://msde.maryland.gov/media/17967
+  publisher: Maryland State Department of Education
+  document_type: state guidance
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:39 GMT; sha256 e06cbf06668be424fb7f6291d55d110998ba6582e0c36b13b1cab3c6b7c4fbf3, 102747 bytes;
+    corpus/inbox/msde-model-local-board-policy.pdf
+  disposition: active
+- id: md-ch634-2026-ai-ready-schools-act
+  title: Chapter 634 (2026), SB 720, AI Ready Schools Act, chapter text, approved by the Governor (HB 1057 is the cross-file)
+  source_url: https://mgaleg.maryland.gov/2026RS/Chapters_noln/CH_634_sb0720e.pdf
+  publisher: Maryland General Assembly
+  document_type: statute or fiscal note
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 application/pdf; last-modified Wed, 03 Jun 2026 20:40:28 GMT; sha256 5f481769f7f52a3019b94350818d5b0650c484995c5ac4f4d9baa0c0b9ba745c, 204874 bytes;
+    corpus/inbox/md-ch634-2026-ai-ready-schools-act.pdf
+  disposition: active
+- id: md-sb0720-fiscal-note
+  title: SB 720 (2026) Fiscal and Policy Note, revised
+  source_url: https://mgaleg.maryland.gov/2026RS/fnotes/bil_0000/sb0720.pdf
+  publisher: Maryland General Assembly
+  document_type: statute or fiscal note
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 application/pdf; last-modified Wed, 06 May 2026 15:39:07 GMT; sha256 744242f208d4c28a414796ec588b3119e0a920403fa3275f69fd22b600f2b0e5, 417238 bytes;
+    corpus/inbox/md-sb0720-fiscal-note.pdf
+  disposition: active
+- id: md-hb1057-fiscal-note
+  title: HB 1057 (2026) Fiscal and Policy Note, revised
+  source_url: https://mgaleg.maryland.gov/2026RS/fnotes/bil_0007/hb1057.pdf
+  publisher: Maryland General Assembly
+  document_type: statute or fiscal note
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 application/pdf; last-modified Tue, 14 Apr 2026 13:13:44 GMT; sha256 b02e3dfe100019ffa08841af677e43268e6197c06beb504db78cdb3b0c02b371, 417205 bytes;
+    corpus/inbox/md-hb1057-fiscal-note.pdf
+  disposition: active
+- id: md-educ-4-131-student-data-privacy
+  title: Md. Code, Education 4-131 (Student Data Privacy), current text from the MGA statute page
+  source_url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=ged&section=4-131
+  publisher: Maryland General Assembly
+  document_type: statute or fiscal note
+  basis: public record; draft Policy DM legal references or DN-002
+  access: browser
+  access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 text/plain (extracted from HTML); last-modified n/a; sha256 049215e70205ea5ed5583abe6d3a8ec47bd7910e8f74d54210b744973d5d31cf, 15289 bytes; corpus/inbox/md-educ-4-131-student-data-privacy.txt
+  disposition: active
