@@ -1,0 +1,12 @@
+{
+ "work": {
+  "assessed": 17,
+  "admitted": 15,
+  "declined": 2,
+  "by_decline_code": {
+   "excluded:out_of_scope": 1,
+   "excluded:deferred": 1
+  },
+  "by_basis": {}
+ }
+}

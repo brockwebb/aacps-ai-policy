@@ -1,0 +1,4 @@
+15 entries at stage 'admitting'
+records: 46 resolver answer(s) read from disk; no authority is called
+work: 15 events appended, 0 dropped (run read_20261101T044735_e46eba02)
+write: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/write.json (0s)

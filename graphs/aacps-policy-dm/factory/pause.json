@@ -1,0 +1,8 @@
+{
+ "cause": "touchpoint 3",
+ "detail": "15 manifest entries nobody has decided; the plan is /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/plan.json. To proceed, the operator writes `review: {undecided: {count: 15, date: YYYY-MM-DD}}` in the control file (DN-027 R-127)",
+ "touchpoint": 3,
+ "where": "assess",
+ "source": "factory",
+ "at": "2026-11-01T04:47:27.898074+00:00"
+}

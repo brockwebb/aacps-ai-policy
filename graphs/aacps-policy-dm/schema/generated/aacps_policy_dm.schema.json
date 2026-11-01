@@ -14,6 +14,9 @@
                                 "$ref": "#/$defs/Supersedes"
                             },
                             {
+                                "$ref": "#/$defs/StatedIn"
+                            },
+                            {
                                 "$ref": "#/$defs/ConflictsWith"
                             }
                         ]
@@ -212,6 +215,12 @@
                         "null"
                     ]
                 },
+                "confidence": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
                 "criteria_version": {
                     "type": [
                         "string",
@@ -282,6 +291,13 @@
                         "null"
                     ]
                 },
+                "resolution_basis": {
+                    "description": "specificity | temporality | hierarchy | exception_clause, when the verdict is apparent_resolved",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "ruling_id": {
                     "description": "The event id of the human ruling that authorized this assertion, when one did.",
                     "type": [
@@ -304,6 +320,7 @@
                     "type": "string"
                 },
                 "verdict": {
+                    "description": "apparent_resolved | genuine_conflict (fss-policy-kg kg/conflict_rubric.md; no_conflict is not a node)",
                     "type": [
                         "string",
                         "null"
@@ -1123,12 +1140,14 @@
                     ]
                 },
                 "binds": {
+                    "description": "The party the statement binds, as the text names it (fss \"addressee\"), or null when it names none.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "force": {
+                    "description": "obligation | prohibition | permission | recommendation (fss-policy-kg's closed vocabulary). The spec cannot declare an enum (the kit takes enums from its base schema only), so the extraction protocol enforces it: a row with any other value is recorded `ungrounded` with the reason and never emitted.",
                     "type": [
                         "string",
                         "null"
@@ -1148,6 +1167,13 @@
                 "id": {
                     "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
                     "type": "string"
+                },
+                "mechanism_stated": {
+                    "description": "The process, timeline or consequence the text attaches, quoted, or null (DN-001 anchor 3).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "method": {
                     "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
@@ -1204,6 +1230,13 @@
                         "null"
                     ]
                 },
+                "responsible_party_stated": {
+                    "description": "Whether the sentence or its section names who must act (DN-001 anchor 3, obligations without mechanism).",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "ruling_id": {
                     "description": "The event id of the human ruling that authorized this assertion, when one did.",
                     "type": [
@@ -1237,6 +1270,110 @@
                 "id"
             ],
             "title": "Obligation",
+            "type": "object"
+        },
+        "StatedIn": {
+            "additionalProperties": false,
+            "description": "(Obligation | Definition)-[:STATED_IN]->(Work): the document a statement was extracted from, with its located span. fss-policy-kg ties an Obligation to its document through Segment and a `source_doc` property; this graph holds no Segment nodes (the parsed intermediate is the segment record), so the tie is one edge. The kit's Asserts edge is not declared here because its range is Claim. Recorded in DN-003 section 2.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "The id of the target node.",
+                    "type": "string"
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "subject": {
+                    "description": "The id of the source node.",
+                    "type": "string"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "subject",
+                "object"
+            ],
+            "title": "StatedIn",
             "type": "object"
         },
         "Supersedes": {
@@ -1637,6 +1774,9 @@
                     },
                     {
                         "$ref": "#/$defs/Supersedes"
+                    },
+                    {
+                        "$ref": "#/$defs/StatedIn"
                     },
                     {
                         "$ref": "#/$defs/ConflictsWith"

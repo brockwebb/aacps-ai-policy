@@ -1,0 +1,766 @@
+{
+ "tool": "squiddy build (factory, F-001)",
+ "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+ "version": "ap02_v1",
+ "maintain": false,
+ "run_id": "factory_20261101T044726_31867a97",
+ "kit_version": "0.8.0",
+ "control_sha256": "b1e0bc0d6e52e0e303de5faeb58434fcddda299dd075de713684ea356c446d64",
+ "extract": false,
+ "nodes": [
+  {
+   "node": "F-20",
+   "unit": "seeds",
+   "what": "each scope subject's MeSH descriptors, as NLM's lookup service returns them",
+   "requires": [],
+   "valve": null,
+   "buckets": [
+    "http.*"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.lookup per seed, through squiddy.calls (the MeSH lookup service)"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "http"
+    ],
+    "hosts": [
+     "api.openalex.org",
+     "arxiv.org",
+     "export.arxiv.org"
+    ]
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-21",
+   "unit": "seed_select",
+   "what": "the model's choice among the returned descriptors, enforced to that vocabulary",
+   "requires": [
+    "F-20"
+   ],
+   "valve": null,
+   "buckets": [
+    "model"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256",
+    "kit_version",
+    "role",
+    "prompt_sha256",
+    "model",
+    "transport"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.selection_prompt -> the model -> parse_selection (R-152), via squiddy.calls"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "model"
+    ],
+    "hosts": []
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-23",
+   "unit": "seed_propose",
+   "what": "at most five lookup labels proposed for a seed no descriptor fits (R-160)",
+   "requires": [
+    "F-21"
+   ],
+   "valve": null,
+   "buckets": [
+    "model"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256",
+    "kit_version",
+    "role",
+    "prompt_sha256",
+    "model",
+    "transport"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.proposal_prompt -> the model -> parse_proposal (R-160), via squiddy.calls"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "model"
+    ],
+    "hosts": []
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-24",
+   "unit": "seed_relookup",
+   "what": "each proposed label sent to the MeSH lookup (R-160)",
+   "requires": [
+    "F-23"
+   ],
+   "valve": null,
+   "buckets": [
+    "http.*"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.lookup_labels per seed with proposed labels, through squiddy.calls"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "http"
+    ],
+    "hosts": [
+     "api.openalex.org",
+     "arxiv.org",
+     "export.arxiv.org"
+    ]
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-25",
+   "unit": "seed_reselect",
+   "what": "the choice among what the proposed labels returned, under R-152's guard (R-160)",
+   "requires": [
+    "F-24"
+   ],
+   "valve": null,
+   "buckets": [
+    "model"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256",
+    "kit_version",
+    "role",
+    "prompt_sha256",
+    "model",
+    "transport"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.selection_prompt over the proposed labels' descriptors -> the model -> parse_selection (R-152's guard), via squiddy.calls"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "model"
+    ],
+    "hosts": []
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-26",
+   "unit": "seed_context",
+   "what": "scope.context_descriptors resolved through the lookup, with MeSH tree numbers (R-161)",
+   "requires": [],
+   "valve": null,
+   "buckets": [
+    "http.*"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.resolve_context per scope.context_descriptors phrase, through squiddy.calls (the MeSH lookup and its SPARQL tree numbers)"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "http"
+    ],
+    "hosts": [
+     "api.openalex.org",
+     "arxiv.org",
+     "export.arxiv.org"
+    ]
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-22",
+   "unit": "seed_search",
+   "what": "PubMed by rule per chosen descriptor; the candidates file the catalog reads",
+   "requires": [
+    "F-21"
+   ],
+   "valve": null,
+   "buckets": [
+    "http.*"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256"
+   ],
+   "command": [
+    "(in process) squiddy.mesh_seed.search per chosen descriptor through squiddy.calls (E-utilities), then the candidates file"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "http"
+    ],
+    "hosts": [
+     "api.openalex.org",
+     "arxiv.org",
+     "export.arxiv.org"
+    ]
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-27",
+   "unit": "shelf_screen",
+   "what": "each shelf file's title and first page screened include/exclude/unsure (R-162)",
+   "requires": [],
+   "valve": null,
+   "buckets": [
+    "model"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256",
+    "kit_version",
+    "role",
+    "prompt_sha256",
+    "model",
+    "transport"
+   ],
+   "command": [
+    "(in process) squiddy.shelf_screen per unique file: title and opening -> the model -> parse_verdict (R-162, R-165), via squiddy.calls; then the recall-control gate (R-164) and the candidates file"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "model"
+    ],
+    "hosts": []
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no shelf_screen intake (DN-035 R-162)",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-01",
+   "unit": "catalog",
+   "what": "every file in the declared intake becomes a manifest entry",
+   "requires": [],
+   "valve": null,
+   "buckets": [],
+   "key_components": [
+    "unit",
+    "item"
+   ],
+   "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python3",
+    "-m",
+    "squiddy.lessons",
+    "catalog",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/lessons_catalog.json"
+   ],
+   "network": {
+    "policy": "none",
+    "classes": [],
+    "hosts": [],
+    "where": "in process",
+    "sandbox": "not applicable (in process)",
+    "enforcement": [
+     "proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty"
+    ],
+    "children": []
+   },
+   "state": "runs",
+   "total": 48,
+   "done": 33,
+   "pending": 15,
+   "rc": 0,
+   "seconds": 0.55,
+   "detail": "",
+   "evidence": null,
+   "result": {
+    "sources": [
+     {
+      "source": "candidates",
+      "cataloged": 0,
+      "revised": [],
+      "refreshed": [
+       "aacps-policy-committee-page",
+       "ferpa-34cfr99",
+       "coppa-16cfr312",
+       "cipa-47cfr54-520",
+       "md-ch634-2026-ai-ready-schools-act",
+       "ppra-34cfr98",
+       "ferpa-20usc1232g",
+       "ppra-20usc1232h",
+       "coppa-15usc6501",
+       "coppa-15usc6502",
+       "coppa-15usc6503",
+       "coppa-15usc6504",
+       "coppa-15usc6505",
+       "coppa-15usc6506",
+       "cipa-47usc254"
+      ],
+      "metadata": {
+       "refreshed": {},
+       "conflicts": {},
+       "unowned": {},
+       "adopted": [],
+       "released_moved": {},
+       "reopened": {},
+       "decided": {},
+       "duplicated": {},
+       "released_note": "an entry in the graph is not refreshed from its candidates row: a correction to released metadata is a new revision (SQ-023 R-213, through a declared content field) or a supersession (DN-029 R-135), decided and recorded as one; the manifest is never edited by hand",
+       "decided_note": "a field a recorded decision sets (records.DECIDED_FIELDS) on an entry that decision covers is the decision record's: `records.apply_decisions` puts the recorded value back on every assess, so the row's value is named and not written (DN-030 R-137)"
+      }
+     },
+     {
+      "source": "inbox",
+      "cataloged": 0,
+      "waiting_on_operator": []
+     }
+    ]
+   },
+   "after": {
+    "done": 48,
+    "total": 48,
+    "not_complete": []
+   }
+  },
+  {
+   "node": "F-19",
+   "unit": "routes",
+   "what": "each entry's text route, licence and host, from the services' metadata, before admit",
+   "requires": [
+    "F-01"
+   ],
+   "valve": null,
+   "buckets": [
+    "http.*"
+   ],
+   "key_components": [
+    "unit",
+    "item",
+    "input_sha256",
+    "control_sha256"
+   ],
+   "command": [
+    "(in process) squiddy.text_routes.resolve per entry not declined, through squiddy.calls"
+   ],
+   "network": {
+    "policy": "buckets",
+    "classes": [
+     "http"
+    ],
+    "hosts": [
+     "api.openalex.org",
+     "arxiv.org",
+     "export.arxiv.org"
+    ]
+   },
+   "state": "skipped-by-config",
+   "why": "this graph declares no `engine.acquire.text_routes` block (ACQ-001): no route is recorded before admit, and acquire takes OpenAlex's locations as before",
+   "rc": 0,
+   "seconds": 0.0
+  },
+  {
+   "node": "F-02",
+   "unit": "assess",
+   "what": "the graph's own criterion decides each cataloged entry",
+   "requires": [
+    "F-01"
+   ],
+   "valve": null,
+   "buckets": [],
+   "key_components": [
+    "unit",
+    "item"
+   ],
+   "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python3",
+    "-m",
+    "tools.admit_batch",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--assess-only",
+    "--assess-json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/assess.json",
+    "--write-json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/write.json",
+    "--progress-every",
+    "0"
+   ],
+   "network": {
+    "policy": "none",
+    "classes": [],
+    "hosts": [],
+    "where": "in process",
+    "sandbox": "not applicable (in process)",
+    "enforcement": [
+     "proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty"
+    ],
+    "children": []
+   },
+   "state": "runs",
+   "total": 48,
+   "done": 31,
+   "pending": 17,
+   "rc": 3,
+   "seconds": 0.22,
+   "detail": "",
+   "evidence": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/plan.json",
+   "result": {
+    "decisions": {}
+   }
+  }
+ ],
+ "ceilings": {
+  "model": 1000000.0,
+  "cpu": 18.0,
+  "http.default": 5000.0,
+  "http.api.openalex.org": 5000.0,
+  "http.export.arxiv.org": 5000.0,
+  "http.arxiv.org": 5000.0
+ },
+ "network": {
+  "sandbox": {
+   "available": true,
+   "why": "/usr/bin/sandbox-exec applied the none profile to /usr/bin/true"
+  },
+  "closed_proxy": "http://127.0.0.1:9",
+  "offline": {
+   "variables": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "HF_HUB_DISABLE_TELEMETRY": "1",
+    "FASTMCP_CHECK_FOR_UPDATES": "off"
+   },
+   "imported_before_kit": [],
+   "hub_constant": null
+  },
+  "forwarder_log": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/egress.jsonl"
+ },
+ "overrides": [],
+ "disk": {
+  "scratch": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/scratch/factory_20261101T044726_31867a97",
+  "inherited_temp": "/var/folders/s1/yqb3d76d7053f7dyy9fwtkzw0000gp/T",
+  "swept": [],
+  "floor_gb": 25.0,
+  "checks": 3,
+  "first": {
+   "floor_gb": 25.0,
+   "floor_source": "the kit's default (disk.yaml floor_gb_default)",
+   "volumes": [
+    {
+     "what": "graph root (the data volume)",
+     "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+     "device": 16777231,
+     "free_bytes": 62809194496,
+     "probe": "the volume (shutil.disk_usage)",
+     "free_gb": 62.81,
+     "total_gb": 994.66
+    }
+   ],
+   "below": [],
+   "ok": true,
+   "at": "2026-11-01T04:47:26Z",
+   "where": "before item 1"
+  },
+  "last": {
+   "floor_gb": 25.0,
+   "floor_source": "the kit's default (disk.yaml floor_gb_default)",
+   "volumes": [
+    {
+     "what": "graph root (the data volume)",
+     "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+     "device": 16777231,
+     "free_bytes": 62809006080,
+     "probe": "the volume (shutil.disk_usage)",
+     "free_gb": 62.81,
+     "total_gb": 994.66
+    }
+   ],
+   "below": [],
+   "ok": true,
+   "at": "2026-11-01T04:47:27Z",
+   "where": "assess/before its first item"
+  }
+ },
+ "seconds_total": 1.0,
+ "rc": 3,
+ "buckets": {
+  "cpu": {
+   "unit": "hours",
+   "spent": 0.0,
+   "ceiling": 18.0,
+   "share_of_ceiling": 0.0,
+   "rate_limited": 0
+  },
+  "http.api.openalex.org": {
+   "unit": "requests",
+   "spent": 0.0,
+   "ceiling": 5000.0,
+   "share_of_ceiling": 0.0,
+   "rate_limited": 0,
+   "level": 18000.0,
+   "rate_per_hour": 18000.0,
+   "halved": false
+  },
+  "http.arxiv.org": {
+   "unit": "requests",
+   "spent": 0.0,
+   "ceiling": 5000.0,
+   "share_of_ceiling": 0.0,
+   "rate_limited": 0,
+   "level": 1199.88,
+   "rate_per_hour": 1199.88,
+   "halved": false
+  },
+  "http.default": {
+   "unit": "requests",
+   "spent": 0.0,
+   "ceiling": 5000.0,
+   "share_of_ceiling": 0.0,
+   "rate_limited": 0,
+   "level": 9000.0,
+   "rate_per_hour": 9000.0,
+   "halved": false
+  },
+  "http.export.arxiv.org": {
+   "unit": "requests",
+   "spent": 0.0,
+   "ceiling": 5000.0,
+   "share_of_ceiling": 0.0,
+   "rate_limited": 0,
+   "level": 1199.88,
+   "rate_per_hour": 1199.88,
+   "halved": false
+  },
+  "model": {
+   "unit": "tokens",
+   "spent": 0.0,
+   "ceiling": 1000000.0,
+   "share_of_ceiling": 0.0,
+   "rate_limited": 0,
+   "level": 13000000.0,
+   "rate_per_hour": 13000000.0,
+   "halved": false
+  }
+ },
+ "pause": {
+  "cause": "touchpoint 3",
+  "detail": "15 manifest entries nobody has decided; the plan is /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/plan.json. To proceed, the operator writes `review: {undecided: {count: 15, date: YYYY-MM-DD}}` in the control file (DN-027 R-127)",
+  "touchpoint": 3,
+  "where": "assess",
+  "source": "factory",
+  "at": "2026-11-01T04:47:27.898074+00:00"
+ },
+ "model_calls": 0,
+ "phase_seconds": {
+  "kit_import_to_run": 0.01,
+  "start_to_plan": 0.02,
+  "plan": 0.36,
+  "plan_decide": [
+   {
+    "node": "F-20",
+    "unit": "seeds",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-21",
+    "unit": "seed_select",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-23",
+    "unit": "seed_propose",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-24",
+    "unit": "seed_relookup",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-25",
+    "unit": "seed_reselect",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-26",
+    "unit": "seed_context",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-22",
+    "unit": "seed_search",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-27",
+    "unit": "shelf_screen",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-01",
+    "unit": "catalog",
+    "seconds": 0.28
+   },
+   {
+    "node": "F-19",
+    "unit": "routes",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-02",
+    "unit": "assess",
+    "seconds": 0.07
+   },
+   {
+    "node": "F-03",
+    "unit": "acquire",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-16",
+    "unit": "resolve",
+    "seconds": 0.0
+   },
+   {
+    "node": "F-06",
+    "unit": "write",
+    "seconds": 0.0
+   }
+  ],
+  "decide": [
+   {
+    "node": "F-20",
+    "unit": "seeds",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-21",
+    "unit": "seed_select",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-23",
+    "unit": "seed_propose",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-24",
+    "unit": "seed_relookup",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-25",
+    "unit": "seed_reselect",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-26",
+    "unit": "seed_context",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-22",
+    "unit": "seed_search",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-27",
+    "unit": "shelf_screen",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-01",
+    "unit": "catalog",
+    "decide": 0.04,
+    "recount": 0.27
+   },
+   {
+    "node": "F-19",
+    "unit": "routes",
+    "decide": 0.0,
+    "recount": 0.0
+   },
+   {
+    "node": "F-02",
+    "unit": "assess",
+    "decide": 0.05,
+    "recount": 0.0
+   }
+  ],
+  "plan_to_first_node": 0.02,
+  "nodes": 0.68,
+  "between_nodes": 0.36,
+  "after_last_node": 0.0,
+  "total": 1.44
+ },
+ "summary": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/run_summary.md"
+}

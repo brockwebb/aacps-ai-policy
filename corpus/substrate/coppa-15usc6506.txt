@@ -1,0 +1,24 @@
+---
+doc_id: coppa-15usc6506
+source_path: corpus/inbox/coppa-15usc6506.html
+source_sha256: 170e132104d84d4e5a5d14a3ef892de1b8b1e6b3e162da9940bea8f7143da034
+source_format: html
+converter: aacps-ai-policy/html_docling
+converter_version: '1'
+converted_at: '2026-11-01T04:47:19+00:00'
+evidence_class: structural
+extent:
+  visible_chars: 898
+  link_density: 0.012
+extent_flag: thin_extent_suspected
+---
+
+### §6506. Review
+
+Not later than 5 years after the effective date of the regulations initially issued under section 6502 of this title, the Commission shall-
+
+(1) review the implementation of this chapter, including the effect of the implementation of this chapter on practices relating to the collection and disclosure of information relating to children, children's ability to obtain access to information of their choice online, and on the availability of websites directed to children; and
+
+(2) prepare and submit to Congress a report on the results of the review under paragraph (1).
+
+(Pub. L. 105-277, div. C, title XIII, §1307, Oct. 21, 1998, 112 Stat. 2681-735.)

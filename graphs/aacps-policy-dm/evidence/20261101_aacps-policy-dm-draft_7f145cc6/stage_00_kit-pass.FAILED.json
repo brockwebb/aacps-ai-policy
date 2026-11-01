@@ -1,0 +1,26 @@
+{
+  "stage": 0,
+  "sub": null,
+  "label": "00",
+  "name": "kit-pass",
+  "question": "Has the kit commit this graph is pinned to passed its full suite on a clean clone, and is it the kit running?",
+  "pass": false,
+  "decision_stop": false,
+  "returncode": 1,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python3",
+    "-m",
+    "squiddy.kitpass",
+    "check",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm"
+  ],
+  "wall_seconds": 0.11,
+  "finished_utc": "2026-11-01T04:54:01.042306+00:00",
+  "defect_of_record": "2026-10-04 handoff 4.B (SQ-008 F3, SEL-002 G1): every admission ran the 13-minute kit suite; SQ-014 Part B rows 17, 18",
+  "output_tail": [
+    "kit_commit_untested: the kit commit d6ed8c1ea7db461f8ff1814414f1a4af21badce4 (unpinned: the kit checkout /Users/brock/GitHub/squiddy HEAD) has no recorded full-suite pass in /Users/brock/GitHub/squiddy/kit/ledger/passes.jsonl. Run `squiddy kit record-pass --commit d6ed8c1ea7db461f8ff1814414f1a4af21badce4` in the kit checkout (DN-043 R-188); an admission never runs the suite itself."
+  ],
+  "first_line": "kit_commit_untested: the kit commit d6ed8c1ea7db461f8ff1814414f1a4af21badce4 (unpinned: the kit checkout /Users/brock/GitHub/squiddy HEAD) has no recorded full-suite pass in /Users/brock/GitHub/squiddy/kit/ledger/passes.jsonl. Run `squiddy kit record-pass --commit d6ed8c1ea7db461f8ff1814414f1a4af21badce4` in the kit checkout (DN-043 R-188); an admission never runs the suite itself.",
+  "verdict": true
+}

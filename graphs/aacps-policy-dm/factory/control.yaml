@@ -108,3 +108,13 @@ serve:
 
 pause: false
 pause_reason: null
+
+# TOUCHPOINT 3 (DN-027 R-127), answered 2026-11-01 by AP-02 Part C. Which documents go in was decided in the task the
+# factory session wrote for the operator ("Every inbox document through squiddy: catalog, assess, admit, parse,
+# extract"), and per entry, with its grounding, in corpus/admission/dispositions.yaml (applied by
+# scripts/build_admission_candidates.py). The count is the plan's undecided count at that moment (factory/plan.json):
+# 46 of the 48 cataloged entries. The operator overrides by editing dispositions.yaml and re-running the build.
+# Re-answered the same day for the 15 held texts re-cataloged as revisions after their substrate became `.txt`
+# (corpus/substrate.yaml KLUDGE note): the same decisions, the same dispositions file, a new count.
+review:
+  undecided: {count: 15, date: 2026-11-01}

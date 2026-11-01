@@ -1,0 +1,58 @@
+# corpus/substrate.yaml: AP-02 Part C. The documents whose held bytes the kit's parser (docling) cannot read
+# faithfully, converted by scripts/convert_substrate.py to the canonical markdown substrate (YAML frontmatter +
+# markdown; the document-ingest rule, ai-readiness-kg DD-030). Every other held file (the PDFs and the GovInfo HTML)
+# goes to the kit's own parse unchanged: re-converting a working path is not an improvement.
+#
+# Two converters, each registered for a measured reason:
+#
+# - ecfr_xml: eCFR's versioner API serves GPO bulk-data XML (DIV5 part, DIV6 subpart, DIV8 section, P paragraphs).
+#   Docling registers no reader for it (its XML readers are USPTO and JATS). The converter keeps the section heading
+#   as the citable unit (fss-policy-kg's lesson: a definition heading the segmenter does not recognise truncates
+#   definitions, docs/2026-06-16_design_e3_extraction_architecture_resolved.md, correction 3, Defect A).
+# - strike_pdf: Maryland chapter laws print amendments made in passage as STRUCK text (a double rule through the
+#   character, +2.5 and +3.7 pt above its baseline) beside the enacted text, which is underlined (a rule 1.5 pt below
+#   the baseline) or plain. Measured on corpus/inbox/md-ch634-2026-ai-ready-schools-act.pdf pages 2 to 4 on
+#   2026-11-01. A text layer keeps both: pdftotext and docling would hand extraction "EACH YEAR, MORGAN STATE
+#   UNIVERSITY ... SHALL SUPPORT THE DEPARTMENT ... TO CERTIFY" (struck: not law) as if it were enacted. The converter
+#   drops every character a rule crosses inside the band below, and counts what it dropped in the frontmatter.
+
+# - html_docling: GovInfo's US Code pages (HTML). Docling is the registry's measured HTML converter (document-ingest
+#   skill: headings and tables kept, no raw-HTML leak); the extent gate's two shallow features are recorded and flag a
+#   navigation surface, never drop it.
+# - md_passthrough: a markdown text acquired by hand (the Policy Committee page snapshot); the acquisition's frontmatter
+#   is kept, nested, as provenance.
+
+out_dir: corpus/substrate
+# KLUDGE (AP-02, filed ../squiddy/cc_tasks/2026-11-01_SQ-AP02a_*): every substrate is written `.txt` although its
+# content is markdown. squiddy's acquire reads any held `kind: work` file as a PDF unless its suffix is `.txt`
+# (acquire.py text_chars), so a `.md` or `.html` text halts as "not a readable PDF". graph.yaml routes `.txt` to the
+# kit's markdown reader, so the headings still reach the parse. Remove when the filing lands: set `.md` here and
+# re-run this script and scripts/build_admission_candidates.py.
+out_suffix: .txt
+extent_gate:
+  min_visible_chars: 2000      # document-ingest skill's text-density floor
+  max_link_density: 0.25       # document-ingest skill's link-density ceiling
+strike:
+  # a rule whose centre lies in this band of a character's box height above the box's bottom strikes it; the measured
+  # strikes sit at 0.31 to 0.49 of the box and the underlines at -0.20, so the band separates them with margin
+  band_low: 0.2
+  band_high: 0.75
+  max_rule_height_pt: 2.5      # a horizontal rule, not a filled box
+  min_rule_width_pt: 3.0
+
+units:
+- {id: ferpa-34cfr99, source: corpus/inbox/ferpa-34cfr99.xml, converter: ecfr_xml}
+- {id: ppra-34cfr98, source: corpus/inbox/ppra-34cfr98.xml, converter: ecfr_xml}
+- {id: coppa-16cfr312, source: corpus/inbox/coppa-16cfr312.xml, converter: ecfr_xml}
+- {id: cipa-47cfr54-520, source: corpus/inbox/cipa-47cfr54-520.xml, converter: ecfr_xml}
+- {id: md-ch634-2026-ai-ready-schools-act, source: corpus/inbox/md-ch634-2026-ai-ready-schools-act.pdf, converter: strike_pdf}
+- {id: ferpa-20usc1232g, source: corpus/inbox/ferpa-20usc1232g.html, converter: html_docling}
+- {id: ppra-20usc1232h, source: corpus/inbox/ppra-20usc1232h.html, converter: html_docling}
+- {id: coppa-15usc6501, source: corpus/inbox/coppa-15usc6501.html, converter: html_docling}
+- {id: coppa-15usc6502, source: corpus/inbox/coppa-15usc6502.html, converter: html_docling}
+- {id: coppa-15usc6503, source: corpus/inbox/coppa-15usc6503.html, converter: html_docling}
+- {id: coppa-15usc6504, source: corpus/inbox/coppa-15usc6504.html, converter: html_docling}
+- {id: coppa-15usc6505, source: corpus/inbox/coppa-15usc6505.html, converter: html_docling}
+- {id: coppa-15usc6506, source: corpus/inbox/coppa-15usc6506.html, converter: html_docling}
+- {id: cipa-47usc254, source: corpus/inbox/cipa-47usc254.html, converter: html_docling}
+- {id: aacps-policy-committee-page, source: corpus/snapshots/aacps-policy-committee-page_2026-10-31.md, converter: md_passthrough}

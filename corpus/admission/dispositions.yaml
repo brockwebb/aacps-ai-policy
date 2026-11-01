@@ -1,0 +1,101 @@
+# corpus/admission/dispositions.yaml: AP-02 Part C. The disposition of every candidate in corpus/candidates/, decided
+# on the grounding written beside it (repo CLAUDE.md: a declined document gets an entry with the reason).
+# scripts/build_admission_candidates.py applies these and refuses a candidate with no decision here.
+#
+# `cited_in` is the recorded basis for admission (squiddy assess criterion `cited_by_recorded_decision`): where the
+# draft names the document, or the design note that put it in scope. The draft's own reference lists were read on
+# 2026-11-01 (corpus/inbox/aacps-policy-dm-draft.pdf): page 1 "Related Entries: AC, DI, DI-RA, DL, DL-RA, DM-RA";
+# page 2 "Legal References": FERPA, COPPA, PPRA, CIPA, IDEA, Section 504, ADA, Title VI, Title IX, Education Article
+# 4-131, COMAR Title 13A, "Maryland K-12 Artificial Intelligence Guidance". It does NOT cite the AI Ready Schools Act
+# (Ch. 634 of 2026), the MSDE model local board policy or any other component of the MSDE set; those are in scope by
+# DN-002 (they govern the draft or are its apparent source), and their `cited_in` says so.
+recorded_decision: >-
+  AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1
+  (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop
+  acquisitions of 2026-10-31 and 2026-11-01.
+
+entries:
+  # ---- the draft and its process record ----
+  aacps-policy-dm-draft:
+    disposition: active
+    cited_in: "DN-001 section 1 (the document under comment)"
+  aacps-policy-committee-page:
+    disposition: active
+    held_file: corpus/snapshots/aacps-policy-committee-page_2026-10-31.md
+    cited_in: "DN-001 section 1 (process facts that bound the comment)"
+    note: "Held as the browser text extract of 2026-11-01T03:40Z (navigation omitted), not the full page."
+  aacps-public-comment-page:
+    disposition: reference
+    cited_in: "AP-01 candidate list (seen in search)"
+    withheld_reason: "not read: board-meeting oral comment, not the written policy comment this graph supports; aacps.org is browser-only"
+  aacps-board-policies-and-regulations:
+    disposition: reference
+    cited_in: "AP-01 candidate list (index of adopted policies)"
+    withheld_reason: "an index page, not a document; the policies the draft names are held as their own entries"
+  aacps-board-meeting-record-first-reading:
+    disposition: excluded:deferred
+    cited_in: "DN-001 section 1 (public meeting records of adoption)"
+    withheld_reason: "not located: the Policy Committee page's Current Meeting Materials tab was not opened; the Desktop session locates it (browser host)"
+
+  # ---- the draft's Related Entries (page 1) ----
+  aacps-policy-ac: {disposition: active, cited_in: "draft Policy DM page 1, Related Entries: AC"}
+  aacps-policy-di: {disposition: active, cited_in: "draft Policy DM page 1, Related Entries: DI"}
+  aacps-reg-di-ra: {disposition: active, cited_in: "draft Policy DM page 1, Related Entries: DI-RA"}
+  aacps-policy-dl: {disposition: active, cited_in: "draft Policy DM page 1, Related Entries: DL"}
+  aacps-reg-dl-ra: {disposition: active, cited_in: "draft Policy DM page 1, Related Entries: DL-RA"}
+  aacps-reg-dm-ra:
+    disposition: metadata_only
+    cited_in: "draft Policy DM page 1, Related Entries: DM-RA"
+    withheld_reason: "not_published: absent from the Policy Committee listing and the aacpsschools.org D section on 2026-10-31; the draft names a regulation the public cannot read during the comment period"
+  aacps-policy-dm-regulation:
+    merge_into: aacps-reg-dm-ra
+    why: "AP-01's placeholder for 'the regulation accompanying DM, if any'; the draft names it as DM-RA, recorded under that id"
+
+  # ---- the draft's Legal References (page 2) ----
+  ferpa-34cfr99: {disposition: active, cited_in: "draft Policy DM page 2, Legal References: Family Educational Rights and Privacy Act"}
+  coppa-16cfr312: {disposition: active, cited_in: "draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act"}
+  cipa-47cfr54-520: {disposition: active, cited_in: "draft Policy DM page 2, Legal References: Children's Internet Protection Act"}
+  md-educ-4-131-student-data-privacy: {disposition: active, cited_in: "draft Policy DM page 2, Legal References: Section 4-131 of the Education Article"}
+  msde-k12-ai-guidance:
+    disposition: active
+    cited_in: "draft Policy DM page 2, Legal References: Maryland K-12 Artificial Intelligence Guidance"
+    supersedes: [msde-ai-guidance]
+    note: "The draft names no version or date. This is the revision last modified 2026-10-03; the June 2026 release (msde-ai-guidance) is the version the 120-day clock runs from."
+  msde-ai-guidance:
+    disposition: metadata_only
+    cited_in: "AP-01 candidate list; DN-002 (the June 2026 release the Act's 120-day clock runs from)"
+    superseded_by: msde-k12-ai-guidance
+    withheld_reason: "not held: the June 2026 bytes were not acquired (403 to scripts); the revision of 2026-10-03 is held as msde-k12-ai-guidance"
+
+  # ---- governing law and the MSDE set (DN-002; not cited by the draft) ----
+  md-ch634-2026-ai-ready-schools-act: {disposition: active, cited_in: "DN-002 (the statute the policy answers; not in the draft's Legal References)"}
+  md-sb0720-fiscal-note: {disposition: active, cited_in: "DN-002 (fiscal and policy note; quotes the statutory definition of AI)"}
+  md-hb1057-fiscal-note: {disposition: active, cited_in: "DN-002 (cross-file fiscal and policy note)"}
+  msde-01-k12-guidance-exec-summary: {disposition: active, cited_in: "DN-002 (MSDE guidance set, 01 Executive Summary)"}
+  msde-it-guidance: {disposition: active, cited_in: "DN-002 (MSDE guidance set)"}
+  msde-local-action-planning-guide: {disposition: active, cited_in: "DN-002 (MSDE guidance set; named in the MSDE model policy's State Guidance)"}
+  msde-local-policy-considerations: {disposition: active, cited_in: "DN-002 (MSDE guidance set)"}
+  msde-state-level-responsibilities: {disposition: active, cited_in: "DN-002 (MSDE guidance set, SEA responsibilities)"}
+  msde-local-level-responsibilities: {disposition: active, cited_in: "DN-002 (MSDE guidance set, LEA responsibilities)"}
+  msde-ai-tool-evaluation-rubric: {disposition: active, cited_in: "DN-002 (the rubric Educ. 7-2202(e)(3) requires local systems to use)"}
+  msde-model-local-board-policy:
+    disposition: active
+    cited_in: "DN-001 section 3 (closest prior art: the model the draft appears to adapt); DN-002"
+    supersedes: [msde-model-local-board-policy-ai]
+  msde-model-local-board-policy-ai:
+    disposition: metadata_only
+    cited_in: "AP-01 candidate list (June 2026 URL of the MSDE model policy)"
+    superseded_by: msde-model-local-board-policy
+    withheld_reason: "not held: the June URL's bytes were not acquired; the September 2026 re-publication on msde.maryland.gov is held as msde-model-local-board-policy (whether the text changed is not verified)"
+  msde-ai-supporting-set:
+    disposition: reference
+    cited_in: "AP-01 candidate list (the MSDE AI hub page)"
+    withheld_reason: "the hub page (403 to scripts); its components are held as their own msde-* entries"
+  msde-ai-tools-policy-oit:
+    disposition: reference
+    cited_in: "AP-01 candidate list (MSDE's internal OIT policy)"
+    withheld_reason: "MSDE's own internal policy: it binds MSDE staff, not AACPS, and the draft does not cite it"
+  ed-gov-ai-guidance:
+    disposition: excluded:out_of_scope
+    cited_in: "AP-01 candidate list (seed, from corpus/README.md)"
+    withheld_reason: "the draft's Legal References, read 2026-11-01, cite no US Department of Education AI guidance, and no DN-002 anchor needs it; never located"

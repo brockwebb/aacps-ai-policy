@@ -11,8 +11,10 @@
 # are declared on their own lines below with their fss meaning. The mapping and why are in
 # docs/design/2026-10-31_DN-001_scope.md section 4.
 #
-# Extraction is CLOSED (`extract.enabled: false`): squiddy CONOPS R-106, extraction opens when the graph's
-# own downstream test can earn it. AP-01 admits no text and makes no model call.
+# Extraction was CLOSED by AP-01 (squiddy CONOPS R-106). AP-02 opens it for this graph (its Part C: "valve opened for
+# this graph; DN-001 kept it closed until there was a corpus"); the downstream test that earns it is DN-002's eight
+# anchors, which need Obligations and Definitions to confirm or refute. The extraction design, the prompt's prior art
+# and the conflict pass are docs/design/2026-11-01_DN-003_extraction_and_conflict_pass.md.
 spec_version: 1
 name: aacps_policy_dm
 title: the AACPS Policy DM corpus graph
@@ -32,7 +34,10 @@ policy: public_only
 serve:
   backend: export
 intake:
-  - {source: candidates, files: ["corpus/candidates/*.yaml"], content_fields: [raw_sha256, withheld_reason]}
+  # AP-02: the kit resolves the glob against the graph directory, and the hand-written corpus/candidates/*.yaml are not
+  # the catalog's shape (two are bare lists), so the catalog reads the file scripts/build_admission_candidates.py
+  # generates from them. `sha256` is the held text's hash: a changed file is a revision.
+  - {source: candidates, files: ["../../corpus/admission/candidates.yaml"], content_fields: [sha256, withheld_reason]}
 classes:
   - Work: Node                       # fss "Document"
   - ExternalReference: Node          # fss "Reference"
@@ -49,7 +54,19 @@ classes:
       text: {required: true}
     attributes:
       force:
+        description: >-
+          obligation | prohibition | permission | recommendation (fss-policy-kg's closed vocabulary). The spec cannot
+          declare an enum (the kit takes enums from its base schema only), so the extraction protocol enforces it:
+          a row with any other value is recorded `ungrounded` with the reason and never emitted.
       binds:
+        description: The party the statement binds, as the text names it (fss "addressee"), or null when it names none.
+      responsible_party_stated:
+        range: boolean
+        description: >-
+          Whether the sentence or its section names who must act (DN-001 anchor 3, obligations without mechanism).
+      mechanism_stated:
+        description: >-
+          The process, timeline or consequence the text attaches, quoted, or null (DN-001 anchor 3).
       section_path:
       page:
         range: integer
@@ -67,6 +84,13 @@ classes:
       section_path:
       page:
         range: integer
+  - name: StatedIn                   # (Obligation | Definition)-[:STATED_IN]->(Work)
+    is_a: Edge
+    description: >-
+      (Obligation | Definition)-[:STATED_IN]->(Work): the document a statement was extracted from, with its located
+      span. fss-policy-kg ties an Obligation to its document through Segment and a `source_doc` property; this graph
+      holds no Segment nodes (the parsed intermediate is the segment record), so the tie is one edge. The kit's
+      Asserts edge is not declared here because its range is Claim. Recorded in DN-003 section 2.
   - name: Conflict
     is_a: Node
     description: >-
@@ -78,6 +102,11 @@ classes:
     attributes:
       criteria_version:
       verdict:
+        description: apparent_resolved | genuine_conflict (fss-policy-kg kg/conflict_rubric.md; no_conflict is not a node)
+      resolution_basis:
+        description: specificity | temporality | hierarchy | exception_clause, when the verdict is apparent_resolved
+      confidence:
+        range: float
   - name: ConflictsWith              # (Conflict)-[:CONFLICTS_WITH]->(Obligation | Definition)
     is_a: Edge
     description: >-
@@ -93,5 +122,31 @@ emit:
         common: [id, kind, title, source_url, disposition, cited_in]
         work: [publisher, doc_type, access, licence_basis, raw_sha256, withheld_reason]
       citation_lines: false
+parse:
+  # .txt goes to the kit's own markdown reader (plain prose; Educ. 4-131 is the one), not to docling
+  markdown_suffixes: [".md", ".markdown", ".mdown", ".txt"]
 extract:
-  enabled: false
+  enabled: true
+  # DN-003: this graph's own protocol (squiddy `extract.graph_protocol`, SQ-021): one call per section-bounded unit of
+  # the parsed intermediate, items located verbatim in it, rows emitted by emit.py `emit_extraction`
+  protocol: extract_protocol.py
+  roles:
+    extractor: extractor             # seldon registry roles (MODEL-001), never a model id: sonnet, effort medium
+    rater: rater
+    adjudicator: adjudicator         # opus: the conflict pass (scripts/conflict_pass.py)
+domain:
+  extract:
+    # DN-003 section 3: the protocol's instrument. The prompt is versioned by its file and hashed into every unit key,
+    # so a changed prompt is a new extraction, never a stale reuse.
+    prompt_file: prompts/extract_v1.md
+    prompt_version: extract_v1
+    # a unit is consecutive parsed blocks up to this many characters, cut at a heading where it can be (fss lesson:
+    # the section is the citable unit, and a definitions heading must not be split from its body)
+    unit_max_chars: 6000
+    citation_aliases: ../../corpus/admission/citation_aliases.yaml
+  conflicts:
+    # DN-003 section 4: pairs with a draft statement on one side, adjudicated under fss-policy-kg's rubric
+    anchor_doc: aacps-policy-dm-draft
+    verdicts: evidence/conflicts/verdicts.jsonl
+    rubric_file: prompts/conflict_rubric_v1.md
+    criteria_version: fss-conflict-rubric+aacps-v1

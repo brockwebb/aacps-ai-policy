@@ -151,6 +151,13 @@ def emit(entry: dict, resolved: dict | None, graph, classes: dict) -> list:
                            for i, n in enumerate(entry.get("authors") or [])]
         props["authors_raw"] = [a.get("raw_author_name") or a["display_name"] for a in authorships]
         out.append(Cls(**props))
+        # AP-02 (DN-003 section 2): a newer edition names the edition it replaces in the manifest (`supersedes`,
+        # written by scripts/build_admission_candidates.py from corpus/admission/dispositions.yaml); the edge is
+        # deterministic, from the manifest only. The older edition is cataloged too, so both endpoints are Works.
+        for older in entry.get("supersedes") or []:
+            out.append(classes["Supersedes"](subject=entry["id"], object=older, method="manifest",
+                                             mechanism="re-publication by the same publisher, recorded in "
+                                                       "corpus/admission/dispositions.yaml"))
         seen_org = set()
         for a in authorships:
             pid = person_id(a["display_name"], a.get("orcid"))
@@ -233,8 +240,10 @@ def emit_layer(entry: dict, resolved: dict | None, graph, classes: dict, layer: 
     IsVersionOf). No expansion: nothing here mints a Work.
 
     `context`: {"doi_index": {normalized doi: manifest id}, "in_graph": {ids with a node}}."""
+    if layer == "conflicts":
+        return _conflicts_layer(entry, graph, classes, context)
     if layer != "cites":
-        raise SystemExit(f"FATAL: unknown layer {layer!r}; this emitter knows: cites")
+        raise SystemExit(f"FATAL: unknown layer {layer!r}; this emitter knows: cites, conflicts")
     if entry.get("kind") != "work":
         return []
     res = (resolved or {}).get("resolved") or {}
@@ -313,34 +322,62 @@ def claim_id(doc_id: str, text: str) -> str:
 
 
 def emit_extraction(entry: dict, proposals: list[dict], graph, classes: dict) -> list:
-    """Claim and Asserts instances from the extract stage's evidence file. ONLY `grounded`
-    proposals are emitted: a span the harness could not locate is a failed extraction, never a
-    stored claim (R-14). Every instance carries the extractor stamp with the RESOLVED model id
-    (DI-023), the run id, the prompt hash, the located span, and `status: proposed` (OD-5: shown
-    before commit; acceptance is a later ruling)."""
-    xcfg = graph.domain.get("extract") or {}
-    Claim = classes[xcfg.get("output_class", "Claim")]
-    Asserts = classes[xcfg.get("edge_class", "Asserts")]
+    """AP-02 (DN-003): Obligation, Definition and Cites instances from this graph's extraction protocol
+    (extract_protocol.py). ONLY `grounded` rows are emitted: an item the protocol could not locate verbatim in the
+    parsed text, or whose force is outside the closed vocabulary, is a failed extraction recorded in the evidence file,
+    never a stored statement (R-14). Every instance carries the extractor stamp with the RESOLVED model id (DI-023),
+    the run id, the prompt hash, the located span, and `status: proposed` (OD-5).
+
+    Row shapes (extract_protocol.rows): `item` is `obligation` (text, force, binds, responsible_party_stated,
+    mechanism_stated), `definition` (term, text) or `reference` (text, target, target_kind). A reference whose target
+    is a cataloged Work becomes Cites to it; any other becomes an ExternalReference keyed `ref:<slug>` and Cites to
+    that, so a pointer outside the graph is a node with a key and never a string (DI-046)."""
+    import hashlib
+    Obligation, Definition, StatedIn = classes["Obligation"], classes["Definition"], classes["StatedIn"]
+    Cites, ExternalReference = classes["Cites"], classes["ExternalReference"]
     out, seen = [], set()
+    doc = entry["id"]
     for p in proposals:
         if p.get("status") != "grounded":
             continue
-        text = p["text"]
-        cid = claim_id(entry["id"], text)
-        if cid in seen:
-            continue
-        seen.add(cid)
         x = p.get("extractor") or {}
-        stamp = {"prov_extractor": f"{x.get('provider')}:{x.get('model_role') or x.get('alias')}",
-                 "prov_extractor_version": x.get("model"),
-                 "prov_prompt_sha256": x.get("prompt_sha256"),
-                 "prov_run_id": p.get("run_id"),
-                 "method": "extraction", "status": "proposed"}
-        seg = p.get("segment") or {}
-        out.append(Claim(id=cid, text=text, claim_kind=p["claim"]["claim_kind"],
-                         grounding_span=dict(p["span"]), segment_idx=seg.get("idx"),
-                         section=seg.get("section"), section_path=seg.get("section_path"), **stamp))
-        out.append(Asserts(subject=entry["id"], object=cid, grounding_span=dict(p["span"]), **stamp))
+        stamp = {"prov_extractor": f"{x.get('provider')}:{x.get('model_role')}",
+                 "prov_extractor_version": x.get("model"), "prov_prompt_sha256": x.get("prompt_sha256"),
+                 "prov_run_id": p.get("run_id"), "method": "extraction", "status": "proposed"}
+        span = dict(p["span"])
+        item, text = p["item"], p["text"]
+        h = hashlib.sha256(text.encode("utf-8")).hexdigest()[:12]
+        if item == "obligation":
+            nid = f"obl:{doc}:{h}"
+            if nid in seen:
+                continue
+            seen.add(nid)
+            out.append(Obligation(id=nid, text=text, force=p["force"], binds=p.get("binds"),
+                                  responsible_party_stated=p.get("responsible_party_stated"),
+                                  mechanism_stated=p.get("mechanism_stated"), section_path=p.get("section_path"),
+                                  page=p.get("page"), grounding_span=span, **stamp))
+            out.append(StatedIn(subject=nid, object=doc, grounding_span=span, **stamp))
+        elif item == "definition":
+            nid = f"def:{doc}:{slug(p['term'])}:{h}"
+            if nid in seen:
+                continue
+            seen.add(nid)
+            out.append(Definition(id=nid, term=p["term"], text=text, section_path=p.get("section_path"),
+                                  page=p.get("page"), grounding_span=span, **stamp))
+            out.append(StatedIn(subject=nid, object=doc, grounding_span=span, **stamp))
+        elif item == "reference":
+            target = p["target"]
+            if target == doc:
+                continue
+            key = ("cites", target)
+            if key in seen:
+                continue
+            seen.add(key)
+            if p["target_kind"] == "external":
+                out.append(ExternalReference(id=target, ref_kind="citation", method="extraction"))
+            out.append(Cites(subject=doc, object=target, raw_reference=text, grounding_span=span, **stamp))
+        else:
+            raise SystemExit(f"FATAL: {doc}: extraction row item {item!r} is not obligation, definition or reference")
     return out
 
 
@@ -574,3 +611,48 @@ def emit_gate_ruling(res: dict, graph, classes: dict) -> list:
                method="gate", status="accepted"),
         RulesOn(subject=rid, object=f"release:{version}", final=True, method="gate"),
     ]
+
+
+# --------------------------------------------------------------------------------------
+# AP-02 (DN-003 section 4): the conflict pass's verdicts, as a layer on the draft
+# --------------------------------------------------------------------------------------
+
+def _conflicts_layer(entry: dict, graph, classes: dict, context: dict) -> list:
+    """`conflicts`: a Conflict node and its two ConflictsWith edges for every adjudicated pair whose verdict is not
+    `no_conflict`, read from the conflict pass's verdict file (scripts/conflict_pass.py; `domain.conflicts.verdicts`).
+    Added to the draft's entry only: every pair has a draft statement on one side (DN-003 section 4). A pair adjudicated
+    `no_conflict` is not a node; it is a row in the verdict file, which is the logged abstention. Both endpoints must
+    already be in the graph; one that is not is FATAL, never skipped silently."""
+    import json
+    cfg = (graph.domain.get("conflicts") or {})
+    if entry["id"] != cfg.get("anchor_doc"):
+        return []
+    path = graph.root / cfg["verdicts"]
+    if not path.is_file():
+        raise SystemExit(f"FATAL: the conflicts layer reads {path}, which does not exist; run scripts/conflict_pass.py")
+    latest = {}
+    for ln in path.read_text(encoding="utf-8").splitlines():
+        if ln.strip():
+            r = json.loads(ln)
+            latest[r["pair_key"]] = r
+    in_graph = context["in_graph"]
+    Conflict, ConflictsWith = classes["Conflict"], classes["ConflictsWith"]
+    out = []
+    for key in sorted(latest):
+        r = latest[key]
+        if r.get("status") != "ok" or r["verdict"]["verdict"] == "no_conflict":
+            continue
+        for side in ("a", "b"):
+            if r[side]["id"] not in in_graph:
+                raise SystemExit(f"FATAL: conflict {key}: side {side} {r[side]['id']} is not in the graph")
+        v = r["verdict"]
+        cid = f"conflict:{key}"
+        out.append(Conflict(id=cid, text=v["rationale"], verdict=v["verdict"], criteria_version=r["criteria_version"],
+                            resolution_basis=v.get("resolution_basis"), confidence=v.get("confidence"),
+                            method="adjudication", status="proposed", prov_extractor=f"claude_cli:{r['role']}",
+                            prov_extractor_version=r.get("resolved_model"), prov_prompt_sha256=r["prompt_sha256"],
+                            prov_run_id=r.get("run_id")))
+        for side in ("a", "b"):
+            out.append(ConflictsWith(subject=cid, object=r[side]["id"], side=side, method="adjudication",
+                                     status="proposed"))
+    return out

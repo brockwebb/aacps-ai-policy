@@ -1,0 +1,38 @@
+# config/conflict_pass.yaml: scripts/conflict_pass.py's numbers (DN-003 section 4). Every value is a choice with its
+# reason; none was measured on this corpus before the pilot, and each says so.
+
+graph_root: graphs/aacps-policy-dm
+anchor_doc: aacps-policy-dm-draft          # every pair has a draft Obligation on one side (DN-001 anchor 4)
+role: adjudicator                          # seldon registry role (opus, effort medium); never a model id (MODEL-001)
+rubric_file: graphs/aacps-policy-dm/prompts/conflict_rubric_v1.md
+criteria_version: fss-conflict-rubric+aacps-v1
+checkpoint: graphs/aacps-policy-dm/evidence/conflicts/verdicts.jsonl
+progress_log: logs/conflict_pass.log
+
+pairing:
+  # fss-policy-kg paired on a shared concept or overlapping action objects; this corpus has no concept layer, so the
+  # lexical leg alone. NO MEASURED BASIS: 2 shared content words is the loosest pairing that still requires an object
+  # in common; the adjudicator's gate (same act, addressee, scope) is what decides, not this number.
+  min_shared_terms: 2
+  top_k: 6                                 # partners per draft Obligation, by shared terms; bounds the pass at 6 x draft
+  opposed:                                 # fss class A (prohibition/permission) and class B (prohibition/obligation)
+  - [prohibition, permission]
+  - [prohibition, obligation]
+
+ranks:                                     # authority ranks the rubric is given (DN-003 section 4), by manifest doc_type
+  federal statute: 1
+  federal regulation: 2
+  statute or fiscal note: 3                # Ch. 634 and the fiscal notes carry this doc_type in the candidate record
+  state guidance: 4
+  board policy: 5
+  draft board policy: 5
+  administrative regulation: 6
+  web page (public meeting record, process): 6
+
+run:
+  pilot_pairs: 5                           # constitution 15.4: measure, project, then continue
+  max_calls: 120                           # ceiling: stops new calls, exits non-zero naming it
+  max_billable_tokens: 1500000             # ceiling on input+output tokens the CLI reports, summed over this pass
+  progress_every_units: 5
+  timeout_seconds: 300
+  max_turns: 4

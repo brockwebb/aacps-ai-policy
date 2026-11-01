@@ -4,4 +4,1195 @@
 # Written empty by `squiddy init`; the catalog stage appends to it.
 schema:
   profile: squiddy-manifest
-documents: []
+documents:
+  - id: aacps-policy-dm-draft
+    bytes: 197911
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-001 section 1 (the document under comment). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: NEW Policy DM - Responsible Use of Artificial Intelligence (DRAFT, 2026)
+    source_url: https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/4458/Aacps/136f0ac4-54ab-49c6-b10b-b2a90f5a31fc/DRAFT-Policy-DM-AI-2026.pdf
+    publisher: Anne Arundel County Public Schools, Board of Education (Office of Information Technology, Office of Academics, Office of School Instruction and Performance)
+    doc_type: draft board policy
+    access: browser
+    licence_basis: public-record
+    access_note: aacps.org returns a bot challenge to curl. Acquired 2026-10-31 23:35 EDT through the operator's Chrome (HTTP 200, application/pdf, 197911 bytes, Last-Modified 2026-10-22T13:31:59Z); in corpus/inbox/aacps-policy-dm-draft.pdf, sha256 7f145cc623f75145d8cffd28e958d19168129d4d3f0c7c41f65a80d5b6b6a661, 197911 bytes.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: DN-001 section 1 (the document under comment)
+    local_path: ../../corpus/inbox/aacps-policy-dm-draft.pdf
+    sha256: "7f145cc623f75145d8cffd28e958d19168129d4d3f0c7c41f65a80d5b6b6a661"
+    raw_sha256: 7f145cc623f75145d8cffd28e958d19168129d4d3f0c7c41f65a80d5b6b6a661
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-policy-committee-page
+    bytes: 2923
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-001 section 1 (process facts that bound the comment). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "4a75df359cc4a39aeee2d14198c8a040e12449489564db98dc24b63832bfc9a5"
+    substrate_converter: "md_passthrough"
+    raw_path: "../../corpus/snapshots/aacps-policy-committee-page_2026-10-31.md"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Policy Committee (AACPS Board of Education), proposed policy revisions and comment instructions
+    source_url: https://www.aacps.org/page/board-policies
+    publisher: AACPS Board of Education
+    doc_type: web page (public meeting record, process)
+    access: browser
+    licence_basis: public-record
+    access_note: 'bot challenge to curl; read in browser. Carries: comment through 2026-11-21, policycomments@aacps.org, 30 calendar day comment period, three-reading adoption process. Process facts the comment must respect.'
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: DN-001 section 1 (process facts that bound the comment)
+    local_path: "../../corpus/substrate/aacps-policy-committee-page.txt"
+    sha256: "7c515772ba9d939f155d211a4d3f304fcbd181dd3f8b32189a7dd77361bfde8d"
+    raw_sha256: a37c7c7de7c7ee9866845ddc11c9b12b07e8ff3c6e1eccfb5391997ab751fa27
+    note: Held as the browser text extract of 2026-11-01T03:40Z (navigation omitted), not the full page.
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-public-comment-page
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: AP-01 candidate list (seen in search). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Public Comment At Board Meetings
+    source_url: https://www.aacps.org/page/public-comment-at-board-meetings
+    publisher: AACPS Board of Education
+    doc_type: web page (process)
+    access: browser
+    licence_basis: public-record
+    access_note: seen in search results only; not yet read.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list (seen in search)
+    withheld_reason: 'not read: board-meeting oral comment, not the written policy comment this graph supports; aacps.org is browser-only'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-board-policies-and-regulations
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: AP-01 candidate list (index of adopted policies). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Board Policies and Regulations (index of adopted AACPS policies and regulations)
+    source_url: https://www.aacps.org/o/aacps/page/board-policies-and-regulations
+    publisher: AACPS
+    doc_type: index page
+    access: browser
+    licence_basis: public-record
+    access_note: seen in search results only. The policies Policy DM cites or is bound by (acceptable use, student data privacy, academic integrity, records) are found here once the draft's references are read. Not enumerated by AP-01 because the draft text was not read.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list (index of adopted policies)
+    withheld_reason: an index page, not a document; the policies the draft names are held as their own entries
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-model-local-board-policy-ai
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: AP-01 candidate list (June 2026 URL of the MSDE model policy). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Responsible Use of Artificial Intelligence in Teaching, Learning, and School Operations (MSDE model local board policy)
+    source_url: https://marylandpublicschools.org/about/documents/dccr/ai/08-model-local-board-policy-responsible-use-of-ai-a.pdf
+    publisher: Maryland State Department of Education
+    doc_type: model policy
+    access: machine
+    licence_basis: public-record (state agency publication; licence statement not yet read)
+    access_note: HEAD returned 200 application/pdf on 2026-10-31. Whether the draft DM derives from this model is the highest-value comparison in the corpus; unverified.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list (June 2026 URL of the MSDE model policy)
+    withheld_reason: 'not held: the June URL''s bytes were not acquired; the September 2026 re-publication on msde.maryland.gov is held as msde-model-local-board-policy (whether the text changed is not verified)'
+    superseded_by: msde-model-local-board-policy
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-ai-guidance
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: AP-01 candidate list; DN-002 (the June 2026 release the Act's 120-day clock runs from). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Artificial Intelligence in K-12 Public Schools (MSDE guidance; February 2026 and a later dated version)
+    source_url: https://marylandpublicschools.org/about/documents/dccr/ai/ai-guidance-a.pdf
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: machine
+    licence_basis: public-record (licence statement not yet read)
+    access_note: 'HEAD returned 403 on ai-guidance-a.pdf on 2026-10-31 (a bot block, not a removal); the state-board copy not probed. If 403 persists, hand-acquire (browser). Two versions exist: pin the one the draft cites, record the other as superseded or sibling.'
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list; DN-002 (the June 2026 release the Act's 120-day clock runs from)
+    withheld_reason: 'not held: the June 2026 bytes were not acquired (403 to scripts); the revision of 2026-10-03 is held as msde-k12-ai-guidance'
+    superseded_by: msde-k12-ai-guidance
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-ai-supporting-set
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: AP-01 candidate list (the MSDE AI hub page). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: MSDE AI guidance supporting documents (executive summary 01, IT guidance 02, SEA responsibilities 05; AI hub page)
+    source_url: https://marylandpublicschools.org/about/pages/dccr/artificial-intelligence.aspx
+    publisher: Maryland State Department of Education
+    doc_type: state guidance (component documents)
+    access: browser
+    licence_basis: public-record
+    access_note: hub page returned 403 to HEAD on 2026-10-31. Components 03, 04, 06, 07 inferred from the numbering and not seen; enumerate from the hub page in AP-02.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list (the MSDE AI hub page)
+    withheld_reason: the hub page (403 to scripts); its components are held as their own msde-* entries
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-ai-tools-policy-oit
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: AP-01 candidate list (MSDE's internal OIT policy). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: 'Policy: Responsible Use of Artificial Intelligence Tools (MSDE OIT)'
+    source_url: https://www.marylandpublicschools.org/programs/Documents/Operations/OIT/AI-Policy-A.pdf
+    publisher: Maryland State Department of Education
+    doc_type: agency internal policy
+    access: machine
+    licence_basis: public-record
+    access_note: seen in search results only. MSDE's own policy, not a source AACPS is bound by; held as reference unless the draft cites it.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list (MSDE's internal OIT policy)
+    withheld_reason: 'MSDE''s own internal policy: it binds MSDE staff, not AACPS, and the draft does not cite it'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: ferpa-34cfr99
+    bytes: 82270
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Family Educational Rights and Privacy Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "8f1339d1884343f636368277700f8f4627e7f8b2ec57eaef87a7eefe40095b54"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 34 CFR Part 99, Family Educational Rights and Privacy (FERPA regulations)
+    source_url: https://www.ecfr.gov/current/title-34/subtitle-A/part-99
+    publisher: US Department of Education via eCFR
+    doc_type: federal regulation
+    access: machine
+    licence_basis: public-domain (US government work)
+    access_note: 'URL is the eCFR canonical part path from knowledge, not probed. Currency: eCFR is an unofficial compilation; pin an edition date at acquisition.'
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: 'draft Policy DM page 2, Legal References: Family Educational Rights and Privacy Act'
+    local_path: "../../corpus/substrate/ferpa-34cfr99.txt"
+    sha256: "f0200e926044626ea554b7a7f31c0b1e394c6de6d2804eaff4bb894aebb91547"
+    raw_sha256: 5215a3f303ea41cb5bb4c5afb481da1f4623e64307eadc30ef2ad27a2238ffa0
+    raw_path: ../../corpus/inbox/ferpa-34cfr99.xml
+    substrate_converter: ecfr_xml
+    retrieved_at: '2026-11-01T04:35:14+00:00'
+    fetch_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=99
+    final_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=99
+    citation: 34 CFR Part 99
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-16cfr312
+    bytes: 45372
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "babbb58bc896aa0f59920b0bf5b2e22974cb7aa5b3c875c05fe48ca0bef51031"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 16 CFR Part 312, Children's Online Privacy Protection Rule
+    source_url: https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312
+    publisher: FTC via eCFR
+    doc_type: federal regulation
+    access: machine
+    licence_basis: public-domain (US government work)
+    access_note: not probed. ftc.gov is outside the allowlist; eCFR is inside it.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    local_path: "../../corpus/substrate/coppa-16cfr312.txt"
+    sha256: "9a8919f4bb48a9b47e4ec8a6732b8eb76d2e8086dcf75202da847fb2835b7937"
+    raw_sha256: 5a29d13e4512092a2d064a62a581031dc75aa99998540e6c2ef24f0dbfc66df9
+    raw_path: ../../corpus/inbox/coppa-16cfr312.xml
+    substrate_converter: ecfr_xml
+    retrieved_at: '2026-11-01T04:35:20+00:00'
+    fetch_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-16.xml?part=312
+    final_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-16.xml?part=312
+    citation: 16 CFR Part 312
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: cipa-47cfr54-520
+    bytes: 18024
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Internet Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "fb5f1be136f95f8e096e63b29b712e648c0d14cc90c0367c32d8b0f99db5256f"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 47 CFR 54.520, Children's Internet Protection Act certification requirements (E-rate)
+    source_url: https://www.ecfr.gov/current/title-47/chapter-I/subchapter-B/part-54/subpart-F/section-54.520
+    publisher: FCC via eCFR
+    doc_type: federal regulation
+    access: machine
+    licence_basis: public-domain (US government work)
+    access_note: not probed.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Internet Protection Act'
+    local_path: "../../corpus/substrate/cipa-47cfr54-520.txt"
+    sha256: "20f706587406bf1fa976f34d05bb48afd0c60a48d96881365b8d9731282e012c"
+    raw_sha256: d635bc44466275f8ca5ee4d9e377f55c26ee78b69b82b09774ae3be2ed2e78ae
+    raw_path: ../../corpus/inbox/cipa-47cfr54-520.xml
+    substrate_converter: ecfr_xml
+    retrieved_at: '2026-11-01T04:35:21+00:00'
+    fetch_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-47.xml?part=54&section=54.520
+    final_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-47.xml?part=54&section=54.520
+    citation: 47 CFR 54.520
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: ed-gov-ai-guidance
+    notes: "NOT ADMITTED (excluded:out_of_scope). the manifest declares this entry 'excluded:out_of_scope'. A declared exclusion is binding on the assess stage; the entry stays in the manifest as the record of what was looked at and why it did not enter (R-08), and it is a record and not a backlog.. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "cataloged"
+    disposition: "excluded:out_of_scope"
+    title: US Department of Education guidance on artificial intelligence in education
+    publisher: US Department of Education
+    doc_type: federal guidance
+    access: machine
+    licence_basis: public-domain (US government work)
+    access_note: NOT LOCATED. No ed.gov URL was verified in AP-01; the guidance has changed across administrations, so which edition the draft cites is the open question. Locate from the draft's reference list, then fetch from ed.gov.
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: AP-01 candidate list (seed, from corpus/README.md)
+    withheld_reason: the draft's Legal References, read 2026-11-01, cite no US Department of Education AI guidance, and no DN-002 anchor needs it; never located
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: pending
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-board-meeting-record-first-reading
+    notes: "NOT ADMITTED (excluded:deferred). the manifest declares this entry 'excluded:deferred'. A declared exclusion is binding on the assess stage; the entry stays in the manifest as the record of what was looked at and why it did not enter (R-08), and it is a record and not a backlog.. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "cataloged"
+    disposition: "excluded:deferred"
+    title: Board of Education agenda and minutes for the first reading of Policy DM
+    publisher: AACPS Board of Education
+    doc_type: public meeting record
+    access: browser
+    licence_basis: public-record
+    access_note: NOT LOCATED. A news item about a first reading of a responsible AI use policy appeared in search but was ~624 days old (an earlier cycle, not this draft); not adopted as a candidate. Locate the October 2026 meeting materials on the Policy Committee 'Current Meeting Materials' tab (not expanded in AP-01).
+    candidate_record: corpus/candidates/aacps-policy-dm.yaml
+    cited_in: DN-001 section 1 (public meeting records of adoption)
+    withheld_reason: 'not located: the Policy Committee page''s Current Meeting Materials tab was not opened; the Desktop session locates it (browser host)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: pending
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-policy-ac
+    bytes: 189644
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 1, Related Entries: AC. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Policy AC, Nondiscrimination (AACPS Board, 2024)
+    source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2024/12/FINAL-AC-2024.pdf
+    publisher: Anne Arundel County Public Schools
+    doc_type: board policy
+    access: browser
+    licence_basis: public record; Related Entry named on draft Policy DM
+    access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2024-12-04; sha256 14f8c1ff6c1426f08ef11f100e5148ee9ea6a50dc200d225106b5bd1e708e17f, 189644 bytes; corpus/inbox/aacps-policy-ac.pdf
+    candidate_record: corpus/candidates/aacps-policy-dm_related_entries.yaml
+    cited_in: 'draft Policy DM page 1, Related Entries: AC'
+    local_path: ../../corpus/inbox/aacps-policy-ac.pdf
+    sha256: "14f8c1ff6c1426f08ef11f100e5148ee9ea6a50dc200d225106b5bd1e708e17f"
+    raw_sha256: 14f8c1ff6c1426f08ef11f100e5148ee9ea6a50dc200d225106b5bd1e708e17f
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-policy-di
+    bytes: 165975
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 1, Related Entries: DI. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Policy DI, Technology Use and Security (AACPS Board, 2024)
+    source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2024/12/FINAL-DI-Technology-Use-and-Security-2024.pdf
+    publisher: Anne Arundel County Public Schools
+    doc_type: board policy
+    access: browser
+    licence_basis: public record; Related Entry named on draft Policy DM
+    access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2024-12-04; sha256 31e05442fcbc117091a55f82a9ad870a8f805d03441552318e2a2fe2410c344b, 165975 bytes; corpus/inbox/aacps-policy-di.pdf
+    candidate_record: corpus/candidates/aacps-policy-dm_related_entries.yaml
+    cited_in: 'draft Policy DM page 1, Related Entries: DI'
+    local_path: ../../corpus/inbox/aacps-policy-di.pdf
+    sha256: "31e05442fcbc117091a55f82a9ad870a8f805d03441552318e2a2fe2410c344b"
+    raw_sha256: 31e05442fcbc117091a55f82a9ad870a8f805d03441552318e2a2fe2410c344b
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-reg-di-ra
+    bytes: 261706
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 1, Related Entries: DI-RA. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Administrative Regulation DI-RA, Technology Use and Security (AACPS, 2024)
+    source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2024/12/FINAL-DI-RA-Technology-Use-and-Security-2024.pdf
+    publisher: Anne Arundel County Public Schools
+    doc_type: administrative regulation
+    access: browser
+    licence_basis: public record; Related Entry named on draft Policy DM
+    access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2024-12-04; sha256 1ee83b65b3b25e2972f9fd3368367a98480903325332d30250db1f243a2f68bc, 261706 bytes; corpus/inbox/aacps-reg-di-ra.pdf
+    candidate_record: corpus/candidates/aacps-policy-dm_related_entries.yaml
+    cited_in: 'draft Policy DM page 1, Related Entries: DI-RA'
+    local_path: ../../corpus/inbox/aacps-reg-di-ra.pdf
+    sha256: "1ee83b65b3b25e2972f9fd3368367a98480903325332d30250db1f243a2f68bc"
+    raw_sha256: 1ee83b65b3b25e2972f9fd3368367a98480903325332d30250db1f243a2f68bc
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-policy-dl
+    bytes: 186154
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 1, Related Entries: DL. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Policy DL, Data Governance (AACPS Board, 2024)
+    source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2025/07/FINAL-DL-Data-Governance-2024.pdf
+    publisher: Anne Arundel County Public Schools
+    doc_type: board policy
+    access: browser
+    licence_basis: public record; Related Entry named on draft Policy DM
+    access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2025-07-08; sha256 fa88959ced8d12a7313c2e90915208604e56879beadb4266260f3a1cdecfb0e6, 186154 bytes; corpus/inbox/aacps-policy-dl.pdf
+    candidate_record: corpus/candidates/aacps-policy-dm_related_entries.yaml
+    cited_in: 'draft Policy DM page 1, Related Entries: DL'
+    local_path: ../../corpus/inbox/aacps-policy-dl.pdf
+    sha256: "fa88959ced8d12a7313c2e90915208604e56879beadb4266260f3a1cdecfb0e6"
+    raw_sha256: fa88959ced8d12a7313c2e90915208604e56879beadb4266260f3a1cdecfb0e6
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-reg-dl-ra
+    bytes: 207233
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 1, Related Entries: DL-RA. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Administrative Regulation DL-RA, Data Governance (AACPS, 2024)
+    source_url: https://aacpsschools.org/aacpsboardpolicies/wp-content/uploads/2025/07/FINAL-DL-RA-Data-Governance-2024.pdf
+    publisher: Anne Arundel County Public Schools
+    doc_type: administrative regulation
+    access: browser
+    licence_basis: public record; Related Entry named on draft Policy DM
+    access_note: aacpsschools.org via operator Chrome 2026-10-31; HTTP 200 application/pdf; last-modified 2025-07-08; sha256 0d6a9e8017e34344eb277f3c6a2d80368a2352eb94da20d78f9acd2ac0347014, 207233 bytes; corpus/inbox/aacps-reg-dl-ra.pdf
+    candidate_record: corpus/candidates/aacps-policy-dm_related_entries.yaml
+    cited_in: 'draft Policy DM page 1, Related Entries: DL-RA'
+    local_path: ../../corpus/inbox/aacps-reg-dl-ra.pdf
+    sha256: "0d6a9e8017e34344eb277f3c6a2d80368a2352eb94da20d78f9acd2ac0347014"
+    raw_sha256: 0d6a9e8017e34344eb277f3c6a2d80368a2352eb94da20d78f9acd2ac0347014
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: aacps-reg-dm-ra
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 1, Related Entries: DM-RA. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Administrative Regulation DM-RA (named as a Related Entry on draft Policy DM)
+    publisher: Anne Arundel County Public Schools
+    doc_type: administrative regulation
+    access: browser
+    licence_basis: named on draft Policy DM
+    access_note: 'Not posted 2026-10-31: absent from the Policy Committee proposed-policy listing and from the aacpsschools.org D section (which lists DI, DI-RA, DL, DL-RA). The draft cites a regulation the public cannot read during the comment period.'
+    candidate_record: corpus/candidates/aacps-policy-dm_related_entries.yaml
+    cited_in: 'draft Policy DM page 1, Related Entries: DM-RA'
+    withheld_reason: 'not_published: absent from the Policy Committee listing and the aacpsschools.org D section on 2026-10-31; the draft names a regulation the public cannot read during the comment period'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-k12-ai-guidance
+    bytes: 471998
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Maryland K-12 Artificial Intelligence Guidance. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE K-12 Instructional AI Guidance (revised; last-modified 2026-10-03)
+    source_url: https://msde.maryland.gov/media/26289
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: named in draft Policy DM legal references ("Maryland K-12 Artificial Intelligence Guidance")
+    access_note: operator Chrome 2026-11-01T03:55Z; HTTP 200 application/pdf; last-modified 2026-10-03T19:06:46Z; sha256 efefbf67b448759091651b37acc10251cf370afe06b784d2f16ac7073e3e5f85, 471998 bytes; corpus/inbox/msde-k12-ai-guidance.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: 'draft Policy DM page 2, Legal References: Maryland K-12 Artificial Intelligence Guidance'
+    local_path: ../../corpus/inbox/msde-k12-ai-guidance.pdf
+    sha256: "efefbf67b448759091651b37acc10251cf370afe06b784d2f16ac7073e3e5f85"
+    raw_sha256: efefbf67b448759091651b37acc10251cf370afe06b784d2f16ac7073e3e5f85
+    supersedes:
+    - msde-ai-guidance
+    note: The draft names no version or date. This is the revision last modified 2026-10-03; the June 2026 release (msde-ai-guidance) is the version the 120-day clock runs from.
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-01-k12-guidance-exec-summary
+    bytes: 111528
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (MSDE guidance set, 01 Executive Summary). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE K-12 Guidance Executive Summary
+    source_url: https://msde.maryland.gov/media/17960
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:32 GMT; sha256 7a039a85e13bb168a03b0473eef66d1c52ae5f693eb0a5e6c88407120e32d60b, 111528 bytes; corpus/inbox/msde-01-k12-guidance-exec-summary.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (MSDE guidance set, 01 Executive Summary)
+    local_path: ../../corpus/inbox/msde-01-k12-guidance-exec-summary.pdf
+    sha256: "7a039a85e13bb168a03b0473eef66d1c52ae5f693eb0a5e6c88407120e32d60b"
+    raw_sha256: 7a039a85e13bb168a03b0473eef66d1c52ae5f693eb0a5e6c88407120e32d60b
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-it-guidance
+    bytes: 108285
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (MSDE guidance set). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE Information Technology Guidance
+    source_url: https://msde.maryland.gov/media/17961
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:33 GMT; sha256 1166365a9c73c9b5f8d074e1089afdcd53948d82aac1d85ba58811861b149301, 108285 bytes; corpus/inbox/msde-it-guidance.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (MSDE guidance set)
+    local_path: ../../corpus/inbox/msde-it-guidance.pdf
+    sha256: "1166365a9c73c9b5f8d074e1089afdcd53948d82aac1d85ba58811861b149301"
+    raw_sha256: 1166365a9c73c9b5f8d074e1089afdcd53948d82aac1d85ba58811861b149301
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-local-action-planning-guide
+    bytes: 468631
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (MSDE guidance set; named in the MSDE model policy's State Guidance). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE Local Action Planning Guide Companion
+    source_url: https://msde.maryland.gov/media/17962
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:34 GMT; sha256 9ea90123f4e1457b772f05fc1386034bc7dfdc7d2847ef95485d28df59b8d09f, 468631 bytes; corpus/inbox/msde-local-action-planning-guide.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (MSDE guidance set; named in the MSDE model policy's State Guidance)
+    local_path: ../../corpus/inbox/msde-local-action-planning-guide.pdf
+    sha256: "9ea90123f4e1457b772f05fc1386034bc7dfdc7d2847ef95485d28df59b8d09f"
+    raw_sha256: 9ea90123f4e1457b772f05fc1386034bc7dfdc7d2847ef95485d28df59b8d09f
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-local-policy-considerations
+    bytes: 129022
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (MSDE guidance set). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE Local Policy Considerations
+    source_url: https://msde.maryland.gov/media/17963
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:35 GMT; sha256 9ba52b0ab60a077168c738cbb22b376850b8a412ac3697fe7e9b65d9b5ea1ccf, 129022 bytes; corpus/inbox/msde-local-policy-considerations.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (MSDE guidance set)
+    local_path: ../../corpus/inbox/msde-local-policy-considerations.pdf
+    sha256: "9ba52b0ab60a077168c738cbb22b376850b8a412ac3697fe7e9b65d9b5ea1ccf"
+    raw_sha256: 9ba52b0ab60a077168c738cbb22b376850b8a412ac3697fe7e9b65d9b5ea1ccf
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-state-level-responsibilities
+    bytes: 99216
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (MSDE guidance set, SEA responsibilities). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE State-Level Responsibilities
+    source_url: https://msde.maryland.gov/media/17964
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:37 GMT; sha256 6c7c9070cec44d59ddc3ce05f8eff6fd9c8e5fbf115c737f6dd382d21f8bce7b, 99216 bytes; corpus/inbox/msde-state-level-responsibilities.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (MSDE guidance set, SEA responsibilities)
+    local_path: ../../corpus/inbox/msde-state-level-responsibilities.pdf
+    sha256: "6c7c9070cec44d59ddc3ce05f8eff6fd9c8e5fbf115c737f6dd382d21f8bce7b"
+    raw_sha256: 6c7c9070cec44d59ddc3ce05f8eff6fd9c8e5fbf115c737f6dd382d21f8bce7b
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-local-level-responsibilities
+    bytes: 91525
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (MSDE guidance set, LEA responsibilities). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE Local-Level Responsibilities
+    source_url: https://msde.maryland.gov/media/17965
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:37 GMT; sha256 5a4949b50dad57f1f2a991ab67c9cdf66bb98851e5e8da737f025ac896832ea3, 91525 bytes; corpus/inbox/msde-local-level-responsibilities.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (MSDE guidance set, LEA responsibilities)
+    local_path: ../../corpus/inbox/msde-local-level-responsibilities.pdf
+    sha256: "5a4949b50dad57f1f2a991ab67c9cdf66bb98851e5e8da737f025ac896832ea3"
+    raw_sha256: 5a4949b50dad57f1f2a991ab67c9cdf66bb98851e5e8da737f025ac896832ea3
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-ai-tool-evaluation-rubric
+    bytes: 73200
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (the rubric Educ. 7-2202(e)(3) requires local systems to use). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE AI Tool Evaluation Rubric
+    source_url: https://msde.maryland.gov/media/17966
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:38 GMT; sha256 0250314490bedf04a1959ca2cdb3de9148cfba5e18445afbb5e24e6fab7ddc15, 73200 bytes; corpus/inbox/msde-ai-tool-evaluation-rubric.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (the rubric Educ. 7-2202(e)(3) requires local systems to use)
+    local_path: ../../corpus/inbox/msde-ai-tool-evaluation-rubric.pdf
+    sha256: "0250314490bedf04a1959ca2cdb3de9148cfba5e18445afbb5e24e6fab7ddc15"
+    raw_sha256: 0250314490bedf04a1959ca2cdb3de9148cfba5e18445afbb5e24e6fab7ddc15
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: msde-model-local-board-policy
+    bytes: 102747
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-001 section 3 (closest prior art: the model the draft appears to adapt); DN-002. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: MSDE Model Local Board Policy for the Responsible Use of Artificial Intelligence
+    source_url: https://msde.maryland.gov/media/17967
+    publisher: Maryland State Department of Education
+    doc_type: state guidance
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:56Z; HTTP 200 application/pdf; last-modified Fri, 25 Sep 2026 03:18:39 GMT; sha256 e06cbf06668be424fb7f6291d55d110998ba6582e0c36b13b1cab3c6b7c4fbf3, 102747 bytes; corpus/inbox/msde-model-local-board-policy.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: 'DN-001 section 3 (closest prior art: the model the draft appears to adapt); DN-002'
+    local_path: ../../corpus/inbox/msde-model-local-board-policy.pdf
+    sha256: "e06cbf06668be424fb7f6291d55d110998ba6582e0c36b13b1cab3c6b7c4fbf3"
+    raw_sha256: e06cbf06668be424fb7f6291d55d110998ba6582e0c36b13b1cab3c6b7c4fbf3
+    supersedes:
+    - msde-model-local-board-policy-ai
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: md-ch634-2026-ai-ready-schools-act
+    bytes: 11984
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (the statute the policy answers; not in the draft's Legal References). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "081f0383ec4727b2441e53ac79d7dc0deda0b1deb93df8affc54b1417a96b4dc"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Chapter 634 (2026), SB 720, AI Ready Schools Act, chapter text, approved by the Governor (HB 1057 is the cross-file)
+    source_url: https://mgaleg.maryland.gov/2026RS/Chapters_noln/CH_634_sb0720e.pdf
+    publisher: Maryland General Assembly
+    doc_type: statute or fiscal note
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 application/pdf; last-modified Wed, 03 Jun 2026 20:40:28 GMT; sha256 5f481769f7f52a3019b94350818d5b0650c484995c5ac4f4d9baa0c0b9ba745c, 204874 bytes; corpus/inbox/md-ch634-2026-ai-ready-schools-act.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (the statute the policy answers; not in the draft's Legal References)
+    local_path: "../../corpus/substrate/md-ch634-2026-ai-ready-schools-act.txt"
+    sha256: "79024a334e39f596b07642470ce58a3b6fdc0ceae4a15a10bf44abcaffb650d1"
+    raw_sha256: 5f481769f7f52a3019b94350818d5b0650c484995c5ac4f4d9baa0c0b9ba745c
+    raw_path: ../../corpus/inbox/md-ch634-2026-ai-ready-schools-act.pdf
+    substrate_converter: strike_pdf
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: md-sb0720-fiscal-note
+    bytes: 417238
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (fiscal and policy note; quotes the statutory definition of AI). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: SB 720 (2026) Fiscal and Policy Note, revised
+    source_url: https://mgaleg.maryland.gov/2026RS/fnotes/bil_0000/sb0720.pdf
+    publisher: Maryland General Assembly
+    doc_type: statute or fiscal note
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 application/pdf; last-modified Wed, 06 May 2026 15:39:07 GMT; sha256 744242f208d4c28a414796ec588b3119e0a920403fa3275f69fd22b600f2b0e5, 417238 bytes; corpus/inbox/md-sb0720-fiscal-note.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (fiscal and policy note; quotes the statutory definition of AI)
+    local_path: ../../corpus/inbox/md-sb0720-fiscal-note.pdf
+    sha256: "744242f208d4c28a414796ec588b3119e0a920403fa3275f69fd22b600f2b0e5"
+    raw_sha256: 744242f208d4c28a414796ec588b3119e0a920403fa3275f69fd22b600f2b0e5
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: md-hb1057-fiscal-note
+    bytes: 417205
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: DN-002 (cross-file fiscal and policy note). Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: HB 1057 (2026) Fiscal and Policy Note, revised
+    source_url: https://mgaleg.maryland.gov/2026RS/fnotes/bil_0007/hb1057.pdf
+    publisher: Maryland General Assembly
+    doc_type: statute or fiscal note
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 application/pdf; last-modified Tue, 14 Apr 2026 13:13:44 GMT; sha256 b02e3dfe100019ffa08841af677e43268e6197c06beb504db78cdb3b0c02b371, 417205 bytes; corpus/inbox/md-hb1057-fiscal-note.pdf
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: DN-002 (cross-file fiscal and policy note)
+    local_path: ../../corpus/inbox/md-hb1057-fiscal-note.pdf
+    sha256: "b02e3dfe100019ffa08841af677e43268e6197c06beb504db78cdb3b0c02b371"
+    raw_sha256: b02e3dfe100019ffa08841af677e43268e6197c06beb504db78cdb3b0c02b371
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: md-educ-4-131-student-data-privacy
+    bytes: 15289
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Section 4-131 of the Education Article. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: Md. Code, Education 4-131 (Student Data Privacy), current text from the MGA statute page
+    source_url: https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=ged&section=4-131
+    publisher: Maryland General Assembly
+    doc_type: statute or fiscal note
+    access: browser
+    licence_basis: public record; draft Policy DM legal references or DN-002
+    access_note: operator Chrome 2026-11-01T03:57Z; HTTP 200 text/plain (extracted from HTML); last-modified n/a; sha256 049215e70205ea5ed5583abe6d3a8ec47bd7910e8f74d54210b744973d5d31cf, 15289 bytes; corpus/inbox/md-educ-4-131-student-data-privacy.txt
+    candidate_record: corpus/candidates/md-law-and-msde-guidance.yaml
+    cited_in: 'draft Policy DM page 2, Legal References: Section 4-131 of the Education Article'
+    local_path: ../../corpus/inbox/md-educ-4-131-student-data-privacy.txt
+    sha256: "049215e70205ea5ed5583abe6d3a8ec47bd7910e8f74d54210b744973d5d31cf"
+    raw_sha256: 049215e70205ea5ed5583abe6d3a8ec47bd7910e8f74d54210b744973d5d31cf
+    provenance_flag: public
+    acquisition: operator_download
+    acquisition_status: "acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: ppra-34cfr98
+    bytes: 9938
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Protection of Pupil Rights Amendment. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "4dc764806c299490b01433b54fc077571ba75ca94bc654096657c7552ee896cb"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 34 CFR Part 98, Student Rights in Research, Experimental Programs, and Testing (PPRA regulations), eCFR current as of 2026-10-29
+    source_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=98
+    publisher: eCFR (Office of the Federal Register)
+    doc_type: federal regulation
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Protection of Pupil Rights Amendment'
+    retrieved_at: '2026-11-01T04:35:18+00:00'
+    fetch_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=98
+    final_url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=98
+    citation: 34 CFR Part 98
+    local_path: "../../corpus/substrate/ppra-34cfr98.txt"
+    sha256: "57a374f201e3224f33488c43af0d4e2af991863434f86004557378a7b9d77f8f"
+    raw_sha256: 9e651df06077e1778565c54028b1eddb47e25d401b0e55a842b32e083e4de777
+    raw_path: ../../corpus/inbox/ppra-34cfr98.xml
+    substrate_converter: ecfr_xml
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: ferpa-20usc1232g
+    bytes: 42966
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Family Educational Rights and Privacy Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "66514d8409850c9002d7ad28e9b65e216cb46a2aea7733fa66cda4b9d00ff008"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/ferpa-20usc1232g.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 20 U.S.C. 1232g, Family educational and privacy rights (FERPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-subchapIII-part4-sec1232g.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Family Educational Rights and Privacy Act'
+    retrieved_at: '2026-11-01T04:34:46+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/20/1232g?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-subchapIII-part4-sec1232g.htm
+    citation: 20 U.S.C. 1232g
+    local_path: "../../corpus/substrate/ferpa-20usc1232g.txt"
+    sha256: "7641a07e96da0a659b6d566cc9eab881220cfd2d174c7bdd3e8daa3ee87d5f8a"
+    raw_sha256: 31eb5373678a193852a0c0591ef691635dbfeab3147faa0e4c4d6239b12b8164
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: ppra-20usc1232h
+    bytes: 16312
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Protection of Pupil Rights Amendment. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "b78a9ac7729ae8989bf3ab4ea892b1bd05103875601616e48ed3a0fe0df3ef6c"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/ppra-20usc1232h.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 20 U.S.C. 1232h, Protection of pupil rights (PPRA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-subchapIII-part4-sec1232h.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Protection of Pupil Rights Amendment'
+    retrieved_at: '2026-11-01T04:34:47+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/20/1232h?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-subchapIII-part4-sec1232h.htm
+    citation: 20 U.S.C. 1232h
+    local_path: "../../corpus/substrate/ppra-20usc1232h.txt"
+    sha256: "9574099a0139d904395ae25bf051ae483580070962ff726e98cf2d8755408ed7"
+    raw_sha256: 8adc0bf180d31e2c8a98af7c44f2dde0adc00c9854e2d644c699bea0fec40039
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-15usc6501
+    bytes: 6309
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "5c1262098d9004baa149223580e6ea48cf9bba89819a9c3922f357e8de337b94"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/coppa-15usc6501.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 15 U.S.C. 6501, Definitions (COPPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6501.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    retrieved_at: '2026-11-01T04:34:48+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/15/6501?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6501.htm
+    citation: 15 U.S.C. 6501
+    local_path: "../../corpus/substrate/coppa-15usc6501.txt"
+    sha256: "c0e15718be4a52086e52becdfbf9d36c432540ad288ef47663e477294331c813"
+    raw_sha256: 23db127527b0f5f048a8143ec3b6f1379bd11c896fa04400c49e03fc6c31c96b
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-15usc6502
+    bytes: 7220
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "5b4263acafc2400a9d90169078c9109c0c59fb8ee2d6c528fcb4b93e57757531"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/coppa-15usc6502.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 15 U.S.C. 6502, Regulation of unfair and deceptive acts and practices in connection with collection and use of personal information from and about children on the Internet (COPPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6502.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    retrieved_at: '2026-11-01T04:34:50+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/15/6502?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6502.htm
+    citation: 15 U.S.C. 6502
+    local_path: "../../corpus/substrate/coppa-15usc6502.txt"
+    sha256: "7b77aa835999aec44089dae027c42f69ca2d32083919e7640491da5be07cdc33"
+    raw_sha256: 019202fb7d756918bced071c46b75c082d88c37a365f9fd0d8e3ccfa1f483980
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-15usc6503
+    bytes: 2112
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "e51449090811ec504cb43f714fcd7e449f4e04f93ec9ee2191700604df690171"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/coppa-15usc6503.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 15 U.S.C. 6503, Safe harbors (COPPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6503.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    retrieved_at: '2026-11-01T04:34:51+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/15/6503?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6503.htm
+    citation: 15 U.S.C. 6503
+    local_path: "../../corpus/substrate/coppa-15usc6503.txt"
+    sha256: "3c20c90f7ed59473ccc9d26e8789841822bba0d66eb524a334a29a35f56ed1e4"
+    raw_sha256: 1a0fc98d1a73cf89a2f5585c94bfed7cd4548b364f3baa34c86e31f68411424e
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-15usc6504
+    bytes: 4127
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "abfb10044877ba80e40d55e495c79b2a796241f20cd9f894ec82b5932b7ef52a"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/coppa-15usc6504.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 15 U.S.C. 6504, Actions by States (COPPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6504.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    retrieved_at: '2026-11-01T04:34:52+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/15/6504?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6504.htm
+    citation: 15 U.S.C. 6504
+    local_path: "../../corpus/substrate/coppa-15usc6504.txt"
+    sha256: "fded4547700ffefa2c2ca326a87f1ef51585825f9a2f35bec0036d98375e9b23"
+    raw_sha256: 00f155e1ae35cb8c2d7ca50c44b6db23bd9deed89dc314a97d5f752aa6786298
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-15usc6505
+    bytes: 6411
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "a2daf7fdea4b07bf2ed7ae33b5a3a8986b1a5f77f342857dd19cfddb3b1b07c2"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/coppa-15usc6505.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 15 U.S.C. 6505, Administration and applicability (COPPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6505.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    retrieved_at: '2026-11-01T04:34:54+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/15/6505?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6505.htm
+    citation: 15 U.S.C. 6505
+    local_path: "../../corpus/substrate/coppa-15usc6505.txt"
+    sha256: "eeecc94e81a8cb9a5dc2bc6bc7680ed541a4f257ea39826d88b7b54c265f0e87"
+    raw_sha256: 22ddfec26f100d9bc40f9fcc0a056147ec9d040d289f066c32238a2bfc661e6f
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: coppa-15usc6506
+    bytes: 1072
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Online Privacy Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "69fe6642a19223a88c787d8714c89700608ae0dec25f8720ca6535c2a5a4bce2"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/coppa-15usc6506.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 15 U.S.C. 6506, Review (COPPA)
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6506.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Online Privacy Protection Act'
+    retrieved_at: '2026-11-01T04:34:55+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/15/6506?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap91-sec6506.htm
+    citation: 15 U.S.C. 6506
+    local_path: "../../corpus/substrate/coppa-15usc6506.txt"
+    sha256: "7c8ceef700217c385102413f283e1a97380e022de34a34ebba539d9c2b3555f6"
+    raw_sha256: 170e132104d84d4e5a5d14a3ef892de1b8b1e6b3e162da9940bea8f7143da034
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: cipa-47usc254
+    bytes: 54308
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Children's Internet Protection Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    content_key: "f616ec71de9c82572ee62766e11c126769c55e1332257da3aa858fa942870f75"
+    substrate_converter: "html_docling"
+    raw_path: "../../corpus/inbox/cipa-47usc254.html"
+    kind: work
+    stage: "in_graph"
+    disposition: active
+    title: 47 U.S.C. 254, Universal service; subsections (h)(5) and (h)(6) are CIPA's school and library certifications
+    source_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partII-sec254.htm
+    publisher: Office of the Law Revision Counsel via GovInfo
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    cited_in: 'draft Policy DM page 2, Legal References: Children''s Internet Protection Act'
+    retrieved_at: '2026-11-01T04:34:56+00:00'
+    fetch_url: https://www.govinfo.gov/link/uscode/47/254?link-type=html
+    final_url: https://www.govinfo.gov/content/pkg/USCODE-2024-title47/html/USCODE-2024-title47-chap5-subchapII-partII-sec254.htm
+    citation: 47 U.S.C. 254(h)(5)-(6)
+    local_path: "../../corpus/substrate/cipa-47usc254.txt"
+    sha256: "0ca7c0fc4ec7f6661266a69dca92e27cd6c9ce0bb115b36191d66611e73c02d2"
+    raw_sha256: 6c37ee01cdc145196b13fec857882aca350a5878d7dcd01fa73f382511b23394
+    note: GovInfo serves the whole section; the anchors read (h)(5) and (h)(6) only.
+    provenance_flag: public
+    acquisition: script_fetch
+    acquisition_status: "acquired"
+    verification_status: "declared"
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: idea-20usc1400
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Individuals with Disabilities Education Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Individuals with Disabilities Education Act, 20 U.S.C. 1400 et seq.; 34 CFR Part 300
+    source_url: https://www.govinfo.gov/link/uscode/20/1400?link-type=html
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    citation: 20 U.S.C. 1400 et seq.; 34 CFR Part 300
+    cited_in: 'draft Policy DM page 2, Legal References: Individuals with Disabilities Education Act'
+    withheld_reason: 'cataloged only: the draft cites it as general compliance and no DN-002 anchor needs a section (AP-02 Part B)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: section504-29usc794
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Section 504 of the Rehabilitation Act of 1973. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Section 504 of the Rehabilitation Act of 1973, 29 U.S.C. 794; 34 CFR Part 104
+    source_url: https://www.govinfo.gov/link/uscode/29/794?link-type=html
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    citation: 29 U.S.C. 794; 34 CFR Part 104
+    cited_in: 'draft Policy DM page 2, Legal References: Section 504 of the Rehabilitation Act of 1973'
+    withheld_reason: 'cataloged only: the draft cites it as general compliance and no DN-002 anchor needs a section (AP-02 Part B)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: ada-42usc12101
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Americans with Disabilities Act. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Americans with Disabilities Act, 42 U.S.C. 12101 et seq.; 28 CFR Part 35
+    source_url: https://www.govinfo.gov/link/uscode/42/12101?link-type=html
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    citation: 42 U.S.C. 12101 et seq.; 28 CFR Part 35
+    cited_in: 'draft Policy DM page 2, Legal References: Americans with Disabilities Act'
+    withheld_reason: 'cataloged only: the draft cites it as general compliance and no DN-002 anchor needs a section (AP-02 Part B)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: titlevi-42usc2000d
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Title VI of the Civil Rights Act of 1964. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Title VI of the Civil Rights Act of 1964, 42 U.S.C. 2000d et seq.; 34 CFR Part 100
+    source_url: https://www.govinfo.gov/link/uscode/42/2000d?link-type=html
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    citation: 42 U.S.C. 2000d et seq.; 34 CFR Part 100
+    cited_in: 'draft Policy DM page 2, Legal References: Title VI of the Civil Rights Act of 1964'
+    withheld_reason: 'cataloged only: the draft cites it as general compliance and no DN-002 anchor needs a section (AP-02 Part B)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: titleix-20usc1681
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Title IX of the Education Amendments of 1972. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Title IX of the Education Amendments of 1972, 20 U.S.C. 1681 et seq.; 34 CFR Part 106
+    source_url: https://www.govinfo.gov/link/uscode/20/1681?link-type=html
+    doc_type: federal statute
+    access: machine
+    licence_basis: public-domain (US government work)
+    citation: 20 U.S.C. 1681 et seq.; 34 CFR Part 106
+    cited_in: 'draft Policy DM page 2, Legal References: Title IX of the Education Amendments of 1972'
+    withheld_reason: 'cataloged only: the draft cites it as general compliance and no DN-002 anchor needs a section (AP-02 Part B)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.
+
+  - id: comar-13a
+    metadata_only_reason: "no_open_access_text"
+    notes: "ADMITTED under criterion cited_by_recorded_decision: cited by a recorded decision: draft Policy DM page 2, Legal References: Code of Maryland Regulations Title 13A. Assessed mechanically by squiddy.assess on 2026-11-01. || PRIOR NOTE, PRESERVED:"
+    kind: work
+    stage: "in_graph"
+    disposition: "metadata_only"
+    title: Code of Maryland Regulations, Title 13A (State Board of Education)
+    source_url: https://dsd.maryland.gov/Pages/COMARSearch.aspx
+    doc_type: state regulation
+    access: browser
+    access_note: 'Host posture NOT probed: dsd.maryland.gov is outside AP-02''s Network line, so no request was sent (the fetcher refuses it before any socket opens). Marked browser per Part B and stopped on it; the Desktop session acquires the chapters an anchor needs (COMAR 13A is the State Board''s regulations, a title of hundreds of chapters; the draft names the title, not a chapter).'
+    licence_basis: public-record
+    citation: COMAR Title 13A
+    cited_in: 'draft Policy DM page 2, Legal References: Code of Maryland Regulations Title 13A'
+    withheld_reason: 'cataloged only: the draft cites it as general compliance and no DN-002 anchor needs a section (AP-02 Part B)'
+    provenance_flag: public
+    acquisition: auto
+    acquisition_status: "not_acquired"
+    verification_status: declared
+    cataloged_by: AP-02 (cc_tasks/2026-11-01_AP-02_admit_the_corpus_extract_and_test_the_anchors.md) Part C, applying DN-001 section 1 (scope) and DN-002 (corpus added by the prior analysis) to the candidates recorded by AP-01 and the Desktop acquisitions of 2026-10-31 and 2026-11-01.

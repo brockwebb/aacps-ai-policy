@@ -1,0 +1,45 @@
+# corpus/admission/citation_aliases.yaml: how a reference the extractor found resolves to a cataloged document
+# (DN-003 section 3). Deterministic: the extraction protocol tests each rule's regex (case-insensitive) against the
+# reference's quoted text and then its `cited_instrument`, first match wins. A reference no rule matches becomes an
+# ExternalReference keyed `ref:<slug of cited_instrument>`, so it is still a node with a key (DI-046).
+#
+# A rule names a cataloged id; the protocol refuses an id the manifest does not hold. Order matters: the specific
+# (a CFR part, a regulation code) before the general (the Act's name).
+rules:
+- {pattern: '\b34\s*C\.?F\.?R\.?\s*(Part\s*|§+\s*)?99\b', id: ferpa-34cfr99}
+- {pattern: '\b34\s*C\.?F\.?R\.?\s*(Part\s*|§+\s*)?98\b', id: ppra-34cfr98}
+- {pattern: '\b16\s*C\.?F\.?R\.?\s*(Part\s*|§+\s*)?312\b', id: coppa-16cfr312}
+- {pattern: '\b47\s*C\.?F\.?R\.?\s*(§+\s*)?54\.520\b', id: cipa-47cfr54-520}
+- {pattern: '\b20\s*U\.?S\.?C\.?\s*(§+\s*)?1232g\b', id: ferpa-20usc1232g}
+- {pattern: '\b20\s*U\.?S\.?C\.?\s*(§+\s*)?1232h\b', id: ppra-20usc1232h}
+- {pattern: '\b15\s*U\.?S\.?C\.?\s*(§+\s*)?650[1-6]\b', id: coppa-15usc6501}
+- {pattern: '\b47\s*U\.?S\.?C\.?\s*(§+\s*)?254\b', id: cipa-47usc254}
+- {pattern: '\b20\s*U\.?S\.?C\.?\s*(§+\s*)?14\d\d\b|\bIndividuals with Disabilities Education Act\b|\bIDEA\b', id: idea-20usc1400}
+- {pattern: '\bSection\s*504\b|\b29\s*U\.?S\.?C\.?\s*(§+\s*)?794\b', id: section504-29usc794}
+- {pattern: '\bAmericans with Disabilities Act\b|\bADA\b|\b42\s*U\.?S\.?C\.?\s*(§+\s*)?121\d\d\b', id: ada-42usc12101}
+- {pattern: '\bTitle\s*VI\b(?!I)|\b42\s*U\.?S\.?C\.?\s*(§+\s*)?2000d\b', id: titlevi-42usc2000d}
+- {pattern: '\bTitle\s*IX\b|\b20\s*U\.?S\.?C\.?\s*(§+\s*)?1681\b', id: titleix-20usc1681}
+- {pattern: '\bCOMAR\b|\bCode of Maryland Regulations\b', id: comar-13a}
+- {pattern: '\bFamily Educational Rights and Privacy Act\b|\bFERPA\b', id: ferpa-20usc1232g}
+- {pattern: '\bProtection of Pupil Rights\b|\bPPRA\b', id: ppra-20usc1232h}
+- {pattern: '\bChildren.s Online Privacy Protection\b|\bCOPPA\b', id: coppa-15usc6501}
+- {pattern: '\bChildren.s Internet Protection Act\b|\bCIPA\b', id: cipa-47usc254}
+- {pattern: '\b4[-–]131\b|\bStudent Data Privacy Act\b', id: md-educ-4-131-student-data-privacy}
+- {pattern: '\bAI Ready Schools Act\b|\bArtificial Intelligence Ready Schools Act\b|\bChapter\s*634\b|\bSB\s*720\b|\b7[-–]220[1-4]\b', id: md-ch634-2026-ai-ready-schools-act}
+- {pattern: '\bHB\s*1057\b', id: md-hb1057-fiscal-note}
+- {pattern: '\bRegulation\s+DM[-–]RA\b|\bDM[-–]RA\b', id: aacps-reg-dm-ra}
+- {pattern: '\bRegulation\s+DI[-–]RA\b|\bDI[-–]RA\b', id: aacps-reg-di-ra}
+- {pattern: '\bRegulation\s+DL[-–]RA\b|\bDL[-–]RA\b', id: aacps-reg-dl-ra}
+- {pattern: '\bPolicy\s+DI\b', id: aacps-policy-di}
+- {pattern: '\bPolicy\s+DL\b', id: aacps-policy-dl}
+- {pattern: '\bPolicy\s+AC\b', id: aacps-policy-ac}
+- {pattern: '\bPolicy\s+DM\b', id: aacps-policy-dm-draft}
+- {pattern: '\bModel (Local Board )?Policy\b', id: msde-model-local-board-policy}
+- {pattern: '\bAI Tool Evaluation Rubric\b|\bevaluation rubric\b', id: msde-ai-tool-evaluation-rubric}
+- {pattern: '\bLocal Action Planning Guide\b', id: msde-local-action-planning-guide}
+- {pattern: '\bMaryland K[-–]12 (Artificial Intelligence|AI|Instructional AI) Guidance\b', id: msde-k12-ai-guidance}
+# A Related Entries line ("Related Entries: AC, DI, DI-RA, DL, DL-RA, DM-RA") quotes bare codes; a bare code alone is
+# an AACPS policy code, matched only when it is the whole quoted text.
+- {pattern: '^\s*AC\s*$', id: aacps-policy-ac}
+- {pattern: '^\s*DI\s*$', id: aacps-policy-di}
+- {pattern: '^\s*DL\s*$', id: aacps-policy-dl}

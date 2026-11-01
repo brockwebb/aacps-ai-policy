@@ -1,0 +1,27 @@
+{
+ "record": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/decisions.jsonl",
+ "record_present": false,
+ "applied": {},
+ "intake_moved": [],
+ "record_rows_not_in_manifest": 0,
+ "uncovered_count": 17,
+ "uncovered": [
+  "aacps-policy-committee-page",
+  "ferpa-34cfr99",
+  "coppa-16cfr312",
+  "cipa-47cfr54-520",
+  "ed-gov-ai-guidance",
+  "aacps-board-meeting-record-first-reading",
+  "md-ch634-2026-ai-ready-schools-act",
+  "ppra-34cfr98",
+  "ferpa-20usc1232g",
+  "ppra-20usc1232h",
+  "coppa-15usc6501",
+  "coppa-15usc6502",
+  "coppa-15usc6503",
+  "coppa-15usc6504",
+  "coppa-15usc6505",
+  "coppa-15usc6506",
+  "cipa-47usc254"
+ ]
+}

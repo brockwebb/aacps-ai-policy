@@ -17,3 +17,15 @@ handoffs/*.jsonl
 logs/dispatch/
 logs/seldon_dispatch.log
 .claude/worktrees/
+
+# AP-02: the graph's derived and runtime files, as hazbrief-mcp ignores them (its .gitignore). The parsed intermediates
+# and the served export rebuild from the tracked ledger and the held texts; the dispatcher links them into a worktree
+# (seldon.yaml dispatch.worktree_links). Logs are the session's; what ships is the RESULT and docs/.
+logs/
+graphs/*/corpus/parsed/
+graphs/*/exports/*.json
+graphs/*/exports/*.jsonl
+graphs/*/evidence/*/unreleased_export/
+graphs/*/factory/scratch/
+graphs/*/factory/queries.jsonl
+graphs/**/__pycache__/

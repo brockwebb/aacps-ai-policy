@@ -1,7 +1,7 @@
 {
  "tool": "squiddy init",
  "spec": "graph.yaml",
- "spec_sha256": "e70656ebe39d0870302337d93ab8c85f7fe3e4998651c9644ae7996682eb0c15",
+ "spec_sha256": "fc915772b5e770debc7eac1d102465daed6891b46562c181e1d5063e9e738891",
  "base_schema_sha256": "53ed585f57aae21706a8295862219654991c5105f3e3b1e8736bca0ef7b07d34",
  "defaults_sha256": "1f615958bbe20dfc49cf4dcc08cd9a7b59c4c8939e14fb7e1ea1f83e082e7bc0",
  "emitter_template_sha256": "9b84e1388d6e6d0b2513b40f0e884991b7e4603bcd77cd1208b9fbf669c04437",
@@ -10,16 +10,16 @@
  "serve_backend": "export",
  "schema_epoch": "0.1.0+2be37bcfe547",
  "generated": {
-  "schema": "2be37bcfe54732ae82edf74d50388297f383279c1579179e1b6d496d6a71be6f",
-  "config.yaml": "5454db83faa60409e9406835ab9a8658260dff6e0465ef2f2eea89a621bf1aed",
-  "env_example": "fa7cd056ce179cc3c94f1d801ddfbb645a98f266438a7e27dd78421b2aed9065",
-  "generated_module": "604e8c963cd6ef56948a34e9d891c97d25aed859d2f9a517c8b785ed170b60b8",
-  "generated_json_schema": "a97abf08dedeb9d554c3f4582bc5a7b7ef4b3839f61dc3fa386053cf01f3097a",
+  "schema": "4b476041e2d61c9f87fc1de394751288cf60a81c3dbfdc5ca962751d18060590",
+  "config.yaml": "0f8b08e4574f683fa52f93b91e18f49f6ea7f21b992efdb2083257c6d0a70dd1",
+  "env_example": "9253327ab84e146371ce16b920423693f3e5efcadf7238faaa351aa2fca085fd",
+  "generated_module": "509b50c28378e33a2f80a14d18568f49f6dee6540060e658405e57a5df0e1760",
+  "generated_json_schema": "6fb56981b1d2bf7534d4ae12b3650cfb079c1c14f0958a764eda38a11019250a",
   "ledger_index": "81b1fb6fe354536f8eb021bd4f7390892164eab70f720a101b0e6d1e5cbeb559"
  },
  "generated_body": {
-  "schema": "9de4f506d6f9cc027d6f21506abaa7adc8f0be264f6f996bee4592f80e22bf6c",
-  "config.yaml": "dc9152834195842fa237a8ebc2caee74385233d8a7d1482bdee1116c4961ab34",
+  "schema": "bffe78c0f12805c38e24e397e70bc436e4d53c630fe68e1e871ceb81be2fe592",
+  "config.yaml": "9e9ff8be1bbaf83346b1436e195d69c13b8b11a8c42f403e9c327aeca79b567f",
   "env_example": "7e220abebf2f1611ce2395be59ab953e22152ded922dc7cfa2518d58a484745c",
   "generated_module": "604e8c963cd6ef56948a34e9d891c97d25aed859d2f9a517c8b785ed170b60b8"
  },
@@ -42,5 +42,16 @@
   "generated_json_schema": "schema/generated/aacps_policy_dm.schema.json",
   "ledger_index": "ledger/index.json",
   "events": "ledger/open.jsonl"
+ },
+ "schema_changed": true,
+ "rendered": {
+  "at": "2026-11-01T04:45:51.634449+00:00",
+  "artifacts": {
+   "schema": "schema/aacps_policy_dm.yaml",
+   "config.yaml": "config.yaml",
+   "env_example": ".env.example",
+   "generated_module": "schema/generated/aacps_policy_dm_pydantic.py",
+   "generated_json_schema": "schema/generated/aacps_policy_dm.schema.json"
+  }
  }
 }

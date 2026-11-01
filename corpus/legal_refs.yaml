@@ -1,0 +1,144 @@
+# corpus/legal_refs.yaml: AP-02 Part B. The machine-fetchable legal references named in draft Policy DM's footer
+# ("Legal References", page 2), and the ones cataloged without their full texts.
+#
+# `fetch` units are pulled by scripts/fetch_legal_refs.py into corpus/inbox/ with a receipt per unit in
+# corpus/legal_refs_receipts.jsonl (url, final url, retrieval time, HTTP status, content type, sha256, bytes), the
+# same fields the browser-acquired candidates carry. `catalog_only` entries are recorded as `reference` with their
+# canonical citations: the draft cites them as general compliance and no anchor in DN-002 needs a specific section
+# (AP-02 Part B; admit a section later only if an anchor query needs it).
+#
+# Edition pins: eCFR is an unofficial compilation, so every CFR unit names the date it is current as of, read from
+# https://www.ecfr.gov/api/versioner/v1/titles.json on 2026-11-01 (titles 16, 34, 47: up_to_date_as_of 2026-10-29).
+# The statute units use GovInfo's link service, which resolves to the latest published US Code edition (USCODE-2024
+# on 2026-11-01); the receipt records the edition URL it resolved to.
+
+network:
+  # The task's Network line (AP-02). The fetcher refuses any other host, before and after redirects.
+  allowlist: [www.ecfr.gov, ecfr.gov, www.govinfo.gov, govinfo.gov, uscode.house.gov, www.law.cornell.edu, github.com]
+  user_agent: "aacps-ai-policy corpus fetcher (public legal texts; https://github.com/brockwebb)"
+  timeout_seconds: 60
+  inter_request_delay_seconds: 1.0     # polite pacing; eCFR and GovInfo publish no lower bound for a handful of pulls
+  retry_attempts: 3                    # factory/control.yaml retry.attempts
+  retry_backoff_seconds: 5
+
+inbox_dir: corpus/inbox
+receipts: corpus/legal_refs_receipts.jsonl
+
+fetch:
+- id: ferpa-34cfr99
+  title: 34 CFR Part 99, Family Educational Rights and Privacy (FERPA regulations), eCFR current as of 2026-10-29
+  citation: 34 CFR Part 99
+  draft_footer_name: Family Educational Rights and Privacy Act
+  url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=99
+  ext: xml
+- id: ppra-34cfr98
+  title: 34 CFR Part 98, Student Rights in Research, Experimental Programs, and Testing (PPRA regulations), eCFR current as of 2026-10-29
+  citation: 34 CFR Part 98
+  draft_footer_name: Protection of Pupil Rights Amendment
+  url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-34.xml?part=98
+  ext: xml
+- id: coppa-16cfr312
+  title: 16 CFR Part 312, Children's Online Privacy Protection Rule, eCFR current as of 2026-10-29
+  citation: 16 CFR Part 312
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-16.xml?part=312
+  ext: xml
+- id: cipa-47cfr54-520
+  title: 47 CFR 54.520, Children's Internet Protection Act certifications (E-rate), eCFR current as of 2026-10-29
+  citation: 47 CFR 54.520
+  draft_footer_name: Children's Internet Protection Act
+  url: https://www.ecfr.gov/api/versioner/v1/full/2026-10-29/title-47.xml?part=54&section=54.520
+  ext: xml
+- id: ferpa-20usc1232g
+  title: 20 U.S.C. 1232g, Family educational and privacy rights (FERPA)
+  citation: 20 U.S.C. 1232g
+  draft_footer_name: Family Educational Rights and Privacy Act
+  url: https://www.govinfo.gov/link/uscode/20/1232g?link-type=html
+  ext: html
+- id: ppra-20usc1232h
+  title: 20 U.S.C. 1232h, Protection of pupil rights (PPRA)
+  citation: 20 U.S.C. 1232h
+  draft_footer_name: Protection of Pupil Rights Amendment
+  url: https://www.govinfo.gov/link/uscode/20/1232h?link-type=html
+  ext: html
+- id: coppa-15usc6501
+  title: 15 U.S.C. 6501, Definitions (COPPA)
+  citation: 15 U.S.C. 6501
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.govinfo.gov/link/uscode/15/6501?link-type=html
+  ext: html
+- id: coppa-15usc6502
+  title: 15 U.S.C. 6502, Regulation of unfair and deceptive acts and practices in connection with collection and use of personal information from and about children on the Internet (COPPA)
+  citation: 15 U.S.C. 6502
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.govinfo.gov/link/uscode/15/6502?link-type=html
+  ext: html
+- id: coppa-15usc6503
+  title: 15 U.S.C. 6503, Safe harbors (COPPA)
+  citation: 15 U.S.C. 6503
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.govinfo.gov/link/uscode/15/6503?link-type=html
+  ext: html
+- id: coppa-15usc6504
+  title: 15 U.S.C. 6504, Actions by States (COPPA)
+  citation: 15 U.S.C. 6504
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.govinfo.gov/link/uscode/15/6504?link-type=html
+  ext: html
+- id: coppa-15usc6505
+  title: 15 U.S.C. 6505, Administration and applicability (COPPA)
+  citation: 15 U.S.C. 6505
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.govinfo.gov/link/uscode/15/6505?link-type=html
+  ext: html
+- id: coppa-15usc6506
+  title: 15 U.S.C. 6506, Review (COPPA)
+  citation: 15 U.S.C. 6506
+  draft_footer_name: Children's Online Privacy Protection Act
+  url: https://www.govinfo.gov/link/uscode/15/6506?link-type=html
+  ext: html
+- id: cipa-47usc254
+  title: 47 U.S.C. 254, Universal service; subsections (h)(5) and (h)(6) are CIPA's school and library certifications
+  citation: 47 U.S.C. 254(h)(5)-(6)
+  draft_footer_name: Children's Internet Protection Act
+  url: https://www.govinfo.gov/link/uscode/47/254?link-type=html
+  ext: html
+  note: GovInfo serves the whole section; the anchors read (h)(5) and (h)(6) only.
+
+catalog_only:
+- id: idea-20usc1400
+  title: Individuals with Disabilities Education Act, 20 U.S.C. 1400 et seq.; 34 CFR Part 300
+  citation: 20 U.S.C. 1400 et seq.; 34 CFR Part 300
+  canonical_url: https://www.govinfo.gov/link/uscode/20/1400?link-type=html
+  draft_footer_name: Individuals with Disabilities Education Act
+- id: section504-29usc794
+  title: Section 504 of the Rehabilitation Act of 1973, 29 U.S.C. 794; 34 CFR Part 104
+  citation: 29 U.S.C. 794; 34 CFR Part 104
+  canonical_url: https://www.govinfo.gov/link/uscode/29/794?link-type=html
+  draft_footer_name: Section 504 of the Rehabilitation Act of 1973
+- id: ada-42usc12101
+  title: Americans with Disabilities Act, 42 U.S.C. 12101 et seq.; 28 CFR Part 35
+  citation: 42 U.S.C. 12101 et seq.; 28 CFR Part 35
+  canonical_url: https://www.govinfo.gov/link/uscode/42/12101?link-type=html
+  draft_footer_name: Americans with Disabilities Act
+- id: titlevi-42usc2000d
+  title: Title VI of the Civil Rights Act of 1964, 42 U.S.C. 2000d et seq.; 34 CFR Part 100
+  citation: 42 U.S.C. 2000d et seq.; 34 CFR Part 100
+  canonical_url: https://www.govinfo.gov/link/uscode/42/2000d?link-type=html
+  draft_footer_name: Title VI of the Civil Rights Act of 1964
+- id: titleix-20usc1681
+  title: Title IX of the Education Amendments of 1972, 20 U.S.C. 1681 et seq.; 34 CFR Part 106
+  citation: 20 U.S.C. 1681 et seq.; 34 CFR Part 106
+  canonical_url: https://www.govinfo.gov/link/uscode/20/1681?link-type=html
+  draft_footer_name: Title IX of the Education Amendments of 1972
+- id: comar-13a
+  title: Code of Maryland Regulations, Title 13A (State Board of Education)
+  citation: COMAR Title 13A
+  canonical_url: https://dsd.maryland.gov/Pages/COMARSearch.aspx
+  draft_footer_name: Code of Maryland Regulations Title 13A
+  access: browser
+  access_note: >-
+    Host posture NOT probed: dsd.maryland.gov is outside AP-02's Network line, so no request was sent (the fetcher
+    refuses it before any socket opens). Marked browser per Part B and stopped on it; the Desktop session acquires
+    the chapters an anchor needs (COMAR 13A is the State Board's regulations, a title of hundreds of chapters; the
+    draft names the title, not a chapter).

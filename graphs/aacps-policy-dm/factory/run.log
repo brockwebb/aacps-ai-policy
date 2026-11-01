@@ -1,0 +1,103 @@
+[2026-11-01T04:46:07.176224+00:00] [factory] plan: 14 node(s) decided in 0.11s (slowest F-01 catalog, 0.1s)
+[2026-11-01T04:46:07.188976+00:00] [factory] disk preflight: floor 25.0 GB (the kit's default (disk.yaml floor_gb_default)); graph root (the data volume) /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm: 61.9 GB free
+[2026-11-01T04:46:07.189024+00:00] [factory] F-20 seeds: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.189764+00:00] [factory] F-21 seed_select: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.190295+00:00] [factory] F-23 seed_propose: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.190777+00:00] [factory] F-24 seed_relookup: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.191230+00:00] [factory] F-25 seed_reselect: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.191703+00:00] [factory] F-26 seed_context: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.192509+00:00] [factory] F-22 seed_search: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:07.192992+00:00] [factory] F-27 shelf_screen: SKIPPED-BY-CONFIG -- this graph declares no shelf_screen intake (DN-035 R-162)
+[2026-11-01T04:46:07.227187+00:00] [factory] F-01 catalog: 48 of 48 item(s) pending; every file in the declared intake becomes a manifest entry
+[2026-11-01T04:46:07.227925+00:00] [factory] F-01 catalog: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:46:08.968959+00:00] [factory] F-01 catalog: done (1.53s; 48/48 complete by their records)
+[2026-11-01T04:46:08.968997+00:00] [factory] F-19 routes: SKIPPED-BY-CONFIG -- this graph declares no `engine.acquire.text_routes` block (ACQ-001): no route is recorded before admit, and acquire takes OpenAlex's locations as before
+[2026-11-01T04:46:09.016043+00:00] [factory] F-02 assess: 48 of 48 item(s) pending; the graph's own criterion decides each cataloged entry
+[2026-11-01T04:46:09.017126+00:00] [factory] F-02 assess: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:46:09.164342+00:00] [factory] F-02 assess: STOPPED (touchpoint 3: 46 manifest entries nobody has decided; the plan is /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/plan.json. To proceed, the operator writes `review: {undecided: {count: 46, date: YYYY-MM-DD}}` in the control file (DN-027 R-127)); every item that finished is in its checkpoint. Touchpoint 3: the decision is the operator's; the detail above says what to write.
+[2026-11-01T04:46:09.690871+00:00] squiddy build ap02_v1: 2 node(s) ran, rc=3, 2.0s. Record: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/build_record.json
+[2026-11-01T04:46:24.195868+00:00] [factory] plan: 14 node(s) decided in 0.26s (slowest F-01 catalog, 0.25s)
+[2026-11-01T04:46:24.211529+00:00] [factory] disk preflight: floor 25.0 GB (the kit's default (disk.yaml floor_gb_default)); graph root (the data volume) /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm: 61.9 GB free
+[2026-11-01T04:46:24.211579+00:00] [factory] F-20 seeds: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.212136+00:00] [factory] F-21 seed_select: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.212611+00:00] [factory] F-23 seed_propose: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.213047+00:00] [factory] F-24 seed_relookup: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.213488+00:00] [factory] F-25 seed_reselect: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.213940+00:00] [factory] F-26 seed_context: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.214358+00:00] [factory] F-22 seed_search: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:46:24.214890+00:00] [factory] F-27 shelf_screen: SKIPPED-BY-CONFIG -- this graph declares no shelf_screen intake (DN-035 R-162)
+[2026-11-01T04:46:24.249204+00:00] [factory] F-01 catalog: ALREADY-COMPLETE
+[2026-11-01T04:46:24.249949+00:00] [factory] F-19 routes: SKIPPED-BY-CONFIG -- this graph declares no `engine.acquire.text_routes` block (ACQ-001): no route is recorded before admit, and acquire takes OpenAlex's locations as before
+[2026-11-01T04:46:24.250756+00:00] [factory] F-02 assess: 48 of 48 item(s) pending; the graph's own criterion decides each cataloged entry
+[2026-11-01T04:46:24.251440+00:00] [factory] F-02 assess: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:46:24.894349+00:00] [factory] F-02 assess: in_progress (0.59s; 46/48 complete by their records)
+[2026-11-01T04:46:24.948762+00:00] [factory] F-03 acquire: 46 of 46 item(s) pending; the declared resolvers answer, one keyed row per entry, through the call layer
+[2026-11-01T04:46:24.949912+00:00] [factory] F-03 acquire: network buckets (api.openalex.org, arxiv.org, export.arxiv.org); proxy variables -> the allowlisting forwarder http://127.0.0.1:49979 (3 host(s)); every other host refused and logged
+[2026-11-01T04:46:25.255087+00:00] [acquire] PILOT 20 unit(s): 0.013s/unit, projected 0.3s for the 26 left; buckets {'http.api.openalex.org': {'per_unit': 0.0, 'projected_total': 0.0, 'ceiling': 5000.0}, 'http.arxiv.org': {'per_unit': 0.0, 'projected_total': 0.0, 'ceiling': 5000.0}, 'http.default': {'per_unit': 0.0, 'projected_total': 0.0, 'ceiling': 5000.0}, 'http.export.arxiv.org': {'per_unit': 0.0, 'projected_total': 0.0, 'ceiling': 5000.0}} (measured on the pilot)
+[2026-11-01T04:46:25.338916+00:00] [2026-11-01T04:46:25Z] acquire progress: 25/46 units (0 already done), 54.96 units/s, eta 0s, failures 0, spend {'http.api.openalex.org': 0.0, 'http.arxiv.org': 0.0, 'http.default': 0.0, 'http.export.arxiv.org': 0.0}
+[2026-11-01T04:46:25.732962+00:00] [2026-11-01T04:46:25Z] acquire final: 46/46 units (0 already done), 178.47 units/s, eta 0s, failures 0, spend {'http.api.openalex.org': 0.0, 'http.arxiv.org': 0.0, 'http.default': 0.0, 'http.export.arxiv.org': 0.0}
+[2026-11-01T04:46:25.737251+00:00] [factory] acquire: 15 entries HELD at their halts, not written; each waits for the operator's decision (SQ-007 2a): aacps-policy-committee-page: the held file ../../corpus/snapshots/aacps-policy-committee-page_2026-10-31.md is not a readable PDF: PdfiumError: Faile; ferpa-34cfr99: the held file ../../corpus/substrate/ferpa-34cfr99.md is not a readable PDF: PdfiumError: Failed to load document (PDFiu; coppa-16cfr312: the held file ../../corpus/substrate/coppa-16cfr312.md is not a readable PDF: PdfiumError: Failed to load document (PDFi; cipa-47cfr54-520: the held file ../../corpus/substrate/cipa-47cfr54-520.md is not a readable PDF: PdfiumError: Failed to load document (PD; md-ch634-2026-ai-ready-schools-act: the held file ../../corpus/substrate/md-ch634-2026-ai-ready-schools-act.md is not a readable PDF: PdfiumError: Failed to
+[2026-11-01T04:46:26.041799+00:00] [factory] F-03 acquire: done (1.06s; 46/46 complete by their records)
+[2026-11-01T04:46:26.041837+00:00] [factory] F-16 resolve: SKIPPED-BY-CONFIG -- this graph declares no `engine.resolve.merge_plans`; no identity merge is recorded for it
+[2026-11-01T04:46:26.099221+00:00] [factory] F-06 write: 31 of 31 item(s) pending; the emitter's instances, appended through the single write path
+[2026-11-01T04:46:26.099890+00:00] [factory] F-06 write: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:46:26.779396+00:00] [factory] F-06 write: done (0.68s; 31/31 complete by their records)
+[2026-11-01T04:46:27.325647+00:00] squiddy build ap02_v1: 3 node(s) ran, rc=0, 2.6s. Record: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/build_record.json
+[2026-11-01T04:46:27.382548+00:00] [factory] held: 15 entries waiting on a decision (exit 0; --strict makes a hold exit 1)
+[2026-11-01T04:46:27.382558+00:00]   - aacps-policy-committee-page: acquire halt: the held file ../../corpus/snapshots/aacps-policy-committee-page_2026-10-31.md is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382560+00:00]   - ferpa-34cfr99: acquire halt: the held file ../../corpus/substrate/ferpa-34cfr99.md is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382561+00:00]   - coppa-16cfr312: acquire halt: the held file ../../corpus/substrate/coppa-16cfr312.md is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382562+00:00]   - cipa-47cfr54-520: acquire halt: the held file ../../corpus/substrate/cipa-47cfr54-520.md is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382563+00:00]   - md-ch634-2026-ai-ready-schools-act: acquire halt: the held file ../../corpus/substrate/md-ch634-2026-ai-ready-schools-act.md is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382564+00:00]   - ppra-34cfr98: acquire halt: the held file ../../corpus/substrate/ppra-34cfr98.md is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382565+00:00]   - ferpa-20usc1232g: acquire halt: the held file ../../corpus/inbox/ferpa-20usc1232g.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382567+00:00]   - ppra-20usc1232h: acquire halt: the held file ../../corpus/inbox/ppra-20usc1232h.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382568+00:00]   - coppa-15usc6501: acquire halt: the held file ../../corpus/inbox/coppa-15usc6501.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382569+00:00]   - coppa-15usc6502: acquire halt: the held file ../../corpus/inbox/coppa-15usc6502.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382570+00:00]   - coppa-15usc6503: acquire halt: the held file ../../corpus/inbox/coppa-15usc6503.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382571+00:00]   - coppa-15usc6504: acquire halt: the held file ../../corpus/inbox/coppa-15usc6504.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382572+00:00]   - coppa-15usc6505: acquire halt: the held file ../../corpus/inbox/coppa-15usc6505.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382573+00:00]   - coppa-15usc6506: acquire halt: the held file ../../corpus/inbox/coppa-15usc6506.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:46:27.382574+00:00]   - cipa-47usc254: acquire halt: the held file ../../corpus/inbox/cipa-47usc254.html is not a readable PDF: PdfiumError: Failed to load document (PDFium: Data format error).
+[2026-11-01T04:47:26.838730+00:00] [factory] plan: 14 node(s) decided in 0.36s (slowest F-01 catalog, 0.28s)
+[2026-11-01T04:47:26.858316+00:00] [factory] disk preflight: floor 25.0 GB (the kit's default (disk.yaml floor_gb_default)); graph root (the data volume) /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm: 62.81 GB free
+[2026-11-01T04:47:26.858366+00:00] [factory] F-20 seeds: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.858879+00:00] [factory] F-21 seed_select: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.859458+00:00] [factory] F-23 seed_propose: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.860005+00:00] [factory] F-24 seed_relookup: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.860420+00:00] [factory] F-25 seed_reselect: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.860989+00:00] [factory] F-26 seed_context: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.861589+00:00] [factory] F-22 seed_search: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:26.862067+00:00] [factory] F-27 shelf_screen: SKIPPED-BY-CONFIG -- this graph declares no shelf_screen intake (DN-035 R-162)
+[2026-11-01T04:47:26.900772+00:00] [factory] F-01 catalog: 15 of 48 item(s) pending; every file in the declared intake becomes a manifest entry
+[2026-11-01T04:47:26.901477+00:00] [factory] F-01 catalog: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:47:27.682100+00:00] [factory] F-01 catalog: done (0.55s; 48/48 complete by their records)
+[2026-11-01T04:47:27.682160+00:00] [factory] F-19 routes: SKIPPED-BY-CONFIG -- this graph declares no `engine.acquire.text_routes` block (ACQ-001): no route is recorded before admit, and acquire takes OpenAlex's locations as before
+[2026-11-01T04:47:27.735756+00:00] [factory] F-02 assess: 17 of 48 item(s) pending; the graph's own criterion decides each cataloged entry
+[2026-11-01T04:47:27.736600+00:00] [factory] F-02 assess: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:47:27.898849+00:00] [factory] F-02 assess: STOPPED (touchpoint 3: 15 manifest entries nobody has decided; the plan is /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/plan.json. To proceed, the operator writes `review: {undecided: {count: 15, date: YYYY-MM-DD}}` in the control file (DN-027 R-127)); every item that finished is in its checkpoint. Touchpoint 3: the decision is the operator's; the detail above says what to write.
+[2026-11-01T04:47:28.424803+00:00] squiddy build ap02_v1: 2 node(s) ran, rc=3, 1.0s. Record: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/build_record.json
+[2026-11-01T04:47:33.226128+00:00] [factory] plan: 14 node(s) decided in 0.32s (slowest F-01 catalog, 0.32s)
+[2026-11-01T04:47:33.236509+00:00] [factory] disk preflight: floor 25.0 GB (the kit's default (disk.yaml floor_gb_default)); graph root (the data volume) /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm: 62.78 GB free
+[2026-11-01T04:47:33.236546+00:00] [factory] F-20 seeds: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.236990+00:00] [factory] F-21 seed_select: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.237401+00:00] [factory] F-23 seed_propose: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.237818+00:00] [factory] F-24 seed_relookup: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.238235+00:00] [factory] F-25 seed_reselect: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.238699+00:00] [factory] F-26 seed_context: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.239136+00:00] [factory] F-22 seed_search: SKIPPED-BY-CONFIG -- this graph declares no mesh_seed intake (DN-033): its catalog reads its shelf sources only
+[2026-11-01T04:47:33.239626+00:00] [factory] F-27 shelf_screen: SKIPPED-BY-CONFIG -- this graph declares no shelf_screen intake (DN-035 R-162)
+[2026-11-01T04:47:33.273963+00:00] [factory] F-01 catalog: ALREADY-COMPLETE
+[2026-11-01T04:47:33.274512+00:00] [factory] F-19 routes: SKIPPED-BY-CONFIG -- this graph declares no `engine.acquire.text_routes` block (ACQ-001): no route is recorded before admit, and acquire takes OpenAlex's locations as before
+[2026-11-01T04:47:33.275115+00:00] [factory] F-02 assess: 17 of 48 item(s) pending; the graph's own criterion decides each cataloged entry
+[2026-11-01T04:47:33.275603+00:00] [factory] F-02 assess: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:47:33.922782+00:00] [factory] F-02 assess: in_progress (0.59s; 46/48 complete by their records)
+[2026-11-01T04:47:33.979422+00:00] [factory] F-03 acquire: 15 of 15 item(s) pending; the declared resolvers answer, one keyed row per entry, through the call layer
+[2026-11-01T04:47:33.980635+00:00] [factory] F-03 acquire: network buckets (api.openalex.org, arxiv.org, export.arxiv.org); proxy variables -> the allowlisting forwarder http://127.0.0.1:50048 (3 host(s)); every other host refused and logged
+[2026-11-01T04:47:34.105005+00:00] [2026-11-01T04:47:34Z] acquire final: 15/15 units (0 already done), 188.60 units/s, eta 0s, failures 0, spend {'http.api.openalex.org': 0.0, 'http.arxiv.org': 0.0, 'http.default': 0.0, 'http.export.arxiv.org': 0.0}
+[2026-11-01T04:47:34.590196+00:00] [factory] F-03 acquire: done (0.56s; 15/15 complete by their records)
+[2026-11-01T04:47:34.590235+00:00] [factory] F-16 resolve: SKIPPED-BY-CONFIG -- this graph declares no `engine.resolve.merge_plans`; no identity merge is recorded for it
+[2026-11-01T04:47:34.645631+00:00] [factory] F-06 write: 15 of 15 item(s) pending; the emitter's instances, appended through the single write path
+[2026-11-01T04:47:34.646310+00:00] [factory] F-06 write: network none; proxy variables -> http://127.0.0.1:9 (closed), NO_PROXY empty
+[2026-11-01T04:47:35.315511+00:00] [factory] F-06 write: done (0.67s; 15/15 complete by their records)
+[2026-11-01T04:47:35.831243+00:00] squiddy build ap02_v1: 3 node(s) ran, rc=0, 2.1s. Record: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_v1/build_record.json

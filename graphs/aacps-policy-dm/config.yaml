@@ -1,4 +1,4 @@
-# squiddy-generated: graph config | spec sha256 e70656ebe39d0870302337d93ab8c85f7fe3e4998651c9644ae7996682eb0c15
+# squiddy-generated: graph config | spec sha256 fc915772b5e770debc7eac1d102465daed6891b46562c181e1d5063e9e738891
 # Do not edit. Edit the spec and re-run `squiddy init`; `squiddy init --check` reports drift.
 #
 # Rendered by `squiddy init` from graph.yaml. Every value here is either a choice in
@@ -26,6 +26,11 @@ engine:
     allowlist: corpus/manifest_property_allowlist.yaml
   parse:
     table_linearisation: rows
+    markdown_suffixes:
+    - .md
+    - .markdown
+    - .mdown
+    - .txt
   manifest:
     profile: squiddy-manifest
     stages:
@@ -113,7 +118,7 @@ engine:
       collapse_at: 0.9
     backend: export
   extract:
-    enabled: false
+    enabled: true
     client: claude_cli_max_oauth
     roles:
       extractor: extractor
@@ -167,6 +172,7 @@ engine:
           grounding_rate: 0.005
           protocol_failure_rate: 0.005
       equivalence_progress_seconds: 60
+    protocol: extract_protocol.py
   lessons:
     id_prefix: lesson
     doc_kind: lab_note
@@ -205,9 +211,9 @@ engine:
   intake:
   - source: candidates
     files:
-    - corpus/candidates/*.yaml
+    - ../../corpus/admission/candidates.yaml
     content_fields:
-    - raw_sha256
+    - sha256
     - withheld_reason
   - source: inbox
     dir: intake/inbox
@@ -234,3 +240,14 @@ identity:
   registers_slice: true
   consumes_bridges: true
   currency_sweep: weekly
+domain:
+  extract:
+    prompt_file: prompts/extract_v1.md
+    prompt_version: extract_v1
+    unit_max_chars: 6000
+    citation_aliases: ../../corpus/admission/citation_aliases.yaml
+  conflicts:
+    anchor_doc: aacps-policy-dm-draft
+    verdicts: evidence/conflicts/verdicts.jsonl
+    rubric_file: prompts/conflict_rubric_v1.md
+    criteria_version: fss-conflict-rubric+aacps-v1

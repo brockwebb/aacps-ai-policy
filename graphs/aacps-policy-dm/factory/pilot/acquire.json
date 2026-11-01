@@ -1,0 +1,29 @@
+{
+ "unit": "acquire",
+ "units_measured": 20,
+ "seconds_per_unit": 0.013,
+ "remaining_units": 26,
+ "projected_seconds": 0.3,
+ "buckets": {
+  "http.api.openalex.org": {
+   "per_unit": 0.0,
+   "projected_total": 0.0,
+   "ceiling": 5000.0
+  },
+  "http.arxiv.org": {
+   "per_unit": 0.0,
+   "projected_total": 0.0,
+   "ceiling": 5000.0
+  },
+  "http.default": {
+   "per_unit": 0.0,
+   "projected_total": 0.0,
+   "ceiling": 5000.0
+  },
+  "http.export.arxiv.org": {
+   "per_unit": 0.0,
+   "projected_total": 0.0,
+   "ceiling": 5000.0
+  }
+ }
+}

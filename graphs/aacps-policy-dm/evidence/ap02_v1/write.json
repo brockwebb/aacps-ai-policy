@@ -1,0 +1,12 @@
+{
+ "work": {
+  "admitted": 15,
+  "appended": 15,
+  "dropped": 0,
+  "run_id": "read_20261101T044735_e46eba02",
+  "by_type": {
+   "Work": 15
+  },
+  "drops": {}
+ }
+}

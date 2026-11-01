@@ -96,6 +96,8 @@ dispatch:
   - .env
   - corpus/inbox
   - graphs/aacps-policy-dm/work
+  - graphs/aacps-policy-dm/corpus/parsed
+  - graphs/aacps-policy-dm/exports/aacps_policy_dm_graph.json
 
 # The sibling repositories this project's runs depend on, read by `dispatch.stations.environment_ref`. squiddy: the
 # kit the graph, extraction, secret scan and spend band come from. seldon: the dispatcher and the hooks.

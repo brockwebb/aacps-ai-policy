@@ -1,0 +1,15 @@
+{
+  "version": "ap02_pilot_dm",
+  "started": "2026-11-01T04:54:00.617351+00:00",
+  "documents": [
+    {
+      "id": "aacps-policy-dm-draft",
+      "evidence": "20261101_aacps-policy-dm-draft_7f145cc6",
+      "rc": 2,
+      "seconds": 0.4,
+      "paused": false
+    }
+  ],
+  "release": null,
+  "paused": null
+}

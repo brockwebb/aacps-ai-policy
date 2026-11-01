@@ -395,8 +395,10 @@ class Obligation(Node):
          'slot_usage': {'text': {'name': 'text', 'required': True}}})
 
     text: str = Field(default=..., description="""The located text, verbatim from the parsed intermediate.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation', 'Definition', 'Conflict']} })
-    force: Optional[str] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation']} })
-    binds: Optional[str] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation']} })
+    force: Optional[str] = Field(default=None, description="""obligation | prohibition | permission | recommendation (fss-policy-kg's closed vocabulary). The spec cannot declare an enum (the kit takes enums from its base schema only), so the extraction protocol enforces it: a row with any other value is recorded `ungrounded` with the reason and never emitted.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation']} })
+    binds: Optional[str] = Field(default=None, description="""The party the statement binds, as the text names it (fss \"addressee\"), or null when it names none.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation']} })
+    responsible_party_stated: Optional[bool] = Field(default=None, description="""Whether the sentence or its section names who must act (DN-001 anchor 3, obligations without mechanism).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation']} })
+    mechanism_stated: Optional[str] = Field(default=None, description="""The process, timeline or consequence the text attaches, quoted, or null (DN-001 anchor 3).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation']} })
     section_path: Optional[str] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation', 'Definition']} })
     page: Optional[int] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation', 'Definition']} })
     id: str = Field(default=..., description="""The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 §3.1).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'ManifestEntry']} })
@@ -440,6 +442,28 @@ class Definition(Node):
     grounding_span: Optional[GroundingSpan] = Field(default=None, description="""Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
 
 
+class StatedIn(Edge):
+    """
+    (Obligation | Definition)-[:STATED_IN]->(Work): the document a statement was extracted from, with its located span. fss-policy-kg ties an Obligation to its document through Segment and a `source_doc` property; this graph holds no Segment nodes (the parsed intermediate is the segment record), so the tie is one edge. The kit's Asserts edge is not declared here because its range is Claim. Recorded in DN-003 section 2.
+    """
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://github.com/brockwebb/squiddy/graphs/aacps_policy_dm/schema'})
+
+    subject: str = Field(default=..., description="""The id of the source node.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Edge']} })
+    object: str = Field(default=..., description="""The id of the target node.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Edge']} })
+    prov_wasGeneratedBy: Optional[str] = Field(default=None, description="""Run id of the activity that made the assertion.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge'], 'slot_uri': 'prov:wasGeneratedBy'} })
+    prov_wasDerivedFrom: Optional[str] = Field(default=None, description="""The manifest entry or source the assertion was derived from.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge'], 'slot_uri': 'prov:wasDerivedFrom'} })
+    method: Optional[str] = Field(default=None, description="""How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    ruling_id: Optional[str] = Field(default=None, description="""The event id of the human ruling that authorized this assertion, when one did.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    asserted_at: Optional[str] = Field(default=None, description="""When the assertion was made, ISO 8601 UTC.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    status: Optional[AssertionStatus] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    superseded_by: Optional[str] = Field(default=None, description="""The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    prov_extractor: Optional[str] = Field(default=None, description="""The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    prov_extractor_version: Optional[str] = Field(default=None, description="""The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    prov_prompt_sha256: Optional[str] = Field(default=None, description="""The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    prov_run_id: Optional[str] = Field(default=None, description="""The run id of the extraction that proposed this assertion (also the envelope's run_id).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+    grounding_span: Optional[GroundingSpan] = Field(default=None, description="""Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge']} })
+
+
 class Conflict(Node):
     """
     An adjudicated conflict between two Obligations or Definitions, with the rationale and the criteria version (fss-policy-kg CONFLICTS_WITH overlay, reified as a node so the verdict can carry its reason).
@@ -449,7 +473,9 @@ class Conflict(Node):
 
     text: str = Field(default=..., description="""The located text, verbatim from the parsed intermediate.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Obligation', 'Definition', 'Conflict']} })
     criteria_version: Optional[str] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Conflict']} })
-    verdict: Optional[str] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Conflict']} })
+    verdict: Optional[str] = Field(default=None, description="""apparent_resolved | genuine_conflict (fss-policy-kg kg/conflict_rubric.md; no_conflict is not a node)""", json_schema_extra = { "linkml_meta": {'domain_of': ['Conflict']} })
+    resolution_basis: Optional[str] = Field(default=None, description="""specificity | temporality | hierarchy | exception_clause, when the verdict is apparent_resolved""", json_schema_extra = { "linkml_meta": {'domain_of': ['Conflict']} })
+    confidence: Optional[float] = Field(default=None, json_schema_extra = { "linkml_meta": {'domain_of': ['Conflict']} })
     id: str = Field(default=..., description="""The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 §3.1).""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'ManifestEntry']} })
     prov_wasGeneratedBy: Optional[str] = Field(default=None, description="""Run id of the activity that made the assertion.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge'], 'slot_uri': 'prov:wasGeneratedBy'} })
     prov_wasDerivedFrom: Optional[str] = Field(default=None, description="""The manifest entry or source the assertion was derived from.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Node', 'Edge'], 'slot_uri': 'prov:wasDerivedFrom'} })
@@ -512,6 +538,7 @@ Cites.model_rebuild()
 Supersedes.model_rebuild()
 Obligation.model_rebuild()
 Definition.model_rebuild()
+StatedIn.model_rebuild()
 Conflict.model_rebuild()
 ConflictsWith.model_rebuild()
 AacpsPolicyDmGraph.model_rebuild()
