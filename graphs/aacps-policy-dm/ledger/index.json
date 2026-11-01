@@ -1,0 +1,8 @@
+{
+ "layout": "squiddy-segmented-ledger/1",
+ "graph": "aacps_policy_dm",
+ "schema_file": "../schema/aacps_policy_dm.yaml",
+ "segment_max_bytes": 40000000,
+ "open": "open.jsonl",
+ "segments": []
+}

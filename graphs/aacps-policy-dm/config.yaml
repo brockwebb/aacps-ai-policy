@@ -1,0 +1,236 @@
+# squiddy-generated: graph config | spec sha256 e70656ebe39d0870302337d93ab8c85f7fe3e4998651c9644ae7996682eb0c15
+# Do not edit. Edit the spec and re-run `squiddy init`; `squiddy init --check` reports drift.
+#
+# Rendered by `squiddy init` from graph.yaml. Every value here is either a choice in
+# that spec or a default in squiddy/init_defaults.yaml, which carries the comment that
+# records where each number came from. `engine.gates` is absent on purpose: Part A of
+# K-001 measured it as the one config block no kit module reads.
+#
+# TWO TOP-LEVEL BLOCKS (S-001 finding 3): `engine:` is what the kit reads and every key
+# in it is a kit contract; `domain:` is this graph's vocabulary and the kit reads nothing
+# from it except by a key the graph's own emitter names. `identity:` is required of every
+# graph by docs/OD-4_identity_spine.md section 5.
+
+engine:
+  ledger:
+    segment_max_bytes: 40000000
+  paths:
+    manifest: corpus/manifest.yaml
+    events: ledger/open.jsonl
+    corpus_dir: corpus
+    parsed_dir: corpus/parsed
+    resolved_dir: corpus/resolved
+    exports_dir: exports
+    evidence_dir: evidence
+    acquisition_state: corpus/acquisition_state.json
+    allowlist: corpus/manifest_property_allowlist.yaml
+  parse:
+    table_linearisation: rows
+  manifest:
+    profile: squiddy-manifest
+    stages:
+    - cataloged
+    - acquired
+    - admitting
+    - in_graph
+    - assess_queue
+    dispositions:
+    - active
+    - metadata_only
+    - reference
+    - excluded:out_of_scope
+    - excluded:deferred
+    - excluded:document_removed
+    in_graph_stage: in_graph
+    admitting_stage: admitting
+    retire_removed_max_fraction: 0.1
+  acquire:
+    timeout_seconds: 60
+    max_retries: 4
+    retry_backoff_seconds: 3
+    inter_request_delay_seconds: 0.4
+    min_valid_bytes: 10000
+    min_text_chars: 1200
+    max_bytes: 104857600
+    host_delay_seconds:
+      export.arxiv.org: 3.0
+      arxiv.org: 3.0
+    title_match_floor: 0.6
+    resolvers:
+      work:
+      - crossref
+      - openalex
+      standard:
+      - url
+      software:
+      - github
+    user_agent: squiddy/0.1 (https://github.com/brockwebb/squiddy; graph aacps_policy_dm)
+  assess:
+    criterion: cited_by_recorded_decision
+    cited_in_field: cited_in
+    prose_extensions:
+    - md
+    - txt
+    min_local_text_chars: 40
+  write:
+    schema_version: '1'
+    shared_classes:
+    - ExternalReference
+    primary_class_by_kind:
+      work: Work
+    identifier_keys: []
+  export:
+    kgx:
+      knowledge_level: knowledge_assertion
+      agent_type: automated_agent
+      category_map:
+        Work: biolink:Publication
+        ExternalReference: biolink:InformationContentEntity
+      predicate_map:
+        Cites: biolink:cites
+        Supersedes: biolink:superseded_by
+      primary_knowledge_source: infores:squiddy-aacps_policy_dm
+    artifact_stem: aacps_policy_dm_graph
+  gates:
+    schema_closed: true
+    dangling:
+      legs:
+      - edge_endpoints
+      - superseded_by
+  preview:
+    pause: false
+  serve:
+    registry: ../registry
+    currency_edges:
+    - Supersedes
+    text_fields:
+      Work:
+      - title
+      - abstract
+      - venue
+    resemblance:
+      shingle_words: 3
+      collapse_at: 0.9
+    backend: export
+  extract:
+    enabled: false
+    client: claude_cli_max_oauth
+    roles:
+      extractor: extractor
+      rater: rater
+      adjudicator: adjudicator
+    concurrency: 8
+    max_concurrency: 16
+    min_concurrency: 1
+    width:
+      step: 4
+      min_gain: 0.1
+      sample_calls: 64
+    bulk:
+      release_every: 10
+      progress_seconds: 60
+    rate:
+      release_every: 10
+      progress_seconds: 60
+      pilot_calls: 20
+    rate_limit_backoff_seconds: 60
+    retries: 2
+    retry_backoff_seconds: 5
+    timeout_seconds: 300
+    max_turns: 4
+    cost_ledger: cost_ledger.jsonl
+    segments:
+      max_chars: 5000
+      min_chars:
+        text: 150
+        table: 150
+        list: 0
+    pilot:
+      grounding_rate_min: 0.98
+      protocol_failure_rate_max: 0.02
+      rater_agreement_min: 0.85
+      rater_alpha: 0.1
+      rater_beta: 0.1
+      piloted_binaries: extract/piloted_binaries.jsonl
+      equivalence_tolerance:
+        per_unit:
+          claims_returned:
+            abs: 2
+            rel: 0.005
+          ungrounded:
+            abs: 3
+            rel: 0.005
+          protocol_failures:
+            abs: 3
+            rel: 0.005
+        total:
+          grounding_rate: 0.005
+          protocol_failure_rate: 0.005
+      equivalence_progress_seconds: 60
+  lessons:
+    id_prefix: lesson
+    doc_kind: lab_note
+    filename_pattern: ^\d{4}-\d{2}-\d{2}_[A-Za-z0-9][A-Za-z0-9_-]*\.md$
+    required:
+    - source_conversation
+    - project
+    - kind
+    - stated_by
+    kinds:
+    - decision
+    - defect
+    - result
+    - citation
+    stated_by:
+    - operator
+    - assistant
+    dir: lessons
+    cataloged_by: squiddy init (aacps_policy_dm)
+  graph:
+    name: aacps_policy_dm
+    prefix: aacps_policy_dm
+    schema: schema/aacps_policy_dm.yaml
+    generated_module: schema/generated/aacps_policy_dm_pydantic.py
+    generated_json_schema: schema/generated/aacps_policy_dm.schema.json
+    emitter: emit.py
+  projection:
+    backends:
+    - name: networkx
+      enabled: true
+  policy:
+    provenance: public_only
+    allowed_provenance_flags:
+    - public
+    - public_metadata_only
+  intake:
+  - source: candidates
+    files:
+    - corpus/candidates/*.yaml
+    content_fields:
+    - raw_sha256
+    - withheld_reason
+  - source: inbox
+    dir: intake/inbox
+  emit:
+  - metadata_document:
+      fields:
+        common:
+        - id
+        - kind
+        - title
+        - source_url
+        - disposition
+        - cited_in
+        work:
+        - publisher
+        - doc_type
+        - access
+        - licence_basis
+        - raw_sha256
+        - withheld_reason
+      citation_lines: false
+identity:
+  prefix: aacps_policy_dm
+  registers_slice: true
+  consumes_bridges: true
+  currency_sweep: weekly

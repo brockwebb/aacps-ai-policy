@@ -1,0 +1,97 @@
+# graphs/aacps-policy-dm/graph.yaml: THE ONE FILE (squiddy K-001) for the AACPS Policy DM corpus graph.
+# AP-01 (cc_tasks/2026-10-31_AP-01_scope_corpus_and_graph_spec.md) Part C. Second squiddy consumer after
+# hazbrief-mcp; shape adapted from ../../../hazbrief-mcp/graphs/hazbrief-corpus/graph.yaml with every
+# hazmat-specific block removed (vocabularies, claim overlay, concept layer, extraction roles).
+#
+# Schema reuse (repo CLAUDE.md): the fss-policy-kg classes Document, Definition, Obligation, Reference and
+# Conflict. The kit's base schema has no Obligation, Definition or Conflict class (squiddy schema/base.yaml
+# lists Work, Claim, Ruling, Concept, ExternalReference, Cites, Supersedes and others), and fss-policy-kg
+# keeps its classes in Neo4j labels, not in a LinkML file. So: Document = the kit's Work (same role: one
+# admitted source document); Reference = the kit's ExternalReference; Obligation, Definition and Conflict
+# are declared on their own lines below with their fss meaning. The mapping and why are in
+# docs/design/2026-10-31_DN-001_scope.md section 4.
+#
+# Extraction is CLOSED (`extract.enabled: false`): squiddy CONOPS R-106, extraction opens when the graph's
+# own downstream test can earn it. AP-01 admits no text and makes no model call.
+spec_version: 1
+name: aacps_policy_dm
+title: the AACPS Policy DM corpus graph
+description: >-
+  The draft AACPS Board Policy DM, Responsible Use of Artificial Intelligence (October 2026), the public
+  documents it cites or is bound by, and the public meeting records of its adoption. Each document is held
+  with its url, sha256 and retrieval date, or recorded as metadata only with the reason.
+scope:
+  topic: >-
+    The draft policy, what it cites, what governs it (Maryland State Department of Education guidance,
+    federal student-privacy and child-online-safety regulation, AACPS policies it references), and the
+    public meeting records of its adoption; nothing else (DN-001 section 1).
+version: 0.1.0
+license: MIT
+store: ledger
+policy: public_only
+serve:
+  backend: export
+intake:
+  - {source: candidates, files: ["corpus/candidates/*.yaml"], content_fields: [raw_sha256, withheld_reason]}
+classes:
+  - Work: Node                       # fss "Document"
+  - ExternalReference: Node          # fss "Reference"
+  - Cites: Edge                      # (Work)-[:CITES]->(Work | ExternalReference)
+  - Supersedes: Edge                 # a newer edition replaces an older (MSDE guidance has two versions)
+  - name: Obligation
+    is_a: Node
+    description: >-
+      One sentence a document states as an obligation, prohibition, permission or recommendation, with its
+      deontic force and the party it binds (fss-policy-kg Obligation). Declared here because the kit's base
+      schema does not carry it.
+    slots: [text]
+    slot_usage:
+      text: {required: true}
+    attributes:
+      force:
+      binds:
+      section_path:
+      page:
+        range: integer
+  - name: Definition
+    is_a: Node
+    description: >-
+      A defined term and its definition as one document states it (fss-policy-kg Definition). Two
+      Definitions of one term in two documents are the raw material of a definitional-consistency finding.
+    slots: [text]
+    slot_usage:
+      text: {required: true}
+    attributes:
+      term:
+        required: true
+      section_path:
+      page:
+        range: integer
+  - name: Conflict
+    is_a: Node
+    description: >-
+      An adjudicated conflict between two Obligations or Definitions, with the rationale and the criteria
+      version (fss-policy-kg CONFLICTS_WITH overlay, reified as a node so the verdict can carry its reason).
+    slots: [text]
+    slot_usage:
+      text: {required: true}
+    attributes:
+      criteria_version:
+      verdict:
+  - name: ConflictsWith              # (Conflict)-[:CONFLICTS_WITH]->(Obligation | Definition)
+    is_a: Edge
+    description: >-
+      (Conflict)-[:CONFLICTS_WITH]->(Obligation | Definition): one of the two statements a Conflict
+      adjudicates (fss-policy-kg CONFLICTS_WITH). Declared here because the kit's base schema has no
+      conflict edge.
+    attributes:
+      side:
+        description: "a or b: which of the two conflicting statements this edge points at."
+emit:
+  - metadata_document:
+      fields:
+        common: [id, kind, title, source_url, disposition, cited_in]
+        work: [publisher, doc_type, access, licence_basis, raw_sha256, withheld_reason]
+      citation_lines: false
+extract:
+  enabled: false

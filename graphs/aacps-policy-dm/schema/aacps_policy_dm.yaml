@@ -1,0 +1,227 @@
+# squiddy-generated: LinkML schema | spec sha256 e70656ebe39d0870302337d93ab8c85f7fe3e4998651c9644ae7996682eb0c15
+# Do not edit. Edit the spec and re-run `squiddy init`; `squiddy init --check` reports drift.
+id: https://github.com/brockwebb/squiddy/graphs/aacps_policy_dm/schema
+name: aacps_policy_dm
+title: the AACPS Policy DM corpus graph
+description: >-
+  The draft AACPS Board Policy DM, Responsible Use of Artificial Intelligence (October 2026), the
+  public documents it cites or is bound by, and the public meeting records of its adoption. Each
+  document is held with its url, sha256 and retrieval date, or recorded as metadata only with the
+  reason.
+version: 0.1.0
+license: MIT
+
+prefixes:
+  aacps_policy_dm: https://github.com/brockwebb/squiddy/graphs/aacps_policy_dm/
+  squiddy: https://github.com/brockwebb/squiddy/schema/core/
+  linkml: https://w3id.org/linkml/
+  cito: http://purl.org/spar/cito/
+  fabio: http://purl.org/spar/fabio/
+  prov: http://www.w3.org/ns/prov#
+default_prefix: aacps_policy_dm
+default_range: string
+
+imports:
+  - linkml:types
+  # `init` rewrites this line for the graph it is writing: relative when the graph lives
+  # inside the kit checkout (what graphs/biblio and graphs/library carry), absolute
+  # otherwise, because a checkout-relative import cannot resolve from a graph that lives
+  # anywhere else (K-001 Part B finding).
+  - /Users/brock/GitHub/squiddy/squiddy/schema/core
+
+enums:
+  CitoIntent:
+    description: >-
+      CiTO citation intents, the subset a bibliographic evidence graph needs (Peroni and Shotton
+      2012, peroni2012fabio). The default is the weakest claim.
+    permissible_values:
+      citesForInformation:
+        meaning: cito:citesForInformation
+      citesAsAuthority:
+        meaning: cito:citesAsAuthority
+      citesAsEvidence:
+        meaning: cito:citesAsEvidence
+      usesMethodIn:
+        meaning: cito:usesMethodIn
+      supports:
+        meaning: cito:supports
+      disagreesWith:
+        meaning: cito:disagreesWith
+      extends:
+        meaning: cito:extends
+        description: Fillable by extraction (S-007); no deterministic source sets it.
+
+  DocKind:
+    description: >-
+      The sort of record an internal document is (S-008 Part A, fixed by the task). Decided by the
+      path and the file name under the ordered rules in `engine.repodocs.doc_kind_rules`.
+    permissible_values:
+      decision_record: {}
+      handoff: {}
+      lab_note: {}
+      delivery_report: {}
+      design_note: {}
+      cc_task: {}
+      other: {}
+
+slots:
+  text:
+    description: The located text, verbatim from the parsed intermediate.
+
+classes:
+  # ---- node classes ----
+  Work:
+    is_a: Node
+    description: A published or preprinted scholarly work; identity is DOI plus OpenAlex work id.
+    slots: [title, source_url, cited_in, local_path, sha256, disposition]
+    slot_usage:
+      title: {required: true}
+      cited_in: {multivalued: true}
+    attributes:
+      doi:
+      openalex_id:
+      arxiv_id:
+      year:
+        range: integer
+      publication_date:
+      venue:
+      work_type:
+      oa_status:
+      oa_url:
+      licence:
+      abstract:
+      authors_raw:
+        multivalued: true
+        description: The author strings as the resolver returned them, kept for the pilot's gold.
+      references_total:
+        range: integer
+        description: References in the resolver's reference list (Crossref).
+      references_keyed:
+        range: integer
+        description: >-
+          Of those, references that carry a DOI and so became a Cites edge. The difference is the
+          logged abstention for references the graph cannot key (DI-046).
+      # ---- S-008 Part A: a repository's own document, admitted as a Work of this work_type ----
+      doc_kind:
+        range: DocKind
+        description: >-
+          What sort of record this is, for an internal document (S-008 Part A). Absent on a
+          published work, and that absence is the signal that it came from a publisher.
+      repo:
+        description: The repository the document lives in, as the catalog's source names it.
+      commit:
+        description: That repository's HEAD when the document was cataloged.
+      file_type:
+        description: The file extension, without the dot.
+      first_heading:
+        description: The document's first heading, which is also its title when it has one.
+      doc_date:
+        description: >-
+          The date in the file name or the YAML frontmatter, never the file's mtime: a date
+          invented from the disk orders the record by when it was last touched.
+      headings:
+        multivalued: true
+        description: >-
+          Every heading, in reading order. This is what the mention layer scans for an internal
+          document (Part E). The body prose is never stored: the graph holds the path, the hashes
+          and the headings, and the file is the text.
+
+  ExternalReference:
+    is_a: Node
+    description: >-
+      A citation target outside the graph, keyed by DOI or URL (`id` is `doi:<doi>`), so a pointer
+      outside is a node with a key and never a bare string (fss-policy-kg practice, DI-046). No
+      slot may be named `key` or `label`: the projection reserves both (squiddy.project).
+    attributes:
+      ref_kind:
+      doi:
+
+  # ---- edge classes ----
+  Cites:
+    is_a: Edge
+    description: >-
+      (Work)-[:CITES]->(Work | ExternalReference), from a public reference list; typed with a CiTO
+      intent, default citesForInformation.
+    attributes:
+      cito_intent:
+        range: CitoIntent
+        ifabsent: string(citesForInformation)
+      raw_reference:
+
+  Supersedes:
+    is_a: Edge
+    description: (Work)-[:SUPERSEDES]->(Work), with the mechanism named (DI-051).
+    attributes:
+      mechanism:
+
+  # ---- node classes ----
+  Obligation:
+    is_a: Node
+    description: One sentence a document states as an obligation, prohibition, permission or recommendation,
+      with its deontic force and the party it binds (fss-policy-kg Obligation). Declared here because the
+      kit's base schema does not carry it.
+    slots:
+    - text
+    slot_usage:
+      text:
+        required: true
+    attributes:
+      force: null
+      binds: null
+      section_path: null
+      page:
+        range: integer
+
+  Definition:
+    is_a: Node
+    description: A defined term and its definition as one document states it (fss-policy-kg Definition).
+      Two Definitions of one term in two documents are the raw material of a definitional-consistency finding.
+    slots:
+    - text
+    slot_usage:
+      text:
+        required: true
+    attributes:
+      term:
+        required: true
+      section_path: null
+      page:
+        range: integer
+
+  Conflict:
+    is_a: Node
+    description: An adjudicated conflict between two Obligations or Definitions, with the rationale and
+      the criteria version (fss-policy-kg CONFLICTS_WITH overlay, reified as a node so the verdict can carry
+      its reason).
+    slots:
+    - text
+    slot_usage:
+      text:
+        required: true
+    attributes:
+      criteria_version: null
+      verdict: null
+
+  # ---- edge classes ----
+  ConflictsWith:
+    is_a: Edge
+    description: '(Conflict)-[:CONFLICTS_WITH]->(Obligation | Definition): one of the two statements a Conflict
+      adjudicates (fss-policy-kg CONFLICTS_WITH). Declared here because the kit''s base schema has no conflict
+      edge.'
+    attributes:
+      side:
+        description: 'a or b: which of the two conflicting statements this edge points at.'
+
+  # ---- the container the export validates ----
+  Aacps_policy_dmGraph:
+    tree_root: true
+    description: The graph as two lists, the shape of the node-link export.
+    attributes:
+      nodes:
+        range: Node
+        multivalued: true
+        inlined_as_list: true
+      edges:
+        range: Edge
+        multivalued: true
+        inlined_as_list: true

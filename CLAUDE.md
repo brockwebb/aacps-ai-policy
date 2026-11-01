@@ -28,8 +28,8 @@ for the operator is the comment.
 
 ## Commands
 
-Once the graph spec exists: `cd graphs/aacps-policy-dm && ../../../squiddy/.venv/bin/squiddy init`
-(renders config.yaml from graph.yaml; `--check` reports drift). The task files name every other command.
+Once the graph spec exists: `cd graphs/aacps-policy-dm && ../../../squiddy/.venv/bin/squiddy init . --config graph.yaml`
+(renders config.yaml from graph.yaml; `--check` reports drift; bare `init` crashes, SQ-AP01a). The task files name every other command.
 
 ## Seldon
 

@@ -1,0 +1,1681 @@
+{
+    "$defs": {
+        "AacpsPolicyDmGraph": {
+            "additionalProperties": false,
+            "description": "The graph as two lists, the shape of the node-link export.",
+            "properties": {
+                "edges": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Cites"
+                            },
+                            {
+                                "$ref": "#/$defs/Supersedes"
+                            },
+                            {
+                                "$ref": "#/$defs/ConflictsWith"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "nodes": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Work"
+                            },
+                            {
+                                "$ref": "#/$defs/ExternalReference"
+                            },
+                            {
+                                "$ref": "#/$defs/Obligation"
+                            },
+                            {
+                                "$ref": "#/$defs/Definition"
+                            },
+                            {
+                                "$ref": "#/$defs/Conflict"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AacpsPolicyDmGraph",
+            "type": "object"
+        },
+        "Any": {
+            "additionalProperties": true,
+            "description": "",
+            "title": "Any",
+            "type": [
+                "null",
+                "boolean",
+                "object",
+                "number",
+                "string"
+            ]
+        },
+        "AssertionStatus": {
+            "description": "The authority model on an assertion, from fss-policy-kg's overlay discipline.",
+            "enum": [
+                "proposed",
+                "accepted",
+                "retracted"
+            ],
+            "title": "AssertionStatus",
+            "type": "string"
+        },
+        "Cites": {
+            "additionalProperties": false,
+            "description": "(Work)-[:CITES]->(Work | ExternalReference), from a public reference list; typed with a CiTO intent, default citesForInformation.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cito_intent": {
+                    "$ref": "#/$defs/CitoIntent"
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "The id of the target node.",
+                    "type": "string"
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "raw_reference": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "subject": {
+                    "description": "The id of the source node.",
+                    "type": "string"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "subject",
+                "object"
+            ],
+            "title": "Cites",
+            "type": "object"
+        },
+        "CitoIntent": {
+            "description": "CiTO citation intents, the subset a bibliographic evidence graph needs (Peroni and Shotton 2012, peroni2012fabio). The default is the weakest claim.",
+            "enum": [
+                "citesForInformation",
+                "citesAsAuthority",
+                "citesAsEvidence",
+                "usesMethodIn",
+                "supports",
+                "disagreesWith",
+                "extends"
+            ],
+            "title": "CitoIntent",
+            "type": "string"
+        },
+        "Conflict": {
+            "additionalProperties": false,
+            "description": "An adjudicated conflict between two Obligations or Definitions, with the rationale and the criteria version (fss-policy-kg CONFLICTS_WITH overlay, reified as a node so the verdict can carry its reason).",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "criteria_version": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "text": {
+                    "description": "The located text, verbatim from the parsed intermediate.",
+                    "type": "string"
+                },
+                "verdict": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "text",
+                "id"
+            ],
+            "title": "Conflict",
+            "type": "object"
+        },
+        "ConflictsWith": {
+            "additionalProperties": false,
+            "description": "(Conflict)-[:CONFLICTS_WITH]->(Obligation | Definition): one of the two statements a Conflict adjudicates (fss-policy-kg CONFLICTS_WITH). Declared here because the kit's base schema has no conflict edge.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "The id of the target node.",
+                    "type": "string"
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "side": {
+                    "description": "a or b: which of the two conflicting statements this edge points at.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "subject": {
+                    "description": "The id of the source node.",
+                    "type": "string"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "subject",
+                "object"
+            ],
+            "title": "ConflictsWith",
+            "type": "object"
+        },
+        "Definition": {
+            "additionalProperties": false,
+            "description": "A defined term and its definition as one document states it (fss-policy-kg Definition). Two Definitions of one term in two documents are the raw material of a definitional-consistency finding.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "page": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "section_path": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term": {
+                    "type": "string"
+                },
+                "text": {
+                    "description": "The located text, verbatim from the parsed intermediate.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "term",
+                "id"
+            ],
+            "title": "Definition",
+            "type": "object"
+        },
+        "DocKind": {
+            "description": "The sort of record an internal document is (S-008 Part A, fixed by the task). Decided by the path and the file name under the ordered rules in `engine.repodocs.doc_kind_rules`.",
+            "enum": [
+                "decision_record",
+                "handoff",
+                "lab_note",
+                "delivery_report",
+                "design_note",
+                "cc_task",
+                "other"
+            ],
+            "title": "DocKind",
+            "type": "string"
+        },
+        "Edge": {
+            "additionalProperties": false,
+            "description": "A property-graph edge from `subject` to `object`; the class is the predicate.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "The id of the target node.",
+                    "type": "string"
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "subject": {
+                    "description": "The id of the source node.",
+                    "type": "string"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "subject",
+                "object"
+            ],
+            "title": "Edge",
+            "type": "object"
+        },
+        "EventEnvelope": {
+            "additionalProperties": false,
+            "description": "One line of the ledger.",
+            "properties": {
+                "doc_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "event_id": {
+                    "type": "string"
+                },
+                "event_kind": {
+                    "$ref": "#/$defs/EventKind"
+                },
+                "event_stage": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "payload": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Any"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "provenance": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Any"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "run_id": {
+                    "type": "string"
+                },
+                "schema_version": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ts": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "event_id",
+                "run_id",
+                "type",
+                "event_kind",
+                "ts"
+            ],
+            "title": "EventEnvelope",
+            "type": "object"
+        },
+        "EventKind": {
+            "description": "",
+            "enum": [
+                "node",
+                "edge",
+                "retract",
+                "manifest",
+                "catalog"
+            ],
+            "title": "EventKind",
+            "type": "string"
+        },
+        "ExternalReference": {
+            "additionalProperties": false,
+            "description": "A citation target outside the graph, keyed by DOI or URL (`id` is `doi:<doi>`), so a pointer outside is a node with a key and never a bare string (fss-policy-kg practice, DI-046). No slot may be named `key` or `label`: the projection reserves both (squiddy.project).",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "doi": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ref_kind": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ExternalReference",
+            "type": "object"
+        },
+        "GroundingSpan": {
+            "additionalProperties": false,
+            "description": "Character offsets into the parsed intermediate's `plain_text`, the sha256 of the located text (so anyone holding the intermediate can verify the slice), and the sha256 of the whole plain text (so a re-parse that moves the offsets is detectable rather than silent).",
+            "properties": {
+                "end": {
+                    "type": "integer"
+                },
+                "parsed_sha256": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sha256": {
+                    "type": "string"
+                },
+                "start": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "start",
+                "end",
+                "sha256"
+            ],
+            "title": "GroundingSpan",
+            "type": "object"
+        },
+        "ManifestDisposition": {
+            "description": "Axis 2, intent or role, profiling DDI-Lifecycle 3.3 with local reason codes. A graph's config restricts this to the values it uses; a value not in the config is a gate failure.",
+            "enum": [
+                "active",
+                "reference",
+                "metadata_only",
+                "excluded:deferred",
+                "excluded:restricted",
+                "excluded:out_of_scope"
+            ],
+            "title": "ManifestDisposition",
+            "type": "string"
+        },
+        "ManifestEntry": {
+            "additionalProperties": false,
+            "description": "One entry per document ever considered (DI-070). The two status axes are required.",
+            "properties": {
+                "acquisition_status": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "admitting_since": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "bytes": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cited_in": {
+                    "description": "Where in the graph's own record this item is cited; the biblio assessment criterion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "disposition": {
+                    "$ref": "#/$defs/ManifestDisposition"
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "kind": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_path": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "notes": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "provenance_flag": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "retrieved_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sha256": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "stage": {
+                    "$ref": "#/$defs/ManifestStage"
+                },
+                "title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "verification_status": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "stage",
+                "disposition"
+            ],
+            "title": "ManifestEntry",
+            "type": "object"
+        },
+        "ManifestStage": {
+            "description": "Axis 1, pipeline position, profiling UNECE GSBPM v5.1 (icsp_notebook/corpus/manifest_schema.md). `admitting` is `in_graph` in the middle of becoming true (v7.11, DI-078).",
+            "enum": [
+                "cataloged",
+                "acquired",
+                "admitting",
+                "in_graph",
+                "assess_queue"
+            ],
+            "title": "ManifestStage",
+            "type": "string"
+        },
+        "Node": {
+            "additionalProperties": false,
+            "description": "A property-graph node keyed by `id`.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Node",
+            "type": "object"
+        },
+        "Obligation": {
+            "additionalProperties": false,
+            "description": "One sentence a document states as an obligation, prohibition, permission or recommendation, with its deontic force and the party it binds (fss-policy-kg Obligation). Declared here because the kit's base schema does not carry it.",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "binds": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "force": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "page": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "section_path": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "text": {
+                    "description": "The located text, verbatim from the parsed intermediate.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "text",
+                "id"
+            ],
+            "title": "Obligation",
+            "type": "object"
+        },
+        "Supersedes": {
+            "additionalProperties": false,
+            "description": "(Work)-[:SUPERSEDES]->(Work), with the mechanism named (DI-051).",
+            "properties": {
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "mechanism": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object": {
+                    "description": "The id of the target node.",
+                    "type": "string"
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "subject": {
+                    "description": "The id of the source node.",
+                    "type": "string"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "subject",
+                "object"
+            ],
+            "title": "Supersedes",
+            "type": "object"
+        },
+        "Work": {
+            "additionalProperties": false,
+            "description": "A published or preprinted scholarly work; identity is DOI plus OpenAlex work id.",
+            "properties": {
+                "abstract": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "arxiv_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "asserted_at": {
+                    "description": "When the assertion was made, ISO 8601 UTC.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "authors_raw": {
+                    "description": "The author strings as the resolver returned them, kept for the pilot's gold.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "cited_in": {
+                    "description": "Where in the graph's own record this item is cited; the biblio assessment criterion.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "commit": {
+                    "description": "That repository's HEAD when the document was cataloged.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "disposition": {
+                    "$ref": "#/$defs/ManifestDisposition"
+                },
+                "doc_date": {
+                    "description": "The date in the file name or the YAML frontmatter, never the file's mtime: a date invented from the disk orders the record by when it was last touched.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "doc_kind": {
+                    "$ref": "#/$defs/DocKind",
+                    "description": "What sort of record this is, for an internal document (S-008 Part A). Absent on a published work, and that absence is the signal that it came from a publisher."
+                },
+                "doi": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "file_type": {
+                    "description": "The file extension, without the dot.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "first_heading": {
+                    "description": "The document's first heading, which is also its title when it has one.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grounding_span": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/GroundingSpan"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Where in the source the harness located the text behind this assertion. Located and cut by the harness from the parsed intermediate, never quoted by the model (ai-readiness-kg's anchor contract, S-001 finding 2). A span the harness cannot locate is a failed extraction, never a stored assertion."
+                },
+                "headings": {
+                    "description": "Every heading, in reading order. This is what the mention layer scans for an internal document (Part E). The body prose is never stored: the graph holds the path, the hashes and the headings, and the file is the text.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "The readable, source-scoped key the graph minted at admission. It never changes and is never reused; a name is a property (DI-060, DI-062, OD-4 \u00a73.1).",
+                    "type": "string"
+                },
+                "licence": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "local_path": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "method": {
+                    "description": "How the assertion was made (manifest, crossref, openalex, github, human_ruling, ...).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "oa_status": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "oa_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "openalex_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor": {
+                    "description": "The instrument that made an extracted assertion, as `<provider>:<alias asked for>` (`claude_cli_max_oauth:sonnet`). Absent on a deterministic assertion, and that absence is itself the signal.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_extractor_version": {
+                    "description": "The model id the client ACTUALLY RESOLVED the alias to, read from the CLI envelope of the call that made the assertion; never the alias (DI-023: recording an alias as the model is citing a document that quotes a statute as if it were the statute).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_prompt_sha256": {
+                    "description": "The sha256 of the prompt template the extraction ran under; a prompt change is a new extractor.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_run_id": {
+                    "description": "The run id of the extraction that proposed this assertion (also the envelope's run_id).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasDerivedFrom": {
+                    "description": "The manifest entry or source the assertion was derived from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prov_wasGeneratedBy": {
+                    "description": "Run id of the activity that made the assertion.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "publication_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "references_keyed": {
+                    "description": "Of those, references that carry a DOI and so became a Cites edge. The difference is the logged abstention for references the graph cannot key (DI-046).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "references_total": {
+                    "description": "References in the resolver's reference list (Crossref).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "repo": {
+                    "description": "The repository the document lives in, as the catalog's source names it.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ruling_id": {
+                    "description": "The event id of the human ruling that authorized this assertion, when one did.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sha256": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "status": {
+                    "$ref": "#/$defs/AssertionStatus"
+                },
+                "superseded_by": {
+                    "description": "The event id of the assertion that replaced this one. Never a deletion (DI-053, DI-064).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "type": "string"
+                },
+                "venue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "work_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "year": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "title",
+                "id"
+            ],
+            "title": "Work",
+            "type": "object"
+        }
+    },
+    "$id": "https://github.com/brockwebb/squiddy/graphs/aacps_policy_dm/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": false,
+    "description": "The graph as two lists, the shape of the node-link export.",
+    "metamodel_version": "1.11.0",
+    "properties": {
+        "edges": {
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Cites"
+                    },
+                    {
+                        "$ref": "#/$defs/Supersedes"
+                    },
+                    {
+                        "$ref": "#/$defs/ConflictsWith"
+                    }
+                ]
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "nodes": {
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Work"
+                    },
+                    {
+                        "$ref": "#/$defs/ExternalReference"
+                    },
+                    {
+                        "$ref": "#/$defs/Obligation"
+                    },
+                    {
+                        "$ref": "#/$defs/Definition"
+                    },
+                    {
+                        "$ref": "#/$defs/Conflict"
+                    }
+                ]
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        }
+    },
+    "title": "aacps_policy_dm",
+    "type": "object",
+    "version": "0.1.0"
+}
+

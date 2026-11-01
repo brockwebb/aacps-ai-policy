@@ -1,0 +1,173 @@
+# AP-01 Part B: candidate list, written 2026-10-31. Provenance of each entry: where it was seen and how.
+# `access` is the host posture: machine (fetch by script), browser (hand-acquire into corpus/inbox with a
+# manifest receipt), or declined. Nothing here has been downloaded; no sha256 exists yet (AP-02 acquires).
+# `cited_by_draft` is `unverified` for every entry until the draft's text is read; the seed list came from
+# corpus/README.md and a web search, not from the draft's own reference list.
+recorded_decision: >-
+  AP-01 (cc_tasks/2026-10-31_AP-01_scope_corpus_and_graph_spec.md) Part B. Located by browser read of
+  https://www.aacps.org/page/board-policies on 2026-10-31 and by web search (standard mode) the same day.
+candidates:
+- id: aacps-policy-dm-draft
+  kind: work
+  title: "NEW Policy DM - Responsible Use of Artificial Intelligence (DRAFT, 2026)"
+  publisher: Anne Arundel County Public Schools, Board of Education (Office of Information Technology, Office of Academics, Office of School Instruction and Performance)
+  doc_type: draft board policy
+  date: "2026-10"
+  source_url: https://files-backend.assets.thrillshare.com/documents/asset/uploaded_file/4458/Aacps/136f0ac4-54ab-49c6-b10b-b2a90f5a31fc/DRAFT-Policy-DM-AI-2026.pdf
+  found_via: "https://www.aacps.org/page/board-policies (Policy DM accordion; link https://aptg.co/4xF3HT redirects to the PDF, observed in browser 2026-10-31)"
+  licence_basis: public-record
+  licence_note: "Board policy posted for public comment (comment window closes 2026-11-21). No licence statement on the page; public-record basis, redistribution as a quoted excerpt in the comment; full-text redistribution to be confirmed before the PDF is committed."
+  access: browser
+  access_note: "aacps.org returns a bot challenge to curl (Client Challenge, 200, 3038 bytes). The PDF host files-backend.assets.thrillshare.com is NOT on AP-01's network allowlist, so no machine pull was attempted. AP-02: hand-acquire to corpus/inbox/ with a receipt, or add the host to the allowlist."
+  cited_by_draft: n/a
+  disposition: active
+- id: aacps-policy-committee-page
+  kind: work
+  title: "Policy Committee (AACPS Board of Education), proposed policy revisions and comment instructions"
+  publisher: AACPS Board of Education
+  doc_type: web page (public meeting record, process)
+  date: "2026-10-31 (as observed)"
+  source_url: https://www.aacps.org/page/board-policies
+  licence_basis: public-record
+  access: browser
+  access_note: "bot challenge to curl; read in browser. Carries: comment through 2026-11-21, policycomments@aacps.org, 30 calendar day comment period, three-reading adoption process. Process facts the comment must respect."
+  cited_by_draft: n/a
+  disposition: active
+- id: aacps-public-comment-page
+  kind: work
+  title: "Public Comment At Board Meetings"
+  publisher: AACPS Board of Education
+  doc_type: web page (process)
+  source_url: https://www.aacps.org/page/public-comment-at-board-meetings
+  licence_basis: public-record
+  access: browser
+  access_note: "seen in search results only; not yet read."
+  cited_by_draft: n/a
+  disposition: reference
+- id: aacps-board-policies-and-regulations
+  kind: work
+  title: "Board Policies and Regulations (index of adopted AACPS policies and regulations)"
+  publisher: AACPS
+  doc_type: index page
+  source_url: https://www.aacps.org/o/aacps/page/board-policies-and-regulations
+  licence_basis: public-record
+  access: browser
+  access_note: "seen in search results only. The policies Policy DM cites or is bound by (acceptable use, student data privacy, academic integrity, records) are found here once the draft's references are read. Not enumerated by AP-01 because the draft text was not read."
+  cited_by_draft: unverified
+  disposition: reference
+- id: msde-model-local-board-policy-ai
+  kind: work
+  title: "Responsible Use of Artificial Intelligence in Teaching, Learning, and School Operations (MSDE model local board policy)"
+  publisher: Maryland State Department of Education
+  doc_type: model policy
+  source_url: https://marylandpublicschools.org/about/documents/dccr/ai/08-model-local-board-policy-responsible-use-of-ai-a.pdf
+  licence_basis: public-record (state agency publication; licence statement not yet read)
+  access: machine
+  access_note: "HEAD returned 200 application/pdf on 2026-10-31. Whether the draft DM derives from this model is the highest-value comparison in the corpus; unverified."
+  cited_by_draft: unverified
+  disposition: active
+- id: msde-ai-guidance
+  kind: work
+  title: "Artificial Intelligence in K-12 Public Schools (MSDE guidance; February 2026 and a later dated version)"
+  publisher: Maryland State Department of Education
+  doc_type: state guidance
+  source_url: https://marylandpublicschools.org/about/documents/dccr/ai/ai-guidance-a.pdf
+  alt_urls:
+    - https://marylandpublicschools.org/stateboard/documents/2026/0224/artificial-intelligence-guidance-a.pdf
+  licence_basis: public-record (licence statement not yet read)
+  access: machine
+  access_note: "HEAD returned 403 on ai-guidance-a.pdf on 2026-10-31 (a bot block, not a removal); the state-board copy not probed. If 403 persists, hand-acquire (browser). Two versions exist: pin the one the draft cites, record the other as superseded or sibling."
+  cited_by_draft: unverified
+  disposition: active
+- id: msde-ai-supporting-set
+  kind: work
+  title: "MSDE AI guidance supporting documents (executive summary 01, IT guidance 02, SEA responsibilities 05; AI hub page)"
+  publisher: Maryland State Department of Education
+  doc_type: state guidance (component documents)
+  source_url: https://marylandpublicschools.org/about/pages/dccr/artificial-intelligence.aspx
+  alt_urls:
+    - https://marylandpublicschools.org/about/documents/dccr/ai/01-ai-guidance-executive-summary-a.pdf
+    - https://marylandpublicschools.org/about/documents/dccr/ai/02-information-technology-guidance-a.pdf
+    - https://marylandpublicschools.org/about/documents/dccr/ai/05-sea-responsibilities-a.pdf
+  licence_basis: public-record
+  access: browser
+  access_note: "hub page returned 403 to HEAD on 2026-10-31. Components 03, 04, 06, 07 inferred from the numbering and not seen; enumerate from the hub page in AP-02."
+  cited_by_draft: unverified
+  disposition: reference
+- id: msde-ai-tools-policy-oit
+  kind: work
+  title: "Policy: Responsible Use of Artificial Intelligence Tools (MSDE OIT)"
+  publisher: Maryland State Department of Education
+  doc_type: agency internal policy
+  source_url: https://www.marylandpublicschools.org/programs/Documents/Operations/OIT/AI-Policy-A.pdf
+  licence_basis: public-record
+  access: machine
+  access_note: "seen in search results only. MSDE's own policy, not a source AACPS is bound by; held as reference unless the draft cites it."
+  cited_by_draft: unverified
+  disposition: reference
+- id: ferpa-34cfr99
+  kind: work
+  title: "34 CFR Part 99, Family Educational Rights and Privacy (FERPA regulations)"
+  publisher: US Department of Education via eCFR
+  doc_type: federal regulation
+  source_url: https://www.ecfr.gov/current/title-34/subtitle-A/part-99
+  licence_basis: public-domain (US government work)
+  access: machine
+  access_note: "URL is the eCFR canonical part path from knowledge, not probed. Currency: eCFR is an unofficial compilation; pin an edition date at acquisition."
+  cited_by_draft: unverified
+  disposition: active
+- id: coppa-16cfr312
+  kind: work
+  title: "16 CFR Part 312, Children's Online Privacy Protection Rule"
+  publisher: FTC via eCFR
+  doc_type: federal regulation
+  source_url: https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312
+  licence_basis: public-domain (US government work)
+  access: machine
+  access_note: "not probed. ftc.gov is outside the allowlist; eCFR is inside it."
+  cited_by_draft: unverified
+  disposition: active
+- id: cipa-47cfr54-520
+  kind: work
+  title: "47 CFR 54.520, Children's Internet Protection Act certification requirements (E-rate)"
+  publisher: FCC via eCFR
+  doc_type: federal regulation
+  source_url: https://www.ecfr.gov/current/title-47/chapter-I/subchapter-B/part-54/subpart-F/section-54.520
+  licence_basis: public-domain (US government work)
+  access: machine
+  access_note: "not probed."
+  cited_by_draft: unverified
+  disposition: active
+- id: ed-gov-ai-guidance
+  kind: work
+  title: "US Department of Education guidance on artificial intelligence in education"
+  publisher: US Department of Education
+  doc_type: federal guidance
+  source_url: null
+  licence_basis: public-domain (US government work)
+  access: machine
+  access_note: "NOT LOCATED. No ed.gov URL was verified in AP-01; the guidance has changed across administrations, so which edition the draft cites is the open question. Locate from the draft's reference list, then fetch from ed.gov."
+  cited_by_draft: unverified
+  disposition: excluded:deferred
+- id: aacps-policy-dm-regulation
+  kind: work
+  title: "Administrative regulation accompanying Policy DM (if any)"
+  publisher: AACPS
+  doc_type: administrative regulation
+  source_url: null
+  licence_basis: public-record
+  access: browser
+  access_note: "NOT LOCATED. The Policy Committee page says regulations are posted with the accompanying policy when applicable; the Policy DM panel showed one link (the policy) and no regulation. Recorded as absent on 2026-10-31, to be re-checked after the draft is read."
+  cited_by_draft: unverified
+  disposition: excluded:deferred
+- id: aacps-board-meeting-record-first-reading
+  kind: work
+  title: "Board of Education agenda and minutes for the first reading of Policy DM"
+  publisher: AACPS Board of Education
+  doc_type: public meeting record
+  source_url: null
+  licence_basis: public-record
+  access: browser
+  access_note: "NOT LOCATED. A news item about a first reading of a responsible AI use policy appeared in search but was ~624 days old (an earlier cycle, not this draft); not adopted as a candidate. Locate the October 2026 meeting materials on the Policy Committee 'Current Meeting Materials' tab (not expanded in AP-01)."
+  cited_by_draft: n/a
+  disposition: excluded:deferred
