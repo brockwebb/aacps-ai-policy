@@ -1,0 +1,28 @@
+{
+  "stage": 16,
+  "sub": null,
+  "label": "16",
+  "name": "diff",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.release_diff",
+    "--prev",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_pilot_dm_2026-11-01.json",
+    "--new",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_pilot_model_2026-11-01.json",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/diff_ap02_pilot_dm_ap02_pilot_model.md"
+  ],
+  "wall_seconds": 0.15,
+  "finished_utc": "2026-11-01T08:40:40.393475+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "wrote /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/diff_ap02_pilot_dm_ap02_pilot_model.md: nodes 62 -> 104, edges 30 -> 85"
+  ],
+  "first_line": "wrote /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/diff_ap02_pilot_dm_ap02_pilot_model.md: nodes 62 -> 104, edges 30 -> 85"
+}

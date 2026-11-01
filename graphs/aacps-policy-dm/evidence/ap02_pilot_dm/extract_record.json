@@ -5,11 +5,15 @@
     {
       "id": "aacps-policy-dm-draft",
       "evidence": "20261101_aacps-policy-dm-draft_7f145cc6",
-      "rc": 2,
-      "seconds": 0.4,
+      "rc": 0,
+      "seconds": 1.4,
       "paused": false
     }
   ],
-  "release": null,
-  "paused": null
+  "release": {
+    "rc": 0,
+    "version": "ap02_pilot_dm"
+  },
+  "paused": null,
+  "seconds_total": 4.9
 }

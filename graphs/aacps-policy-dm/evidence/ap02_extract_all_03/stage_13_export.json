@@ -1,0 +1,31 @@
+{
+  "stage": 13,
+  "sub": null,
+  "label": "13",
+  "name": "export",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.export",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--version",
+    "ap02_extract_all_03",
+    "--date",
+    "2026-11-01"
+  ],
+  "wall_seconds": 0.54,
+  "finished_utc": "2026-11-01T08:52:16.350741+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "built graph from the ledger: 1,507 nodes / 1,604 edges in 0.23s; position 3117 event(s), last cc378f64b4af46a19f9f371cbd4cc20f (R-207)",
+    "wrote aacps_policy_dm_graph_ap02_extract_all_03_2026-11-01.json (2,435,813 bytes); KGX 1507 nodes, 1604 edges",
+    "  round trip OK: 1,507 nodes and 1,604 edges identical",
+    "published -> /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph.json"
+  ],
+  "first_line": "built graph from the ledger: 1,507 nodes / 1,604 edges in 0.23s; position 3117 event(s), last cc378f64b4af46a19f9f371cbd4cc20f (R-207)"
+}

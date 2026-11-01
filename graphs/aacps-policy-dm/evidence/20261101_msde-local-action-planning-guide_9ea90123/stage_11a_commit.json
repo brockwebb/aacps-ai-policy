@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-local-action-planning-guide",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/extract_msde-local-action-planning-guide.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-action-planning-guide_9ea90123_msde-local-action-planning-guide/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-action-planning-guide_9ea90123_msde-local-action-planning-guide/commit_before.json"
+  ],
+  "wall_seconds": 0.61,
+  "finished_utc": "2026-11-01T08:52:15.380123+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "msde-local-action-planning-guide: 292 segment(s) extracted, 279 grounded proposal(s) -> appending 515 event(s) under run_id=commit_20261101T085215_228cae53: Cites 46, Definition 5, ExternalReference 35, Obligation 212, StatedIn 217",
+    "  node Definition              134 ->    139 measured    +5 expected    +5  OK",
+    "  node ExternalReference       215 ->    250 measured   +35 expected   +35  OK",
+    "  node Obligation              860 ->   1072 measured  +212 expected  +212  OK",
+    "  edge Cites                   345 ->    391 measured   +46 expected   +46  OK",
+    "  edge StatedIn                994 ->   1211 measured  +217 expected  +217  OK"
+  ],
+  "first_line": "msde-local-action-planning-guide: 292 segment(s) extracted, 279 grounded proposal(s) -> appending 515 event(s) under run_id=commit_20261101T085215_228cae53: Cites 46, Definition 5, ExternalReference 35, Obligation 212, StatedIn 217",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-action-planning-guide_9ea90123_msde-local-action-planning-guide/commit_scratch.jsonl": "1909255f3821367ec5f2b49847c9f43394066f8bd25668e73537ce9e3fc9f094"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/extract_msde-local-action-planning-guide.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/extract_msde-local-action-planning-guide.jsonl",
+        "sha256": "7a549ccdd690f603e753176dd726fbf73011d2bba7d3668ec5bd521430f23e9e"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-action-planning-guide_9ea90123_msde-local-action-planning-guide/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-action-planning-guide_9ea90123_msde-local-action-planning-guide/commit_scratch.jsonl",
+        "sha256": "1909255f3821367ec5f2b49847c9f43394066f8bd25668e73537ce9e3fc9f094"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 3491565,
+        "end": 4205163,
+        "sha256": "1909255f3821367ec5f2b49847c9f43394066f8bd25668e73537ce9e3fc9f094"
+      }
+    ]
+  }
+}

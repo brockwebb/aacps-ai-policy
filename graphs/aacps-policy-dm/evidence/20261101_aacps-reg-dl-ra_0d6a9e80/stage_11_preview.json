@@ -1,0 +1,73 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-reg-dl-ra",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-dl-ra_0d6a9e80_aacps-reg-dl-ra/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/preview_aacps-reg-dl-ra.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/extract_aacps-reg-dl-ra.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:43:28.090455+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `aacps-reg-dl-ra` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "35 segment(s) extracted: 35 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 35** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | In accordance with State law, AACPS commits to implementing best practices on data governance and professional development on data governance policies and procedures. | claude_cli:extractor (claude-sonnet-5-5) | [454:620] sha256 9fcdecd126e2 |",
+    "| proposed | Claim | None None | None | Data Owner - an individual who has the requisite knowledge, administrative control, and has been officially designated as accountable for specific data elements or data sets. | claude_cli:extractor (claude-sonnet-5-5) | [1408:1582] sha256 2222c4db4b18 |",
+    "| proposed | Claim | None None | None | Data Steward - an individual who is responsible for maintaining data quality and security. | claude_cli:extractor (claude-sonnet-5-5) | [1587:1677] sha256 892a06f13086 |",
+    "| proposed | Claim | None None | None | Education Records - those records that are directly related to a student and maintained by AACPS or by a party acting for AACPS. | claude_cli:extractor (claude-sonnet-5-5) | [1682:1810] sha256 4fc0810dc13c |",
+    "| proposed | Claim | None None | None | Personally Identifiable Information - information that, alone or in combination, makes it possible to identify an individual student with reasonable certainty. | claude_cli:extractor (claude-sonnet-5-5) | [1815:1974] sha256 aeeda40fb2ae |",
+    "| proposed | Claim | None None | None | AACPS shall continuously improve the availability, integrity, and security of data systems through the development and enforcement of laws, policies, and regulations. | claude_cli:extractor (claude-sonnet-5-5) | [1991:2157] sha256 662b6b5711eb |",
+    "| proposed | Claim | None None | None | Accordingly, data privacy protection of AACPS technology, related data, and electronic communications shall be in accordance with Policy DI and Regulation DI-RA - Technology Use and Security. | claude_cli:extractor (claude-sonnet-5-5) | [2158:2349] sha256 a004b4cf2a1b |",
+    "| proposed | Claim | None None | None | Policy DI | claude_cli:extractor (claude-sonnet-5-5) | [2288:2297] sha256 aac68d89b65d |",
+    "| proposed | Claim | None None | None | Regulation DI-RA - Technology Use and Security | claude_cli:extractor (claude-sonnet-5-5) | [2302:2348] sha256 74abf3f56470 |",
+    "| proposed | Claim | None None | None | AACPS shall have a data privacy and security incident response plan. | claude_cli:extractor (claude-sonnet-5-5) | [2354:2422] sha256 538d97413cee |",
+    "| proposed | Claim | None None | None | AACPS shall have a security breach notification plan. | claude_cli:extractor (claude-sonnet-5-5) | [2427:2480] sha256 2ef1593268c9 |",
+    "| proposed | Claim | None None | None | AACPS shall maintain cyber security incident response guidelines and data breach notification procedures. | claude_cli:extractor (claude-sonnet-5-5) | [2485:2590] sha256 60a87bd65a57 |",
+    "| proposed | Claim | None None | None | AACPS shall:",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/preview_aacps-reg-dl-ra.md"
+  ],
+  "first_line": "# Preview: assertions for `aacps-reg-dl-ra` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/preview_aacps-reg-dl-ra.md": "e21f5c5a51aea36f3c5f0c760ae2e178786289aa6a44d9a3eecf9759108815de"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/extract_aacps-reg-dl-ra.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/extract_aacps-reg-dl-ra.jsonl",
+        "sha256": "62769777e26082bd67c8b3f2695ab7656e1a0a1a7ab84e19873cb9462ce069f6"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/preview_aacps-reg-dl-ra.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-dl-ra_0d6a9e80/preview_aacps-reg-dl-ra.md",
+        "sha256": "e21f5c5a51aea36f3c5f0c760ae2e178786289aa6a44d9a3eecf9759108815de"
+      }
+    ]
+  }
+}

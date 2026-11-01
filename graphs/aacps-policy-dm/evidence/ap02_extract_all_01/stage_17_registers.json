@@ -1,0 +1,32 @@
+{
+  "stage": 17,
+  "sub": null,
+  "label": "17",
+  "name": "registers",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.registers",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--version",
+    "ap02_extract_all_01",
+    "--date",
+    "2026-11-01",
+    "--diff",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/diff_ap02_pilot_model_ap02_extract_all_01.md",
+    "--note",
+    "squiddy extract --all ap02_extract_all: 10 documents committed"
+  ],
+  "wall_seconds": 0.16,
+  "finished_utc": "2026-11-01T08:43:32.211905+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "EXPORT_VERSIONS.md: wrote the ap02_extract_all_01 row (226 nodes / 251 edges, sha256 b9a64c7a0f1a737c)"
+  ],
+  "first_line": "EXPORT_VERSIONS.md: wrote the ap02_extract_all_01 row (226 nodes / 251 edges, sha256 b9a64c7a0f1a737c)"
+}

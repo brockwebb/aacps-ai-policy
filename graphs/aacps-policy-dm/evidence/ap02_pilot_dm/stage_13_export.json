@@ -1,0 +1,28 @@
+{
+  "stage": 13,
+  "sub": null,
+  "label": "13",
+  "name": "export",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.export",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--version",
+    "ap02_pilot_dm",
+    "--date",
+    "2026-11-01"
+  ],
+  "wall_seconds": 0.36,
+  "finished_utc": "2026-11-01T08:39:49.599116+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "export: no-op, aacps_policy_dm_graph_ap02_pilot_dm_2026-11-01.json is already this ledger's export under ap02_pilot_dm (DN-043 R-183); published -> /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph.json"
+  ],
+  "first_line": "export: no-op, aacps_policy_dm_graph_ap02_pilot_dm_2026-11-01.json is already this ledger's export under ap02_pilot_dm (DN-043 R-183); published -> /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph.json"
+}

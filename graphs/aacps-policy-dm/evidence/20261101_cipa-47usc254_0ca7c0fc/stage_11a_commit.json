@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "cipa-47usc254",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47usc254_0ca7c0fc_cipa-47usc254/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47usc254_0ca7c0fc_cipa-47usc254/commit_before.json"
+  ],
+  "wall_seconds": 0.69,
+  "finished_utc": "2026-11-01T08:51:30.275865+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "cipa-47usc254: 206 segment(s) extracted, 199 grounded proposal(s) -> appending 329 event(s) under run_id=commit_20261101T085130_1189f796: Cites 36, Definition 31, ExternalReference 31, Obligation 100, StatedIn 131; DROP 5 ExternalReference: unchanged since the last ingest",
+    "  node Definition              103 ->    134 measured   +31 expected   +31  OK",
+    "  node ExternalReference       184 ->    215 measured   +31 expected   +31  OK",
+    "  node Obligation              760 ->    860 measured  +100 expected  +100  OK",
+    "  edge Cites                   309 ->    345 measured   +36 expected   +36  OK",
+    "  edge StatedIn                863 ->    994 measured  +131 expected  +131  OK"
+  ],
+  "first_line": "cipa-47usc254: 206 segment(s) extracted, 199 grounded proposal(s) -> appending 329 event(s) under run_id=commit_20261101T085130_1189f796: Cites 36, Definition 31, ExternalReference 31, Obligation 100, StatedIn 131; DROP 5 ExternalReference: unchanged since the last ingest",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47usc254_0ca7c0fc_cipa-47usc254/commit_scratch.jsonl": "7db31d51443091654b7fd42718232f5a805d4db8b3020c57577eca9abd7a43b7"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+        "sha256": "e90828d8c339af1de995836b0329837db94d2aca02d540e7dc8fcf8006c35c6a"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47usc254_0ca7c0fc_cipa-47usc254/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47usc254_0ca7c0fc_cipa-47usc254/commit_scratch.jsonl",
+        "sha256": "7db31d51443091654b7fd42718232f5a805d4db8b3020c57577eca9abd7a43b7"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 3046251,
+        "end": 3491565,
+        "sha256": "7db31d51443091654b7fd42718232f5a805d4db8b3020c57577eca9abd7a43b7"
+      }
+    ]
+  }
+}

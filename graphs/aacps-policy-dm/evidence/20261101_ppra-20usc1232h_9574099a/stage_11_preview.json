@@ -1,0 +1,73 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "ppra-20usc1232h",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ppra-20usc1232h_9574099a_ppra-20usc1232h/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/preview_ppra-20usc1232h.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/extract_ppra-20usc1232h.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:47:12.977438+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `ppra-20usc1232h` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "33 segment(s) extracted: 31 grounded, 1 ungrounded, 1 unparseable. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 31** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | All instructional materials, including teacher's manuals, films, tapes, or other supplementary material which will be used in connection with any survey, analysis, or evaluation as part of any applicable program shall be available for inspection by the parents or guardians of the children. | claude_cli:extractor (claude-sonnet-5-5) | [477:767] sha256 dba94a73e096 |",
+    "| proposed | Claim | None None | None | No student shall be required, as part of any applicable program, to submit to a survey, analysis, or evaluation that reveals information concerning- | claude_cli:extractor (claude-sonnet-5-5) | [822:970] sha256 776952842da8 |",
+    "| proposed | Claim | None None | None | Except as provided in subsections (a) and (b), a local educational agency that receives funds under any applicable program shall develop and adopt policies, in consultation with parents, regarding the following: | claude_cli:extractor (claude-sonnet-5-5) | [2097:2308] sha256 028804787bb1 |",
+    "| proposed | Claim | None None | None | The policies developed by a local educational agency under paragraph (1) shall provide for reasonable notice of the adoption or continued use of such policies directly to the parents of students enrolled in schools served by that agency. | claude_cli:extractor (claude-sonnet-5-5) | [5072:5309] sha256 fe94b80c3b3d |",
+    "| proposed | Claim | None None | None | At a minimum, the agency shall-",
+    "(i) provide such notice at least annually, at the beginning of the school year, and within a reasonable period of time after any substantive change in such policies; | claude_cli:extractor (claude-sonnet-5-5) | [5310:5508] sha256 bd9e3130bf19 |",
+    "| ungrounded | | None None |  | ungrounded | claude_cli:extractor (claude-sonnet-5-5) | |",
+    "| proposed | Claim | None None | None | The local educational agency shall directly notify the parent of a student, at least annually at the beginning of the school year, of the specific or approximate dates during the school year when activities described in subparagraph (C) are scheduled, or expected to be scheduled. | claude_cli:extractor (claude-sonnet-5-5) | [5812:6092] sha256 39d25661ab96 |",
+    "| proposed | Claim | None None | None | A local educational agency need not develop and adopt new policies if the State educational agency or local educational agency has in place, on January 8, 2002, policies covering the requirements of paragraph (1). | claude_cli:extractor (claude-sonnet-5-5) | [6904:7117] sha256 3f70fd7b5266 |",
+    "| proposed | Claim | None None | None | The agency shall provide reasonable notice of such existing policies to parents and guardians of students, in accordance with paragraph (2). | claude_cli:extractor (claude-sonnet-5-5) | [7118:7258] sha256 282c69304dac |",
+    "| proposed | Claim | None None | None | Paragraph (1)(E) does not apply to the collection, disclosure, or use of personal information collected from students for the exclusive purpose of developing, evaluating, or providing educational products or services for, or to, students or educational institutions, such as the following: | claude_cli:extractor (claude-sonnet-5-5) | [7324:7613] sha256 87afc9730f92 |",
+    "| proposed | Claim | None None | None | The following activities require notification under this paragraph: | claude_cli:extractor (claude-sonnet-5-5) | [6138:6205] sha256 64d28b8664ea |",
+    "| proposed | Claim | None None | None | paragraph (1) | claude_cli:extractor (claude-sonnet-5-5) | [5131:5144] sha256 e15e5e95598e |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/preview_ppra-20usc1232h.md"
+  ],
+  "first_line": "# Preview: assertions for `ppra-20usc1232h` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/preview_ppra-20usc1232h.md": "7dd32ae79236a993d1339a80f82a81b8f21ed27e3791dd826ef0101c2ecb557d"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/extract_ppra-20usc1232h.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/extract_ppra-20usc1232h.jsonl",
+        "sha256": "ee894afab98bfff6e6108ac8d4e7180c4a8f60be6b722cdafbc0373299c28d6a"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/preview_ppra-20usc1232h.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/preview_ppra-20usc1232h.md",
+        "sha256": "7dd32ae79236a993d1339a80f82a81b8f21ed27e3791dd826ef0101c2ecb557d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "cipa-47cfr54-520",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47cfr54-520_20f70658_cipa-47cfr54-520/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/preview_cipa-47cfr54-520.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/extract_cipa-47cfr54-520.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:47:32.662317+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `cipa-47cfr54-520` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "62 segment(s) extracted: 62 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 62** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | For the purposes of the certification requirements of this rule, school means school, school board, school district, local education agency or other authority responsible for administration of a school. | claude_cli:extractor (claude-sonnet-5-5) | [521:723] sha256 c3474c2bafb4 |",
+    "| proposed | Claim | None None | None | For the purposes of the certification requirements of this rule, library means library, library board or authority responsible for administration of a library. | claude_cli:extractor (claude-sonnet-5-5) | [738:897] sha256 be9548b4989f |",
+    "| proposed | Claim | None None | None | In the case of a consortium, the billed entity is the lead member of the consortium. | claude_cli:extractor (claude-sonnet-5-5) | [956:1040] sha256 d3bec3fb4985 |",
+    "| proposed | Claim | None None | None | § 54.500 | claude_cli:extractor (claude-sonnet-5-5) | [946:954] sha256 92d9d3470a8b |",
+    "| proposed | Claim | None None | None | The term “minor” means any individual who has not attained the age of 17 years. | claude_cli:extractor (claude-sonnet-5-5) | [1074:1153] sha256 bf2e447d00c1 |",
+    "| proposed | Claim | None None | None | The term “obscene” has the meaning given such term in 18 U.S.C. 1460. | claude_cli:extractor (claude-sonnet-5-5) | [1160:1229] sha256 434a36144722 |",
+    "| proposed | Claim | None None | None | 18 U.S.C. 1460 | claude_cli:extractor (claude-sonnet-5-5) | [1214:1228] sha256 b299874d57d9 |",
+    "| proposed | Claim | None None | None | The term “child pornography” has the meaning given such term in 18 U.S.C. 2256. | claude_cli:extractor (claude-sonnet-5-5) | [1237:1316] sha256 d1b8189f9c3e |",
+    "| proposed | Claim | None None | None | 18 U.S.C. 2256 | claude_cli:extractor (claude-sonnet-5-5) | [1301:1315] sha256 1bd01d2d68a0 |",
+    "| proposed | Claim | None None | None | The term “harmful to minors” means any picture, image, graphic image file, or other visual depiction that— | claude_cli:extractor (claude-sonnet-5-5) | [1323:1429] sha256 8a92af09cbed |",
+    "| proposed | Claim | None None | None | The terms “sexual act” and “sexual contact” have the meanings given such terms in 18 U.S.C. 2246. | claude_cli:extractor (claude-sonnet-5-5) | [1909:2006] sha256 52a9b0d0ee1e |",
+    "| proposed | Claim | None None | None | 18 U.S.C. 2246 | claude_cli:extractor (claude-sonnet-5-5) | [1991:2005] sha256 e622fec7c355 |",
+    "| proposed | Claim | None None | None | The term “technology protection measure” means a specific technology that blocks or filters Internet access to the material covered by a certification under paragraph (c) of this section. | claude_cli:extractor (claude-sonnet-5-5) | [2013:2200] sha256 da77baa458f5 |",
+    "| proposed | Claim | None None | None | A school or library that receives discounts for Internet access and internal connections services under the federal universal service support mechanism for schools and libraries, must make such certifications as described in paragraph (c) of this section. | claude_cli:extractor (claude-sonnet-5-5) | [2250:2505] sha256 f7ab54c8529e |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/preview_cipa-47cfr54-520.md"
+  ],
+  "first_line": "# Preview: assertions for `cipa-47cfr54-520` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/preview_cipa-47cfr54-520.md": "e449ad3f166d754a8c94fc103ee8ae7b8486eaf3e2d313109eada88a533c06d9"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/extract_cipa-47cfr54-520.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/extract_cipa-47cfr54-520.jsonl",
+        "sha256": "f413fd8ff44baa8146b063d777658781f3754877a6834e6e2dda6457d069ec61"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/preview_cipa-47cfr54-520.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47cfr54-520_20f70658/preview_cipa-47cfr54-520.md",
+        "sha256": "e449ad3f166d754a8c94fc103ee8ae7b8486eaf3e2d313109eada88a533c06d9"
+      }
+    ]
+  }
+}

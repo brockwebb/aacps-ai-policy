@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-model-local-board-policy",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/extract_msde-model-local-board-policy.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-model-local-board-policy_e06cbf06_msde-model-local-board-policy/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-model-local-board-policy_e06cbf06_msde-model-local-board-policy/commit_before.json"
+  ],
+  "wall_seconds": 0.48,
+  "finished_utc": "2026-11-01T08:40:37.053527+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "msde-model-local-board-policy: 65 segment(s) extracted, 65 grounded proposal(s) -> appending 97 event(s) under run_id=commit_20261101T084037_cbdbda16: Cites 14, Definition 7, ExternalReference 1, Obligation 34, StatedIn 41",
+    "  node Definition                0 ->      7 measured    +7 expected    +7  OK",
+    "  node ExternalReference         1 ->      2 measured    +1 expected    +1  OK",
+    "  node Obligation               15 ->     49 measured   +34 expected   +34  OK",
+    "  edge Cites                    13 ->     27 measured   +14 expected   +14  OK",
+    "  edge StatedIn                 15 ->     56 measured   +41 expected   +41  OK"
+  ],
+  "first_line": "msde-model-local-board-policy: 65 segment(s) extracted, 65 grounded proposal(s) -> appending 97 event(s) under run_id=commit_20261101T084037_cbdbda16: Cites 14, Definition 7, ExternalReference 1, Obligation 34, StatedIn 41",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-model-local-board-policy_e06cbf06_msde-model-local-board-policy/commit_scratch.jsonl": "650f54a76fb76fa564baff0f96330abf409a80e7ce903d018d45960325323600"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/extract_msde-model-local-board-policy.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/extract_msde-model-local-board-policy.jsonl",
+        "sha256": "a672ff52944f81467add0a62812ae813c0ddd68cda72960dd94a0e25913d0fc6"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-model-local-board-policy_e06cbf06_msde-model-local-board-policy/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-model-local-board-policy_e06cbf06_msde-model-local-board-policy/commit_scratch.jsonl",
+        "sha256": "650f54a76fb76fa564baff0f96330abf409a80e7ce903d018d45960325323600"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 101234,
+        "end": 239205,
+        "sha256": "650f54a76fb76fa564baff0f96330abf409a80e7ce903d018d45960325323600"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "stage": 18,
+  "sub": null,
+  "label": "18",
+  "name": "seal",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-c",
+    "from squiddy.cli import seal_release; import sys; raise SystemExit(seal_release(*sys.argv[1:4]))",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "ap02_extract_all_02",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_extract_all_02_2026-11-01.json"
+  ],
+  "wall_seconds": 0.17,
+  "finished_utc": "2026-11-01T08:46:54.064380+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[seal] ap02_extract_all_02.jsonl: 485 events, 644,981 bytes, sha256 b9f9231e1a8f9005, epoch 0.1.0+4b476041e2d6"
+  ],
+  "first_line": "[seal] ap02_extract_all_02.jsonl: 485 events, 644,981 bytes, sha256 b9f9231e1a8f9005, epoch 0.1.0+4b476041e2d6"
+}

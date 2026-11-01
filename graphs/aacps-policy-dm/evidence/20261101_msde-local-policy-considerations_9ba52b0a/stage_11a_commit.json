@@ -1,0 +1,65 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-local-policy-considerations",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-policy-considerations_9ba52b0a_msde-local-policy-considerations/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-policy-considerations_9ba52b0a_msde-local-policy-considerations/commit_before.json"
+  ],
+  "wall_seconds": 0.5,
+  "finished_utc": "2026-11-01T08:45:27.819961+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "msde-local-policy-considerations: 19 segment(s) extracted, 19 grounded proposal(s) -> appending 35 event(s) under run_id=commit_20261101T084527_242d1c9a: Cites 3, Obligation 16, StatedIn 16",
+    "  node Obligation              224 ->    240 measured   +16 expected   +16  OK",
+    "  edge Cites                   141 ->    144 measured    +3 expected    +3  OK",
+    "  edge StatedIn                247 ->    263 measured   +16 expected   +16  OK"
+  ],
+  "first_line": "msde-local-policy-considerations: 19 segment(s) extracted, 19 grounded proposal(s) -> appending 35 event(s) under run_id=commit_20261101T084527_242d1c9a: Cites 3, Obligation 16, StatedIn 16",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-policy-considerations_9ba52b0a_msde-local-policy-considerations/commit_scratch.jsonl": "4135aa499ac7bf350bb06734b6933285907b3e7cda39debb042d4c78d4f3dfb1"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+        "sha256": "3ed2dd7e4eaa8be87c83d98faca088506b60f52f51126b8bbc32aec278679de5"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-policy-considerations_9ba52b0a_msde-local-policy-considerations/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-policy-considerations_9ba52b0a_msde-local-policy-considerations/commit_scratch.jsonl",
+        "sha256": "4135aa499ac7bf350bb06734b6933285907b3e7cda39debb042d4c78d4f3dfb1"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 971854,
+        "end": 1020591,
+        "sha256": "4135aa499ac7bf350bb06734b6933285907b3e7cda39debb042d4c78d4f3dfb1"
+      }
+    ]
+  }
+}

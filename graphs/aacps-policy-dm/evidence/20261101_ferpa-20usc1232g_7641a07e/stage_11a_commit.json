@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "ferpa-20usc1232g",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/extract_ferpa-20usc1232g.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-20usc1232g_7641a07e_ferpa-20usc1232g/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-20usc1232g_7641a07e_ferpa-20usc1232g/commit_before.json"
+  ],
+  "wall_seconds": 0.55,
+  "finished_utc": "2026-11-01T08:50:15.193085+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "ferpa-20usc1232g: 116 segment(s) extracted, 110 grounded proposal(s) -> appending 183 event(s) under run_id=commit_20261101T085015_88e1f6a5: Cites 39, Definition 5, ExternalReference 36, Obligation 49, StatedIn 54; DROP 3 ExternalReference: unchanged since the last ingest",
+    "  node Definition               78 ->     83 measured    +5 expected    +5  OK",
+    "  node ExternalReference       144 ->    180 measured   +36 expected   +36  OK",
+    "  node Obligation              621 ->    670 measured   +49 expected   +49  OK",
+    "  edge Cites                   264 ->    303 measured   +39 expected   +39  OK",
+    "  edge StatedIn                699 ->    753 measured   +54 expected   +54  OK"
+  ],
+  "first_line": "ferpa-20usc1232g: 116 segment(s) extracted, 110 grounded proposal(s) -> appending 183 event(s) under run_id=commit_20261101T085015_88e1f6a5: Cites 39, Definition 5, ExternalReference 36, Obligation 49, StatedIn 54; DROP 3 ExternalReference: unchanged since the last ingest",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-20usc1232g_7641a07e_ferpa-20usc1232g/commit_scratch.jsonl": "b5f69c59c01401ca66e3fad5c10fae04749f3e94ad671dc94f3f10d9e774025e"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/extract_ferpa-20usc1232g.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/extract_ferpa-20usc1232g.jsonl",
+        "sha256": "0c3dbb0e4c2410a723f667e34cc9d00c8f67d8fbcdc0a018f32f49153d9a3493"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-20usc1232g_7641a07e_ferpa-20usc1232g/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-20usc1232g_7641a07e_ferpa-20usc1232g/commit_scratch.jsonl",
+        "sha256": "b5f69c59c01401ca66e3fad5c10fae04749f3e94ad671dc94f3f10d9e774025e"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 2475468,
+        "end": 2722786,
+        "sha256": "b5f69c59c01401ca66e3fad5c10fae04749f3e94ad671dc94f3f10d9e774025e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "cipa-47usc254",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_cipa-47usc254_0ca7c0fc_cipa-47usc254/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/preview_cipa-47usc254.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:51:29.524121+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `cipa-47usc254` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "206 segment(s) extracted: 199 grounded, 7 ungrounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 199** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Within one month after February 8, 1996, the Commission shall institute and refer to a Federal-State Joint Board under section 410(c) of this title a proceeding to recommend changes to any of its regulations in order to implement sections 214(e) of this title and this section, in cluding the definition of the services that are supported by Federal universal service support mechanisms and a specific timetable for completion of such recommendations. | claude_cli:extractor (claude-sonnet-5-5) | [507:958] sha256 432a6527da55 |",
+    "| proposed | Claim | None None | None | In addition to the members of the Joint Board required under section 410(c) of this title, one member of such Joint Board shall be a State-appointed utility consumer advocate nominated by a national organization of State utility consumer advocates. | claude_cli:extractor (claude-sonnet-5-5) | [959:1207] sha256 b461c9024ea6 |",
+    "| proposed | Claim | None None | None | The Joint Board shall, after notice and opportunity for public comment, make its recommendations to the Commission 9 months after February 8, 1996. | claude_cli:extractor (claude-sonnet-5-5) | [1208:1355] sha256 5df8d7fc7a61 |",
+    "| proposed | Claim | None None | None | The Commission shall initiate a single proceeding to implement the recommendations from the Joint Board required by paragraph (1) and shall complete such proceeding within 15 months after February 8, 1996. | claude_cli:extractor (claude-sonnet-5-5) | [1385:1590] sha256 2376d656cb42 |",
+    "| proposed | Claim | None None | None | The rules established by such proceeding shall include a definition of the services that are supported by Federal universal service support mechanisms and a specific timetable for implementation. | claude_cli:extractor (claude-sonnet-5-5) | [1591:1786] sha256 5fe9aa51ad49 |",
+    "| proposed | Claim | None None | None | Thereafter, the Commission shall complete any proceeding to implement subsequent recommendations from any Joint Board on universal service within one year after receiving such recommendations. | claude_cli:extractor (claude-sonnet-5-5) | [1787:1979] sha256 e876d25e55e7 |",
+    "| proposed | Claim | None None | None | The Joint Board and the Commission shall base policies for the preservation and advancement of universal service on the following principles: | claude_cli:extractor (claude-sonnet-5-5) | [2020:2161] sha256 21d78bb0ed01 |",
+    "| proposed | Claim | None None | None | Quality services should be available at just, reasonable, and affordable rates. | claude_cli:extractor (claude-sonnet-5-5) | [2191:2270] sha256 eb48a2107639 |",
+    "| proposed | Claim | None None | None | Access to advanced telecommunications and information services should be provided in all regions of the Nation. | claude_cli:extractor (claude-sonnet-5-5) | [2310:2421] sha256 97177018b9e9 |",
+    "| proposed | Claim | None None | None | Consumers in all regions of the Nation, including low-income consumers and those in rural, insular, and high cost areas, should have access to telecommunications and information services, including interexchange services and advanced telecommunications and information services, that are reasonably comparable to those services provided in urban areas and that are available at rates that are reasonably comparable to rates charged for similar services in urban areas. | claude_cli:extractor (claude-sonnet-5-5) | [2469:2937] sha256 6b5ba59fb1de |",
+    "| proposed | Claim | None None | None | All providers of telecommunications services should make an equitable and nondiscriminatory contribution to the preservation and advancement of universal service. | claude_cli:extractor (claude-sonnet-5-5) | [2995:3157] sha256 fde8e74db152 |",
+    "| proposed | Claim | None None | None | There should be specific, predictable and sufficient Federal and State mechanisms to preserve and advance universal service. | claude_cli:extractor (claude-sonnet-5-5) | [3213:3337] sha256 502815a47950 |",
+    "| proposed | Claim | None None | None | Elementary and secondary schools and classrooms, health care providers, and libraries should have access to advanced telecommunications services as described in subsection (h). | claude_cli:extractor (claude-sonnet-5-5) | [3436:3612] sha256 349738979cf4 |",
+    "| proposed | Claim | None None | None | section 410(c) of this title | claude_cli:extractor (claude-sonnet-5-5) | [626:654] sha256 0973ce072ebf |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/preview_cipa-47usc254.md"
+  ],
+  "first_line": "# Preview: assertions for `cipa-47usc254` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/preview_cipa-47usc254.md": "17e212a24ebfd4b5f7bf2d02260048cd0d3f5c786ea807ac1aa95ce9471e4a47"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+        "sha256": "e90828d8c339af1de995836b0329837db94d2aca02d540e7dc8fcf8006c35c6a"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/preview_cipa-47usc254.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/preview_cipa-47usc254.md",
+        "sha256": "17e212a24ebfd4b5f7bf2d02260048cd0d3f5c786ea807ac1aa95ce9471e4a47"
+      }
+    ]
+  }
+}

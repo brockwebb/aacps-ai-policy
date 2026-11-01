@@ -1,0 +1,30 @@
+{
+  "stage": 12,
+  "sub": null,
+  "label": "12",
+  "name": "check-after",
+  "question": "Does it still agree with itself?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.gates",
+    "drift",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--when",
+    "after"
+  ],
+  "wall_seconds": 0.32,
+  "finished_utc": "2026-11-01T08:42:10.525819+00:00",
+  "defect_of_record": "S-005: the served copy is behind by exactly this admission until the export republishes it",
+  "output_tail": [
+    "[drift] manifest leg: CLEAN",
+    "[drift] backend leg: CLEAN (no server backend enabled; the projection IS the replay)",
+    "CLEAN: manifest == ledger == projection."
+  ],
+  "first_line": "[drift] manifest leg: CLEAN",
+  "verdict": true
+}

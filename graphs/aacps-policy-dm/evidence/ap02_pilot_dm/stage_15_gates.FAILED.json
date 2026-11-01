@@ -1,0 +1,42 @@
+{
+  "phase": "the index and what reads it",
+  "ruling": "DN-041 R-175",
+  "ran": [
+    "index"
+  ],
+  "failed": [
+    {
+      "stage": 15,
+      "name": "index",
+      "rc": 1,
+      "record": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_pilot_dm/stage_15_index.FAILED.json",
+      "question": "",
+      "defect_of_record": null,
+      "reason": "FATAL: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/extract/control.yaml does not exist; a graph declares its index under `index:` there (or `index: {not_applicable: true, why: ...}`) (S-016, DN-025 R-110)",
+      "findings": null
+    }
+  ],
+  "blocked": [
+    {
+      "name": "index-parity",
+      "why": "its input, stage index, failed"
+    },
+    {
+      "name": "anchors",
+      "why": "its input, stage index, failed"
+    },
+    {
+      "name": "claims-reachable",
+      "why": "its input, stage index, failed"
+    }
+  ],
+  "not_run": [
+    "index-parity",
+    "anchors",
+    "claims-reachable",
+    "diff",
+    "registers",
+    "seal"
+  ],
+  "finished_utc": "2026-11-01T08:38:56.426705+00:00"
+}

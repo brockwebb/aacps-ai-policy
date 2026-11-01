@@ -1,0 +1,65 @@
+{
+  "doc_id": "ferpa-34cfr99",
+  "run_id": "extract_20261101T085221_6bde350a",
+  "protocol": {
+    "protocol": "aacps-dm-extract",
+    "prompt_version": "extract_v1",
+    "prompt_file": "prompts/extract_v1.md",
+    "role": "extractor",
+    "unit_max_chars": 6000
+  },
+  "model_role": "extractor",
+  "segments": 19,
+  "calls": 19,
+  "by_status": {
+    "grounded": 317,
+    "ungrounded": 8
+  },
+  "claims_returned": 325,
+  "grounded": 317,
+  "grounding_rate": 0.9753846153846154,
+  "protocol_failures": 0,
+  "protocol_failure_rate": 0.0,
+  "usage": {
+    "input_tokens": 38,
+    "output_tokens": 38009,
+    "cache_read_input_tokens": 37771,
+    "cache_creation_input_tokens": 121345,
+    "overhead_input_tokens": 0,
+    "overhead_output_tokens": 0
+  },
+  "billable_shaped_tokens": 38047,
+  "resolved_models": [
+    "claude-sonnet-5-5"
+  ],
+  "wall_seconds": 37.81,
+  "workers_achieved": 16,
+  "calls_by_status": {
+    "ok": 19
+  },
+  "spend_node": "extract_document",
+  "resumed_calls": 0,
+  "calls_this_session": 19,
+  "width": {
+    "start": 8,
+    "final": 8,
+    "ceiling": 16,
+    "stopped": null,
+    "step": 4,
+    "min_gain": 0.1,
+    "sample_calls": 64,
+    "steps": []
+  },
+  "model_bucket": {
+    "declared": true,
+    "source": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/control.yaml",
+    "holds": 0,
+    "waited_seconds": 0.0,
+    "tokens_per_hour": 13000000.0,
+    "level": 12163818.3,
+    "others_in_flight": 0,
+    "in_flight": 0,
+    "estimate": 18186.4
+  },
+  "cost_ledger_row": "extract_20261101T085221_6bde350a"
+}

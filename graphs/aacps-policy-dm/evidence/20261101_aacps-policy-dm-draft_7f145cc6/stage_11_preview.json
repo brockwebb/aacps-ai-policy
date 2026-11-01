@@ -1,0 +1,76 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-policy-dm-draft",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-dm-draft_7f145cc6_aacps-policy-dm-draft/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/preview_aacps-policy-dm-draft.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+    "--resume-command",
+    "squiddy extract --graph graphs/aacps-policy-dm --id aacps-policy-dm-draft --version ap02_pilot_dm"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:39:48.829071+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `aacps-policy-dm-draft` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "28 segment(s) extracted: 28 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 28** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | AI shall be used in accordance with federal and State laws, Board of Education of Anne Arundel County (Board) policies and administrative regulations, and the AACPS Strategic Plan. | claude_cli:extractor (claude-sonnet-5-5) | [473:653] sha256 90aea149b411 |",
+    "| proposed | Claim | None None | None | AACPS Strategic Plan | claude_cli:extractor (claude-sonnet-5-5) | [632:652] sha256 c02577a0ddcc |",
+    "| proposed | Claim | None None | None | AI shall be used in ways that enhance, and never replace, the professional judgment of employees. | claude_cli:extractor (claude-sonnet-5-5) | [1298:1395] sha256 b0fa3aa64c21 |",
+    "| proposed | Claim | None None | None | AI used by AACPS shall serve a clear educational or operational purpose; protect the rights and safety of students, employees, parents/guardians, and other stakeholders; and comply with applicable federal and State laws and Board polices and AACPS administrative regulations. | claude_cli:extractor (claude-sonnet-5-5) | [1503:1778] sha256 3b5ad6e8144d |",
+    "| proposed | Claim | None None | None | AI shall support, and may not replace, the professional expertise and responsibilities of employees and stakeholders. | claude_cli:extractor (claude-sonnet-5-5) | [1796:1913] sha256 558af6f4c963 |",
+    "| proposed | Claim | None None | None | Any AI output used in a consequential decision affecting a student or employee shall be subject to documented human oversight. | claude_cli:extractor (claude-sonnet-5-5) | [1915:2041] sha256 1499ade4f795 |",
+    "| proposed | Claim | None None | None | Employees and stakeholders retain the authority and responsibility to interpret, contextualize, override, or reject AI outputs. | claude_cli:extractor (claude-sonnet-5-5) | [2042:2169] sha256 efaa562c0334 |",
+    "| proposed | Claim | None None | None | AI may only be used for approved administrative, educational, and operational purposes in AACPS. | claude_cli:extractor (claude-sonnet-5-5) | [2235:2331] sha256 35096dd7871d |",
+    "| proposed | Claim | None None | None | AI shall be used to expand equitable access to opportunity. | claude_cli:extractor (claude-sonnet-5-5) | [2336:2395] sha256 75bb4babbfdd |",
+    "| proposed | Claim | None None | None | AACPS shall monitor AI tools for biased, discrimination, or inequitable outcomes and take corrective action where disparities emerge. | claude_cli:extractor (claude-sonnet-5-5) | [2397:2530] sha256 5aefc0ead3f2 |",
+    "| proposed | Claim | None None | None | AACPS shall establish expectations, conditions, and limitations for student use of AI. | claude_cli:extractor (claude-sonnet-5-5) | [2535:2621] sha256 9c7c72e58ee7 |",
+    "| proposed | Claim | None None | None | AACPS shall provide role-specific professional learning so that employees can use AI safely, ethically, and effectively. | claude_cli:extractor (claude-sonnet-5-5) | [2626:2746] sha256 aebeb90417f1 |",
+    "| proposed | Claim | None None | None | Professional learning shall emphasize critical evaluation of AI outputs, protection of student data, and recognition of when AI use is inappropriate. | claude_cli:extractor (claude-sonnet-5-5) | [2748:2897] sha256 7328389c2fbc |",
+    "| proposed | Claim | None None | None | AI tools shall be vetted before adoption for educational value, data practices, accessibility, and compliance with applicable federal and State laws and Board policies and administrative regulations. | claude_cli:extractor (claude-sonnet-5-5) | [2902:3101] sha256 2a88b1ab4c2a |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/preview_aacps-policy-dm-draft.md"
+  ],
+  "first_line": "# Preview: assertions for `aacps-policy-dm-draft` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/preview_aacps-policy-dm-draft.md": "46e402ed86d09a035e21b3e15de6cf439c19d080f3313d68b65bd9cb67d7310e"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+        "sha256": "3b7dfbdfd840d07477ce5b6f5a3e86eca84ffc23be74634adec164449925165b"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/preview_aacps-policy-dm-draft.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/preview_aacps-policy-dm-draft.md",
+        "sha256": "46e402ed86d09a035e21b3e15de6cf439c19d080f3313d68b65bd9cb67d7310e"
+      }
+    ]
+  }
+}

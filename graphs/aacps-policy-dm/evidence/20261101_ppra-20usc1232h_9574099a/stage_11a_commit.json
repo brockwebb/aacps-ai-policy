@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "ppra-20usc1232h",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/extract_ppra-20usc1232h.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ppra-20usc1232h_9574099a_ppra-20usc1232h/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ppra-20usc1232h_9574099a_ppra-20usc1232h/commit_before.json"
+  ],
+  "wall_seconds": 0.53,
+  "finished_utc": "2026-11-01T08:47:13.559583+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "ppra-20usc1232h: 33 segment(s) extracted, 31 grounded proposal(s) -> appending 50 event(s) under run_id=commit_20261101T084713_696a5ecb: Cites 9, Definition 6, ExternalReference 7, Obligation 11, StatedIn 17",
+    "  node Definition               37 ->     43 measured    +6 expected    +6  OK",
+    "  node ExternalReference        85 ->     92 measured    +7 expected    +7  OK",
+    "  node Obligation              290 ->    301 measured   +11 expected   +11  OK",
+    "  edge Cites                   174 ->    183 measured    +9 expected    +9  OK",
+    "  edge StatedIn                327 ->    344 measured   +17 expected   +17  OK"
+  ],
+  "first_line": "ppra-20usc1232h: 33 segment(s) extracted, 31 grounded proposal(s) -> appending 50 event(s) under run_id=commit_20261101T084713_696a5ecb: Cites 9, Definition 6, ExternalReference 7, Obligation 11, StatedIn 17",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ppra-20usc1232h_9574099a_ppra-20usc1232h/commit_scratch.jsonl": "8d48de2e4f3f7128e6a688fb460ecffd599ea7a37c635334ca9991251da85203"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/extract_ppra-20usc1232h.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ppra-20usc1232h_9574099a/extract_ppra-20usc1232h.jsonl",
+        "sha256": "ee894afab98bfff6e6108ac8d4e7180c4a8f60be6b722cdafbc0373299c28d6a"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ppra-20usc1232h_9574099a_ppra-20usc1232h/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ppra-20usc1232h_9574099a_ppra-20usc1232h/commit_scratch.jsonl",
+        "sha256": "8d48de2e4f3f7128e6a688fb460ecffd599ea7a37c635334ca9991251da85203"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 1266653,
+        "end": 1332544,
+        "sha256": "8d48de2e4f3f7128e6a688fb460ecffd599ea7a37c635334ca9991251da85203"
+      }
+    ]
+  }
+}

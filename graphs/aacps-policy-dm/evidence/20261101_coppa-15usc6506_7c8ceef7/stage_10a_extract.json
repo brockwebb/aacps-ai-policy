@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "coppa-15usc6506",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7"
+  ],
+  "wall_seconds": 6.7,
+  "finished_utc": "2026-11-01T08:40:57.494127+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "coppa-15usc6506: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 1 call(s), 4 grounded of 4 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl"
+  ],
+  "first_line": "coppa-15usc6506: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 1 call(s), 4 grounded of 4 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl": "947680af5591760ab3fd1f6c13d807028333c703ee8c71d791386e71e4f87607"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:coppa-15usc6506",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "coppa-15usc6506",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/substrate/coppa-15usc6506.txt",
+        "sha256": "7c8ceef700217c385102413f283e1a97380e022de34a34ebba539d9c2b3555f6"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl",
+        "sha256": "947680af5591760ab3fd1f6c13d807028333c703ee8c71d791386e71e4f87607"
+      }
+    ]
+  }
+}

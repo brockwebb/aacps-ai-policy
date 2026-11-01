@@ -1,0 +1,29 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "halts",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.gates",
+    "halts",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--mutate",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_extract_all_01/halts_ap02_extract_all_01.json"
+  ],
+  "wall_seconds": 0.25,
+  "finished_utc": "2026-11-01T08:43:31.150130+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[halts] 46 in-graph entr(y|ies), 0 with an acquire halt: CLEAN",
+    "[halts] positive control: FIRED"
+  ],
+  "first_line": "[halts] 46 in-graph entr(y|ies), 0 with an acquire halt: CLEAN"
+}

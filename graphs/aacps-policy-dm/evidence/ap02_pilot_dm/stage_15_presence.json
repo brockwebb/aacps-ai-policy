@@ -1,0 +1,29 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "presence",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.gates",
+    "presence",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--mutate",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_pilot_dm/presence_ap02_pilot_dm.json"
+  ],
+  "wall_seconds": 0.21,
+  "finished_utc": "2026-11-01T08:39:51.036714+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[presence] 46 primary node(s), 46 in-graph entr(y|ies): CLEAN",
+    "[presence] positive control: FIRED on both directions"
+  ],
+  "first_line": "[presence] 46 primary node(s), 46 in-graph entr(y|ies): CLEAN"
+}

@@ -1,0 +1,26 @@
+{
+  "stage": 0,
+  "sub": null,
+  "label": "00",
+  "name": "kit-pass",
+  "question": "Has the kit commit this graph is pinned to passed its full suite on a clean clone, and is it the kit running?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.kitpass",
+    "check",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm"
+  ],
+  "wall_seconds": 0.12,
+  "finished_utc": "2026-11-01T08:38:52.241699+00:00",
+  "defect_of_record": "2026-10-04 handoff 4.B (SQ-008 F3, SEL-002 G1): every admission ran the 13-minute kit suite; SQ-014 Part B rows 17, 18",
+  "output_tail": [
+    "kit pass: d6ed8c1ea7db (unpinned: the kit checkout /private/tmp/claude-502/-Users-brock-GitHub-aacps-ai-policy/d8d5181c-8161-46e2-ac4f-4fa979160c2d/scratchpad/squiddy-kit HEAD) passed 3 clean run(s), seeds [2734702589, 548859159, 3556520137], recorded 2026-11-01T08:37:10.514329+00:00 for commit d6ed8c1ea7db; the running squiddy/ is its tree ea7dac594980; environment lock uv.lock sha256 1a207dc8f4a7bd842de12b6747de106dff065869bc964e9f17bfde404de9a515"
+  ],
+  "first_line": "kit pass: d6ed8c1ea7db (unpinned: the kit checkout /private/tmp/claude-502/-Users-brock-GitHub-aacps-ai-policy/d8d5181c-8161-46e2-ac4f-4fa979160c2d/scratchpad/squiddy-kit HEAD) passed 3 clean run(s), seeds [2734702589, 548859159, 3556520137], recorded 2026-11-01T08:37:10.514329+00:00 for commit d6ed8c1ea7db; the running squiddy/ is its tree ea7dac594980; environment lock uv.lock sha256 1a207dc8f4a7bd842de12b6747de106dff065869bc964e9f17bfde404de9a515",
+  "verdict": true
+}

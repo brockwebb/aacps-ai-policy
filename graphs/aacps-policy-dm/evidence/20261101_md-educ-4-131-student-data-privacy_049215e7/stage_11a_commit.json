@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "md-educ-4-131-student-data-privacy",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-educ-4-131-student-data-privacy_049215e7/extract_md-educ-4-131-student-data-privacy.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-educ-4-131-student-data-privacy_049215e7_md-educ-4-131-student-data-privacy/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-educ-4-131-student-data-privacy_049215e7_md-educ-4-131-student-data-privacy/commit_before.json"
+  ],
+  "wall_seconds": 0.5,
+  "finished_utc": "2026-11-01T08:46:50.186331+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "md-educ-4-131-student-data-privacy: 22 segment(s) extracted, 12 grounded proposal(s) -> appending 23 event(s) under run_id=commit_20261101T084650_a3bc0711: Cites 3, Definition 5, ExternalReference 2, Obligation 4, StatedIn 9",
+    "  node Definition               32 ->     37 measured    +5 expected    +5  OK",
+    "  node ExternalReference        83 ->     85 measured    +2 expected    +2  OK",
+    "  node Obligation              286 ->    290 measured    +4 expected    +4  OK",
+    "  edge Cites                   171 ->    174 measured    +3 expected    +3  OK",
+    "  edge StatedIn                318 ->    327 measured    +9 expected    +9  OK"
+  ],
+  "first_line": "md-educ-4-131-student-data-privacy: 22 segment(s) extracted, 12 grounded proposal(s) -> appending 23 event(s) under run_id=commit_20261101T084650_a3bc0711: Cites 3, Definition 5, ExternalReference 2, Obligation 4, StatedIn 9",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-educ-4-131-student-data-privacy_049215e7_md-educ-4-131-student-data-privacy/commit_scratch.jsonl": "3d61989865758a56438d106e4d09a48790ecf56d06d2da94e0b0360ff53cbd32"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-educ-4-131-student-data-privacy_049215e7/extract_md-educ-4-131-student-data-privacy.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-educ-4-131-student-data-privacy_049215e7/extract_md-educ-4-131-student-data-privacy.jsonl",
+        "sha256": "22cb8b05b7e43c826c6747410b375946069d311efc21231e4e9296daba36e7d2"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-educ-4-131-student-data-privacy_049215e7_md-educ-4-131-student-data-privacy/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-educ-4-131-student-data-privacy_049215e7_md-educ-4-131-student-data-privacy/commit_scratch.jsonl",
+        "sha256": "3d61989865758a56438d106e4d09a48790ecf56d06d2da94e0b0360ff53cbd32"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 1233544,
+        "end": 1266081,
+        "sha256": "3d61989865758a56438d106e4d09a48790ecf56d06d2da94e0b0360ff53cbd32"
+      }
+    ]
+  }
+}

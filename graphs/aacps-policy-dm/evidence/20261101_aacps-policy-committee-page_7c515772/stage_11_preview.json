@@ -1,0 +1,69 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-policy-committee-page",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-committee-page_7c515772_aacps-policy-committee-page/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/preview_aacps-policy-committee-page.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/extract_aacps-policy-committee-page.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:41:48.572235+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `aacps-policy-committee-page` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "7 segment(s) extracted: 7 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 7** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Public comment on the proposed revisions to Policy AA (Philosophy and Mission), Policy KBA (Citizen Advisory",
+    "Committee), and NEW Policy DM (Responsible Use of Artificial Intelligence) will be accepted through",
+    "November 21, 2026. | claude_cli:extractor (claude-sonnet-5-5) | [820:1047] sha256 864ad196e9f5 |",
+    "| proposed | Claim | None None | None | comments go to policycomments@aacps.org | claude_cli:extractor (claude-sonnet-5-5) | [2008:2047] sha256 270261699d05 |",
+    "| proposed | Claim | None None | None | the Board reserves the right to edit comments for obscene language or",
+    "confidential information | claude_cli:extractor (claude-sonnet-5-5) | [2240:2334] sha256 cc205bb9293b |",
+    "| proposed | Claim | None None | None | Policy AA | claude_cli:extractor (claude-sonnet-5-5) | [864:873] sha256 08b0fef1e9cf |",
+    "| proposed | Claim | None None | None | Policy KBA | claude_cli:extractor (claude-sonnet-5-5) | [900:910] sha256 bf9763889867 |",
+    "| proposed | Claim | None None | None | Policy DM | claude_cli:extractor (claude-sonnet-5-5) | [949:958] sha256 f148f12402b4 |",
+    "| proposed | Claim | None None | None | Policy BF (Policy Setting) | claude_cli:extractor (claude-sonnet-5-5) | [1197:1223] sha256 5bc6927a045b |",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/preview_aacps-policy-committee-page.md"
+  ],
+  "first_line": "# Preview: assertions for `aacps-policy-committee-page` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/preview_aacps-policy-committee-page.md": "06397e53ea09a0b2d5865324950592a668531088f505a552338fb50ddbefb5df"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/extract_aacps-policy-committee-page.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/extract_aacps-policy-committee-page.jsonl",
+        "sha256": "960a30a5dbcda366b10f8aaca4a6d15c560f33cd38ca8dfaa4846faa9bef9cd9"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/preview_aacps-policy-committee-page.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-committee-page_7c515772/preview_aacps-policy-committee-page.md",
+        "sha256": "06397e53ea09a0b2d5865324950592a668531088f505a552338fb50ddbefb5df"
+      }
+    ]
+  }
+}

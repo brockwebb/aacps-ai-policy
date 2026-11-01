@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "ferpa-34cfr99",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-34cfr99_f0200e92/extract_ferpa-34cfr99.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-34cfr99_f0200e92_ferpa-34cfr99/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-34cfr99_f0200e92_ferpa-34cfr99/commit_before.json"
+  ],
+  "wall_seconds": 0.73,
+  "finished_utc": "2026-11-01T08:53:00.144326+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "ferpa-34cfr99: 325 segment(s) extracted, 317 grounded proposal(s) -> appending 417 event(s) under run_id=commit_20261101T085300_0d957067: Cites 24, Definition 44, ExternalReference 15, Obligation 145, StatedIn 189; DROP 7 ExternalReference: unchanged since the last ingest",
+    "  node Definition              139 ->    183 measured   +44 expected   +44  OK",
+    "  node ExternalReference       250 ->    265 measured   +15 expected   +15  OK",
+    "  node Obligation             1072 ->   1217 measured  +145 expected  +145  OK",
+    "  edge Cites                   391 ->    415 measured   +24 expected   +24  OK",
+    "  edge StatedIn               1211 ->   1400 measured  +189 expected  +189  OK"
+  ],
+  "first_line": "ferpa-34cfr99: 325 segment(s) extracted, 317 grounded proposal(s) -> appending 417 event(s) under run_id=commit_20261101T085300_0d957067: Cites 24, Definition 44, ExternalReference 15, Obligation 145, StatedIn 189; DROP 7 ExternalReference: unchanged since the last ingest",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-34cfr99_f0200e92_ferpa-34cfr99/commit_scratch.jsonl": "edb2568696aab807f21e8757f64e6b392262d57720fb6381085e7cfaa462393a"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-34cfr99_f0200e92/extract_ferpa-34cfr99.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-34cfr99_f0200e92/extract_ferpa-34cfr99.jsonl",
+        "sha256": "70e555e1575985de717c5bfbabf627e2e1764a56d5679bef53a1a4c66ebd94db"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-34cfr99_f0200e92_ferpa-34cfr99/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-34cfr99_f0200e92_ferpa-34cfr99/commit_scratch.jsonl",
+        "sha256": "edb2568696aab807f21e8757f64e6b392262d57720fb6381085e7cfaa462393a"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 4205738,
+        "end": 4810553,
+        "sha256": "edb2568696aab807f21e8757f64e6b392262d57720fb6381085e7cfaa462393a"
+      }
+    ]
+  }
+}

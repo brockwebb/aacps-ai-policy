@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "coppa-15usc6505",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6505_eeecc94e_coppa-15usc6505/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/preview_coppa-15usc6505.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/extract_coppa-15usc6505.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:44:59.428218+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `coppa-15usc6505` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "23 segment(s) extracted: 22 grounded, 1 ungrounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 22** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Except as otherwise provided, this chapter shall be enforced by the Commission under the Federal Trade Commission Act (15 U.S.C. 41 et seq.). | claude_cli:extractor (claude-sonnet-5-5) | [430:571] sha256 dcf4b222fad2 |",
+    "| proposed | Claim | None None | None | Federal Trade Commission Act (15 U.S.C. 41 et seq.) | claude_cli:extractor (claude-sonnet-5-5) | [519:570] sha256 93b98198e3d5 |",
+    "| proposed | Claim | None None | None | Compliance with the requirements imposed under this chapter shall be enforced under- | claude_cli:extractor (claude-sonnet-5-5) | [594:678] sha256 5746affdbb9d |",
+    "| proposed | Claim | None None | None | section 8 of the Federal Deposit Insurance Act (12 U.S.C. 1818) | claude_cli:extractor (claude-sonnet-5-5) | [684:747] sha256 07ef78194601 |",
+    "| proposed | Claim | None None | None | section 25 or 25(a) | claude_cli:extractor (claude-sonnet-5-5) | [1207:1226] sha256 9d8994d06594 |",
+    "| proposed | Claim | None None | None | Federal Reserve Act (12 U.S.C. 601 et seq. and 611 et. seq.) | claude_cli:extractor (claude-sonnet-5-5) | [1254:1314] sha256 9a234684ce52 |",
+    "| proposed | Claim | None None | None | the Federal Credit Union Act (12 U.S.C. 1751 et seq.) | claude_cli:extractor (claude-sonnet-5-5) | [1811:1864] sha256 9fae2c0428e0 |",
+    "| proposed | Claim | None None | None | part A of subtitle VII of title 49 | claude_cli:extractor (claude-sonnet-5-5) | [1962:1996] sha256 6a69edc1422e |",
+    "| proposed | Claim | None None | None | the Packers and Stockyards Act, 1921 (7 U.S.C. 181 et. seq.) | claude_cli:extractor (claude-sonnet-5-5) | [2114:2174] sha256 49882f66dee5 |",
+    "| proposed | Claim | None None | None | section 406 of that Act (7 U.S.C. 226, 227) | claude_cli:extractor (claude-sonnet-5-5) | [2198:2241] sha256 e999cd059454 |",
+    "| proposed | Claim | None None | None | the Farm Credit Act of 1971 (12 U.S.C. 2001 et seq.) | claude_cli:extractor (claude-sonnet-5-5) | [2337:2389] sha256 4157a33ed67d |",
+    "| ungrounded | | None None |  | ungrounded | claude_cli:extractor (claude-sonnet-5-5) | |",
+    "| proposed | Claim | None None | None | The Commission shall prevent any person from violating a rule of the Commission under section 6502 of this title in the same manner, by the same means, and with the same jurisdiction, powers, and duties as though all applicable terms and provisions of the Federal Trade Commission Act (15 U.S.C. 41 et seq.) were incorporated into and made a part of this chapter. | claude_cli:extractor (claude-sonnet-5-5) | [3238:3601] sha256 f74c498c1f54 |",
+    "| proposed | Claim | None None | None | section 6502 of this title | claude_cli:extractor (claude-sonnet-5-5) | [3324:3350] sha256 ca8e6d337ac5 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/preview_coppa-15usc6505.md"
+  ],
+  "first_line": "# Preview: assertions for `coppa-15usc6505` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/preview_coppa-15usc6505.md": "557df0e38e8ce9eeaad588d8f3da18aa6b734dc16eb334fa5b74fab4b13b1745"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/extract_coppa-15usc6505.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/extract_coppa-15usc6505.jsonl",
+        "sha256": "8289ecd7c837c4839914d3e2773ef1daf4b3887bb08472b60c49c9c927013068"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/preview_coppa-15usc6505.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6505_eeecc94e/preview_coppa-15usc6505.md",
+        "sha256": "557df0e38e8ce9eeaad588d8f3da18aa6b734dc16eb334fa5b74fab4b13b1745"
+      }
+    ]
+  }
+}

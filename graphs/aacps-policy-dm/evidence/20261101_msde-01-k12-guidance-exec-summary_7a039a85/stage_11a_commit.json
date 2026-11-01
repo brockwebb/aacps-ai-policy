@@ -1,0 +1,65 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-01-k12-guidance-exec-summary",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/extract_msde-01-k12-guidance-exec-summary.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-01-k12-guidance-exec-summary_7a039a85_msde-01-k12-guidance-exec-summary/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-01-k12-guidance-exec-summary_7a039a85_msde-01-k12-guidance-exec-summary/commit_before.json"
+  ],
+  "wall_seconds": 0.48,
+  "finished_utc": "2026-11-01T08:42:10.169284+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "msde-01-k12-guidance-exec-summary: 18 segment(s) extracted, 18 grounded proposal(s) -> appending 29 event(s) under run_id=commit_20261101T084210_4699906e: Cites 7, Obligation 11, StatedIn 11",
+    "  node Obligation               68 ->     79 measured   +11 expected   +11  OK",
+    "  edge Cites                    54 ->     61 measured    +7 expected    +7  OK",
+    "  edge StatedIn                 75 ->     86 measured   +11 expected   +11  OK"
+  ],
+  "first_line": "msde-01-k12-guidance-exec-summary: 18 segment(s) extracted, 18 grounded proposal(s) -> appending 29 event(s) under run_id=commit_20261101T084210_4699906e: Cites 7, Obligation 11, StatedIn 11",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-01-k12-guidance-exec-summary_7a039a85_msde-01-k12-guidance-exec-summary/commit_scratch.jsonl": "d92eb0d96123623ea97320f3f986b7034e9a361138b165ca3baea8a805f4a1bf"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/extract_msde-01-k12-guidance-exec-summary.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/extract_msde-01-k12-guidance-exec-summary.jsonl",
+        "sha256": "5c77dfa6da3a5e31e994ff57c6a9d9ce1b0216a80da83513fbf39dd796054f4e"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-01-k12-guidance-exec-summary_7a039a85_msde-01-k12-guidance-exec-summary/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-01-k12-guidance-exec-summary_7a039a85_msde-01-k12-guidance-exec-summary/commit_scratch.jsonl",
+        "sha256": "d92eb0d96123623ea97320f3f986b7034e9a361138b165ca3baea8a805f4a1bf"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 334694,
+        "end": 375548,
+        "sha256": "d92eb0d96123623ea97320f3f986b7034e9a361138b165ca3baea8a805f4a1bf"
+      }
+    ]
+  }
+}

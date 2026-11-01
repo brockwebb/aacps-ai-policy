@@ -1,0 +1,19 @@
+{
+  "version": "ap02_pilot_model",
+  "started": "2026-11-01T08:40:04.943842+00:00",
+  "documents": [
+    {
+      "id": "msde-model-local-board-policy",
+      "evidence": "20261101_msde-model-local-board-policy_e06cbf06",
+      "rc": 0,
+      "seconds": 32.4,
+      "paused": false
+    }
+  ],
+  "release": {
+    "rc": 0,
+    "version": "ap02_pilot_model"
+  },
+  "paused": null,
+  "seconds_total": 35.8
+}

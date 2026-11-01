@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-state-level-responsibilities",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070"
+  ],
+  "wall_seconds": 19.49,
+  "finished_utc": "2026-11-01T08:42:42.502923+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "msde-state-level-responsibilities: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 2 call(s), 32 grounded of 32 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl"
+  ],
+  "first_line": "msde-state-level-responsibilities: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 2 call(s), 32 grounded of 32 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl": "fd5623dddb015fa4a5b4d16593241530270598a3ee3d868772141f196c3da9de"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:msde-state-level-responsibilities",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "msde-state-level-responsibilities",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/inbox/msde-state-level-responsibilities.pdf",
+        "sha256": "6c7c9070cec44d59ddc3ce05f8eff6fd9c8e5fbf115c737f6dd382d21f8bce7b"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl",
+        "sha256": "fd5623dddb015fa4a5b4d16593241530270598a3ee3d868772141f196c3da9de"
+      }
+    ]
+  }
+}

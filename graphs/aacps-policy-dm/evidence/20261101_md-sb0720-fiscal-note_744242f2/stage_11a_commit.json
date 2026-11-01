@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "md-sb0720-fiscal-note",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-sb0720-fiscal-note_744242f2_md-sb0720-fiscal-note/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-sb0720-fiscal-note_744242f2_md-sb0720-fiscal-note/commit_before.json"
+  ],
+  "wall_seconds": 0.53,
+  "finished_utc": "2026-11-01T08:48:42.526646+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "md-sb0720-fiscal-note: 55 segment(s) extracted, 55 grounded proposal(s) -> appending 97 event(s) under run_id=commit_20261101T084842_349a3388: Cites 13, Definition 3, ExternalReference 2, Obligation 38, StatedIn 41; DROP 10 ExternalReference: unchanged since the last ingest",
+    "  node Definition               56 ->     59 measured    +3 expected    +3  OK",
+    "  node ExternalReference       110 ->    112 measured    +2 expected    +2  OK",
+    "  node Obligation              370 ->    408 measured   +38 expected   +38  OK",
+    "  edge Cites                   203 ->    216 measured   +13 expected   +13  OK",
+    "  edge StatedIn                426 ->    467 measured   +41 expected   +41  OK"
+  ],
+  "first_line": "md-sb0720-fiscal-note: 55 segment(s) extracted, 55 grounded proposal(s) -> appending 97 event(s) under run_id=commit_20261101T084842_349a3388: Cites 13, Definition 3, ExternalReference 2, Obligation 38, StatedIn 41; DROP 10 ExternalReference: unchanged since the last ingest",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-sb0720-fiscal-note_744242f2_md-sb0720-fiscal-note/commit_scratch.jsonl": "6a591047f5eb6b60bbacec27b2a85f844c3972da2a1908cca0b98f51067170f3"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl",
+        "sha256": "d63e218715de582b5c92619ffbb30b9b0895138a28b5560abc0f8a82cc8f285a"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-sb0720-fiscal-note_744242f2_md-sb0720-fiscal-note/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-sb0720-fiscal-note_744242f2_md-sb0720-fiscal-note/commit_scratch.jsonl",
+        "sha256": "6a591047f5eb6b60bbacec27b2a85f844c3972da2a1908cca0b98f51067170f3"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 1614094,
+        "end": 1750276,
+        "sha256": "6a591047f5eb6b60bbacec27b2a85f844c3972da2a1908cca0b98f51067170f3"
+      }
+    ]
+  }
+}

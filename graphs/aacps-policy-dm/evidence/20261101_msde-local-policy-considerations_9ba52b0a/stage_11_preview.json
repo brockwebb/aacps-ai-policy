@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-local-policy-considerations",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-policy-considerations_9ba52b0a_msde-local-policy-considerations/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/preview_msde-local-policy-considerations.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:45:27.264543+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `msde-local-policy-considerations` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "19 segment(s) extracted: 19 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 19** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | District AI policy should articulate why AI is being addressed and what principles guide its use. | claude_cli:extractor (claude-sonnet-5-5) | [667:764] sha256 8550abfd1006 |",
+    "| proposed | Claim | None None | None | Many districts may choose to adopt a guiding principle such as: | claude_cli:extractor (claude-sonnet-5-5) | [765:828] sha256 fdcb00c8f592 |",
+    "| proposed | Claim | None None | None | AI policy should reflect and reinforce the district's broader strategic plan. | claude_cli:extractor (claude-sonnet-5-5) | [1301:1378] sha256 bd5800a4e3ca |",
+    "| proposed | Claim | None None | None | AI oversight should not rest with individual educators or a single department. | claude_cli:extractor (claude-sonnet-5-5) | [2324:2402] sha256 48d0e45d2851 |",
+    "| proposed | Claim | None None | None | Policy should clarify distributed responsibility. | claude_cli:extractor (claude-sonnet-5-5) | [2403:2452] sha256 934665b528d5 |",
+    "| proposed | Claim | None None | None | Policy should explicitly address privacy protections. | claude_cli:extractor (claude-sonnet-5-5) | [2960:3013] sha256 12ace1935539 |",
+    "| proposed | Claim | None None | None | AI use should not weaken existing privacy or cybersecurity safeguards. | claude_cli:extractor (claude-sonnet-5-5) | [3014:3084] sha256 85e3993b4eb4 |",
+    "| proposed | Claim | None None | None | Family Educational Rights and Privacy Act | claude_cli:extractor (claude-sonnet-5-5) | [3213:3254] sha256 20cd42dcc810 |",
+    "| proposed | Claim | None None | None | Children's Online Privacy Protection Act | claude_cli:extractor (claude-sonnet-5-5) | [3260:3300] sha256 d35d8fe229d5 |",
+    "| proposed | Claim | None None | None | Protection of Pupil Rights Amendment | claude_cli:extractor (claude-sonnet-5-5) | [3306:3342] sha256 313158f3d503 |",
+    "| proposed | Claim | None None | None | AI policy should reinforce the district's civil rights and equity commitments. | claude_cli:extractor (claude-sonnet-5-5) | [3642:3720] sha256 c4a11ee81e1d |",
+    "| proposed | Claim | None None | None | Equity monitoring should be ongoing, not one-time. | claude_cli:extractor (claude-sonnet-5-5) | [3721:3771] sha256 11a425210767 |",
+    "| proposed | Claim | None None | None | Policy should clarify expectations while supporting instructional adaptation. | claude_cli:extractor (claude-sonnet-5-5) | [4322:4399] sha256 3dea004e91d9 |",
+    "| proposed | Claim | None None | None | Policy should reflect sustained preparation, not one-time training. | claude_cli:extractor (claude-sonnet-5-5) | [4974:5041] sha256 661921d469b1 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/preview_msde-local-policy-considerations.md"
+  ],
+  "first_line": "# Preview: assertions for `msde-local-policy-considerations` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/preview_msde-local-policy-considerations.md": "cd9795922cf21db7945fe847186cdec5f5d44f77e375ee737b968771c7e8939f"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+        "sha256": "3ed2dd7e4eaa8be87c83d98faca088506b60f52f51126b8bbc32aec278679de5"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/preview_msde-local-policy-considerations.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/preview_msde-local-policy-considerations.md",
+        "sha256": "cd9795922cf21db7945fe847186cdec5f5d44f77e375ee737b968771c7e8939f"
+      }
+    ]
+  }
+}

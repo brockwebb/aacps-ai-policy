@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "cipa-47usc254",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc"
+  ],
+  "wall_seconds": 46.19,
+  "finished_utc": "2026-11-01T08:51:29.421264+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "cipa-47usc254: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 15 call(s), 199 grounded of 206 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl"
+  ],
+  "first_line": "cipa-47usc254: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 15 call(s), 199 grounded of 206 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl": "e90828d8c339af1de995836b0329837db94d2aca02d540e7dc8fcf8006c35c6a"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:cipa-47usc254",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "cipa-47usc254",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/substrate/cipa-47usc254.txt",
+        "sha256": "0ca7c0fc4ec7f6661266a69dca92e27cd6c9ce0bb115b36191d66611e73c02d2"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_cipa-47usc254_0ca7c0fc/extract_cipa-47usc254.jsonl",
+        "sha256": "e90828d8c339af1de995836b0329837db94d2aca02d540e7dc8fcf8006c35c6a"
+      }
+    ]
+  }
+}

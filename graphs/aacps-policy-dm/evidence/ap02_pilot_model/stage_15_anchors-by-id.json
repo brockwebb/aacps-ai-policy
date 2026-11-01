@@ -1,0 +1,37 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "anchors-by-id",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.conformance",
+    "run",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--export",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_pilot_model_2026-11-01.json",
+    "--scope",
+    "graph",
+    "--gate",
+    "scope_anchors_covered",
+    "--anchors",
+    "identifier",
+    "--controls",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_pilot_model/anchors_by_id_ap02_pilot_model.json"
+  ],
+  "wall_seconds": 0.2,
+  "finished_utc": "2026-11-01T08:40:39.818010+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[N/A    ] 29 scope_anchors_covered  (the graph's scope names no anchors (DN-028 R-129: they are optional); nothing to check, and nothing checked is not a pass)",
+    "[control caught ] 29 scope_anchors_covered"
+  ],
+  "first_line": "[N/A    ] 29 scope_anchors_covered  (the graph's scope names no anchors (DN-028 R-129: they are optional); nothing to check, and nothing checked is not a pass)"
+}

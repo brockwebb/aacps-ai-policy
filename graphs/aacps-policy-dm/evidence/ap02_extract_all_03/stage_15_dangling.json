@@ -1,0 +1,31 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "dangling",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.gates",
+    "dangling",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--mutate",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_extract_all_03/dangling_gate_ap02_extract_all_03.json"
+  ],
+  "wall_seconds": 0.52,
+  "finished_utc": "2026-11-01T08:52:17.561244+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[dangling] ledger: CLEAN (1507 nodes, 1604 edges; legs edge_endpoints, superseded_by)",
+    "[dangling] positive control: FIRED on every seeded defect the declared legs cover",
+    "  - (mutant) edge-endpoint: Supersedes msde-k12-ai-guidance -> node-that-does-not-exist (missing ['node-that-does-not-exist']; event 096f8f1d75aa43a1aa744719ac902b0e)",
+    "  - (mutant) superseded_by: event a32561519cad4822af267049f0b7429c names 'event-that-does-not-exist', which is not in the ledger"
+  ],
+  "first_line": "[dangling] ledger: CLEAN (1507 nodes, 1604 edges; legs edge_endpoints, superseded_by)"
+}

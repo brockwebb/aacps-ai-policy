@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "ferpa-20usc1232g",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_ferpa-20usc1232g_7641a07e_ferpa-20usc1232g/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/preview_ferpa-20usc1232g.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/extract_ferpa-20usc1232g.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:50:14.585760+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `ferpa-20usc1232g` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "116 segment(s) extracted: 110 grounded, 6 ungrounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 110** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | No funds shall be made available under any applicable program to any educational agency or institution which has a policy of denying, or which effectively prevents, the parents of students who are or have been in attendance at a school of such agency or at such institution, as the case may be, the right to inspect and review the education records of their children. | claude_cli:extractor (claude-sonnet-5-5) | [738:1105] sha256 52c17e21aa38 |",
+    "| proposed | Claim | None None | None | If any material or document in the education record of a student includes information on more than one student, the parents of one of such students shall have the right to inspect and review only such part of such material or document as relates to such student or to be informed of the specific information contained in such part of such material. | claude_cli:extractor (claude-sonnet-5-5) | [1106:1454] sha256 d9da90723704 |",
+    "| proposed | Claim | None None | None | Each educational agency or institution shall establish appropriate procedures for the granting of a request by parents for access to the education records of their children within a reasonable period of time, but in no case more than forty-five days after the request has been made. | claude_cli:extractor (claude-sonnet-5-5) | [1455:1737] sha256 3343bbb2b58f |",
+    "| proposed | Claim | None None | None | No funds under any applicable program shall be made available to any State educational agency (whether or not that agency is an educational agency or institution under this section) that has a policy of denying, or effectively prevents, the parents of students the right to inspect and review the education records maintained by the State educational agency on their children who are or have been in attendance at any school of an educational agency or institution that is subject to the provisions of this section. | claude_cli:extractor (claude-sonnet-5-5) | [1743:2258] sha256 39b7aa397738 |",
+    "| proposed | Claim | None None | None | A student or a person applying for admission may waive his right of access to confidential statements described in clause (iii) of subparagraph (C), except that such waiver shall apply to recommendations only if (i) the student is, upon request, notified of the names of all persons making confidential recommendations and (ii) such recommendations are used solely for the purpose for which they were specifically intended. | claude_cli:extractor (claude-sonnet-5-5) | [3112:3535] sha256 2c3a3aa4d445 |",
+    "| proposed | Claim | None None | None | Such waivers may not be required as a condition for admission to, receipt of financial aid from, or receipt of any other services or benefits from such agency or institution. | claude_cli:extractor (claude-sonnet-5-5) | [3536:3710] sha256 49c28e2f1394 |",
+    "| proposed | Claim | None None | None | No funds shall be made available under any applicable program to any educational agency or institution unless the parents of students who are or have been in attendance at a school of such agency or at such institution are provided an opportunity for a hearing by such agency or institution, in accordance with regulations of the Secretary, to challenge the content of such student's education records, in order to insure that the records are not inaccurate, misleading, or otherwise in violation of the privacy rights of students, and to provide an opportunity for the correction or deletion of any such inaccurate, misleading or otherwise inappropriate data contained therein and to insert into such records a written explanation of the parents respecting the content of such records. | claude_cli:extractor (claude-sonnet-5-5) | [3716:4502] sha256 fdb34753c04d |",
+    "| proposed | Claim | None None | None | For the purposes of this section the term \"educational agency or institution\" means any public or private agency or institution which is the recipient of funds under any applicable program. | claude_cli:extractor (claude-sonnet-5-5) | [4508:4697] sha256 35c0776325e5 |",
+    "| proposed | Claim | None None | None | For the purposes of this section, the term \"education records\" means, except as may be provided otherwise in subparagraph (B), those records, files, documents, and other materials which- | claude_cli:extractor (claude-sonnet-5-5) | [4706:4892] sha256 e83d79cce06f |",
+    "| proposed | Claim | None None | None | For the purposes of this section the term \"directory information\" relating to a student includes the following: the student's name, address, telephone listing, date and place of birth, major field of study, participation in officially recognized activities and sports, weight and height of members of athletic teams, dates of attendance, degrees and awards received, and the most recent previous educational agency or institution attended by the student. | claude_cli:extractor (claude-sonnet-5-5) | [6551:7005] sha256 bc3b48a63ea6 |",
+    "| proposed | Claim | None None | None | Any educational agency or institution making public directory information shall give public notice of the categories of information which it has designated as such information with respect to each student attending the institution or agency and shall allow a reasonable period of time after such notice has been given for a parent to inform the institution or agency that any or all of the information designated should not be released without the parent's prior consent. | claude_cli:extractor (claude-sonnet-5-5) | [7011:7482] sha256 1fa3450d35af |",
+    "| proposed | Claim | None None | None | For the purposes of this section, the term \"student\" includes any person with respect to whom an educational agency or institution maintains education records or personally identifiable information, but does not include a person who has not been in attendance at such agency or institution. | claude_cli:extractor (claude-sonnet-5-5) | [7488:7778] sha256 20f13fcd8385 |",
+    "| proposed | Claim | None None | None | No funds shall be made available under any applicable program to any educational agency or institution which has a policy or practice of permitting the release of education records (or personally identifiable information contained therein other than directory information, as defined in paragraph (5) of subsection (a)) of students without the written consent of their parents to any individual, agency, or organization, other than to the following- | claude_cli:extractor (claude-sonnet-5-5) | [7991:8440] sha256 0e50bcf7b512 |",
+    "| proposed | Claim | None None | None | (J)(i) the entity or persons designated in a Federal grand jury subpoena, in which case the court shall order, for good cause shown, the educational agency or institution (and any officer, director, employee, agent, or attorney for such agency or institution) on which the subpoena is served, to not disclose to any person the existence or contents of the subpoena or any information furnished to the grand jury in response to the subpoena; and | claude_cli:extractor (claude-sonnet-5-5) | [11289:11733] sha256 41256f5c8719 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/preview_ferpa-20usc1232g.md"
+  ],
+  "first_line": "# Preview: assertions for `ferpa-20usc1232g` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/preview_ferpa-20usc1232g.md": "dae59f5095f9568b6eb5d38b5d16cea509f24dd3fe7fbc539ce0e74c82708d88"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/extract_ferpa-20usc1232g.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/extract_ferpa-20usc1232g.jsonl",
+        "sha256": "0c3dbb0e4c2410a723f667e34cc9d00c8f67d8fbcdc0a018f32f49153d9a3493"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/preview_ferpa-20usc1232g.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_ferpa-20usc1232g_7641a07e/preview_ferpa-20usc1232g.md",
+        "sha256": "dae59f5095f9568b6eb5d38b5d16cea509f24dd3fe7fbc539ce0e74c82708d88"
+      }
+    ]
+  }
+}

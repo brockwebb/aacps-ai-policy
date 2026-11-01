@@ -1,0 +1,27 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "index",
+  "question": "",
+  "pass": false,
+  "decision_stop": false,
+  "returncode": 1,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.index",
+    "build",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--release",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_pilot_dm_2026-11-01.json"
+  ],
+  "wall_seconds": 0.07,
+  "finished_utc": "2026-11-01T08:38:56.426059+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "FATAL: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/extract/control.yaml does not exist; a graph declares its index under `index:` there (or `index: {not_applicable: true, why: ...}`) (S-016, DN-025 R-110)"
+  ],
+  "first_line": "FATAL: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/extract/control.yaml does not exist; a graph declares its index under `index:` there (or `index: {not_applicable: true, why: ...}`) (S-016, DN-025 R-110)"
+}

@@ -1,0 +1,15 @@
+{
+  "real": {
+    "clean": true,
+    "findings": [],
+    "primary_nodes": 46,
+    "in_graph_entries": 46
+  },
+  "positive_control": {
+    "fired": true,
+    "findings": [
+      "node-without-entry: Work 'sq007-planted-presence-node' is in the ledger and the manifest has no `in_graph` entry for it",
+      "entry-without-node: 'sq007-planted-presence-entry' is `in_graph` in the manifest and the ledger holds no live Work node for it"
+    ]
+  }
+}

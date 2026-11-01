@@ -1,0 +1,66 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-ai-tool-evaluation-rubric",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-ai-tool-evaluation-rubric_02503144/extract_msde-ai-tool-evaluation-rubric.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-ai-tool-evaluation-rubric_02503144_msde-ai-tool-evaluation-rubric/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-ai-tool-evaluation-rubric_02503144_msde-ai-tool-evaluation-rubric/commit_before.json"
+  ],
+  "wall_seconds": 0.48,
+  "finished_utc": "2026-11-01T08:43:43.524060+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "msde-ai-tool-evaluation-rubric: 7 segment(s) extracted, 7 grounded proposal(s) -> appending 12 event(s) under run_id=commit_20261101T084343_d6824c16: Cites 4, ExternalReference 2, Obligation 3, StatedIn 3",
+    "  node ExternalReference        29 ->     31 measured    +2 expected    +2  OK",
+    "  node Obligation              140 ->    143 measured    +3 expected    +3  OK",
+    "  edge Cites                    98 ->    102 measured    +4 expected    +4  OK",
+    "  edge StatedIn                151 ->    154 measured    +3 expected    +3  OK"
+  ],
+  "first_line": "msde-ai-tool-evaluation-rubric: 7 segment(s) extracted, 7 grounded proposal(s) -> appending 12 event(s) under run_id=commit_20261101T084343_d6824c16: Cites 4, ExternalReference 2, Obligation 3, StatedIn 3",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-ai-tool-evaluation-rubric_02503144_msde-ai-tool-evaluation-rubric/commit_scratch.jsonl": "f727c2692b1c2dd26aed7b3b30c50ea9280310accc59a209142e6f3f477d5d20"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-ai-tool-evaluation-rubric_02503144/extract_msde-ai-tool-evaluation-rubric.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-ai-tool-evaluation-rubric_02503144/extract_msde-ai-tool-evaluation-rubric.jsonl",
+        "sha256": "0ba7f8dc3783df9bd9ab526495c147d41975ad0c098ad6b72ddd01a55526d558"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-ai-tool-evaluation-rubric_02503144_msde-ai-tool-evaluation-rubric/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-ai-tool-evaluation-rubric_02503144_msde-ai-tool-evaluation-rubric/commit_scratch.jsonl",
+        "sha256": "f727c2692b1c2dd26aed7b3b30c50ea9280310accc59a209142e6f3f477d5d20"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 621672,
+        "end": 637191,
+        "sha256": "f727c2692b1c2dd26aed7b3b30c50ea9280310accc59a209142e6f3f477d5d20"
+      }
+    ]
+  }
+}

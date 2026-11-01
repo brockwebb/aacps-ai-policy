@@ -115,3 +115,29 @@ def test_no_parsed_text_plans_no_unit(tmp_path):
     g = _graph(tmp_path, "x", [])
     (tmp_path / "corpus/parsed/doc.json").unlink()
     assert xp.plan(g, {"id": "doc"})["role"] is None
+
+
+def test_grounded_span_is_the_kits_grounding_span(tmp_path):
+    """The AP-02 pilot's commit stage refused `{start, end, matches_in_unit}`: the kit's GroundingSpan is exactly
+    start, end, sha256 of the located text and parsed_sha256 of the whole plain text (squiddy schema/core.yaml)."""
+    import hashlib
+    import importlib
+    import sys as _sys
+    _sys.path.insert(0, str(GRAPH / "schema/generated"))
+    GroundingSpan = importlib.import_module("aacps_policy_dm_pydantic").GroundingSpan
+    plain = "C. POSITION\n\n2. AI may only be used for approved purposes."
+    blocks = [{"idx": 0, "kind": "heading", "text": "C. POSITION", "char_span": [0, 11], "page": 2,
+               "section_path": "C"},
+              {"idx": 1, "kind": "list_item", "text": "2. AI may only be used for approved purposes.",
+               "char_span": [13, 58], "page": 2, "section_path": "C"}]
+    g = _graph(tmp_path, plain, blocks)
+    pl = xp.plan(g, {"id": "doc", "title": "T"})
+    answer = {"items": [{"type": "obligation", "text": "AI may only be used for approved purposes.",
+                         "force": "prohibition"}]}
+    results = [{"unit": {k: v for k, v in pl["units"][0].items() if k != "prompt"}, "status": "ok",
+                "content": json.dumps(answer), "resolved_model": "m"}]
+    ob = xp.rows(g, {"id": "doc"}, pl, results)[0]
+    span = GroundingSpan(**ob["span"])           # extra keys are forbidden; sha256 is required
+    assert span.sha256 == hashlib.sha256(ob["text"].encode("utf-8")).hexdigest()
+    assert span.parsed_sha256 == hashlib.sha256(plain.encode("utf-8")).hexdigest()
+    assert plain[span.start:span.end] == ob["text"] and ob["matches_in_unit"] == 1

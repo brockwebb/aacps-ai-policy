@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-local-level-responsibilities",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-level-responsibilities_5a4949b5_msde-local-level-responsibilities/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/preview_msde-local-level-responsibilities.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/extract_msde-local-level-responsibilities.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:44:10.727128+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `msde-local-level-responsibilities` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "50 segment(s) extracted: 50 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 50** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | While the Maryland State Department of Education establishes statewide expectations and supports, Local Education Agencies (LEAs) are responsible for evaluating AI tools, ensuring compliance with privacy and civil rights laws, monitoring equity impacts, and guiding responsible classroom and operational use. | claude_cli:extractor (claude-sonnet-5-5) | [53:361] sha256 cd5bb15541b3 |",
+    "| proposed | Claim | None None | None | The responsibilities outlined below reflect the essential work districts must undertake to ensure that AI strengthens teaching, learning, and student well-being across Maryland's schools while ensuring it is used safely and ethically. | claude_cli:extractor (claude-sonnet-5-5) | [362:596] sha256 acfc458c1123 |",
+    "| proposed | Claim | None None | None | Adopt or update district AI policies covering instructional use, operational use, data privacy, academic integrity, and human oversight. | claude_cli:extractor (claude-sonnet-5-5) | [664:800] sha256 8fb76165dff9 |",
+    "| proposed | Claim | None None | None | Ensure policies reflect statewide principles of equity, transparency, privacy, and responsible innovation. | claude_cli:extractor (claude-sonnet-5-5) | [802:908] sha256 28abbcb0070e |",
+    "| proposed | Claim | None None | None | Review and revise policies annually as technologies, risks, and local conditions evolve. | claude_cli:extractor (claude-sonnet-5-5) | [910:998] sha256 19cbc4e0a0e5 |",
+    "| proposed | Claim | None None | None | Form a multidisciplinary AI governance team (curriculum, IT, data privacy, legal, school administrators, teachers, specialists). | claude_cli:extractor (claude-sonnet-5-5) | [1045:1173] sha256 3927dfaa4e38 |",
+    "| proposed | Claim | None None | None | Define local procedures for tool vetting, pilot approval, escalation pathways, and incident response. | claude_cli:extractor (claude-sonnet-5-5) | [1175:1276] sha256 cb57fefc7f0f |",
+    "| proposed | Claim | None None | None | Ensure governance processes include perspectives representing multilingual learners, students with disabilities, and traditionally marginalized groups. | claude_cli:extractor (claude-sonnet-5-5) | [1278:1429] sha256 71ee161b6fa6 |",
+    "| proposed | Claim | None None | None | Conduct thorough evaluations using a local rubric or Maryland's provided templates (risk assessments, privacy checklists, equity reviews). | claude_cli:extractor (claude-sonnet-5-5) | [1468:1606] sha256 192cc4e638e8 |",
+    "| proposed | Claim | None None | None | Review vendor disclosures on training data, model limitations, data use, accessibility, and known risks. | claude_cli:extractor (claude-sonnet-5-5) | [1608:1712] sha256 2245cab7b91e |",
+    "| proposed | Claim | None None | None | Ensure all adopted tools comply with FERPA, COPPA, PPRA, IDEA, Section 504, ADA, COMAR, and district data governance policies. | claude_cli:extractor (claude-sonnet-5-5) | [1714:1840] sha256 048bd345c677 |",
+    "| proposed | Claim | None None | None | Document decisions, including rationale for adoption, rejection, or conditional approval. | claude_cli:extractor (claude-sonnet-5-5) | [1842:1931] sha256 a41671d47108 |",
+    "| proposed | Claim | None None | None | Evaluate whether AI tools produce disparate impacts across student groups. | claude_cli:extractor (claude-sonnet-5-5) | [1988:2062] sha256 498e22e9fe26 |",
+    "| proposed | Claim | None None | None | Monitor predictive systems and operational tools (attendance, early warning, scheduling) for bias, drift, or unintended consequences. | claude_cli:extractor (claude-sonnet-5-5) | [2064:2197] sha256 9d71fcee8df9 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/preview_msde-local-level-responsibilities.md"
+  ],
+  "first_line": "# Preview: assertions for `msde-local-level-responsibilities` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/preview_msde-local-level-responsibilities.md": "730bcd6b26ba465e21e0b563d98880094a1da8bd4778741d79008de84b801bc5"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/extract_msde-local-level-responsibilities.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/extract_msde-local-level-responsibilities.jsonl",
+        "sha256": "07f3984a1675885f5265b65b7495883168f3d72153763fa17a090bb5718b73c8"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/preview_msde-local-level-responsibilities.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-level-responsibilities_5a4949b5/preview_msde-local-level-responsibilities.md",
+        "sha256": "730bcd6b26ba465e21e0b563d98880094a1da8bd4778741d79008de84b801bc5"
+      }
+    ]
+  }
+}

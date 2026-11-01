@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-policy-dm-draft",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6"
+  ],
+  "wall_seconds": 0.22,
+  "finished_utc": "2026-11-01T08:38:52.923651+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "aacps-policy-dm-draft: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 1 call(s), 28 grounded of 28 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl"
+  ],
+  "first_line": "aacps-policy-dm-draft: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 1 call(s), 28 grounded of 28 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl": "3b7dfbdfd840d07477ce5b6f5a3e86eca84ffc23be74634adec164449925165b"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:aacps-policy-dm-draft",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "aacps-policy-dm-draft",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/inbox/aacps-policy-dm-draft.pdf",
+        "sha256": "7f145cc623f75145d8cffd28e958d19168129d4d3f0c7c41f65a80d5b6b6a661"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+        "sha256": "3b7dfbdfd840d07477ce5b6f5a3e86eca84ffc23be74634adec164449925165b"
+      }
+    ]
+  }
+}

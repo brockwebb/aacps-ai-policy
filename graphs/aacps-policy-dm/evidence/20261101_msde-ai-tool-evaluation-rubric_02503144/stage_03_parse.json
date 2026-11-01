@@ -1,0 +1,27 @@
+{
+  "stage": 3,
+  "sub": null,
+  "label": "03",
+  "name": "parse",
+  "question": "What does the held text say, structurally?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.parse",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-ai-tool-evaluation-rubric"
+  ],
+  "wall_seconds": 0.12,
+  "finished_utc": "2026-11-01T08:43:32.602667+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "parsed msde-ai-tool-evaluation-rubric: 18 blocks, 5,601 chars via docling (cache)"
+  ],
+  "first_line": "parsed msde-ai-tool-evaluation-rubric: 18 blocks, 5,601 chars via docling (cache)",
+  "verdict": true
+}

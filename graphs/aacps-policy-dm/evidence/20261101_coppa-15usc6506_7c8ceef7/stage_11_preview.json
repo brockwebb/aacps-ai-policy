@@ -1,0 +1,64 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "coppa-15usc6506",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6506_7c8ceef7_coppa-15usc6506/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/preview_coppa-15usc6506.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:40:57.583520+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `coppa-15usc6506` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "4 segment(s) extracted: 4 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 4** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Not later than 5 years after the effective date of the regulations initially issued under section 6502 of this title, the Commission shall-",
+    "(1) review the implementation of this chapter, including the effect of the implementation of this chapter on practices relating to the collection and disclosure of information relating to children, children's ability to obtain access to information of their choice online, and on the availability of websites directed to children; and | claude_cli:extractor (claude-sonnet-5-5) | [417:892] sha256 c6faa2b25b1b |",
+    "| proposed | Claim | None None | None | (2) prepare and submit to Congress a report on the results of the review under paragraph (1). | claude_cli:extractor (claude-sonnet-5-5) | [894:987] sha256 8084290cce6a |",
+    "| proposed | Claim | None None | None | section 6502 of this title | claude_cli:extractor (claude-sonnet-5-5) | [507:533] sha256 ca8e6d337ac5 |",
+    "| proposed | Claim | None None | None | Pub. L. 105-277, div. C, title XIII, §1307 | claude_cli:extractor (claude-sonnet-5-5) | [990:1032] sha256 cd169ac32bdb |",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/preview_coppa-15usc6506.md"
+  ],
+  "first_line": "# Preview: assertions for `coppa-15usc6506` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/preview_coppa-15usc6506.md": "8f6fa3110cf297129b02418167fff412ada3efc186c8e7633ab04c3ce12b5605"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/extract_coppa-15usc6506.jsonl",
+        "sha256": "947680af5591760ab3fd1f6c13d807028333c703ee8c71d791386e71e4f87607"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/preview_coppa-15usc6506.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6506_7c8ceef7/preview_coppa-15usc6506.md",
+        "sha256": "8f6fa3110cf297129b02418167fff412ada3efc186c8e7633ab04c3ce12b5605"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+# graphs/aacps-policy-dm/extract/control.yaml: this graph's extract control plane, named by factory/control.yaml
+# `blocks.extract`. Hand-authored (squiddy init does not write it); added by AP-02 Part C when the draft's pilot
+# extraction (release ap02_pilot_dm) stopped at stage 15 `index`: "a graph declares its index under `index:` there (or
+# `index: {not_applicable: true, why: ...}`) (S-016, DN-025 R-110)". Form copied from
+# ../ai-readiness-kg/graphs/ai-readiness/extract/control.yaml (index) and ../hazbrief-mcp/graphs/hazbrief-corpus/
+# extract/control.yaml (transport).
+
+# NOT BUILT FOR THIS GRAPH, and said so rather than defaulted. Every reader of this graph reads the release export
+# (scripts/policy_graph.py: the anchor queries of docs/findings/anchor_queries.py and scripts/conflict_pass.py); the
+# corpus is 33 held texts, and the anchor evidence is exact-quote and edge lookups, not retrieval. A retrieval index
+# would be built for a served search surface, which AP-02 does not stand up.
+index:
+  not_applicable: true
+  why: "AP-02 reads the release export only (anchor queries and the conflict pass, scripts/policy_graph.py); 33 held texts, exact-quote and edge lookups, no served search surface, so no retrieval index is built"
+
+# THE TRANSPORT every model call of this graph runs under (squiddy `extract.transport_of`, the one reader; SQ-025).
+# hazbrief's two switches, for hazbrief's reason (H-005 R-23): without them the CLI child loads the operator's user and
+# project settings, and a SessionStart hook's injected context reaches every call unrecorded. No `cli_path` or
+# `cli_version`: this graph has no piloted-binaries record and no cost baseline, so the run holds the lock's CLI as
+# read at its start (squiddy `extract_daemon.pin_cli` (a), warned `cli_pilot_record_absent`) and the evidence names it.
+# Declared after the draft's one pilot call (AP-02 RESULT, Part C: that call's input was 8,395 tokens, which leaves no
+# room for injected operator context; the calls made under this block are its comparison).
+transport:
+  setting_sources_disabled: true
+  nonessential_traffic_disabled: true

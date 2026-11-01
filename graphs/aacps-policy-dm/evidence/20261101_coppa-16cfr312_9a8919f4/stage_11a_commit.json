@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "coppa-16cfr312",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/extract_coppa-16cfr312.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-16cfr312_9a8919f4_coppa-16cfr312/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-16cfr312_9a8919f4_coppa-16cfr312/commit_before.json"
+  ],
+  "wall_seconds": 0.56,
+  "finished_utc": "2026-11-01T08:50:41.749073+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "coppa-16cfr312: 161 segment(s) extracted, 156 grounded proposal(s) -> appending 230 event(s) under run_id=commit_20261101T085041_f7dd5af3: Cites 6, Definition 20, ExternalReference 4, Obligation 90, StatedIn 110; DROP 1 ExternalReference: unchanged since the last ingest",
+    "  node Definition               83 ->    103 measured   +20 expected   +20  OK",
+    "  node ExternalReference       180 ->    184 measured    +4 expected    +4  OK",
+    "  node Obligation              670 ->    760 measured   +90 expected   +90  OK",
+    "  edge Cites                   303 ->    309 measured    +6 expected    +6  OK",
+    "  edge StatedIn                753 ->    863 measured  +110 expected  +110  OK"
+  ],
+  "first_line": "coppa-16cfr312: 161 segment(s) extracted, 156 grounded proposal(s) -> appending 230 event(s) under run_id=commit_20261101T085041_f7dd5af3: Cites 6, Definition 20, ExternalReference 4, Obligation 90, StatedIn 110; DROP 1 ExternalReference: unchanged since the last ingest",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-16cfr312_9a8919f4_coppa-16cfr312/commit_scratch.jsonl": "ed0374b80d8cc24e198c5eb346fc264628fb3c62b72b6f333ee495051fdec1cb"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/extract_coppa-16cfr312.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/extract_coppa-16cfr312.jsonl",
+        "sha256": "d53a60eeca9a019f5d509f7ead17583d709e53e00b981f56ac446950948cbfaf"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-16cfr312_9a8919f4_coppa-16cfr312/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-16cfr312_9a8919f4_coppa-16cfr312/commit_scratch.jsonl",
+        "sha256": "ed0374b80d8cc24e198c5eb346fc264628fb3c62b72b6f333ee495051fdec1cb"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 2722786,
+        "end": 3046251,
+        "sha256": "ed0374b80d8cc24e198c5eb346fc264628fb3c62b72b6f333ee495051fdec1cb"
+      }
+    ]
+  }
+}

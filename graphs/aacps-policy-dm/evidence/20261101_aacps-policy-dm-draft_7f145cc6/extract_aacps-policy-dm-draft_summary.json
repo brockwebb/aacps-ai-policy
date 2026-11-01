@@ -1,0 +1,57 @@
+{
+  "doc_id": "aacps-policy-dm-draft",
+  "run_id": "extract_20261101T083852_b978b3fe",
+  "protocol": {
+    "protocol": "aacps-dm-extract",
+    "prompt_version": "extract_v1",
+    "prompt_file": "prompts/extract_v1.md",
+    "role": "extractor",
+    "unit_max_chars": 6000
+  },
+  "model_role": "extractor",
+  "segments": 1,
+  "calls": 1,
+  "by_status": {
+    "grounded": 28
+  },
+  "claims_returned": 28,
+  "grounded": 28,
+  "grounding_rate": 1.0,
+  "protocol_failures": 0,
+  "protocol_failure_rate": 0.0,
+  "usage": {
+    "input_tokens": 2,
+    "output_tokens": 3525,
+    "cache_read_input_tokens": 649,
+    "cache_creation_input_tokens": 7744,
+    "overhead_input_tokens": 0,
+    "overhead_output_tokens": 0
+  },
+  "billable_shaped_tokens": 3527,
+  "resolved_models": [
+    "claude-sonnet-5-5"
+  ],
+  "wall_seconds": 0.07,
+  "workers_achieved": 0,
+  "calls_by_status": {
+    "ok": 1
+  },
+  "spend_node": "extract_document",
+  "resumed_calls": 1,
+  "calls_this_session": 0,
+  "width": {
+    "start": 8,
+    "final": 8,
+    "ceiling": 16,
+    "stopped": null,
+    "step": 4,
+    "min_gain": 0.1,
+    "sample_calls": 64,
+    "steps": []
+  },
+  "model_bucket": {
+    "declared": null,
+    "why": "no call this session"
+  },
+  "cost_ledger_row": null
+}

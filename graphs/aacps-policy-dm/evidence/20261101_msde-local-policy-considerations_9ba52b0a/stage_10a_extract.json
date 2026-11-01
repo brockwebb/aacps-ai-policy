@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-local-policy-considerations",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a"
+  ],
+  "wall_seconds": 12.46,
+  "finished_utc": "2026-11-01T08:45:27.176768+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "msde-local-policy-considerations: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 3 call(s), 19 grounded of 19 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl"
+  ],
+  "first_line": "msde-local-policy-considerations: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 3 call(s), 19 grounded of 19 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl": "3ed2dd7e4eaa8be87c83d98faca088506b60f52f51126b8bbc32aec278679de5"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:msde-local-policy-considerations",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "msde-local-policy-considerations",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/inbox/msde-local-policy-considerations.pdf",
+        "sha256": "9ba52b0ab60a077168c738cbb22b376850b8a412ac3697fe7e9b65d9b5ea1ccf"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-policy-considerations_9ba52b0a/extract_msde-local-policy-considerations.jsonl",
+        "sha256": "3ed2dd7e4eaa8be87c83d98faca088506b60f52f51126b8bbc32aec278679de5"
+      }
+    ]
+  }
+}

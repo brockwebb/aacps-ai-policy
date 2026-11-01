@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-reg-di-ra",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/extract_aacps-reg-di-ra.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-di-ra_1ee83b65_aacps-reg-di-ra/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-di-ra_1ee83b65_aacps-reg-di-ra/commit_before.json"
+  ],
+  "wall_seconds": 0.55,
+  "finished_utc": "2026-11-01T08:49:15.861867+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "aacps-reg-di-ra: 178 segment(s) extracted, 162 grounded proposal(s) -> appending 306 event(s) under run_id=commit_20261101T084915_3acadea5: Cites 21, Definition 8, ExternalReference 11, Obligation 129, StatedIn 137; DROP 1 ExternalReference: unchanged since the last ingest",
+    "  node Definition               59 ->     67 measured    +8 expected    +8  OK",
+    "  node ExternalReference       112 ->    123 measured   +11 expected   +11  OK",
+    "  node Obligation              408 ->    537 measured  +129 expected  +129  OK",
+    "  edge Cites                   216 ->    237 measured   +21 expected   +21  OK",
+    "  edge StatedIn                467 ->    604 measured  +137 expected  +137  OK"
+  ],
+  "first_line": "aacps-reg-di-ra: 178 segment(s) extracted, 162 grounded proposal(s) -> appending 306 event(s) under run_id=commit_20261101T084915_3acadea5: Cites 21, Definition 8, ExternalReference 11, Obligation 129, StatedIn 137; DROP 1 ExternalReference: unchanged since the last ingest",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-di-ra_1ee83b65_aacps-reg-di-ra/commit_scratch.jsonl": "b94c18e9401eb43c1102d995cbbb9a8cb526e3c7794b994beda4ea09b7089fe8"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/extract_aacps-reg-di-ra.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/extract_aacps-reg-di-ra.jsonl",
+        "sha256": "8e43269014b323c48c079475bd54bb81d8f30959c1649dc3c2fe177678854342"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-di-ra_1ee83b65_aacps-reg-di-ra/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-di-ra_1ee83b65_aacps-reg-di-ra/commit_scratch.jsonl",
+        "sha256": "b94c18e9401eb43c1102d995cbbb9a8cb526e3c7794b994beda4ea09b7089fe8"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 1750276,
+        "end": 2158878,
+        "sha256": "b94c18e9401eb43c1102d995cbbb9a8cb526e3c7794b994beda4ea09b7089fe8"
+      }
+    ]
+  }
+}

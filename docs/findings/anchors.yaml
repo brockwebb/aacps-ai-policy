@@ -1,0 +1,309 @@
+# docs/findings/anchors.yaml: AP-02 Part C (the task's "Part C: the anchors"). DN-002's eight anchors and the ones the
+# graph surfaced, each with a verdict and the evidence it rests on. docs/findings/anchor_queries.py resolves every
+# evidence item against the served export (or, for `text`, the held text the graph was extracted from) and writes
+# docs/findings/2026-11-01_anchor_evidence.md; an item the graph does not bear out is FATAL there, so a verdict here
+# cannot outlive its evidence. Evidence kinds are documented in that script's docstring.
+#
+# Verdicts: `confirmed` (the corpus bears the anchor out as DN-002 states it), `refuted` (it does not), `partial`
+# (part of it holds, or the corpus changes what it means). They are this session's reading, not a legal opinion.
+
+max_quote_words: 14          # the task: "quoted text (under 15 words per quote)"
+
+alignment:
+  draft: aacps-policy-dm-draft
+  model: msde-model-local-board-policy
+  # NO MEASURED BASIS: the share of content words a draft Obligation and a model Obligation must share to be shown as
+  # counterparts. A display threshold, not a verdict input: the table prints every score so a reader judges from the
+  # quotes. First set at 0.3; the first run (2026-11-01) left C.7 "communicate" (0.25) and C.1 "support, and may not
+  # replace" (0.27) unpaired though each is the model's clause reworded, so it is 0.2, read off this one run. Below it
+  # sit C.0's compliance sentence (0.14, no single counterpart) and C.4 (0.11, the model's integrity expectations cut
+  # to one general sentence; A7).
+  min_jaccard: 0.2
+
+# The draft's parsed section paths are its running header ("RESPONSIBLE USE OF ARTIFICIAL INTELLIGENCE", squiddy
+# SQ-AP02g), so its `where` is computed from its held text: the last section heading before the passage and the last
+# numbered clause after that heading (anchor_queries.derived_where), e.g. C.1.
+derive_where:
+  aacps-policy-dm-draft:
+    section: '(?m)^([A-F])\.\s+[A-Z][A-Z ]{3,}\s*$'
+    clause: '(?m)^(\d+)\.\s'
+
+count_docs:
+- aacps-policy-dm-draft
+- msde-model-local-board-policy
+- md-ch634-2026-ai-ready-schools-act
+- msde-k12-ai-guidance
+- aacps-reg-dl-ra
+- aacps-reg-di-ra
+- aacps-policy-di
+
+anchors:
+
+- id: A1
+  title: No definition of AI, though section B says AI is embedded in everyday tools
+  verdict: confirmed
+  reading: >-
+    The draft holds no Definition at either layer (no "means", no "defined"). Section B states that AI is
+    "increasingly embedded in tools", and C.2 (approved purposes only) and C.6 (vetting before adoption) speak of AI
+    and AI tools with no scope, so whether the existing tool stack's embedded features are inside C.2 and C.6 is not
+    decidable from the text.
+  changes: >-
+    Three definitions the draft could have adopted are in the corpus. The Act (Educ. 7-2201) defines AI by reference
+    to State Finance and Procurement 3.5-801, whose "machine-based system" text the SB 720 fiscal note quotes (3.5-801
+    itself is not in the corpus). MSDE's K-12 guidance defines AI and states its scope covers every tool "regardless
+    of how they are accessed". The MSDE model policy, which the draft adapts (N2), defines AI and Generative AI. MSDE's
+    Local Policy Considerations asks the exact question the draft leaves open ("embedded AI features within existing
+    platforms"). DI-RA already defines Technology to include software systems and online resources.
+  evidence:
+  - {kind: absent, label: Definition, doc: aacps-policy-dm-draft, pattern: '\bdefin|\bmeans\b',
+     note: "no Definition node; no defining language in the held text"}
+  - {kind: text, doc: aacps-policy-dm-draft, where: "B. ISSUE", quote: "AI is increasingly embedded in tools used for teaching, learning,"}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "AI may only be used for approved administrative, educational, and operational purposes"}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "AI tools shall be vetted before adoption for educational value,"}
+  - {kind: statement, label: Definition, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2201",
+     quote: "HAS THE MEANING STATED IN § 3.5-801 OF THE STATE FINANCE AND PROCUREMENT ARTICLE"}
+  - {kind: statement, label: Definition, doc: md-sb0720-fiscal-note, where: "Current Law",
+     quote: "'Artificial intelligence' means a machine-based system that"}
+  - {kind: statement, label: Definition, doc: msde-k12-ai-guidance, where: "Definitions to Know",
+     quote: "computational systems that perform tasks associated with human intelligence"}
+  - {kind: text, doc: msde-k12-ai-guidance, where: "Scope",
+     quote: "applies to all AI tools that interact with Maryland students, staff, or data,"}
+  - {kind: statement, label: Definition, doc: msde-model-local-board-policy,
+     quote: "Computer systems that perform tasks commonly associated with human intelligence"}
+  - {kind: text, doc: msde-local-policy-considerations, where: "District Policy Considerations",
+     quote: "Does it include embedded AI features within existing platforms?"}
+  - {kind: statement, label: Definition, doc: aacps-reg-di-ra, where: "Definitions: Technology",
+     quote: "software systems, online resources, and email"}
+
+- id: A2
+  title: '"Approved" has no approver, criteria or list; the Act contemplates a coordinator and approved tools'
+  verdict: confirmed
+  reading: >-
+    C.2's restriction to "approved" purposes names no approver, and C.6's vetting names no party (the extractor
+    marked both with no responsible party stated). The draft contains no "coordinator" at either layer, while the Act
+    requires each local system to designate one and to use MSDE's rubric in selecting AI tools.
+  changes: >-
+    AACPS already has approval routes the draft does not name: DL-RA sends instructional digital resources holding PII
+    through Policy IH and Regulation IH-RA, and non-instructional ones to the Chief Information Officer; DI-RA requires
+    CIO approval of free and open-source software. IH and IH-RA are not Related Entries of the draft (N3). The model
+    policy assigns the procedure to the Superintendent ("procedures for vetting and approving"); the draft dropped it.
+  evidence:
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "AI may only be used for approved administrative, educational, and operational purposes"}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "AI tools shall be vetted before adoption"}
+  - {kind: absent, label: Obligation, doc: aacps-policy-dm-draft, pattern: 'coordinator'}
+  - {kind: statement, label: Obligation, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2202(d)(1)",
+     quote: "EACH LOCAL SCHOOL SYSTEM SHALL DESIGNATE A COORDINATOR"}
+  - {kind: statement, label: Obligation, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2202(e)(3)",
+     quote: "SHALL USE THE RUBRIC AND OTHER EVALUATIVE TOOLS DEVELOPED BY THE DEPARTMENT"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "The Superintendent shall establish procedures for vetting and approving artificial intelligence tools,"}
+  - {kind: statement, label: Obligation, doc: aacps-reg-dl-ra, where: "D.7",
+     quote: "Instructional digital resources containing PII shall be reviewed and approved"}
+  - {kind: statement, label: Obligation, doc: aacps-reg-dl-ra, where: "D.8",
+     quote: "reviewed and approved by the Chief Information Officer"}
+  - {kind: text, doc: msde-local-policy-considerations, where: "Governance",
+     quote: "Who coordinates AI implementation at the district level?"}
+
+- id: A3
+  title: C.1's "consequential decision" and "documented human oversight" are undefined
+  verdict: confirmed
+  reading: >-
+    Both terms are operative in C.1 and neither is defined anywhere in the draft (no Definition node, no defining
+    language). DL and DL-RA define PII and education records but neither term.
+  changes: >-
+    The MSDE model policy, whose C.1 sentence the draft copies word for word, defines both "Consequential Use" and
+    "Human Oversight"; the draft kept the sentence and dropped the definitions. MSDE's K-12 guidance gives the
+    substance ("human review, clear procedures for addressing errors or harm, and regular audits").
+  evidence:
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft,
+     quote: "used in a consequential decision affecting a student or employee"}
+  - {kind: absent, label: Definition, doc: aacps-policy-dm-draft, pattern: 'consequential|oversight', text_layer: false,
+     note: "graph layer: no Definition term; the text layer uses both words and defines nothing (A1, evidence 1)"}
+  - {kind: statement, label: Definition, doc: msde-model-local-board-policy,
+     quote: "Any use of artificial intelligence that affects student access to programs,"}
+  - {kind: statement, label: Definition, doc: msde-model-local-board-policy,
+     quote: "Meaningful review by a qualified employee who has the authority and information"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "used in a consequential decision affecting a student or employee"}
+  - {kind: statement, label: Obligation, doc: msde-k12-ai-guidance, where: "Human oversight",
+     quote: "Any AI-supported decision affecting students requires human review,"}
+
+- id: A4
+  title: C.1 gives "employees and stakeholders" authority to override AI outputs; B counts students as stakeholders
+  verdict: confirmed
+  reading: >-
+    C.1 grants the authority to "interpret, contextualize, override, or reject AI outputs" to employees and
+    stakeholders, and section B lists students among the stakeholders. Read together, a student holds authority to
+    override an AI output in a consequential decision about a student.
+  changes: >-
+    The words "and stakeholders" are the draft's own: the MSDE model policy gives the authority to employees only, and
+    its definition of Human Oversight confines it to "a qualified employee".
+  evidence:
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft,
+     quote: "Employees and stakeholders retain the authority and responsibility to interpret,"}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, where: "B. ISSUE",
+     quote: "students, employees, parents/guardians, and other stakeholders"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "Employees retain the authority and responsibility to interpret, contextualize, override,"}
+  - {kind: statement, label: Definition, doc: msde-model-local-board-policy,
+     quote: "Meaningful review by a qualified employee"}
+
+- id: A5
+  title: C.7 says "when opt-out options apply" but creates no opt-out; PPRA gives one; silent on COPPA school consent
+  verdict: partial
+  reading: >-
+    Confirmed that C.7 is a duty to communicate, not a right: it is the draft's only mention of opting out, and no
+    draft statement grants one. PPRA (cited in the draft's Legal References) requires local policies that let a parent
+    opt a student out of the activities it lists. The COPPA leg does not hold as stated: the COPPA rule in the corpus
+    (16 CFR 312, 45,303 characters) never mentions schools, so school consent on a parent's behalf is not in the
+    corpus's text at all (it is FTC guidance, not held); the draft's silence matches the rule it cites.
+  changes: >-
+    The draft's C.7 is MSDE's sentence nearly verbatim (K-12 guidance and model policy alike), so the gap is
+    inherited, not introduced.
+  evidence:
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft,
+     quote: "data collection and retention practices, and when optout options apply."}
+  - {kind: cites, doc: aacps-policy-dm-draft, target: ppra-20usc1232h}
+  - {kind: text, doc: ppra-20usc1232h, where: "20 USC 1232h(c)(2)(A)",
+     quote: "to opt the student out of participation in an activity described in"}
+  - {kind: absent, label: Obligation, doc: coppa-16cfr312, pattern: '\bschools?\b',
+     note: "16 CFR 312 as held (eCFR, 2026-10-29)"}
+  - {kind: statement, label: Obligation, doc: msde-k12-ai-guidance, where: "Transparency",
+     quote: "how long data are retained, and when opt-out options apply,"}
+
+- id: A6
+  title: C.3 bias monitoring needs protected-class outcome data, in tension with data minimization; no direction
+  verdict: partial
+  reading: >-
+    C.3 obliges AACPS to monitor for biased or discriminatory outcomes and gives no direction on the data that takes.
+    But the tension DN-002 names is not in the draft: the draft has no data-minimization duty at either layer. It is
+    between C.3 and MSDE's expectation that districts "minimize data collection", which the draft does not carry.
+  changes: >-
+    MSDE's guidance supplies the direction the anchor asks for: equity monitoring "within existing equity review
+    structures". The model policy also pairs monitoring with evaluation for bias before adoption, which the draft
+    dropped.
+  evidence:
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft,
+     quote: "AACPS shall monitor AI tools for biased, discrimination, or inequitable outcomes"}
+  - {kind: absent, label: Obligation, doc: aacps-policy-dm-draft, pattern: 'minimi'}
+  - {kind: statement, label: Obligation, doc: msde-k12-ai-guidance, where: "District expectations",
+     quote: "Maryland expects districts to minimize data collection"}
+  - {kind: statement, label: Obligation, doc: msde-k12-ai-guidance, where: "Equity",
+     quote: "expects LEAs to do the same within existing equity review structures."}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "shall minimize the data shared with artificial intelligence systems,"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "shall be evaluated for bias before adoption and monitored over time."}
+
+- id: A7
+  title: B names academic integrity and over-reliance as risks; C addresses neither; student use deferred to C.4
+  verdict: confirmed
+  reading: >-
+    Section B names both risks; no draft Obligation mentions integrity or reliance. C.4 defers student use to
+    expectations AACPS "shall establish", and C.5's professional learning omits both.
+  changes: >-
+    The Act requires the professional development it funds to cover "academic integrity, and means of avoiding
+    overdependence", which C.5 does not list. The model policy carries the integrity rules the draft dropped:
+    expectations for when unaided work is required, and no reliance on AI detection tools (MSDE's guidance likewise).
+  evidence:
+  - {kind: text, doc: aacps-policy-dm-draft, where: "B. ISSUE",
+     quote: "academic integrity, and over-reliance on automated systems."}
+  - {kind: absent, label: Obligation, doc: aacps-policy-dm-draft, pattern: 'integrity|reliance|dependen',
+     text_layer: false, note: "graph layer only: the held text has the words, in section B's risk list"}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft,
+     quote: "AACPS shall establish expectations, conditions, and limitations for student use of AI."}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft,
+     quote: "Professional learning shall emphasize critical evaluation of AI outputs,"}
+  - {kind: text, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2203(b)(2)(v)",
+     quote: "ACADEMIC INTEGRITY, AND MEANS OF AVOIDING OVERDEPENDENCE"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "when unaided work is required, and how artificial intelligence assistance must be acknowledged."}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "shall not rely on artificial intelligence detection tools"}
+  - {kind: text, doc: msde-k12-ai-guidance, where: "Academic integrity",
+     quote: "Maryland does not endorse AI-detection tools as a primary means"}
+
+- id: A8
+  title: 'Drafting: "biased, discrimination, or inequitable"; "never replace" vs "may not replace"; no review clause'
+  verdict: confirmed
+  reading: >-
+    All three hold. C.3 reads "biased, discrimination, or inequitable" (the model has "biased or inequitable"). B says
+    AI shall "never replace" professional judgment and C.1 that it "may not replace" professional expertise. The draft
+    contains no "review" at either layer.
+  changes: >-
+    The Act requires MSDE to review its guidance every year, and the policy must be "aligned with the guidance", so an
+    unreviewed policy drifts out of alignment by statute. MSDE asks districts to "review and revise policies
+    annually"; the model policy has the Superintendent "periodically review" the regulations.
+  evidence:
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "biased, discrimination, or inequitable outcomes"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy, quote: "biased or inequitable outcomes"}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "enhance, and never replace, the professional judgment of employees."}
+  - {kind: statement, label: Obligation, doc: aacps-policy-dm-draft, quote: "AI shall support, and may not replace, the professional expertise"}
+  - {kind: absent, label: Obligation, doc: aacps-policy-dm-draft, pattern: '\breview'}
+  - {kind: statement, label: Obligation, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2202(a)(3)",
+     quote: "EACH YEAR, THE DEPARTMENT SHALL REVIEW THE GUIDANCE"}
+  - {kind: statement, label: Obligation, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2202(c)",
+     quote: "SHALL HAVE AN ARTIFICIAL INTELLIGENCE POLICY ALIGNED WITH THE GUIDANCE."}
+  - {kind: statement, label: Obligation, doc: msde-local-level-responsibilities, where: "Policy",
+     quote: "Review and revise policies annually"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "develop, maintain, and periodically review administrative regulations"}
+
+- id: N1
+  new: true
+  title: The draft does not cite the AI Ready Schools Act it is adopted under, nor the MSDE model policy
+  verdict: confirmed
+  reading: >-
+    The draft's Legal References name thirteen instruments, including MSDE's K-12 guidance, and not Chapter 634 (Educ.
+    7-2201 to 7-2203), the statute that requires the policy, its 120-day deadline and its alignment with the guidance.
+    Nor does it cite the MSDE model local board policy it adapts (N2).
+  evidence:
+  - {kind: not_cites, doc: aacps-policy-dm-draft, target: md-ch634-2026-ai-ready-schools-act}
+  - {kind: not_cites, doc: aacps-policy-dm-draft, target: msde-model-local-board-policy}
+  - {kind: cites, doc: aacps-policy-dm-draft, target: msde-k12-ai-guidance}
+  - {kind: absent, label: Obligation, doc: aacps-policy-dm-draft, pattern: 'Ready Schools|7-220|Chapter 634'}
+  - {kind: statement, label: Obligation, doc: md-ch634-2026-ai-ready-schools-act, where: "Educ. 7-2202(c)",
+     quote: "ON OR BEFORE 120 DAYS FROM THE DATE THAT THE DEPARTMENT RELEASES"}
+
+- id: N2
+  new: true
+  title: The draft is the MSDE model policy with its definitions and most of its safeguards removed
+  verdict: confirmed
+  reading: >-
+    Clause by clause (the table below), the draft's Obligations are the model's, reworded ("AACPS" for "[NCPS]", "AI"
+    for "artificial intelligence"). What did not carry over is listed under the table: the model's seven Definitions,
+    its prohibited uses (PII into unapproved tools, final consequential decisions without human review, biometric
+    collection), data minimization, academic-integrity and detection-tool rules, AI literacy instruction, the
+    operational higher-risk rule, vendor contract terms, the cross-functional team, the Superintendent's procedures
+    and periodic reporting to the Board. None is present in the draft at either layer. Where a clause did carry over it
+    is sometimes thinned: C.4 keeps one general sentence ("expectations, conditions, and limitations for student use")
+    in place of the model's expectations for when AI use is permitted, when unaided work is required and how AI
+    assistance is acknowledged.
+  evidence:
+  - {kind: absent, label: Definition, doc: aacps-policy-dm-draft, pattern: '.', text_layer: false,
+     note: "the draft has zero Definition nodes; the model has seven"}
+  - {kind: absent, label: Obligation, doc: aacps-policy-dm-draft, pattern: 'minimi|detect|vendor|contract|literacy|report|biometric|cross-functional'}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "Vendor contracts shall limit data use, retention, and deletion;"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "The Superintendent shall report to the Board periodically on the implementation"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "The Superintendent shall designate a cross-functional team,"}
+  - {kind: statement, label: Obligation, doc: msde-model-local-board-policy,
+     quote: "Using artificial intelligence to make a final consequential decision about a student"}
+
+- id: N3
+  new: true
+  title: The draft's Related Entries omit IH and IH-RA, the existing approval path for instructional digital tools
+  verdict: confirmed
+  reading: >-
+    DL-RA routes instructional digital resources that hold PII through Policy IH and Regulation IH-RA (materials of
+    instruction) and lists IH and IH-RA among its own Related Entries. The draft lists DL and DL-RA but not IH or
+    IH-RA, so the one existing route by which an instructional AI tool is "approved" (A2) is not connected to C.2.
+    IH and IH-RA are not in this corpus; a comment citing them should be checked against their published text.
+  evidence:
+  - {kind: text, doc: aacps-policy-dm-draft, where: "header",
+     quote: "Related Entries: AC, DI, DI-RA, DL, DL-RA, DM-RA"}
+  - {kind: text, doc: aacps-reg-dl-ra, where: "header", quote: "Related Entries: DI, DI-RA, DL, IH, IH-RA"}
+  - {kind: statement, label: Obligation, doc: aacps-reg-dl-ra, where: "D.7",
+     quote: "approved in accordance with Policy IH and Regulation IH-RA"}

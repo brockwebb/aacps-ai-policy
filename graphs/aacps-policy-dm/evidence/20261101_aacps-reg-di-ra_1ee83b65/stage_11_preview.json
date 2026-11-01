@@ -1,0 +1,73 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-reg-di-ra",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-reg-di-ra_1ee83b65_aacps-reg-di-ra/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/preview_aacps-reg-di-ra.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/extract_aacps-reg-di-ra.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:49:15.253386+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `aacps-reg-di-ra` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "178 segment(s) extracted: 162 grounded, 16 ungrounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 162** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Policy DEC - Vendor Relations | claude_cli:extractor (claude-sonnet-5-5) | [2582:2611] sha256 cb5f9953b676 |",
+    "| proposed | Claim | None None | None | Policy DCA - Gifts, Bequests, Donations, and Solicitations | claude_cli:extractor (claude-sonnet-5-5) | [2666:2724] sha256 fb58b3d4b198 |",
+    "| proposed | Claim | None None | None | Policy DJ - Grants, Mini-Grants, and Special Projects | claude_cli:extractor (claude-sonnet-5-5) | [2776:2829] sha256 bde7db4e4ab4 |",
+    "| proposed | Claim | None None | None | Account Credentials - any information used specifically to gain access to a technology or system. | claude_cli:extractor (claude-sonnet-5-5) | [1040:1137] sha256 30575e9e7bd5 |",
+    "| proposed | Claim | None None | None | Least Privilege - only those privileges that are required for a user to fulfill the user's responsibilities. | claude_cli:extractor (claude-sonnet-5-5) | [1142:1250] sha256 fced47ef7efd |",
+    "| proposed | Claim | None None | None | Peripheral - a device or unit that operates separately from a computer, laptop, tablet, or server but is connected to it either physically or logically. | claude_cli:extractor (claude-sonnet-5-5) | [1255:1407] sha256 3c4b067ff285 |",
+    "| proposed | Claim | None None | None | Sensitive Data - electronically stored or transmitted information that contains elements that may be considered personally identifiable information (PII), including full name, social security number, driver's license number, home or work address,",
+    "birthday, credit card number, or any information that may harm AACPS and its stakeholders, if disclosed. | claude_cli:extractor (claude-sonnet-5-5) | [1523:1875] sha256 8297ef51c7bf |",
+    "| proposed | Claim | None None | None | Telecommunications - the entire technological infrastructure that handles voice, video, and data traffic that either begins, ends, or continues within AACPS property. | claude_cli:extractor (claude-sonnet-5-5) | [1880:2046] sha256 3c3571e3ca7a |",
+    "| proposed | Claim | None None | None | Technology - hardware or software, including computers, laptops, servers, tablets, switches, routers, firewalls, wireless devices, telephones, cellular phones, audio equipment, video equipment, software systems, online resources, and email. | claude_cli:extractor (claude-sonnet-5-5) | [2051:2291] sha256 9696a15b710d |",
+    "| proposed | Claim | None None | None | User or Users - AACPS employees, students, parents/guardians, organizations, or approved third parties accessing or utilizing school system technology or telecommunication services. | claude_cli:extractor (claude-sonnet-5-5) | [2296:2477] sha256 7e8db6779f2b |",
+    "| proposed | Claim | None None | None | For commercial purposes, defined as offering or providing goods or services for personal use; | claude_cli:extractor (claude-sonnet-5-5) | [3159:3252] sha256 0e2085fd9f67 |",
+    "| proposed | Claim | None None | None | The purchase of technology shall be in accordance with Policy DEC - Vendor Relations. | claude_cli:extractor (claude-sonnet-5-5) | [2527:2612] sha256 e574124963e5 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/preview_aacps-reg-di-ra.md"
+  ],
+  "first_line": "# Preview: assertions for `aacps-reg-di-ra` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/preview_aacps-reg-di-ra.md": "cbdf2993da9e8ce625b259aa861467bb3cd9f30cca4e4dbb70beffdd5a315b7f"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/extract_aacps-reg-di-ra.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/extract_aacps-reg-di-ra.jsonl",
+        "sha256": "8e43269014b323c48c079475bd54bb81d8f30959c1649dc3c2fe177678854342"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/preview_aacps-reg-di-ra.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-reg-di-ra_1ee83b65/preview_aacps-reg-di-ra.md",
+        "sha256": "cbdf2993da9e8ce625b259aa861467bb3cd9f30cca4e4dbb70beffdd5a315b7f"
+      }
+    ]
+  }
+}

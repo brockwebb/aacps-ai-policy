@@ -1,0 +1,65 @@
+{
+  "doc_id": "aacps-reg-di-ra",
+  "run_id": "extract_20261101T084844_a4696dd5",
+  "protocol": {
+    "protocol": "aacps-dm-extract",
+    "prompt_version": "extract_v1",
+    "prompt_file": "prompts/extract_v1.md",
+    "role": "extractor",
+    "unit_max_chars": 6000
+  },
+  "model_role": "extractor",
+  "segments": 7,
+  "calls": 7,
+  "by_status": {
+    "grounded": 162,
+    "ungrounded": 16
+  },
+  "claims_returned": 178,
+  "grounded": 162,
+  "grounding_rate": 0.9101123595505618,
+  "protocol_failures": 0,
+  "protocol_failure_rate": 0.0,
+  "usage": {
+    "input_tokens": 14,
+    "output_tokens": 26197,
+    "cache_read_input_tokens": 10903,
+    "cache_creation_input_tokens": 46594,
+    "overhead_input_tokens": 0,
+    "overhead_output_tokens": 0
+  },
+  "billable_shaped_tokens": 26211,
+  "resolved_models": [
+    "claude-sonnet-5-5"
+  ],
+  "wall_seconds": 31.04,
+  "workers_achieved": 16,
+  "calls_by_status": {
+    "ok": 7
+  },
+  "spend_node": "extract_document",
+  "resumed_calls": 0,
+  "calls_this_session": 7,
+  "width": {
+    "start": 8,
+    "final": 8,
+    "ceiling": 16,
+    "stopped": null,
+    "step": 4,
+    "min_gain": 0.1,
+    "sample_calls": 64,
+    "steps": []
+  },
+  "model_bucket": {
+    "declared": true,
+    "source": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/control.yaml",
+    "holds": 0,
+    "waited_seconds": 0.0,
+    "tokens_per_hour": 13000000.0,
+    "level": 12857116.9,
+    "others_in_flight": 0,
+    "in_flight": 0,
+    "estimate": 27190.3
+  },
+  "cost_ledger_row": "extract_20261101T084844_a4696dd5"
+}

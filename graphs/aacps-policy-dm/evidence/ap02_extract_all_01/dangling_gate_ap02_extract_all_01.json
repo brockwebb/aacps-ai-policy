@@ -1,0 +1,27 @@
+{
+  "real": {
+    "clean": true,
+    "findings": [],
+    "legs": [
+      "edge_endpoints",
+      "superseded_by"
+    ],
+    "nodes": 226,
+    "edges": 251
+  },
+  "legs": [
+    "edge_endpoints",
+    "superseded_by"
+  ],
+  "positive_control": {
+    "fired": true,
+    "legs": [
+      "edge_endpoints",
+      "superseded_by"
+    ],
+    "findings": [
+      "edge-endpoint: Supersedes msde-k12-ai-guidance -> node-that-does-not-exist (missing ['node-that-does-not-exist']; event 6e79603ec7e14785982db8723069177d)",
+      "superseded_by: event 9a6a79b4a6214879b8c6ef8d0284e16d names 'event-that-does-not-exist', which is not in the ledger"
+    ]
+  }
+}

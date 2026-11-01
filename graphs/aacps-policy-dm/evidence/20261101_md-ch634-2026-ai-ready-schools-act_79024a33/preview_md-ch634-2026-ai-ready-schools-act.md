@@ -1,0 +1,96 @@
+# Preview: assertions for `md-ch634-2026-ai-ready-schools-act` before commit
+
+No deterministic slice in this run (the entry was admitted earlier).
+
+## Proposed by extraction
+
+34 segment(s) extracted: 34 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 34** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.
+
+| kind | class | segment | claim kind | located text | extractor | grounding span |
+|---|---|---|---|---|---|---|
+| proposed | Claim | None None | None | IN THIS SUBTITLE, “ARTIFICIAL INTELLIGENCE” HAS THE MEANING STATED
+IN § 3.5–801 OF THE STATE FINANCE AND PROCUREMENT ARTICLE. | claude_cli:extractor (claude-sonnet-5-5) | [2547:2672] sha256 5ff94af5c798 |
+| proposed | Claim | None None | None | § 3.5–801 OF THE STATE FINANCE AND PROCUREMENT ARTICLE | claude_cli:extractor (claude-sonnet-5-5) | [2617:2671] sha256 257534d08970 |
+| proposed | Claim | None None | None | THE DEPARTMENT SHALL PROVIDE GUIDANCE ON ARTIFICIAL
+INTELLIGENCE TO LOCAL SCHOOL SYSTEMS, EDUCATORS, PARENTS, AND STUDENTS
+THROUGH AN ONLINE PLATFORM THAT: | claude_cli:extractor (claude-sonnet-5-5) | [2689:2844] sha256 fe8caeb89a79 |
+| proposed | Claim | None None | None | THE DEPARTMENT, IN CONSULTATION WITH OTHER INTERESTED
+STAKEHOLDERS, SHALL PUBLISH SEPARATELY ON ITS WEBSITE GUIDANCE FOR
+EACH OF THE FOLLOWING GROUPS: | claude_cli:extractor (claude-sonnet-5-5) | [3349:3499] sha256 1f712898e6fc |
+| proposed | Claim | None None | None | EACH YEAR, THE DEPARTMENT SHALL REVIEW THE GUIDANCE
+AND UPDATE THE GUIDANCE AS NECESSARY. | claude_cli:extractor (claude-sonnet-5-5) | [3634:3723] sha256 28d121451e20 |
+| proposed | Claim | None None | None | THE DEPARTMENT SHALL DEVELOP STRATEGIES TO ASSIST COUNTY
+BOARDS AND COUNTY SUPERINTENDENTS TO IMPLEMENT THE GUIDELINES AND
+BEST PRACTICES DEVELOPED BY THE DEPARTMENT UNDER THIS SECTION. | claude_cli:extractor (claude-sonnet-5-5) | [3728:3913] sha256 9646cd11688b |
+| proposed | Claim | None None | None | ON OR BEFORE 120 DAYS FROM THE DATE THAT THE DEPARTMENT
+RELEASES THE GUIDANCE REQUIRED UNDER SUBSECTION (A)(1) OF THIS SECTION,
+EACH LOCAL SCHOOL SYSTEM SHALL HAVE AN ARTIFICIAL INTELLIGENCE POLICY
+ALIGNED WITH THE GUIDANCE. | claude_cli:extractor (claude-sonnet-5-5) | [3918:4142] sha256 8067ff2d57da |
+| proposed | Claim | None None | None | EACH LOCAL SCHOOL SYSTEM SHALL DESIGNATE
+A COORDINATOR BETWEEN THE LOCAL SCHOOL SYSTEM AND THE STATE ON THE
+PRODUCTIVE AND ETHICAL USE OF SYSTEMS OF ARTIFICIAL INTELLIGENCE IN THE
+LOCAL SCHOOL SYSTEM. | claude_cli:extractor (claude-sonnet-5-5) | [4151:4351] sha256 a357808e4c75 |
+| proposed | Claim | None None | None | A COORDINATOR DESIGNATED UNDER PARAGRAPH (1) OF THIS
+SUBSECTION SHALL BE AN INDIVIDUAL WHO IS EMPLOYED AT THE CENTRAL OFFICE
+ADMINISTRATION LEVEL AS NONINSTRUCTIONAL STAFF. | claude_cli:extractor (claude-sonnet-5-5) | [4356:4528] sha256 ce9c26d080aa |
+| proposed | Claim | None None | None | THE DEPARTMENT SHALL DEVELOP AND PUBLISH A RUBRIC AND
+OTHER EVALUATIVE TOOLS, AS NECESSARY, TO ASSIST LOCAL SCHOOL SYSTEMS IN
+THE EVALUATION OF ARTIFICIAL INTELLIGENCE TOOLS SELECTED FOR USE BY THE
+LOCAL SCHOOL SYSTEM. | claude_cli:extractor (claude-sonnet-5-5) | [4543:4761] sha256 0f9e6bd29801 |
+| proposed | Claim | None None | None | THE RUBRIC SHALL BE DESIGNED TO SUPPORT LOCAL SCHOOL
+SYSTEMS IN DETERMINING WHETHER ARTIFICIAL INTELLIGENCE TOOLS ARE
+CONSISTENT WITH STATE GUIDELINES. | claude_cli:extractor (claude-sonnet-5-5) | [4766:4917] sha256 ba1933ac0e3f |
+| proposed | Claim | None None | None | EACH LOCAL SCHOOL SYSTEM SHALL USE THE RUBRIC AND
+OTHER EVALUATIVE TOOLS DEVELOPED BY THE DEPARTMENT IN THE REVIEW AND | claude_cli:extractor (claude-sonnet-5-5) | [4922:5040] sha256 b5e535004908 |
+| proposed | Claim | None None | None | THE DEPARTMENT PERIODICALLY MAY REVIEW AND UPDATE THE
+RUBRIC AS NECESSARY TO REFLECT CHANGES IN TECHNOLOGY, LAW, OR STATE
+POLICY. | claude_cli:extractor (claude-sonnet-5-5) | [5176:5305] sha256 1aa19d17e15b |
+| proposed | Claim | None None | None | ON REQUEST, MORGAN STATE UNIVERSITY, OR ANOTHER 4–YEAR
+INSTITUTION OF HIGHER EDUCATION IN THE STATE, MAY SUPPORT LOCAL SCHOOL
+SYSTEMS IN ASSESSING THE TOOLS AGAINST THE RUBRIC. | claude_cli:extractor (claude-sonnet-5-5) | [5310:5486] sha256 47cc3e216d61 |
+| proposed | Claim | None None | None | LOCAL SCHOOL SYSTEMS SHALL PROCURE ARTIFICIAL INTELLIGENCE
+TOOLS CONSISTENT WITH THE PROVISIONS OF TITLE 3.5, SUBTITLE 8 OF THE STATE
+FINANCE AND PROCUREMENT ARTICLE. | claude_cli:extractor (claude-sonnet-5-5) | [5491:5657] sha256 3db39536553a |
+| proposed | Claim | None None | None | TITLE 3.5, SUBTITLE 8 OF THE STATE
+FINANCE AND PROCUREMENT ARTICLE | claude_cli:extractor (claude-sonnet-5-5) | [5590:5656] sha256 ea33a750a7c1 |
+| proposed | Claim | None None | None | ON OR BEFORE JUNE 1, 2027, THE DEPARTMENT, IN CONSULTATION
+WITH THE GOVERNOR’S WORKFORCE DEVELOPMENT BOARD, SHALL ENSURE THAT
+ARTIFICIAL INTELLIGENCE LITERACY IS A COMPONENT OF WORKFORCE
+PREPARATION STANDARDS AND COMPUTER SCIENCE STANDARDS FOR
+KINDERGARTEN THROUGH GRADE 12. | claude_cli:extractor (claude-sonnet-5-5) | [5670:5944] sha256 7d925b2611a9 |
+| proposed | Claim | None None | None | THE DEPARTMENT SHALL PROVIDE PROFESSIONAL DEVELOPMENT IN
+ARTIFICIAL INTELLIGENCE TO EDUCATORS AND SCHOOL LEADERS THAT: | claude_cli:extractor (claude-sonnet-5-5) | [5970:6088] sha256 4c1adbd4ac89 |
+| proposed | Claim | None None | None | IN THIS SECTION, “COLLABORATIVE” MEANS THE MARYLAND AI
+EDUCATION COLLABORATIVE ON ARTIFICIAL INTELLIGENCE IN K–12 EDUCATION. | claude_cli:extractor (claude-sonnet-5-5) | [7215:7339] sha256 40370398a7e7 |
+| proposed | Claim | None None | None | IT IS THE INTENT OF THE GENERAL ASSEMBLY THAT THE
+EDUCATORS CONSULTED BY THE COLLABORATIVE
+SHALL REPRESENT DIVERSE SUBJECT AREAS
+AND LICENSURE AREAS, INCLUDING GENERAL AND SPECIAL EDUCATORS. | claude_cli:extractor (claude-sonnet-5-5) | [9058:9248] sha256 c55114c593c9 |
+| proposed | Claim | None None | None | THE STATE SUPERINTENDENT SHALL DESIGNATE THE CHAIR OF THE
+COLLABORATIVE AND MAY ESTABLISH SUBCOMMITTEES OF THE COLLABORATIVE. | claude_cli:extractor (claude-sonnet-5-5) | [9253:9378] sha256 55cd04707f6d |
+| proposed | Claim | None None | None | MAY ESTABLISH SUBCOMMITTEES OF THE COLLABORATIVE | claude_cli:extractor (claude-sonnet-5-5) | [9329:9377] sha256 d59ef57b7998 |
+| proposed | Claim | None None | None | SHALL PROVIDE STAFF FOR THE COLLABORATIVE | claude_cli:extractor (claude-sonnet-5-5) | [9403:9444] sha256 36872956a899 |
+| proposed | Claim | None None | None | MAY PARTNER OR CONTRACT WITH AN ORGANIZATION TO
+SUPPORT THE COLLABORATIVE | claude_cli:extractor (claude-sonnet-5-5) | [9454:9527] sha256 4bf11ea6f402 |
+| proposed | Claim | None None | None | MAY NOT RECEIVE COMPENSATION AS A MEMBER OF THE
+COLLABORATIVE | claude_cli:extractor (claude-sonnet-5-5) | [9568:9629] sha256 92ff05568c65 |
+| proposed | Claim | None None | None | IS ENTITLED TO REIMBURSEMENT FOR EXPENSES UNDER THE
+STANDARD STATE TRAVEL REGULATIONS, AS PROVIDED IN THE STATE BUDGET | claude_cli:extractor (claude-sonnet-5-5) | [9639:9757] sha256 4d6289947a05 |
+| proposed | Claim | None None | None | THE COLLABORATIVE SHALL:
+(1) STUDY THE USES OF ARTIFICIAL INTELLIGENCE IN EACH LOCAL
+SCHOOL SYSTEM, INCLUDING A REVIEW OF INNOVATION BY INDUSTRY AND
+PHILANTHROPIC SUPPORT OF SCHOOLS IN THE USE OF ARTIFICIAL INTELLIGENCE | claude_cli:extractor (claude-sonnet-5-5) | [9763:9982] sha256 a6f05071a6ce |
+| proposed | Claim | None None | None | MAKE FINDINGS AND RECOMMENDATIONS REGARDING | claude_cli:extractor (claude-sonnet-5-5) | [10040:10083] sha256 8cc6f791760c |
+| proposed | Claim | None None | None | ON OR BEFORE JANUARY 1, 2027, BASED ON BEST PRACTICES FROM
+ACROSS THE COUNTRY, THE COLLABORATIVE SHALL | claude_cli:extractor (claude-sonnet-5-5) | [10494:10596] sha256 3153f976e8c6 |
+| proposed | Claim | None None | None | ON OR BEFORE DECEMBER 1, 2027, AND EACH DECEMBER 1
+THEREAFTER, THE COLLABORATIVE SHALL REPORT ITS FINDINGS AND
+RECOMMENDATIONS TO THE STATE BOARD AND THE ACCOUNTABILITY AND
+IMPLEMENTATION BOARD AND, IN ACCORDANCE WITH § 2–1257 OF THE STATE
+GOVERNMENT ARTICLE, THE GENERAL ASSEMBLY | claude_cli:extractor (claude-sonnet-5-5) | [10757:11037] sha256 94603edf4a40 |
+| proposed | Claim | None None | None | § 7–2202(D) OF THIS SUBTITLE | claude_cli:extractor (claude-sonnet-5-5) | [8152:8180] sha256 f08dd144c62d |
+| proposed | Claim | None None | None | § 7–2202 OF THIS SUBTITLE | claude_cli:extractor (claude-sonnet-5-5) | [10174:10199] sha256 8d49b1c0f498 |
+| proposed | Claim | None None | None | STANDARD STATE TRAVEL REGULATIONS | claude_cli:extractor (claude-sonnet-5-5) | [9691:9724] sha256 d293834ff9ff |
+| proposed | Claim | None None | None | § 2–1257 OF THE STATE
+GOVERNMENT ARTICLE | claude_cli:extractor (claude-sonnet-5-5) | [10975:11015] sha256 8f7a48f635c2 |
+

@@ -210,9 +210,14 @@ def rows(graph, entry: dict, plan: dict, results: list[dict]) -> list[dict]:
                 continue
             start, end, matches = got
             blk = next((b for b in ublocks if b["char_span"][0] <= start < b["char_span"][1]), ublocks[0])
+            # the kit's GroundingSpan exactly (squiddy schema/core.yaml): the located text's digest so the slice is
+            # verifiable, the whole text's so a re-parse that moves offsets is detectable. How many times the text
+            # occurs in the unit is this protocol's own diagnostic, so it rides on the row, not in the span.
             row = {**base, "status": "grounded", "item": item, "text": plain[start:end],
-                   "span": {"start": start, "end": end, "matches_in_unit": matches},
-                   "section_path": blk.get("section_path"), "page": blk.get("page")}
+                   "span": {"start": start, "end": end,
+                            "sha256": hashlib.sha256(plain[start:end].encode("utf-8")).hexdigest(),
+                            "parsed_sha256": plan["doc"]["plain_sha256"]},
+                   "matches_in_unit": matches, "section_path": blk.get("section_path"), "page": blk.get("page")}
             if item == "obligation":
                 if it.get("force") not in FORCES:
                     out.append({**base, "status": "ungrounded", "why": "force_outside_vocabulary", "item": item,

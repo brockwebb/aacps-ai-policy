@@ -1,0 +1,506 @@
+{
+  "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+  "kit_config": "squiddy/conformance.yaml",
+  "anchor_mode": "all",
+  "export": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_extract_all_02_2026-11-01.json",
+  "export_sha256": "96c2829f6e7f62feba873b60913d022355eeb7c829faa1e7062063df6d814af6",
+  "text_held_table": {
+    "admitted": 46,
+    "held": 0,
+    "verified": true,
+    "applies": false,
+    "admitted_works": 46,
+    "by_kind": {
+      "work:not_held": 46
+    },
+    "by_reason": {
+      "null": 46
+    },
+    "rows": [
+      {
+        "id": "aacps-policy-dm-draft",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-policy-committee-page",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-public-comment-page",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-board-policies-and-regulations",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-model-local-board-policy-ai",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-ai-guidance",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-ai-supporting-set",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-ai-tools-policy-oit",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "ferpa-34cfr99",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-16cfr312",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "cipa-47cfr54-520",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-policy-ac",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-policy-di",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-reg-di-ra",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-policy-dl",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-reg-dl-ra",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "aacps-reg-dm-ra",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-k12-ai-guidance",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-01-k12-guidance-exec-summary",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-it-guidance",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-local-action-planning-guide",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-local-policy-considerations",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-state-level-responsibilities",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-local-level-responsibilities",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-ai-tool-evaluation-rubric",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "msde-model-local-board-policy",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "md-ch634-2026-ai-ready-schools-act",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "md-sb0720-fiscal-note",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "md-hb1057-fiscal-note",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "md-educ-4-131-student-data-privacy",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "ppra-34cfr98",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "ferpa-20usc1232g",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "ppra-20usc1232h",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-15usc6501",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-15usc6502",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-15usc6503",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-15usc6504",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-15usc6505",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "coppa-15usc6506",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "cipa-47usc254",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "idea-20usc1400",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "section504-29usc794",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "ada-42usc12101",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "titlevi-42usc2000d",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "titleix-20usc1681",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      },
+      {
+        "id": "comar-13a",
+        "kind": "work",
+        "held": false,
+        "text_expected": null,
+        "text_route": null,
+        "text_host": null,
+        "reason": null,
+        "detail": null
+      }
+    ]
+  },
+  "gates": [
+    {
+      "gate": "text_held",
+      "item": 32,
+      "level": "error",
+      "status": "n/a",
+      "why": "the graph declares no `engine.acquire.text_routes` (ACQ-001), so no admit recorded a text expectation (DN-032 R-147); admitted 46, text held 0, not held 46: nothing checked is not a pass",
+      "findings": [],
+      "source": "KG-001 delivery report findings 5 and 6, 2026-10-01 (release 20261001_kg001d shipped 23 documents, 8 with text, and 14 of its 19 papers as one metadata row each; the admit was made on a plan that showed no text availability and no gate compared the admitted entries to the texts held); DN-032 R-147 to R-150",
+      "lesson": "2026-10-01_text_decided_before_admit_gated_before_release.md"
+    }
+  ],
+  "controls": [
+    {
+      "gate": "text_held",
+      "item": 32,
+      "control": "caught",
+      "planted_findings": [
+        "aacps-policy-dm-draft: no text is held and the admit recorded no text expectation (R-147)",
+        "aacps-policy-committee-page: no text is held and the admit recorded no text expectation (R-147)",
+        "aacps-public-comment-page: no text is held and the admit recorded no text expectation (R-147)"
+      ]
+    }
+  ]
+}

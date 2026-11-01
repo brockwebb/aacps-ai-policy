@@ -1,0 +1,30 @@
+{
+  "stage": 5,
+  "sub": null,
+  "label": "05",
+  "name": "check-before",
+  "question": "Do the catalog, the ledger and the served export all say the same thing?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.gates",
+    "drift",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--when",
+    "before"
+  ],
+  "wall_seconds": 0.49,
+  "finished_utc": "2026-11-01T08:44:48.333767+00:00",
+  "defect_of_record": "task 721953b6 (fss-policy-kg): a direct write vanished on the next reload and was caught by a human",
+  "output_tail": [
+    "[drift] manifest leg: CLEAN",
+    "[drift] served-export leg: CLEAN (compared the replay of the ledger's first 481 of 669 event(s) (recorded position) against aacps_policy_dm_graph.json; release ap02_extract_all_02 in progress, 187 event(s) since its start)",
+    "CLEAN: manifest == ledger == served export."
+  ],
+  "first_line": "[drift] manifest leg: CLEAN",
+  "verdict": true
+}

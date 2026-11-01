@@ -1,0 +1,67 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "md-hb1057-fiscal-note",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-hb1057-fiscal-note_b02e3dfe/extract_md-hb1057-fiscal-note.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-hb1057-fiscal-note_b02e3dfe_md-hb1057-fiscal-note/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-hb1057-fiscal-note_b02e3dfe_md-hb1057-fiscal-note/commit_before.json"
+  ],
+  "wall_seconds": 0.53,
+  "finished_utc": "2026-11-01T08:48:03.884801+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "md-hb1057-fiscal-note: 51 segment(s) extracted, 51 grounded proposal(s) -> appending 99 event(s) under run_id=commit_20261101T084803_472dc233: Cites 12, Definition 3, ExternalReference 11, Obligation 35, StatedIn 38",
+    "  node Definition               53 ->     56 measured    +3 expected    +3  OK",
+    "  node ExternalReference        99 ->    110 measured   +11 expected   +11  OK",
+    "  node Obligation              335 ->    370 measured   +35 expected   +35  OK",
+    "  edge Cites                   191 ->    203 measured   +12 expected   +12  OK",
+    "  edge StatedIn                388 ->    426 measured   +38 expected   +38  OK"
+  ],
+  "first_line": "md-hb1057-fiscal-note: 51 segment(s) extracted, 51 grounded proposal(s) -> appending 99 event(s) under run_id=commit_20261101T084803_472dc233: Cites 12, Definition 3, ExternalReference 11, Obligation 35, StatedIn 38",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-hb1057-fiscal-note_b02e3dfe_md-hb1057-fiscal-note/commit_scratch.jsonl": "53448b2e63e3b55382acc2126fd6c07985172052c9d154df5e5a780a8b1cab4a"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-hb1057-fiscal-note_b02e3dfe/extract_md-hb1057-fiscal-note.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-hb1057-fiscal-note_b02e3dfe/extract_md-hb1057-fiscal-note.jsonl",
+        "sha256": "f408f0ff71ddaea752f2f813b4cff36fb1f6a3e1ce6aed820d186de732d30ee9"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-hb1057-fiscal-note_b02e3dfe_md-hb1057-fiscal-note/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_md-hb1057-fiscal-note_b02e3dfe_md-hb1057-fiscal-note/commit_scratch.jsonl",
+        "sha256": "53448b2e63e3b55382acc2126fd6c07985172052c9d154df5e5a780a8b1cab4a"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 1480229,
+        "end": 1614094,
+        "sha256": "53448b2e63e3b55382acc2126fd6c07985172052c9d154df5e5a780a8b1cab4a"
+      }
+    ]
+  }
+}

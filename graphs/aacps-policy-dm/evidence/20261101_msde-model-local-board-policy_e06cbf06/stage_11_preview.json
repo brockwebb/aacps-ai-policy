@@ -1,0 +1,76 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-model-local-board-policy",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-model-local-board-policy_e06cbf06_msde-model-local-board-policy/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/preview_msde-model-local-board-policy.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/extract_msde-model-local-board-policy.jsonl",
+    "--resume-command",
+    "squiddy extract --graph graphs/aacps-policy-dm --id msde-model-local-board-policy --version ap02_pilot_model"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:40:36.515288+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `msde-model-local-board-policy` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "65 segment(s) extracted: 65 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 65** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Maryland  State  Department  of  Education  (MSDE)  Maryland  K-12 Artificial Intelligence Guidance | claude_cli:extractor (claude-sonnet-5-5) | [1302:1401] sha256 dc5b11d07525 |",
+    "| proposed | Claim | None None | None | It is the policy of the Board that artificial intelligence be used only in ways that enhance, and never replace,  the  professional  judgment  of  educators,  counselors,  and  school  leaders. | claude_cli:extractor (claude-sonnet-5-5) | [707:900] sha256 4165a7d56394 |",
+    "| proposed | Claim | None None | None | All artificial intelligence used by [Name] County Public Schools ([NCPS]) must serve clear educational or operational purposes, protect the rights and safety of students and staff, and comply with all applicable federal and Maryland law. | claude_cli:extractor (claude-sonnet-5-5) | [1030:1267] sha256 189aaf7f76f0 |",
+    "| proposed | Claim | None None | None | This policy directs the Superintendent to establish administrative regulations that implement these expectations in instruction, assessment, professional learning, procurement, data governance, and operations. | claude_cli:extractor (claude-sonnet-5-5) | [2078:2287] sha256 83bebb08a09e |",
+    "| proposed | Claim | None None | None | Computer systems that perform tasks commonly associated with human intelligence, such as recognizing patterns, generating content, making predictions, or recommending actions. | claude_cli:extractor (claude-sonnet-5-5) | [2340:2515] sha256 76249dd1f8df |",
+    "| proposed | Claim | None None | None | A category of artificial intelligence that produces new content, including text, images, audio, code, or video, in response to user prompts. | claude_cli:extractor (claude-sonnet-5-5) | [2535:2675] sha256 820d0b732970 |",
+    "| proposed | Claim | None None | None | The knowledge and skills needed to understand how artificial intelligence systems work, evaluate their outputs for accuracy and bias, recognize appropriate and inappropriate uses, and apply ethical judgment when using these systems. | claude_cli:extractor (claude-sonnet-5-5) | [2693:2925] sha256 497fbfa5de57 |",
+    "| proposed | Claim | None None | None | The use of an artificial intelligence system to produce a recommendation, score, classification, or decision that affects a student or employee, with or without human involvement. | claude_cli:extractor (claude-sonnet-5-5) | [2957:3136] sha256 1de7c01b8bdc |",
+    "| proposed | Claim | None None | None | Any use of artificial intelligence that affects student access to programs, services, opportunities, discipline, evaluation, or the protection of civil rights. | claude_cli:extractor (claude-sonnet-5-5) | [3160:3319] sha256 88396e659b39 |",
+    "| proposed | Claim | None None | None | Consequential uses require documented human oversight. | claude_cli:extractor (claude-sonnet-5-5) | [3320:3374] sha256 0e3a4436a343 |",
+    "| proposed | Claim | None None | None | Meaningful review by a qualified employee who has the authority and information needed to interpret, contextualize, override, or reject an artificial intelligence output before it affects a student or employee. | claude_cli:extractor (claude-sonnet-5-5) | [3396:3606] sha256 f2bb296cc685 |",
+    "| proposed | Claim | None None | None | Information that, alone or in combination, can be used to identify a specific student or employee, as defined under applicable federal and Maryland law. | claude_cli:extractor (claude-sonnet-5-5) | [3654:3806] sha256 83b22ec4a69e |",
+    "| proposed | Claim | None None | None | Artificial  intelligence  shall  support,  not  replace,  professional  educators  and  staff. | claude_cli:extractor (claude-sonnet-5-5) | [3867:3961] sha256 1041342d0412 |",
+    "| proposed | Claim | None None | None | Any  artificial intelligence  output  used  in  a  consequential  decision  affecting  a  student  or  employee  shall  be subject  to  documented  human  oversight. | claude_cli:extractor (claude-sonnet-5-5) | [3963:4128] sha256 faf918754a10 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/preview_msde-model-local-board-policy.md"
+  ],
+  "first_line": "# Preview: assertions for `msde-model-local-board-policy` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/preview_msde-model-local-board-policy.md": "8ccadd9a25c03fe0c546762561c3922ceb7bc2d45cb2991a5176f3b10697751c"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/extract_msde-model-local-board-policy.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/extract_msde-model-local-board-policy.jsonl",
+        "sha256": "a672ff52944f81467add0a62812ae813c0ddd68cda72960dd94a0e25913d0fc6"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/preview_msde-model-local-board-policy.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-model-local-board-policy_e06cbf06/preview_msde-model-local-board-policy.md",
+        "sha256": "8ccadd9a25c03fe0c546762561c3922ceb7bc2d45cb2991a5176f3b10697751c"
+      }
+    ]
+  }
+}

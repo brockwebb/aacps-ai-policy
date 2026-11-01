@@ -4,5 +4,72 @@
  "schema_file": "../schema/aacps_policy_dm.yaml",
  "segment_max_bytes": 40000000,
  "open": "open.jsonl",
- "segments": []
+ "segments": [
+  {
+   "segment": "ap02_pilot_dm.jsonl",
+   "release_id": "ap02_pilot_dm",
+   "sha256": "ea0db4a55bc0c7310af9c0344b1587f0543446d52418620c5e8cf930a08708c8",
+   "bytes": 101234,
+   "events": 95,
+   "first_event_id": "5a5090c1980341bfa27f88e5844aa42b",
+   "last_event_id": "ca2fd6342a124643b1e56898f620a809",
+   "sealed_at": "2026-11-01T08:39:52.514827+00:00",
+   "schema_epoch_at_seal": "0.1.0+4b476041e2d6"
+  },
+  {
+   "segment": "ap02_pilot_model.jsonl",
+   "release_id": "ap02_pilot_model",
+   "sha256": "6d04053710636873ab4df4c7d17922d40f06553508ec49ea75f748dad100bbf2",
+   "bytes": 138539,
+   "events": 98,
+   "first_event_id": "5564a637b814466d89579c115fcb5376",
+   "last_event_id": "360b725c4f614d8eb0109dbc246b490a",
+   "sealed_at": "2026-11-01T08:40:40.688669+00:00",
+   "schema_epoch_at_seal": "0.1.0+4b476041e2d6"
+  },
+  {
+   "segment": "ap02_extract_all_01.jsonl",
+   "release_id": "ap02_extract_all_01",
+   "sha256": "73ce26a1b6be26af491163cc2fed3009df9bf84dd27db9f438c9ac53cd3bcb92",
+   "bytes": 381899,
+   "events": 289,
+   "first_event_id": "98e839347cc74500bd0e2242646b3266",
+   "last_event_id": "6a1a7a9a94e04b7db9ec640d7f772233",
+   "sealed_at": "2026-11-01T08:43:32.356950+00:00",
+   "schema_epoch_at_seal": "0.1.0+4b476041e2d6"
+  },
+  {
+   "segment": "ap02_extract_all_02.jsonl",
+   "release_id": "ap02_extract_all_02",
+   "sha256": "b9f9231e1a8f90055cedeae568ec3f9a47a31c1d72bfc13180dd66393a81d76a",
+   "bytes": 644981,
+   "events": 485,
+   "first_event_id": "6a7f78fa41ad41e986946c783b1ebd06",
+   "last_event_id": "7f664577fcf948849b90dd7587bad0af",
+   "sealed_at": "2026-11-01T08:46:54.040746+00:00",
+   "schema_epoch_at_seal": "0.1.0+4b476041e2d6"
+  },
+  {
+   "segment": "ap02_extract_all_03.jsonl",
+   "release_id": "ap02_extract_all_03",
+   "sha256": "89bd7789bfc5b464cf600a1a78773998cdc28c222f29597b9df3c8f3fa96b122",
+   "bytes": 2939085,
+   "events": 2151,
+   "first_event_id": "42ce474150ba4be9baf27d2ed53ee44c",
+   "last_event_id": "945f0227b7ba470495acd85c892b1541",
+   "sealed_at": "2026-11-01T08:52:20.054979+00:00",
+   "schema_epoch_at_seal": "0.1.0+4b476041e2d6"
+  },
+  {
+   "segment": "ap02_extract_all_04.jsonl",
+   "release_id": "ap02_extract_all_04",
+   "sha256": "2e31d285d589e35176b2a3df1cd70c59fdc1df7c35e344751c848af58172cc77",
+   "bytes": 605390,
+   "events": 418,
+   "first_event_id": "6a3fc8f990254366b8208c13c95e04d0",
+   "last_event_id": "afec7e8261bb4a63996e47cce57edb2f",
+   "sealed_at": "2026-11-01T08:53:04.997374+00:00",
+   "schema_epoch_at_seal": "0.1.0+4b476041e2d6"
+  }
+ ]
 }

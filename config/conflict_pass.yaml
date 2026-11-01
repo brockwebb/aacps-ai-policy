@@ -32,7 +32,10 @@ ranks:                                     # authority ranks the rubric is given
 run:
   pilot_pairs: 5                           # constitution 15.4: measure, project, then continue
   max_calls: 120                           # ceiling: stops new calls, exits non-zero naming it
-  max_billable_tokens: 1500000             # ceiling on input+output tokens the CLI reports, summed over this pass
+  max_billable_tokens: 1500000             # ceiling on every token the CLI reports (input, output, cache creation and reads), this run
   progress_every_units: 5
   timeout_seconds: 300
   max_turns: 4
+  max_attempts: 3                          # constitution 15.7: a failed call (an exception, no answer) is retried on
+                                           # the next run up to this many attempts; an unparseable answer is settled
+                                           # and reported, never re-bought. graphs/library's retry.attempts (3)

@@ -1,0 +1,73 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-policy-ac",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-ac_14f8c1ff_aacps-policy-ac/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/preview_aacps-policy-ac.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/extract_aacps-policy-ac.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:42:55.750041+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `aacps-policy-ac` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "31 segment(s) extracted: 29 grounded, 2 ungrounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 29** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Complaints of unlawful discrimination shall be investigated in accordance with the procedures set forth in AACPS policies and regulations regarding discrimination and biased behavior and language. | claude_cli:extractor (claude-sonnet-5-5) | [664:860] sha256 5b3d2250d2ef |",
+    "| proposed | Claim | None None | None | AACPS complies with federal, State, and local laws that prohibit discrimination based on membership of a protected class. | claude_cli:extractor (claude-sonnet-5-5) | [1125:1246] sha256 ac6b2ab77fb0 |",
+    "| proposed | Claim | None None | None | The Board prohibits:",
+    "a. Discrimination in its educational programs and in employment on the basis of actual or perceived race, ethnicity, color, religion, national origin, sex, age, marital status, sexual orientation, genetic information, gender identity, gender expression, disability, homeless status, or military status; | claude_cli:extractor (claude-sonnet-5-5) | [1251:1575] sha256 b71f516edd63 |",
+    "| ungrounded | | None None |  | ungrounded | claude_cli:extractor (claude-sonnet-5-5) | |",
+    "| ungrounded | | None None |  | ungrounded | claude_cli:extractor (claude-sonnet-5-5) | |",
+    "| proposed | Claim | None None | None | In accordance with the law and its commitments, the Board prohibits the use of language and the display of symbols that promote hate, demean an identifiable person or group of persons, or are reasonably perceived as promoting hatred, bullying, cyberbullying, harassment, or intimidation, and can be reasonably forecasted to cause substantial disruption to the orderly operation of a school or AACPS operations or activities. | claude_cli:extractor (claude-sonnet-5-5) | [2483:2907] sha256 09ee63eb4a6e |",
+    "| proposed | Claim | None None | None | The use or display of a symbol of hate on AACPS property, on a school bus or other school vehicle, at school-sponsored activities, or in any manner that substantially disrupts the orderly operation of a school regardless of where the incident occurs is prohibited and may be considered a hate crime under federal or State law. | claude_cli:extractor (claude-sonnet-5-5) | [3145:3471] sha256 472b41e272de |",
+    "| proposed | Claim | None None | None | Complaints of unlawful discrimination shall be promptly and appropriately investigated in accordance with Policy GAGG and Regulation GAGG-RA - Nondiscrimination and Anti-Harassment - Personnel as well as Policy JO and Regulation JO-RA - Bias Behavior and Language. | claude_cli:extractor (claude-sonnet-5-5) | [3476:3740] sha256 b152d67bc9a1 |",
+    "| proposed | Claim | None None | None | Policy GAGG | claude_cli:extractor (claude-sonnet-5-5) | [3582:3593] sha256 d902f5edb302 |",
+    "| proposed | Claim | None None | None | Regulation GAGG-RA - Nondiscrimination and Anti-Harassment - Personnel | claude_cli:extractor (claude-sonnet-5-5) | [3598:3668] sha256 a031a6c1eb1b |",
+    "| proposed | Claim | None None | None | Policy JO | claude_cli:extractor (claude-sonnet-5-5) | [3680:3689] sha256 cf9003e73cf4 |",
+    "| proposed | Claim | None None | None | Regulation JO-RA - Bias Behavior and Language | claude_cli:extractor (claude-sonnet-5-5) | [3694:3739] sha256 65dee066cba5 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/preview_aacps-policy-ac.md"
+  ],
+  "first_line": "# Preview: assertions for `aacps-policy-ac` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/preview_aacps-policy-ac.md": "57a09d6f205051bb26d50c5c4f168c97907bf856c9acaa8f2ff6adcd206ab1a1"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/extract_aacps-policy-ac.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/extract_aacps-policy-ac.jsonl",
+        "sha256": "a8486607388e1fe9d198aa0db540d26824dfd2f88e33d1b05b8f9abd34a833e9"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/preview_aacps-policy-ac.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-ac_14f8c1ff/preview_aacps-policy-ac.md",
+        "sha256": "57a09d6f205051bb26d50c5c4f168c97907bf856c9acaa8f2ff6adcd206ab1a1"
+      }
+    ]
+  }
+}

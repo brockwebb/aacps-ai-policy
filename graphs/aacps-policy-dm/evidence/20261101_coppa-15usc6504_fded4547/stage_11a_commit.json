@@ -1,0 +1,65 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "coppa-15usc6504",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6504_fded4547/extract_coppa-15usc6504.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6504_fded4547_coppa-15usc6504/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6504_fded4547_coppa-15usc6504/commit_before.json"
+  ],
+  "wall_seconds": 0.48,
+  "finished_utc": "2026-11-01T08:42:21.626976+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "coppa-15usc6504: 10 segment(s) extracted, 9 grounded proposal(s) -> appending 15 event(s) under run_id=commit_20261101T084221_fbc55b34: Cites 1, Obligation 7, StatedIn 7",
+    "  node Obligation               79 ->     86 measured    +7 expected    +7  OK",
+    "  edge Cites                    61 ->     62 measured    +1 expected    +1  OK",
+    "  edge StatedIn                 86 ->     93 measured    +7 expected    +7  OK"
+  ],
+  "first_line": "coppa-15usc6504: 10 segment(s) extracted, 9 grounded proposal(s) -> appending 15 event(s) under run_id=commit_20261101T084221_fbc55b34: Cites 1, Obligation 7, StatedIn 7",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6504_fded4547_coppa-15usc6504/commit_scratch.jsonl": "fa8b495eea9fa7983b84e7b092d4c3d4d545402c813b94b405f6a2c96e01650f"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6504_fded4547/extract_coppa-15usc6504.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-15usc6504_fded4547/extract_coppa-15usc6504.jsonl",
+        "sha256": "f7deef19b40aff6a0d418d6e94a7db09b0ffcb381dfe558ea0aaa46321b4bdb6"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6504_fded4547_coppa-15usc6504/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-15usc6504_fded4547_coppa-15usc6504/commit_scratch.jsonl",
+        "sha256": "fa8b495eea9fa7983b84e7b092d4c3d4d545402c813b94b405f6a2c96e01650f"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 375548,
+        "end": 396702,
+        "sha256": "fa8b495eea9fa7983b84e7b092d4c3d4d545402c813b94b405f6a2c96e01650f"
+      }
+    ]
+  }
+}

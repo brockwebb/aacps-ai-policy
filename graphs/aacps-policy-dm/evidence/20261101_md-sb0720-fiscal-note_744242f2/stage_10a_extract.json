@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "md-sb0720-fiscal-note",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2"
+  ],
+  "wall_seconds": 36.51,
+  "finished_utc": "2026-11-01T08:48:41.848925+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "md-sb0720-fiscal-note: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 6 call(s), 55 grounded of 55 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl"
+  ],
+  "first_line": "md-sb0720-fiscal-note: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 6 call(s), 55 grounded of 55 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl": "d63e218715de582b5c92619ffbb30b9b0895138a28b5560abc0f8a82cc8f285a"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:md-sb0720-fiscal-note",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "md-sb0720-fiscal-note",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/inbox/md-sb0720-fiscal-note.pdf",
+        "sha256": "744242f208d4c28a414796ec588b3119e0a920403fa3275f69fd22b600f2b0e5"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-sb0720-fiscal-note_744242f2/extract_md-sb0720-fiscal-note.jsonl",
+        "sha256": "d63e218715de582b5c92619ffbb30b9b0895138a28b5560abc0f8a82cc8f285a"
+      }
+    ]
+  }
+}

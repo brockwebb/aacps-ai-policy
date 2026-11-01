@@ -1,0 +1,64 @@
+{
+  "doc_id": "msde-state-level-responsibilities",
+  "run_id": "extract_20261101T084223_06c483f3",
+  "protocol": {
+    "protocol": "aacps-dm-extract",
+    "prompt_version": "extract_v1",
+    "prompt_file": "prompts/extract_v1.md",
+    "role": "extractor",
+    "unit_max_chars": 6000
+  },
+  "model_role": "extractor",
+  "segments": 2,
+  "calls": 2,
+  "by_status": {
+    "grounded": 32
+  },
+  "claims_returned": 32,
+  "grounded": 32,
+  "grounding_rate": 1.0,
+  "protocol_failures": 0,
+  "protocol_failure_rate": 0.0,
+  "usage": {
+    "input_tokens": 4,
+    "output_tokens": 4177,
+    "cache_read_input_tokens": 1298,
+    "cache_creation_input_tokens": 14196,
+    "overhead_input_tokens": 0,
+    "overhead_output_tokens": 0
+  },
+  "billable_shaped_tokens": 4181,
+  "resolved_models": [
+    "claude-sonnet-5-5"
+  ],
+  "wall_seconds": 19.34,
+  "workers_achieved": 16,
+  "calls_by_status": {
+    "ok": 2
+  },
+  "spend_node": "extract_document",
+  "resumed_calls": 0,
+  "calls_this_session": 2,
+  "width": {
+    "start": 8,
+    "final": 8,
+    "ceiling": 16,
+    "stopped": null,
+    "step": 4,
+    "min_gain": 0.1,
+    "sample_calls": 64,
+    "steps": []
+  },
+  "model_bucket": {
+    "declared": true,
+    "source": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/factory/control.yaml",
+    "holds": 0,
+    "waited_seconds": 0.0,
+    "tokens_per_hour": 13000000.0,
+    "level": 12977258.5,
+    "others_in_flight": 0,
+    "in_flight": 0,
+    "estimate": 19381.9
+  },
+  "cost_ledger_row": "extract_20261101T084223_06c483f3"
+}

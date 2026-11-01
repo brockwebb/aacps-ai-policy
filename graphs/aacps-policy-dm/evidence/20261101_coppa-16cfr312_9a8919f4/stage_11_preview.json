@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "coppa-16cfr312",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_coppa-16cfr312_9a8919f4_coppa-16cfr312/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/preview_coppa-16cfr312.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/extract_coppa-16cfr312.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:50:41.135591+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `coppa-16cfr312` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "161 segment(s) extracted: 156 grounded, 4 ungrounded, 1 unparseable. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 156** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | Child means an individual under the age of 13. | claude_cli:extractor (claude-sonnet-5-5) | [877:923] sha256 e1b08e06e030 |",
+    "| proposed | Claim | None None | None | Collects or collection means the gathering of any personal information from a child by any means, including but not limited to: | claude_cli:extractor (claude-sonnet-5-5) | [925:1052] sha256 7e2a8b6dba3c |",
+    "| proposed | Claim | None None | None | Commission means the Federal Trade Commission. | claude_cli:extractor (claude-sonnet-5-5) | [1566:1612] sha256 9898783c67f5 |",
+    "| proposed | Claim | None None | None | Delete means to remove personal information such that it is not maintained in retrievable form and cannot be retrieved in the normal course of business. | claude_cli:extractor (claude-sonnet-5-5) | [1614:1766] sha256 495cf847fa1b |",
+    "| proposed | Claim | None None | None | Disclose or disclosure means, with respect to personal information: | claude_cli:extractor (claude-sonnet-5-5) | [1768:1835] sha256 9f2201e3199b |",
+    "| proposed | Claim | None None | None | Federal agency means an agency, as that term is defined in section 551(1) of title 5, United States Code. | claude_cli:extractor (claude-sonnet-5-5) | [2458:2563] sha256 2b2492139298 |",
+    "| proposed | Claim | None None | None | Internet means collectively the myriad of computer and telecommunications facilities, including equipment and operating software, which comprise the interconnected world-wide network of networks that employ the Transmission Control Protocol/Internet Protocol, or any predecessor or successor protocols to such protocol, to communicate information of all kinds by wire, radio, or other methods of transmission. | claude_cli:extractor (claude-sonnet-5-5) | [2565:2974] sha256 3004ae5abb7f |",
+    "| proposed | Claim | None None | None | Mixed audience website or online service means a website or online service that is directed to children under the criteria set forth in paragraph (1) of the definition of website or online service directed to children, but that does not target children as its primary audience, and does not collect personal information from any visitor, other than for the limited purposes set forth in § 312.5(c), prior to collecting age information or using another means that is reasonably calculated, in light of available technology, to determine whether the visitor is a child. | claude_cli:extractor (claude-sonnet-5-5) | [2976:3543] sha256 5ce039b14300 |",
+    "| proposed | Claim | None None | None | Any collection of age information, or other means of determining whether a visitor is a child, must be done in a neutral manner that does not default to a set age or encourage visitors to falsify age information. | claude_cli:extractor (claude-sonnet-5-5) | [3544:3756] sha256 b2cade5c4f3c |",
+    "| proposed | Claim | None None | None | Obtaining verifiable consent means making any reasonable effort (taking into consideration available technology) to ensure that before personal information is collected from a child, a parent of the child: | claude_cli:extractor (claude-sonnet-5-5) | [3758:3963] sha256 59f789f47299 |",
+    "| proposed | Claim | None None | None | Online contact information means an email address or any other substantially similar identifier that permits direct contact with a person online, including but not limited to, an instant messaging user identifier, a voice over Internet Protocol (VOIP) identifier, a video chat user identifier, or a mobile telephone number provided the operator uses it only to send text messages to a parent in connection with obtaining parental consent. | claude_cli:extractor (claude-sonnet-5-5) | [4156:4594] sha256 3a64e1d94b0b |",
+    "| proposed | Claim | None None | None | Operator means any person who operates a website located on the internet or an online service and who collects or maintains personal information from or about the users of or visitors to such website or online service, or on whose behalf such information is collected or maintained, or offers products or services for sale through that website or online service, where such website or online service is operated for commercial purposes involving commerce among the several States or with one or more foreign nations; in any territory of the United States or in the District of Columbia, or between any such territory and another such territory or any State or foreign nation; or between the District of Columbia and any State, territory, or foreign nation. | claude_cli:extractor (claude-sonnet-5-5) | [4596:5352] sha256 f17a07e6ece1 |",
+    "| proposed | Claim | None None | None | Parent includes a legal guardian. | claude_cli:extractor (claude-sonnet-5-5) | [5828:5861] sha256 f536dae9d544 |",
+    "| proposed | Claim | None None | None | Person means any individual, partnership, corporation, trust, estate, cooperative, association, or other entity. | claude_cli:extractor (claude-sonnet-5-5) | [5863:5975] sha256 9090f85c630f |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/preview_coppa-16cfr312.md"
+  ],
+  "first_line": "# Preview: assertions for `coppa-16cfr312` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/preview_coppa-16cfr312.md": "6a9e4a3b40945b6fc97b5f0914bb2624d86984746c33fc8083a6c1a6e3e712a7"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/extract_coppa-16cfr312.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/extract_coppa-16cfr312.jsonl",
+        "sha256": "d53a60eeca9a019f5d509f7ead17583d709e53e00b981f56ac446950948cbfaf"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/preview_coppa-16cfr312.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_coppa-16cfr312_9a8919f4/preview_coppa-16cfr312.md",
+        "sha256": "6a9e4a3b40945b6fc97b5f0914bb2624d86984746c33fc8083a6c1a6e3e712a7"
+      }
+    ]
+  }
+}

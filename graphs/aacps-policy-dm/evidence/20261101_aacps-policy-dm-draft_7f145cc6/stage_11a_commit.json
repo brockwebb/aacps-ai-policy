@@ -1,0 +1,66 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "aacps-policy-dm-draft",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-dm-draft_7f145cc6_aacps-policy-dm-draft/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-dm-draft_7f145cc6_aacps-policy-dm-draft/commit_before.json"
+  ],
+  "wall_seconds": 0.46,
+  "finished_utc": "2026-11-01T08:38:53.532154+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "aacps-policy-dm-draft: 28 segment(s) extracted, 28 grounded proposal(s) -> appending 44 event(s) under run_id=commit_20261101T083853_10ff650b: Cites 13, ExternalReference 1, Obligation 15, StatedIn 15",
+    "  node ExternalReference         0 ->      1 measured    +1 expected    +1  OK",
+    "  node Obligation                0 ->     15 measured   +15 expected   +15  OK",
+    "  edge Cites                     0 ->     13 measured   +13 expected   +13  OK",
+    "  edge StatedIn                  0 ->     15 measured   +15 expected   +15  OK"
+  ],
+  "first_line": "aacps-policy-dm-draft: 28 segment(s) extracted, 28 grounded proposal(s) -> appending 44 event(s) under run_id=commit_20261101T083853_10ff650b: Cites 13, ExternalReference 1, Obligation 15, StatedIn 15",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-dm-draft_7f145cc6_aacps-policy-dm-draft/commit_scratch.jsonl": "c3d828988e36275fe8b125ee7dda6dd8fd23b3ade3ead87557bd2b103d89f98e"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_aacps-policy-dm-draft_7f145cc6/extract_aacps-policy-dm-draft.jsonl",
+        "sha256": "3b7dfbdfd840d07477ce5b6f5a3e86eca84ffc23be74634adec164449925165b"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-dm-draft_7f145cc6_aacps-policy-dm-draft/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_aacps-policy-dm-draft_7f145cc6_aacps-policy-dm-draft/commit_scratch.jsonl",
+        "sha256": "c3d828988e36275fe8b125ee7dda6dd8fd23b3ade3ead87557bd2b103d89f98e"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 41465,
+        "end": 100671,
+        "sha256": "c3d828988e36275fe8b125ee7dda6dd8fd23b3ade3ead87557bd2b103d89f98e"
+      }
+    ]
+  }
+}

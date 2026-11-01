@@ -1,0 +1,35 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "claims-reachable",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.conformance",
+    "run",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--export",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_pilot_model_2026-11-01.json",
+    "--scope",
+    "graph",
+    "--gate",
+    "claims_reachable",
+    "--controls",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_pilot_model/claims_reachable_ap02_pilot_model.json"
+  ],
+  "wall_seconds": 0.13,
+  "finished_utc": "2026-11-01T08:40:40.247163+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[N/A    ] 40 claims_reachable  (the served export holds no Claim: no claim to reach)",
+    "[control caught ] 40 claims_reachable"
+  ],
+  "first_line": "[N/A    ] 40 claims_reachable  (the served export holds no Claim: no claim to reach)"
+}

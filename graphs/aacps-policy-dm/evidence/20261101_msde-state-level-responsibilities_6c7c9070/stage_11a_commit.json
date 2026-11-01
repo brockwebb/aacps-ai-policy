@@ -1,0 +1,65 @@
+{
+  "stage": 11,
+  "sub": "a",
+  "label": "11a",
+  "name": "commit",
+  "question": "Are the proposals the preview showed now in the ledger, with their stamps and spans, and nothing else?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.write",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-state-level-responsibilities",
+    "--claims",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-state-level-responsibilities_6c7c9070_msde-state-level-responsibilities/commit_scratch.jsonl",
+    "--before",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-state-level-responsibilities_6c7c9070_msde-state-level-responsibilities/commit_before.json"
+  ],
+  "wall_seconds": 0.47,
+  "finished_utc": "2026-11-01T08:42:43.119566+00:00",
+  "defect_of_record": "OD-5 (DI-135): the write path is the only way in, and it runs after the rendering, never before",
+  "output_tail": [
+    "msde-state-level-responsibilities: 32 segment(s) extracted, 32 grounded proposal(s) -> appending 60 event(s) under run_id=commit_20261101T084243_530129d6: Cites 4, Obligation 28, StatedIn 28",
+    "  node Obligation               86 ->    114 measured   +28 expected   +28  OK",
+    "  edge Cites                    62 ->     66 measured    +4 expected    +4  OK",
+    "  edge StatedIn                 93 ->    121 measured   +28 expected   +28  OK"
+  ],
+  "first_line": "msde-state-level-responsibilities: 32 segment(s) extracted, 32 grounded proposal(s) -> appending 60 event(s) under run_id=commit_20261101T084243_530129d6: Cites 4, Obligation 28, StatedIn 28",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-state-level-responsibilities_6c7c9070_msde-state-level-responsibilities/commit_scratch.jsonl": "361d5f04abae2528852dcc850b3af949819e9c4819be715ed5703520dd423019"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-state-level-responsibilities_6c7c9070/extract_msde-state-level-responsibilities.jsonl",
+        "sha256": "fd5623dddb015fa4a5b4d16593241530270598a3ee3d868772141f196c3da9de"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-state-level-responsibilities_6c7c9070_msde-state-level-responsibilities/commit_scratch.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-state-level-responsibilities_6c7c9070_msde-state-level-responsibilities/commit_scratch.jsonl",
+        "sha256": "361d5f04abae2528852dcc850b3af949819e9c4819be715ed5703520dd423019"
+      },
+      {
+        "kind": "ledger",
+        "spec": "ledger:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "events": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/ledger/open.jsonl",
+        "start": 396702,
+        "end": 482047,
+        "sha256": "361d5f04abae2528852dcc850b3af949819e9c4819be715ed5703520dd423019"
+      }
+    ]
+  }
+}

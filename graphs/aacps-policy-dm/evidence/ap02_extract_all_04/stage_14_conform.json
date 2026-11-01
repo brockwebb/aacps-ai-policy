@@ -1,0 +1,29 @@
+{
+  "stage": 14,
+  "sub": null,
+  "label": "14",
+  "name": "conform",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.gates",
+    "schema",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--export",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/exports/aacps_policy_dm_graph_ap02_extract_all_04_2026-11-01.json",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_extract_all_04/schema_gate_ap02_extract_all_04.json"
+  ],
+  "wall_seconds": 0.71,
+  "finished_utc": "2026-11-01T08:53:01.921857+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "[schema] validated 1711 nodes and 1817 links against aacps_policy_dm.schema.json: 0 distinct failure row(s)"
+  ],
+  "first_line": "[schema] validated 1711 nodes and 1817 links against aacps_policy_dm.schema.json: 0 distinct failure row(s)"
+}

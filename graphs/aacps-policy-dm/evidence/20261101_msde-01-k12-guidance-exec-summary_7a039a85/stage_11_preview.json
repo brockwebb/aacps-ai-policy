@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-01-k12-guidance-exec-summary",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-01-k12-guidance-exec-summary_7a039a85_msde-01-k12-guidance-exec-summary/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/preview_msde-01-k12-guidance-exec-summary.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/extract_msde-01-k12-guidance-exec-summary.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:42:09.633806+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `msde-01-k12-guidance-exec-summary` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "18 segment(s) extracted: 18 grounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 18** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | students are expected to use AI transparently and responsibly. | claude_cli:extractor (claude-sonnet-5-5) | [713:775] sha256 654055181522 |",
+    "| proposed | Claim | None None | None | AI may support differentiation, feedback, and access, but must not replace human relationships, professional judgment, or essential skill development. | claude_cli:extractor (claude-sonnet-5-5) | [1049:1199] sha256 80eeb5ca46f2 |",
+    "| proposed | Claim | None None | None | AI systems must be monitored for bias and disparate impact. | claude_cli:extractor (claude-sonnet-5-5) | [1238:1297] sha256 e6f376deac1d |",
+    "| proposed | Claim | None None | None | Access to AIsupported learning must not widen opportunity gaps. | claude_cli:extractor (claude-sonnet-5-5) | [1298:1361] sha256 e8e99a1f134d |",
+    "| proposed | Claim | None None | None | AI integration must comply with FERPA, COPPA, PPRA, IDEA, ADA, Section 504, COMAR, and applicable Maryland law. | claude_cli:extractor (claude-sonnet-5-5) | [1453:1564] sha256 ca784da42785 |",
+    "| proposed | Claim | None None | None | Districts must enforce data minimization, contractual safeguards, and cybersecurity protections. | claude_cli:extractor (claude-sonnet-5-5) | [1565:1661] sha256 9a84f237830e |",
+    "| proposed | Claim | None None | None | Schools must clearly define appropriate AI use, require transparency when AI is permitted, and redesign assessments to emphasize reasoning, process, and authentic demonstration of learning rather than reliance on detection tools. | claude_cli:extractor (claude-sonnet-5-5) | [1698:1927] sha256 bfffb007d1e5 |",
+    "| proposed | Claim | None None | None | Rolespecific professional learning must equip teachers, leaders, and staff to evaluate AI outputs critically and use tools responsibly. | claude_cli:extractor (claude-sonnet-5-5) | [2025:2160] sha256 539e31e5299f |",
+    "| proposed | Claim | None None | None | Students must develop the knowledge and skills to understand how AI systems function, evaluate bias and limitations, protect privacy, and use AI ethically across disciplines and grade levels. | claude_cli:extractor (claude-sonnet-5-5) | [2203:2394] sha256 8dbb9507f2ab |",
+    "| proposed | Claim | None None | None | High-stakes operational systems, including predictive analytics and automated decision-support tools, require documented human review, equity monitoring, and transparent communication. | claude_cli:extractor (claude-sonnet-5-5) | [2441:2625] sha256 217d772120c1 |",
+    "| proposed | Claim | None None | None | Districts must apply structured evaluation criteria, contractual protections, and ongoing monitoring to ensure that AI tools meet standards for privacy, accessibility, transparency, and instructional value. | claude_cli:extractor (claude-sonnet-5-5) | [2662:2868] sha256 0e7ef32a58ba |",
+    "| proposed | Claim | None None | None | FERPA | claude_cli:extractor (claude-sonnet-5-5) | [1485:1490] sha256 28f1339ffc32 |",
+    "| proposed | Claim | None None | None | COPPA | claude_cli:extractor (claude-sonnet-5-5) | [1492:1497] sha256 235350ae5845 |",
+    "| proposed | Claim | None None | None | PPRA | claude_cli:extractor (claude-sonnet-5-5) | [1499:1503] sha256 b8725f77e2a2 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/preview_msde-01-k12-guidance-exec-summary.md"
+  ],
+  "first_line": "# Preview: assertions for `msde-01-k12-guidance-exec-summary` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/preview_msde-01-k12-guidance-exec-summary.md": "fe524f8a334acbcfe4ef5b320623cc7b924e1e5e5cdef8c3a941fd2e09e4c869"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/extract_msde-01-k12-guidance-exec-summary.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/extract_msde-01-k12-guidance-exec-summary.jsonl",
+        "sha256": "5c77dfa6da3a5e31e994ff57c6a9d9ce1b0216a80da83513fbf39dd796054f4e"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/preview_msde-01-k12-guidance-exec-summary.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-01-k12-guidance-exec-summary_7a039a85/preview_msde-01-k12-guidance-exec-summary.md",
+        "sha256": "fe524f8a334acbcfe4ef5b320623cc7b924e1e5e5cdef8c3a941fd2e09e4c869"
+      }
+    ]
+  }
+}

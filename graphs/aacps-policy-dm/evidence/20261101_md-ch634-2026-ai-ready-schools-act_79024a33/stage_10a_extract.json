@@ -1,0 +1,53 @@
+{
+  "stage": 10,
+  "sub": "a",
+  "label": "10a",
+  "name": "extract",
+  "question": "What does the held text propose, with a span the harness located behind each proposal?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.extract",
+    "document",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "md-ch634-2026-ai-ready-schools-act",
+    "--evid",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-ch634-2026-ai-ready-schools-act_79024a33"
+  ],
+  "wall_seconds": 33.52,
+  "finished_utc": "2026-11-01T08:46:20.626180+00:00",
+  "defect_of_record": "S-001 finding 2 / DI-033 (ai-readiness-kg): a model-quoted span drifts from the source by a character and still looks grounded",
+  "output_tail": [
+    "md-ch634-2026-ai-ready-schools-act: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 4 call(s), 34 grounded of 34 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+    "evidence: /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-ch634-2026-ai-ready-schools-act_79024a33/extract_md-ch634-2026-ai-ready-schools-act.jsonl"
+  ],
+  "first_line": "md-ch634-2026-ai-ready-schools-act: protocol {'protocol': 'aacps-dm-extract', 'prompt_version': 'extract_v1', 'prompt_file': 'prompts/extract_v1.md', 'role': 'extractor', 'unit_max_chars': 6000}, role extractor: 4 call(s), 34 grounded of 34 item(s) returned, 0 failed call(s); models ['claude-sonnet-5-5']",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-ch634-2026-ai-ready-schools-act_79024a33/extract_md-ch634-2026-ai-ready-schools-act.jsonl": "4df275575c2229d029d24198924cc27f65f20937ad48b5292c0745d5aa2bacf0"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "doc:/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm:md-ch634-2026-ai-ready-schools-act",
+        "graph": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+        "doc": "md-ch634-2026-ai-ready-schools-act",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/../../corpus/substrate/md-ch634-2026-ai-ready-schools-act.txt",
+        "sha256": "79024a334e39f596b07642470ce58a3b6fdc0ceae4a15a10bf44abcaffb650d1"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-ch634-2026-ai-ready-schools-act_79024a33/extract_md-ch634-2026-ai-ready-schools-act.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_md-ch634-2026-ai-ready-schools-act_79024a33/extract_md-ch634-2026-ai-ready-schools-act.jsonl",
+        "sha256": "4df275575c2229d029d24198924cc27f65f20937ad48b5292c0745d5aa2bacf0"
+      }
+    ]
+  }
+}

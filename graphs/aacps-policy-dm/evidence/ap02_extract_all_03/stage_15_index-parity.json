@@ -1,0 +1,28 @@
+{
+  "stage": 15,
+  "sub": null,
+  "label": "15",
+  "name": "index-parity",
+  "question": "",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.index",
+    "parity",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--mutate",
+    "--json",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/ap02_extract_all_03/index_parity_ap02_extract_all_03.json"
+  ],
+  "wall_seconds": 0.06,
+  "finished_utc": "2026-11-01T08:52:19.114084+00:00",
+  "defect_of_record": null,
+  "output_tail": [
+    "index: not applicable to aacps-policy-dm: AP-02 reads the release export only (anchor queries and the conflict pass, scripts/policy_graph.py); 33 held texts, exact-quote and edge lookups, no served search surface, so no retrieval index is built"
+  ],
+  "first_line": "index: not applicable to aacps-policy-dm: AP-02 reads the release export only (anchor queries and the conflict pass, scripts/policy_graph.py); 33 held texts, exact-quote and edge lookups, no served search surface, so no retrieval index is built"
+}

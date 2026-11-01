@@ -1,0 +1,74 @@
+{
+  "stage": 11,
+  "sub": null,
+  "label": "11",
+  "name": "preview",
+  "question": "What is about to be committed, shown before it is?",
+  "pass": true,
+  "decision_stop": false,
+  "returncode": 0,
+  "command": [
+    "/Users/brock/GitHub/squiddy/.venv/bin/python",
+    "-m",
+    "squiddy.preview",
+    "--graph",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm",
+    "--id",
+    "msde-local-action-planning-guide",
+    "--scratch",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/work/admit_20261101_msde-local-action-planning-guide_9ea90123_msde-local-action-planning-guide/scratch_events.jsonl",
+    "--out",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/preview_msde-local-action-planning-guide.md",
+    "--extract",
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/extract_msde-local-action-planning-guide.jsonl"
+  ],
+  "wall_seconds": 0.05,
+  "finished_utc": "2026-11-01T08:52:14.706023+00:00",
+  "defect_of_record": "the acceptance bar (DI-135): extraction shown for a nod before commit",
+  "output_tail": [
+    "# Preview: assertions for `msde-local-action-planning-guide` before commit",
+    "No deterministic slice in this run (the entry was admitted earlier).",
+    "## Proposed by extraction",
+    "292 segment(s) extracted: 279 grounded, 13 ungrounded. Located spans are cut from the parsed text by the harness; the model supplied a locator. **will be committed: 279** (status `proposed`, stage 11a); everything else is recorded in the evidence file and never enters the ledger.",
+    "| kind | class | segment | claim kind | located text | extractor | grounding span |",
+    "|---|---|---|---|---|---|---|",
+    "| proposed | Claim | None None | None | LEAs are encouraged to use this Guide as a living planning document. | claude_cli:extractor (claude-sonnet-5-5) | [4649:4717] sha256 67f678b032a9 |",
+    "| proposed | Claim | None None | None | Policies, instructional practices, and oversight mechanisms must evolve as well. | claude_cli:extractor (claude-sonnet-5-5) | [4759:4839] sha256 5edc6ea56fd6 |",
+    "| proposed | Claim | None None | None | Maryland K-12 AI Guidance | claude_cli:extractor (claude-sonnet-5-5) | [2652:2677] sha256 eb6a209cd343 |",
+    "| proposed | Claim | None None | None | LEA leadership teams are encouraged to use it to surface strengths, identify gaps, and prioritize near-term action steps aligned to Maryland's critical elements for safe, informed, and equitable AI integration. | claude_cli:extractor (claude-sonnet-5-5) | [5909:6119] sha256 d0fb01aba863 |",
+    "| proposed | Claim | None None | None | Before developing or revising local AI policies and practices, leadership teams should assess their current stage of implementation across Maryland's critical elements. | claude_cli:extractor (claude-sonnet-5-5) | [6152:6320] sha256 1d28abd6ef92 |",
+    "| proposed | Claim | None None | None | As a leadership team, review each critical element below and determine your current stage of implementation. | claude_cli:extractor (claude-sonnet-5-5) | [6576:6684] sha256 cb8a1c944366 |",
+    "| proposed | Claim | None None | None | Document the rationale for each rating. | claude_cli:extractor (claude-sonnet-5-5) | [7656:7695] sha256 9647087e79b4 |",
+    "| proposed | Claim | None None | None | Include examples of existing initiatives, policies, pilot programs, or operational uses that informed your assessment. | claude_cli:extractor (claude-sonnet-5-5) | [7696:7814] sha256 2837b4b8fffc |",
+    "| proposed | Claim | None None | None | Identify one or two immediate next steps for each area. | claude_cli:extractor (claude-sonnet-5-5) | [7824:7879] sha256 00dadc9e8c85 |",
+    "| proposed | Claim | None None | None | Use your responses to prioritize deeper planning and coordinated action. | claude_cli:extractor (claude-sonnet-5-5) | [7889:7961] sha256 cb7f58a2a788 |",
+    "| proposed | Claim | None None | None | Exploring. The LEA is developing awareness of AI's implications. Conversations are emerging, but formal structures, policies, or coordinated plans are not yet established. | claude_cli:extractor (claude-sonnet-5-5) | [6686:6857] sha256 f88c2eeeff7e |",
+    "| proposed | Claim | None None | None | Organizing. Cross-functional discussions have begun. Initial guidance, pilot efforts, or leadership teams may exist, but shared definitions, expectations, and implementation structures are still developing. | claude_cli:extractor (claude-sonnet-5-5) | [6859:7065] sha256 3e49a4432207 |",
+    "| proposed | Claim | None None | None | Piloting. AI tools or instructional approaches are being tested in defined contexts. Policies and professional learning are emerging, and feedback mechanisms are beginning to form. | claude_cli:extractor (claude-sonnet-5-5) | [7067:7247] sha256 6014605aceb0 |",
+    "| proposed | Claim | None None | None | Scaling. AI integration is expanding across departments or schools. Governance structures, professional learning systems, and monitoring practices are aligned and coordinated. | claude_cli:extractor (claude-sonnet-5-5) | [7249:7424] sha256 b9ee4a905042 |",
+    "...",
+    "preview written to /Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/preview_msde-local-action-planning-guide.md"
+  ],
+  "first_line": "# Preview: assertions for `msde-local-action-planning-guide` before commit",
+  "outputs": {
+    "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/preview_msde-local-action-planning-guide.md": "35e35023979ae087b1b5f26001a291e079f82199ccbdb24a0c34887c85fc58d4"
+  },
+  "trace": {
+    "inputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/extract_msde-local-action-planning-guide.jsonl",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/extract_msde-local-action-planning-guide.jsonl",
+        "sha256": "7a549ccdd690f603e753176dd726fbf73011d2bba7d3668ec5bd521430f23e9e"
+      }
+    ],
+    "outputs": [
+      {
+        "kind": "file",
+        "spec": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/preview_msde-local-action-planning-guide.md",
+        "path": "/Users/brock/GitHub/aacps-ai-policy/graphs/aacps-policy-dm/evidence/20261101_msde-local-action-planning-guide_9ea90123/preview_msde-local-action-planning-guide.md",
+        "sha256": "35e35023979ae087b1b5f26001a291e079f82199ccbdb24a0c34887c85fc58d4"
+      }
+    ]
+  }
+}

@@ -138,3 +138,36 @@ the decomposition was already solved. No new literature search was run; the reas
 
 - Whether the comment cites a conflict: the operator decides that in Desktop, from the anchor evidence.
 - Whether to extract COMAR Title 13A: it is browser-only, and the draft names the title, not a chapter.
+
+## ADDENDUM 01 (2026-11-01, after the run): what the run changed, on its face
+
+Self-executing amendments (doctrine section 3: errata carry their grounding and a diff, no ratification). Each is in
+the AP-02 RESULT with its measurement.
+
+1. **Grounding span.** Section 3's span is now the kit's `GroundingSpan` exactly (`start`, `end`, `sha256` of the
+   located text, `parsed_sha256` of the whole text). The pilot's commit stage refused the first form
+   (`matches_in_unit` inside the span); that count now rides on the row. A test pins it against the generated schema.
+2. **The extract control plane.** `extract/control.yaml` declares the index `not_applicable` (every reader reads the
+   release export) and the transport's two switches (`setting_sources_disabled`, `nonessential_traffic_disabled`),
+   hazbrief's, for its reason (H-005 R-23). The draft's one pilot call ran before the block existed. Its input,
+   8,395 tokens, sits beside the model policy's 7,905 per call under the block, so no operator context reached it.
+3. **The conflict pass runs inside the kit's spend job** (`squiddy.spend.job_or_inherit`, as the kit's own extraction
+   declares one). The first run sent nothing: every call was `SpendRefused (undeclared)`. With no measured history
+   the governor cut the job to its 20-unit pilot; the same command continued under the measured estimate.
+   Section 4's checkpoint list gains four rules, each pinned by a test:
+   - a spend refusal stops the pass and writes no row;
+   - a `failed` row is retried up to `run.max_attempts` (3); an `unparseable` answer is settled, not re-bought;
+   - a pilot that settles no verdict stops before the rest;
+   - `max_billable_tokens` counts cache creation and reads. Input and output alone were 10,019 of the pass's
+     373,257 tokens.
+4. **Alignment threshold.** `min_jaccard` is 0.2, not 0.3. At 0.3, two of the model's clauses, reworded, went
+   unpaired: C.7 (0.25) and C.1 (0.27). It is a display threshold, with every score printed, and it still has no
+   measured basis.
+5. **Section labels for the draft are derived from its text.** The kit's section path for every draft block is the
+   running header (SQ-AP02g), so `anchor_queries.derived_where` computes `B`, `C.1`, `C.2` and so on from the held
+   text's headings and clause numbers.
+6. **Observed recall limit of `extract_v1`, not corrected in AP-02.** 58 items were refused `text_not_in_passage`;
+   31 of them follow one pattern. The model stitches a list's lead-in onto each item, for example "Users may not
+   use AACPS technology: ii. ...". Verbatim grounding refuses these correctly, so those list items are absent from
+   the graph. A prompt revision would tell the model to quote the item and give the lead-in as a separate field.
+   It would be a new instrument (`extract_v2`) and a re-extraction. No anchor rests on a refused item.
