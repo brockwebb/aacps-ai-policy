@@ -1,0 +1,112 @@
+event_store:
+  path: seldon_events.jsonl
+handoff:
+  require_design_note: true
+  session_window_hours: 12
+neo4j:
+  database: seldon-aacps-ai-policy
+  uri: bolt://localhost:7687
+project:
+  created_at: '2026-11-01T04:30:18.334126Z'
+  domain: research
+  name: aacps-ai-policy
+  slug: aacps-ai-policy
+  template: blank
+shared_ontology:
+  inheritance: read-only
+  source: /Users/brock/GitHub/seldon/ontology
+  vocabularies:
+  - validity/VALIDITY_VOCABULARY.md
+
+desktop_commit:
+  # FC-02 (constitution 6.1): `commit-governed` runs the secret scanner over every handoff before it stages it, as
+  # hazbrief-mcp's seldon.yaml (HB-33) and seldon's own do. The scanner resolves from this repository to ../squiddy.
+  scan:
+    roots: [handoffs/]
+    command: [../squiddy/.venv/bin/python, -m, squiddy.secret_scan]
+
+dispatch:
+  # AP-02 Part A: written by `seldon dispatch adopt` (SEL-010R2, AD-038-R11), then each placeholder comment replaced
+  # by the reason, copied from ../hazbrief-mcp/seldon.yaml `dispatch:` (seldon SEL-016), which restates seldon's own.
+  #
+  # THE KILL SWITCH. Read on EVERY pass, never cached; a bool, not a string. To stop the world without editing this
+  # file: `touch .seldon/DISPATCH_STOP`. While it is true, the operator does not hand-dispatch in this checkout
+  # (ai-readiness-kg DN-006 decision 10): the dispatcher cannot see a session it did not launch except through c7's
+  # clean-tree check. AP-02 was the one hand-launched bootstrap task (factory F-008); it is registered in_progress so
+  # no pass launches it a second time.
+  enabled: true
+  # The branch a pass may dispatch on. Any other branch fails c7, together with a dirty tree.
+  branch: main
+  # THE STANDING BAND, as a REFERENCE and never a copied number (DN-006 section 5): the machine-wide spend
+  # configuration of squiddy DN-042 (R-176, one ledger for the machine). Its one integer token cap is R-179's
+  # `job_token_cap_default`, the token cap of a job whose runner has no cap of its own to declare, which is what a
+  # dispatched Claude Code session is. A task whose `**Spend:**` declares more is not launched unattended (c4); it
+  # waits for a pasted line.
+  standing_band_ref: ../squiddy/squiddy/spend.yaml#job_token_cap_default
+  # NO MEASURED BASIS (DN-006 section 5): a pass is a local graph read at zero spend. seldon's, ai-readiness-kg's and
+  # hazbrief's value. The plist's StartInterval must equal it; the wrapper refuses when they differ.
+  poll_interval_s: 300
+  # A headless session in any PROMPTING mode blocks forever on its first tool call (ai-readiness-kg DN-006
+  # ADDENDUM_01); seldon tried `auto` and applied its kill rule on 2026-10-19 (DISP-002, AD-034 ADDENDUM 02 section
+  # 5). The CLI and model come from seldon's model lock for the task's `**Model:**` role, never from this block.
+  permission_mode: bypassPermissions
+  stop_file: .seldon/DISPATCH_STOP
+  # One instance, by flock, with an identified holder; reaped only by the operator, never by age. (`*.lock` ignored.)
+  lease_file: .seldon/dispatch.lock
+  # One log per dispatched task, `EXIT=` appended. Gitignored: what ships is the RESULT.
+  log_dir: logs/dispatch
+  # The finish signal: a local macOS banner. The outcome arrives in the environment, never substituted into this
+  # text. A network notifier would be an outbound send and is deliberately not the default. Titled with this
+  # project's name so the banner says which queue it is.
+  notify: >-
+    osascript -e 'on run argv' -e 'display notification (item 1 of argv) with title "aacps-ai-policy"'
+    -e 'end run' "$SELDON_NOTIFY_TASK_NAME: $SELDON_NOTIFY_MESSAGE"
+  notify_timeout_s: 30
+  # The staleness alarm: one `dispatch_stuck` event per streak of this many passes refused on the same criterion.
+  # NO MEASURED BASIS; ai-readiness-kg's value (fifteen minutes at 300 s).
+  stuck_after_passes: 3
+  # seldon DESK-001 Part B step 6: a dirty tree refuses the WHOLE queue and never clears by itself, so it alarms on
+  # its first pass.
+  stuck_after_passes_by_criterion:
+    dirty_tree: 1
+  # The launchd job that runs the passes (scripts/jobs/com.brock.aacps-ai-policy-dispatch.plist, installed by
+  # symlink). `seldon go` reports `dispatch: on` only while it is loaded.
+  launchd_label: com.brock.aacps-ai-policy-dispatch
+  # AD-034: one task at a time until a project opts into parallel dispatch deliberately (AD-037-R9).
+  max_parallel: 1
+  # AD-038-R11: the headers a task file must carry to be a candidate; Spend and Network are the kit-wide minimum.
+  candidacy_headers:
+  - Spend
+  - Network
+  # AD-038-R10, R17: c18's grace between chained tasks. 0 never waits. No OODA knowledge source here.
+  ooda_grace_s: 0
+  # The re-gate (AD-034 decision 3): run in the task's worktree when main changed a file the task changed, before the
+  # fast-forward. This repository's suite (tests/, the anchor query's tests) under squiddy's venv, which carries
+  # pyyaml and pytest; quiet and with no cache so a worktree leaves no `.pytest_cache` behind. The path is absolute
+  # because a worktree sits under .claude/worktrees/, where ../squiddy does not resolve.
+  gate_command: /Users/brock/GitHub/squiddy/.venv/bin/python -m pytest tests/ -q -p no:cacheprovider
+  stations:
+    # AD-037-R6 (a): the dispatcher's premise on every task, that no other project's dispatcher holds its lease on a
+    # repository this project's environment names (hazbrief's form, SEL-016).
+    environment_ref: seldon.yaml#environment.packages
+  # The gitignored paths symlinked from the primary checkout into every worktree at launch (seldon SEL-017,
+  # AD-034-R13). The hand-acquired PDFs are gitignored (corpus/inbox/*) and every parse reads them; the graph's
+  # parsed texts and work directory are gitignored by size.
+  worktree_links:
+  - .env
+  - corpus/inbox
+  - graphs/aacps-policy-dm/work
+
+# The sibling repositories this project's runs depend on, read by `dispatch.stations.environment_ref`. squiddy: the
+# kit the graph, extraction, secret scan and spend band come from. seldon: the dispatcher and the hooks.
+environment:
+  packages: [squiddy, seldon]
+
+jobs:
+  # The launchd wrapper's log caps (seldon scripts/jobs/seldon_dispatch.sh), seldon's values and ai-readiness-kg's
+  # reasons: 2000 characters per line is the log-bomb guard set after one exception wrote ~230,000 lines; 2 MiB per
+  # log before rotation is ~40x a normal run; 30 days of rotated logs.
+  dispatch:
+    log_max_line_chars: 2000
+    log_max_run_bytes: 2097152
+    log_retention_days: 30

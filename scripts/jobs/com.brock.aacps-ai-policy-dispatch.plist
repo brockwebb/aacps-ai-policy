@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  com.brock.aacps-ai-policy-dispatch: launchd job for the standing dispatcher in /Users/brock/GitHub/aacps-ai-policy.
+  Written by `seldon dispatch adopt` (SEL-010R2, AD-038-R11); the shape and every reason are seldon's own job,
+  /Users/brock/GitHub/seldon/scripts/jobs/com.brock.seldon-dispatch.plist.
+
+  StartInterval is seldon.yaml `dispatch.poll_interval_s`; the wrapper refuses when the two differ.
+  RunAtLoad false: loading the job must not fire a pass. AbandonProcessGroup true: a dispatched session outlives
+  the pass that launched it (AD-034 premise 5).
+
+  Install by SYMLINK, never a copy:
+    ln -s /Users/brock/GitHub/aacps-ai-policy/scripts/jobs/com.brock.aacps-ai-policy-dispatch.plist ~/Library/LaunchAgents/com.brock.aacps-ai-policy-dispatch.plist
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.brock.aacps-ai-policy-dispatch.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.brock.aacps-ai-policy-dispatch</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/brock/GitHub/seldon/scripts/jobs/seldon_dispatch.sh</string>
+        <string>/Users/brock/GitHub/aacps-ai-policy</string>
+        <string>/Users/brock/GitHub/aacps-ai-policy/scripts/jobs/com.brock.aacps-ai-policy-dispatch.plist</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>300</integer>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>AbandonProcessGroup</key>
+    <true/>
+    <key>WorkingDirectory</key>
+    <string>/Users/brock/GitHub/aacps-ai-policy</string>
+</dict>
+</plist>
