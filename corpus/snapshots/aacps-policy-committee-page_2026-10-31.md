@@ -1,0 +1,38 @@
+---
+source_url: https://www.aacps.org/page/board-policies
+retrieved: 2026-11-01T03:40Z (2026-10-31 23:40 EDT)
+method: browser (operator's Chrome via Claude in Chrome; aacps.org returns a bot challenge to curl)
+publisher: Anne Arundel County Public Schools, Board of Education Policy Committee
+status: public record (public web page)
+note: text extract of the page's policy-committee content, navigation omitted; not the full page
+---
+
+Public comment on the proposed revisions to Policy AA (Philosophy and Mission), Policy KBA (Citizen Advisory
+Committee), and NEW Policy DM (Responsible Use of Artificial Intelligence) will be accepted through
+November 21, 2026.
+
+Board Policy Committee. Examines issues related to the educational policies of the school system in accordance
+with the Board's legal authority and Policy BF (Policy Setting). Generally meets the first Tuesday of each
+month except summer, before policies go to the full Board for a first reading.
+
+Members: Dana Schallheim (Chair), Sara Hamdaoui, Dawn Pulliam, Robert Silkworth. Staff: Darren Burns, Mychael
+Dickerson, Maggie Gosewisch, Diane Howell, Maneka Monk, Bob Mosier, Dan Reagan, Grace Wilson.
+
+2026-2027 meetings (3:00 p.m., virtual): 2026-09-01, 2026-10-06, 2026-11-02, 2026-12-01, 2027-01-05,
+2027-02-02, 2027-03-02, 2027-04-06, 2027-05-04, 2027-06-15, 2027-06-21.
+
+Policy adoption process: policy written or revised; first reading at a Board meeting; public comment (30
+calendar days); second reading at the first Board meeting after the comment period; third reading at the
+first Board meeting after the second reading.
+
+Comment rules as posted: comments go to policycomments@aacps.org; they are for the policy and any accompanying
+administrative regulation only, "not for any supporting documents"; comments received are viewable after the
+period closes ("View Comments" tab); the Board reserves the right to edit comments for obscene language or
+confidential information. The Superintendent also accepts comment on accompanying regulations, posted with the
+policy when applicable.
+
+Observed 2026-10-31: the page's proposed-policy listing for Policy DM links only the draft policy PDF; no
+accompanying administrative regulation is posted. Meeting materials: https://aptg.co/gbRm9F (current),
+https://annearundelcpsmd.sites.thrillshare.com/documents/16668680 (archived); minutes:
+https://aptg.co/nHVdBK (current), https://annearundelcpsmd.sites.thrillshare.com/documents/16668704
+(archived). Adopted policies index: https://aacpsschools.org/aacpsboardpolicies/

@@ -18,7 +18,7 @@ candidates:
   licence_basis: public-record
   licence_note: "Board policy posted for public comment (comment window closes 2026-11-21). No licence statement on the page; public-record basis, redistribution as a quoted excerpt in the comment; full-text redistribution to be confirmed before the PDF is committed."
   access: browser
-  access_note: "aacps.org returns a bot challenge to curl (Client Challenge, 200, 3038 bytes). The PDF host files-backend.assets.thrillshare.com is NOT on AP-01's network allowlist, so no machine pull was attempted. AP-02: hand-acquire to corpus/inbox/ with a receipt, or add the host to the allowlist."
+  access_note: "aacps.org returns a bot challenge to curl. Acquired 2026-10-31 23:35 EDT through the operator's Chrome (HTTP 200, application/pdf, 197911 bytes, Last-Modified 2026-10-22T13:31:59Z); file lands in corpus/inbox/aacps-policy-dm-draft.pdf, sha256 recorded on move."
   cited_by_draft: n/a
   disposition: active
 - id: aacps-policy-committee-page
