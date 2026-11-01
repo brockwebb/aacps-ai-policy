@@ -1,0 +1,5 @@
+# Append-only logs merge by union (seldon AD-034-R7, SEL-004 decision 4; written by `seldon hooks install`,
+# AD-034 ADDENDUM 05): two branches that each appended lines keep both sides'. The dispatcher checks the merged
+# file is valid JSONL with unique event_ids before main moves; git's union driver alone cannot see a fused or
+# duplicated line.
+seldon_events.jsonl merge=union
